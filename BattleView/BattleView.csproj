@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{F588D0A5-677F-407B-8BC4-86A2305E1C16}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>BattleView</RootNamespace>
+        <AssemblyName>BattleView</AssemblyName>
+        <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>8</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Entitas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Entitas\Entitas\Entitas.dll</HintPath>
+        </Reference>
+        <Reference Include="Entitas.CodeGeneration.Attributes, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Entitas\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Generated\ViewInput\ViewInputComponentsLookup.cs" />
+    <Compile Include="Generated\ViewField\ViewFieldComponentsLookup.cs" />
+    <Compile Include="Generated\ViewThing\ViewThingComponentsLookup.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillComponentsLookup.cs" />
+    <Compile Include="Generated\ViewHUD\ViewHUDComponentsLookup.cs" />
+    <Compile Include="Generated\ViewBuff\ViewBuffComponentsLookup.cs" />
+    <Compile Include="Generated\ViewBattleState\ViewBattleStateComponentsLookup.cs" />
+    <Compile Include="Generated\ViewAudio\ViewAudioComponentsLookup.cs" />
+    <Compile Include="Generated\ViewInput\ViewInputAttribute.cs" />
+    <Compile Include="Generated\ViewField\ViewFieldAttribute.cs" />
+    <Compile Include="Generated\ViewThing\ViewThingAttribute.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillAttribute.cs" />
+    <Compile Include="Generated\ViewHUD\ViewHUDAttribute.cs" />
+    <Compile Include="Generated\ViewBuff\ViewBuffAttribute.cs" />
+    <Compile Include="Generated\ViewBattleState\ViewBattleStateAttribute.cs" />
+    <Compile Include="Generated\ViewAudio\ViewAudioAttribute.cs" />
+    <Compile Include="Generated\ViewInput\ViewInputContext.cs" />
+    <Compile Include="Generated\ViewField\ViewFieldContext.cs" />
+    <Compile Include="Generated\ViewThing\ViewThingContext.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillContext.cs" />
+    <Compile Include="Generated\ViewHUD\ViewHUDContext.cs" />
+    <Compile Include="Generated\ViewBuff\ViewBuffContext.cs" />
+    <Compile Include="Generated\ViewBattleState\ViewBattleStateContext.cs" />
+    <Compile Include="Generated\ViewAudio\ViewAudioContext.cs" />
+    <Compile Include="Generated\ViewInput\ViewInputMatcher.cs" />
+    <Compile Include="Generated\ViewField\ViewFieldMatcher.cs" />
+    <Compile Include="Generated\ViewThing\ViewThingMatcher.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillMatcher.cs" />
+    <Compile Include="Generated\ViewHUD\ViewHUDMatcher.cs" />
+    <Compile Include="Generated\ViewBuff\ViewBuffMatcher.cs" />
+    <Compile Include="Generated\ViewBattleState\ViewBattleStateMatcher.cs" />
+    <Compile Include="Generated\ViewAudio\ViewAudioMatcher.cs" />
+    <Compile Include="Generated\Contexts.cs" />
+    <Compile Include="Generated\ViewInput\ViewInputEntity.cs" />
+    <Compile Include="Generated\ViewField\ViewFieldEntity.cs" />
+    <Compile Include="Generated\ViewThing\ViewThingEntity.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillEntity.cs" />
+    <Compile Include="Generated\ViewHUD\ViewHUDEntity.cs" />
+    <Compile Include="Generated\ViewBuff\ViewBuffEntity.cs" />
+    <Compile Include="Generated\ViewBattleState\ViewBattleStateEntity.cs" />
+    <Compile Include="Generated\ViewAudio\ViewAudioEntity.cs" />
+    <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\BattleCommon\BattleCommon.csproj">
+        <Project>{f5a7bd1a-5306-4495-ace9-9624ab8665c1}</Project>
+        <Name>BattleCommon</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

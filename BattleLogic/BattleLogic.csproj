@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{BE7F53E5-56A7-43E7-93AF-AD70DDD9D3D6}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>BattleLogic</RootNamespace>
+        <AssemblyName>BattleLogic</AssemblyName>
+        <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>8</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Entitas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Entitas\Entitas\Entitas.dll</HintPath>
+        </Reference>
+        <Reference Include="Entitas.CodeGeneration.Attributes, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Entitas\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Generated\LogicInput\LogicInputComponentsLookup.cs" />
+    <Compile Include="Generated\LogicField\LogicFieldComponentsLookup.cs" />
+    <Compile Include="Generated\LogicBattleState\LogicBattleStateComponentsLookup.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectComponentsLookup.cs" />
+    <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
+    <Compile Include="Generated\LogicTimeline\LogicTimelineComponentsLookup.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventComponentsLookup.cs" />
+    <Compile Include="Generated\LogicInput\LogicInputAttribute.cs" />
+    <Compile Include="Generated\LogicField\LogicFieldAttribute.cs" />
+    <Compile Include="Generated\LogicBattleState\LogicBattleStateAttribute.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingAttribute.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillAttribute.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectAttribute.cs" />
+    <Compile Include="Generated\LogicBuff\LogicBuffAttribute.cs" />
+    <Compile Include="Generated\LogicTimeline\LogicTimelineAttribute.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventAttribute.cs" />
+    <Compile Include="Generated\LogicInput\LogicInputContext.cs" />
+    <Compile Include="Generated\LogicField\LogicFieldContext.cs" />
+    <Compile Include="Generated\LogicBattleState\LogicBattleStateContext.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingContext.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillContext.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectContext.cs" />
+    <Compile Include="Generated\LogicBuff\LogicBuffContext.cs" />
+    <Compile Include="Generated\LogicTimeline\LogicTimelineContext.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventContext.cs" />
+    <Compile Include="Generated\LogicInput\LogicInputMatcher.cs" />
+    <Compile Include="Generated\LogicField\LogicFieldMatcher.cs" />
+    <Compile Include="Generated\LogicBattleState\LogicBattleStateMatcher.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingMatcher.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillMatcher.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectMatcher.cs" />
+    <Compile Include="Generated\LogicBuff\LogicBuffMatcher.cs" />
+    <Compile Include="Generated\LogicTimeline\LogicTimelineMatcher.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventMatcher.cs" />
+    <Compile Include="Generated\Contexts.cs" />
+    <Compile Include="Generated\LogicInput\LogicInputEntity.cs" />
+    <Compile Include="Generated\LogicField\LogicFieldEntity.cs" />
+    <Compile Include="Generated\LogicBattleState\LogicBattleStateEntity.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingEntity.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillEntity.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectEntity.cs" />
+    <Compile Include="Generated\LogicBuff\LogicBuffEntity.cs" />
+    <Compile Include="Generated\LogicTimeline\LogicTimelineEntity.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventEntity.cs" />
+    <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\BattleCommon\BattleCommon.csproj">
+        <Project>{f5a7bd1a-5306-4495-ace9-9624ab8665c1}</Project>
+        <Name>BattleCommon</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

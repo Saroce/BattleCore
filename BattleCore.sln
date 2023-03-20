@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleLogic", "BattleLogic\BattleLogic.csproj", "{BE7F53E5-56A7-43E7-93AF-AD70DDD9D3D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleView", "BattleView\BattleView.csproj", "{F588D0A5-677F-407B-8BC4-86A2305E1C16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleCommon", "BattleCommon\BattleCommon.csproj", "{F5A7BD1A-5306-4495-ACE9-9624AB8665C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE7F53E5-56A7-43E7-93AF-AD70DDD9D3D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7F53E5-56A7-43E7-93AF-AD70DDD9D3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7F53E5-56A7-43E7-93AF-AD70DDD9D3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7F53E5-56A7-43E7-93AF-AD70DDD9D3D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F588D0A5-677F-407B-8BC4-86A2305E1C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F588D0A5-677F-407B-8BC4-86A2305E1C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F588D0A5-677F-407B-8BC4-86A2305E1C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F588D0A5-677F-407B-8BC4-86A2305E1C16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A7BD1A-5306-4495-ACE9-9624AB8665C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A7BD1A-5306-4495-ACE9-9624AB8665C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A7BD1A-5306-4495-ACE9-9624AB8665C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A7BD1A-5306-4495-ACE9-9624AB8665C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
