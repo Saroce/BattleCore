@@ -357,8 +357,6 @@ MigrationBackup/
 
 
 #####################################################################
-### Custom settings
-.SpaceVim.d/
+# Custom settings
 .idea/
-!Output/
 /Output/
