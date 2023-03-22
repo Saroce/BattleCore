@@ -33,6 +33,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Core.Lite, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Game.Core\Core.Lite.dll</HintPath>
+        </Reference>
         <Reference Include="Entitas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.dll</HintPath>
         </Reference>
@@ -43,8 +46,23 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
+        <Reference Include="vFrame.Lockstep.Core, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Lockstep.Core\vFrame.Lockstep.Core.dll</HintPath>
+        </Reference>
     </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BattleContext.cs" />
+    <Compile Include="Base\Clock\Clock.cs" />
+    <Compile Include="Base\Clock\FixedClock.cs" />
+    <Compile Include="Base\Clock\IClock.cs" />
+    <Compile Include="Base\Clock\ScalableClock.cs" />
+    <Compile Include="Base\ECSExtension\LogicBaseSystem.cs" />
+    <Compile Include="Base\ECSExtension\LogicCleanupSystem.cs" />
+    <Compile Include="Base\ECSExtension\LogicExecuteSystem.cs" />
+    <Compile Include="Base\ECSExtension\LogicInitializeSystem.cs" />
+    <Compile Include="Base\ECSExtension\LogicTearDownSystem.cs" />
+    <Compile Include="Base\FrameCounter.cs" />
+    <Compile Include="Base\UniqueIdGenerator.cs" />
     <Compile Include="Generated\LogicInput\LogicInputComponentsLookup.cs" />
     <Compile Include="Generated\LogicField\LogicFieldComponentsLookup.cs" />
     <Compile Include="Generated\LogicBattleState\LogicBattleStateComponentsLookup.cs" />
@@ -94,6 +112,10 @@
     <Compile Include="Generated\Feature.cs" />
   </ItemGroup>
     <ItemGroup>
+        <Compile Include="LogicContexts.cs" />
+        <Compile Include="LogicContextsBridge.cs" />
+        <Compile Include="LogicController.cs" />
+        <Compile Include="LogicSystems.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

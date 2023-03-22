@@ -33,12 +33,26 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Core.Lite, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Game.Core\Core.Lite.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
+        <Reference Include="vFrame.Lockstep.Core, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Lockstep.Core\vFrame.Lockstep.Core.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Constant\BattleDef.cs" />
+        <Compile Include="Context\IMessageQueue.cs" />
+        <Compile Include="Context\MessageQueue.cs" />
+        <Compile Include="Interface\IBattleLogic.cs" />
+        <Compile Include="Interface\IBattleMessage.cs" />
+        <Compile Include="Interface\IBattleRequest.cs" />
+        <Compile Include="Interface\IBattleRespond.cs" />
+        <Compile Include="Interface\IBattleView.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

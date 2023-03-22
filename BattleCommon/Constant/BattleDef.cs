@@ -1,0 +1,4 @@
+﻿namespace Battle.Common.Constant
+{
+    
+}
