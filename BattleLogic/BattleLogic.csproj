@@ -58,8 +58,10 @@
     <Compile Include="Base\Clock\ScalableClock.cs" />
     <Compile Include="Base\ECSExtension\LogicBaseSystem.cs" />
     <Compile Include="Base\ECSExtension\LogicCleanupSystem.cs" />
+    <Compile Include="Base\ECSExtension\LogicComponent.cs" />
     <Compile Include="Base\ECSExtension\LogicExecuteSystem.cs" />
     <Compile Include="Base\ECSExtension\LogicInitializeSystem.cs" />
+    <Compile Include="Base\ECSExtension\LogicReactiveSystem.cs" />
     <Compile Include="Base\ECSExtension\LogicTearDownSystem.cs" />
     <Compile Include="Base\FrameCounter.cs" />
     <Compile Include="Base\UniqueIdGenerator.cs" />

@@ -7,9 +7,11 @@
 //    Modified:  2023-03-22
 //============================================================
 
+using Entitas;
+
 namespace Battle.Logic.Base.ECSExtension
 {
-    public class LogicComponent
+    public class LogicComponent : IComponent
     {
         
     }
