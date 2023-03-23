@@ -9,7 +9,7 @@
 
 using Entitas;
 
-namespace Battle.Logic.Base.ECSExtension
+namespace Battle.Logic.Base.CSExtension
 {
     public class LogicComponent : IComponent
     {

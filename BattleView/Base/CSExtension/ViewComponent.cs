@@ -9,7 +9,7 @@
 
 using Entitas;
 
-namespace Battle.View.Base.ECSExtension
+namespace Battle.View.Base.CSExtension
 {
     public class ViewComponent : IComponent
     {

@@ -6,9 +6,12 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Battle.Logic.Base.CSExtension;
+
 public partial class LogicSkillEntity {
 
-    static readonly Battle.Logic.Base.ECSExtension.LogicComponent logicComponent = new Battle.Logic.Base.ECSExtension.LogicComponent();
+    static readonly LogicComponent logicComponent = new LogicComponent();
 
     public bool isLogic {
         get { return HasComponent(LogicSkillComponentsLookup.Logic); }

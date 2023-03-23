@@ -7,7 +7,7 @@
 //    Modified:  2023-03-22
 //============================================================
 
-namespace Battle.Logic.Base.ECSExtension
+namespace Battle.Logic.Base.CSExtension
 {
     internal class LogicBaseSystem : LogicContextsBridge
     {

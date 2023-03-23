@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
-//        File:  LogicTearDownSystem.cs
-//       Brief:  LogicTearDownSystem
+//        File:  ViewTearDownSystem.cs
+//       Brief:  ViewTearDownSystem
 //
 //      Author:  Saroce, Saroce233@163.com
 //
@@ -9,11 +9,11 @@
 
 using Entitas;
 
-namespace Battle.Logic.Base.ECSExtension
+namespace Battle.View.Base.CSExtension
 {
-    internal abstract class LogicTearDownSystem : LogicBaseSystem, ITearDownSystem
+    internal abstract class ViewTearDownSystem : ViewBaseSystem, ITearDownSystem
     {
-        protected LogicTearDownSystem(LogicContexts contexts) : base(contexts) {
+        protected ViewTearDownSystem(ViewContexts contexts) : base(contexts) {
         }
 
         public abstract void TearDown();
