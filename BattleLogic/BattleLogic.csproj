@@ -51,6 +51,31 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillLogicComponent.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectComponentsLookup.cs" />
+    <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventComponentsLookup.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillAttribute.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectAttribute.cs" />
+    <Compile Include="Generated\LogicBuff\LogicBuffAttribute.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventAttribute.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillContext.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectContext.cs" />
+    <Compile Include="Generated\LogicBuff\LogicBuffContext.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventContext.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillMatcher.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectMatcher.cs" />
+    <Compile Include="Generated\LogicBuff\LogicBuffMatcher.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventMatcher.cs" />
+    <Compile Include="Generated\Contexts.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillEntity.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectEntity.cs" />
+    <Compile Include="Generated\LogicBuff\LogicBuffEntity.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventEntity.cs" />
+    <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Base\BattleContext.cs" />
     <Compile Include="Base\Clock\Clock.cs" />
     <Compile Include="Base\Clock\FixedClock.cs" />
@@ -65,53 +90,6 @@
     <Compile Include="Base\ECSExtension\LogicTearDownSystem.cs" />
     <Compile Include="Base\FrameCounter.cs" />
     <Compile Include="Base\UniqueIdGenerator.cs" />
-    <Compile Include="Generated\LogicInput\LogicInputComponentsLookup.cs" />
-    <Compile Include="Generated\LogicField\LogicFieldComponentsLookup.cs" />
-    <Compile Include="Generated\LogicBattleState\LogicBattleStateComponentsLookup.cs" />
-    <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
-    <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectComponentsLookup.cs" />
-    <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
-    <Compile Include="Generated\LogicTimeline\LogicTimelineComponentsLookup.cs" />
-    <Compile Include="Generated\LogicEvent\LogicEventComponentsLookup.cs" />
-    <Compile Include="Generated\LogicInput\LogicInputAttribute.cs" />
-    <Compile Include="Generated\LogicField\LogicFieldAttribute.cs" />
-    <Compile Include="Generated\LogicBattleState\LogicBattleStateAttribute.cs" />
-    <Compile Include="Generated\LogicThing\LogicThingAttribute.cs" />
-    <Compile Include="Generated\LogicSkill\LogicSkillAttribute.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectAttribute.cs" />
-    <Compile Include="Generated\LogicBuff\LogicBuffAttribute.cs" />
-    <Compile Include="Generated\LogicTimeline\LogicTimelineAttribute.cs" />
-    <Compile Include="Generated\LogicEvent\LogicEventAttribute.cs" />
-    <Compile Include="Generated\LogicInput\LogicInputContext.cs" />
-    <Compile Include="Generated\LogicField\LogicFieldContext.cs" />
-    <Compile Include="Generated\LogicBattleState\LogicBattleStateContext.cs" />
-    <Compile Include="Generated\LogicThing\LogicThingContext.cs" />
-    <Compile Include="Generated\LogicSkill\LogicSkillContext.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectContext.cs" />
-    <Compile Include="Generated\LogicBuff\LogicBuffContext.cs" />
-    <Compile Include="Generated\LogicTimeline\LogicTimelineContext.cs" />
-    <Compile Include="Generated\LogicEvent\LogicEventContext.cs" />
-    <Compile Include="Generated\LogicInput\LogicInputMatcher.cs" />
-    <Compile Include="Generated\LogicField\LogicFieldMatcher.cs" />
-    <Compile Include="Generated\LogicBattleState\LogicBattleStateMatcher.cs" />
-    <Compile Include="Generated\LogicThing\LogicThingMatcher.cs" />
-    <Compile Include="Generated\LogicSkill\LogicSkillMatcher.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectMatcher.cs" />
-    <Compile Include="Generated\LogicBuff\LogicBuffMatcher.cs" />
-    <Compile Include="Generated\LogicTimeline\LogicTimelineMatcher.cs" />
-    <Compile Include="Generated\LogicEvent\LogicEventMatcher.cs" />
-    <Compile Include="Generated\Contexts.cs" />
-    <Compile Include="Generated\LogicInput\LogicInputEntity.cs" />
-    <Compile Include="Generated\LogicField\LogicFieldEntity.cs" />
-    <Compile Include="Generated\LogicBattleState\LogicBattleStateEntity.cs" />
-    <Compile Include="Generated\LogicThing\LogicThingEntity.cs" />
-    <Compile Include="Generated\LogicSkill\LogicSkillEntity.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectEntity.cs" />
-    <Compile Include="Generated\LogicBuff\LogicBuffEntity.cs" />
-    <Compile Include="Generated\LogicTimeline\LogicTimelineEntity.cs" />
-    <Compile Include="Generated\LogicEvent\LogicEventEntity.cs" />
-    <Compile Include="Generated\Feature.cs" />
   </ItemGroup>
     <ItemGroup>
         <Compile Include="LogicContexts.cs" />

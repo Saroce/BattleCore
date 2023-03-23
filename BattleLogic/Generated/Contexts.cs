@@ -21,28 +21,18 @@ public partial class Contexts : Entitas.IContexts {
 
     static Contexts _sharedInstance;
 
-    public LogicBattleStateContext logicBattleState { get; set; }
     public LogicBuffContext logicBuff { get; set; }
     public LogicEffectContext logicEffect { get; set; }
     public LogicEventContext logicEvent { get; set; }
-    public LogicFieldContext logicField { get; set; }
-    public LogicInputContext logicInput { get; set; }
     public LogicSkillContext logicSkill { get; set; }
-    public LogicThingContext logicThing { get; set; }
-    public LogicTimelineContext logicTimeline { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { logicBattleState, logicBuff, logicEffect, logicEvent, logicField, logicInput, logicSkill, logicThing, logicTimeline }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { logicBuff, logicEffect, logicEvent, logicSkill }; } }
 
     public Contexts() {
-        logicBattleState = new LogicBattleStateContext();
         logicBuff = new LogicBuffContext();
         logicEffect = new LogicEffectContext();
         logicEvent = new LogicEventContext();
-        logicField = new LogicFieldContext();
-        logicInput = new LogicInputContext();
         logicSkill = new LogicSkillContext();
-        logicThing = new LogicThingContext();
-        logicTimeline = new LogicTimelineContext();
 
         var postConstructors = System.Linq.Enumerable.Where(
             GetType().GetMethods(),
@@ -77,15 +67,10 @@ public partial class Contexts {
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeContextObservers() {
         try {
-            CreateContextObserver(logicBattleState);
             CreateContextObserver(logicBuff);
             CreateContextObserver(logicEffect);
             CreateContextObserver(logicEvent);
-            CreateContextObserver(logicField);
-            CreateContextObserver(logicInput);
             CreateContextObserver(logicSkill);
-            CreateContextObserver(logicThing);
-            CreateContextObserver(logicTimeline);
         } catch(System.Exception) {
         }
     }

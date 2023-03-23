@@ -51,6 +51,21 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generated\ViewSkill\Components\ViewSkillViewComponent.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillComponentsLookup.cs" />
+    <Compile Include="Generated\ViewBuff\ViewBuffComponentsLookup.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillAttribute.cs" />
+    <Compile Include="Generated\ViewBuff\ViewBuffAttribute.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillContext.cs" />
+    <Compile Include="Generated\ViewBuff\ViewBuffContext.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillMatcher.cs" />
+    <Compile Include="Generated\ViewBuff\ViewBuffMatcher.cs" />
+    <Compile Include="Generated\Contexts.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillEntity.cs" />
+    <Compile Include="Generated\ViewBuff\ViewBuffEntity.cs" />
+    <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Base\BattleContext.cs" />
     <Compile Include="Base\ECSExtension\ViewBaseSystem.cs" />
     <Compile Include="Base\ECSExtension\ViewCleanupSystem.cs" />
@@ -59,48 +74,6 @@
     <Compile Include="Base\ECSExtension\ViewInitializeSystem.cs" />
     <Compile Include="Base\ECSExtension\ViewReactiveSystem.cs" />
     <Compile Include="Base\ECSExtension\ViewTearDownSystem.cs" />
-    <Compile Include="Generated\ViewInput\ViewInputComponentsLookup.cs" />
-    <Compile Include="Generated\ViewField\ViewFieldComponentsLookup.cs" />
-    <Compile Include="Generated\ViewThing\ViewThingComponentsLookup.cs" />
-    <Compile Include="Generated\ViewSkill\ViewSkillComponentsLookup.cs" />
-    <Compile Include="Generated\ViewHUD\ViewHUDComponentsLookup.cs" />
-    <Compile Include="Generated\ViewBuff\ViewBuffComponentsLookup.cs" />
-    <Compile Include="Generated\ViewBattleState\ViewBattleStateComponentsLookup.cs" />
-    <Compile Include="Generated\ViewAudio\ViewAudioComponentsLookup.cs" />
-    <Compile Include="Generated\ViewInput\ViewInputAttribute.cs" />
-    <Compile Include="Generated\ViewField\ViewFieldAttribute.cs" />
-    <Compile Include="Generated\ViewThing\ViewThingAttribute.cs" />
-    <Compile Include="Generated\ViewSkill\ViewSkillAttribute.cs" />
-    <Compile Include="Generated\ViewHUD\ViewHUDAttribute.cs" />
-    <Compile Include="Generated\ViewBuff\ViewBuffAttribute.cs" />
-    <Compile Include="Generated\ViewBattleState\ViewBattleStateAttribute.cs" />
-    <Compile Include="Generated\ViewAudio\ViewAudioAttribute.cs" />
-    <Compile Include="Generated\ViewInput\ViewInputContext.cs" />
-    <Compile Include="Generated\ViewField\ViewFieldContext.cs" />
-    <Compile Include="Generated\ViewThing\ViewThingContext.cs" />
-    <Compile Include="Generated\ViewSkill\ViewSkillContext.cs" />
-    <Compile Include="Generated\ViewHUD\ViewHUDContext.cs" />
-    <Compile Include="Generated\ViewBuff\ViewBuffContext.cs" />
-    <Compile Include="Generated\ViewBattleState\ViewBattleStateContext.cs" />
-    <Compile Include="Generated\ViewAudio\ViewAudioContext.cs" />
-    <Compile Include="Generated\ViewInput\ViewInputMatcher.cs" />
-    <Compile Include="Generated\ViewField\ViewFieldMatcher.cs" />
-    <Compile Include="Generated\ViewThing\ViewThingMatcher.cs" />
-    <Compile Include="Generated\ViewSkill\ViewSkillMatcher.cs" />
-    <Compile Include="Generated\ViewHUD\ViewHUDMatcher.cs" />
-    <Compile Include="Generated\ViewBuff\ViewBuffMatcher.cs" />
-    <Compile Include="Generated\ViewBattleState\ViewBattleStateMatcher.cs" />
-    <Compile Include="Generated\ViewAudio\ViewAudioMatcher.cs" />
-    <Compile Include="Generated\Contexts.cs" />
-    <Compile Include="Generated\ViewInput\ViewInputEntity.cs" />
-    <Compile Include="Generated\ViewField\ViewFieldEntity.cs" />
-    <Compile Include="Generated\ViewThing\ViewThingEntity.cs" />
-    <Compile Include="Generated\ViewSkill\ViewSkillEntity.cs" />
-    <Compile Include="Generated\ViewHUD\ViewHUDEntity.cs" />
-    <Compile Include="Generated\ViewBuff\ViewBuffEntity.cs" />
-    <Compile Include="Generated\ViewBattleState\ViewBattleStateEntity.cs" />
-    <Compile Include="Generated\ViewAudio\ViewAudioEntity.cs" />
-    <Compile Include="Generated\Feature.cs" />
     <Compile Include="ViewContexts.cs" />
     <Compile Include="ViewContextsBridge.cs" />
     <Compile Include="ViewController.cs" />

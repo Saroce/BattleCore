@@ -21,26 +21,14 @@ public partial class Contexts : Entitas.IContexts {
 
     static Contexts _sharedInstance;
 
-    public ViewAudioContext viewAudio { get; set; }
-    public ViewBattleStateContext viewBattleState { get; set; }
     public ViewBuffContext viewBuff { get; set; }
-    public ViewFieldContext viewField { get; set; }
-    public ViewHUDContext viewHUD { get; set; }
-    public ViewInputContext viewInput { get; set; }
     public ViewSkillContext viewSkill { get; set; }
-    public ViewThingContext viewThing { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { viewAudio, viewBattleState, viewBuff, viewField, viewHUD, viewInput, viewSkill, viewThing }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { viewBuff, viewSkill }; } }
 
     public Contexts() {
-        viewAudio = new ViewAudioContext();
-        viewBattleState = new ViewBattleStateContext();
         viewBuff = new ViewBuffContext();
-        viewField = new ViewFieldContext();
-        viewHUD = new ViewHUDContext();
-        viewInput = new ViewInputContext();
         viewSkill = new ViewSkillContext();
-        viewThing = new ViewThingContext();
 
         var postConstructors = System.Linq.Enumerable.Where(
             GetType().GetMethods(),
@@ -75,14 +63,8 @@ public partial class Contexts {
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeContextObservers() {
         try {
-            CreateContextObserver(viewAudio);
-            CreateContextObserver(viewBattleState);
             CreateContextObserver(viewBuff);
-            CreateContextObserver(viewField);
-            CreateContextObserver(viewHUD);
-            CreateContextObserver(viewInput);
             CreateContextObserver(viewSkill);
-            CreateContextObserver(viewThing);
         } catch(System.Exception) {
         }
     }

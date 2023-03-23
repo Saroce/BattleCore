@@ -8,15 +8,15 @@
 //------------------------------------------------------------------------------
 public static class ViewSkillComponentsLookup {
 
+    public const int View = 0;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 1;
 
     public static readonly string[] componentNames = {
-
+        "View"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(Battle.View.Base.ECSExtension.ViewComponent)
     };
 }
