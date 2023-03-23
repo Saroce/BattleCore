@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Battle.View.Base.CSExtension;
-
 public static class ViewSkillComponentsLookup {
 
     public const int View = 0;
@@ -20,6 +17,6 @@ public static class ViewSkillComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(ViewComponent)
+        typeof(Battle.View.Base.CSExtension.ViewComponent)
     };
 }

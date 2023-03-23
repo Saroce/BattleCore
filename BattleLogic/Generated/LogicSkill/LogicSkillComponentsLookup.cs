@@ -6,20 +6,26 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Battle.Logic.Base.CSExtension;
-
 public static class LogicSkillComponentsLookup {
 
-    public const int Logic = 0;
+    public const int Activated = 0;
+    public const int Destroyed = 1;
+    public const int Id = 2;
+    public const int Logic = 3;
 
-    public const int TotalComponents = 1;
+    public const int TotalComponents = 4;
 
     public static readonly string[] componentNames = {
+        "Activated",
+        "Destroyed",
+        "Id",
         "Logic"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(LogicComponent)
+        typeof(Battle.Logic.Base.CSExtension.ActivatedComponent),
+        typeof(Battle.Logic.Base.CSExtension.DestroyedComponent),
+        typeof(Battle.Logic.Base.CSExtension.IdComponent),
+        typeof(Battle.Logic.Base.CSExtension.LogicComponent)
     };
 }

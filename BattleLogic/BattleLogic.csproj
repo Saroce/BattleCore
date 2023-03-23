@@ -51,30 +51,31 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\CSExtension\DestroyedComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillActivatedComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillIdComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillDestroyedComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillLogicComponent.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectComponentsLookup.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
-    <Compile Include="Generated\LogicEvent\LogicEventComponentsLookup.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillAttribute.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectAttribute.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffAttribute.cs" />
-    <Compile Include="Generated\LogicEvent\LogicEventAttribute.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillContext.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectContext.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffContext.cs" />
-    <Compile Include="Generated\LogicEvent\LogicEventContext.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillMatcher.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectMatcher.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffMatcher.cs" />
-    <Compile Include="Generated\LogicEvent\LogicEventMatcher.cs" />
     <Compile Include="Generated\Contexts.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillEntity.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectEntity.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffEntity.cs" />
-    <Compile Include="Generated\LogicEvent\LogicEventEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\CSExtension\ActivatedComponent.cs" />
+    <Compile Include="Base\CSExtension\IdComponent.cs" />
+    <Compile Include="Buff\BuffSystems.cs" />
+    <Compile Include="Skill\SkillSystems.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\CSExtension\DestroyedComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BattleContext.cs" />

@@ -7,12 +7,16 @@
 //    Modified:  2023-03-21
 //============================================================
 
+using Battle.Logic.Buff;
+using Battle.Logic.Skill;
+
 namespace Battle.Logic
 {
-    public class LogicSystems : Feature
+    internal sealed class LogicSystems : Feature
     {
         public LogicSystems(LogicContexts contexts) {
-            
+            Add(new BuffSystems(contexts));
+            Add(new SkillSystems(contexts));
         }
 
         public override void TearDown() {

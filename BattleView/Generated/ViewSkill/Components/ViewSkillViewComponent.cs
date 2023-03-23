@@ -6,12 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Battle.View.Base.CSExtension;
-
 public partial class ViewSkillEntity {
 
-    static readonly ViewComponent viewComponent = new ViewComponent();
+    static readonly Battle.View.Base.CSExtension.ViewComponent viewComponent = new Battle.View.Base.CSExtension.ViewComponent();
 
     public bool isView {
         get { return HasComponent(ViewSkillComponentsLookup.View); }

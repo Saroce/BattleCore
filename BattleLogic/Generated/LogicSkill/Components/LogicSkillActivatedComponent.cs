@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public partial class LogicSkillEntity {
 
-    static readonly Battle.Logic.Base.CSExtension.LogicComponent logicComponent = new Battle.Logic.Base.CSExtension.LogicComponent();
+    static readonly Battle.Logic.Base.CSExtension.ActivatedComponent activatedComponent = new Battle.Logic.Base.CSExtension.ActivatedComponent();
 
-    public bool isLogic {
-        get { return HasComponent(LogicSkillComponentsLookup.Logic); }
+    public bool isActivated {
+        get { return HasComponent(LogicSkillComponentsLookup.Activated); }
         set {
-            if (value != isLogic) {
-                var index = LogicSkillComponentsLookup.Logic;
+            if (value != isActivated) {
+                var index = LogicSkillComponentsLookup.Activated;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : logicComponent;
+                            : activatedComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -40,17 +40,17 @@ public partial class LogicSkillEntity {
 //------------------------------------------------------------------------------
 public sealed partial class LogicSkillMatcher {
 
-    static Entitas.IMatcher<LogicSkillEntity> _matcherLogic;
+    static Entitas.IMatcher<LogicSkillEntity> _matcherActivated;
 
-    public static Entitas.IMatcher<LogicSkillEntity> Logic {
+    public static Entitas.IMatcher<LogicSkillEntity> Activated {
         get {
-            if (_matcherLogic == null) {
-                var matcher = (Entitas.Matcher<LogicSkillEntity>)Entitas.Matcher<LogicSkillEntity>.AllOf(LogicSkillComponentsLookup.Logic);
+            if (_matcherActivated == null) {
+                var matcher = (Entitas.Matcher<LogicSkillEntity>)Entitas.Matcher<LogicSkillEntity>.AllOf(LogicSkillComponentsLookup.Activated);
                 matcher.componentNames = LogicSkillComponentsLookup.componentNames;
-                _matcherLogic = matcher;
+                _matcherActivated = matcher;
             }
 
-            return _matcherLogic;
+            return _matcherActivated;
         }
     }
 }
