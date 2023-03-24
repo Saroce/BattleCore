@@ -74,6 +74,7 @@
     <Compile Include="Base\CSExtension\ViewInitializeSystem.cs" />
     <Compile Include="Base\CSExtension\ViewReactiveSystem.cs" />
     <Compile Include="Base\CSExtension\ViewTearDownSystem.cs" />
+    <Compile Include="IBattleView.cs" />
     <Compile Include="ViewContexts.cs" />
     <Compile Include="ViewContextsBridge.cs" />
     <Compile Include="ViewController.cs" />

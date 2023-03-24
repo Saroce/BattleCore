@@ -1,16 +1,18 @@
 ﻿//------------------------------------------------------------
-//        File:  IBattleRequest.cs
-//       Brief:  IBattleRequest
+//        File:  IBattleMessage.cs
+//       Brief:  IBattleMessage
 //
 //      Author:  Saroce, Saroce233@163.com
 //
 //    Modified:  2023-03-21
 //============================================================
 
-namespace Battle.Common.Interface
+namespace Battle.Common.Context.Message
 {
-    public interface IBattleRequest
+    public interface IBattleMessage
     {
-        IBattleRespond GetRespond();
+        int GetMessageId();
+        
+        int FrameIndex { get; set; }
     }
 }

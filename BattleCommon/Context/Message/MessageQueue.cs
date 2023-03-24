@@ -9,7 +9,7 @@
 
 using System.Collections.Concurrent;
 
-namespace Battle.Common.Context
+namespace Battle.Common.Context.Message
 {
     public class MessageQueue<T> : IMessageQueue<T> where T : class
     {

@@ -7,12 +7,16 @@
 //    Modified:  2023-03-24
 //============================================================
 
+using Battle.Logic.Buff.System;
+
 namespace Battle.Logic.Buff
 {
     internal sealed class BuffSystems : Feature
     {
         public BuffSystems(LogicContexts contexts) {
-            
+
+            // TearDown System
+            Add(new BuffTearDownSystem(contexts));
         }
     }
 }

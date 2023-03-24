@@ -9,7 +9,7 @@
 
 using System.Collections;
 
-namespace Battle.Common.Interface
+namespace Battle.Common.Context.Command
 {
     public interface IBattleRespond
     {

@@ -9,7 +9,8 @@
 
 using System;
 using Battle.Common.Context;
-using Battle.Common.Interface;
+using Battle.Common.Context.Command;
+using Battle.Common.Context.Message;
 using Battle.Logic.Base;
 using Battle.Logic.Base.Clock;
 using Core.Lite.Base;

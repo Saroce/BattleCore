@@ -9,7 +9,7 @@
 
 using System;
 using Battle.Common.Context;
-using Battle.Common.Interface;
+using Battle.Common.Context.Message;
 using Battle.View.Base;
 using Core.Lite.Base;
 using vFrame.Lockstep.Core;

@@ -7,7 +7,7 @@
 //    Modified:  2023-03-21
 //============================================================
 
-namespace Battle.Common.Context
+namespace Battle.Common.Context.Message
 {
     public interface IMessageQueue<T>
     {

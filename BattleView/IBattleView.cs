@@ -7,9 +7,10 @@
 //    Modified:  2023-03-21
 //============================================================
 
+using Battle.Common.Context.Message;
 using Core.Lite.Base;
 
-namespace Battle.Common.Interface
+namespace Battle.View
 {
     public interface IBattleView : IBaseObject<object>
     {

@@ -46,14 +46,16 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Constant\BattleDef.cs" />
-        <Compile Include="Context\IMessageQueue.cs" />
-        <Compile Include="Context\MessageQueue.cs" />
-        <Compile Include="Interface\IBattleLogic.cs" />
-        <Compile Include="Interface\IBattleMessage.cs" />
-        <Compile Include="Interface\IBattleRequest.cs" />
-        <Compile Include="Interface\IBattleRespond.cs" />
-        <Compile Include="Interface\IBattleView.cs" />
+        <Compile Include="Context\Command\IBattleRequest.cs" />
+        <Compile Include="Context\Command\IBattleRespond.cs" />
+        <Compile Include="Context\Message\BattleMessage.cs" />
+        <Compile Include="Context\Message\IBattleMessage.cs" />
+        <Compile Include="Context\Message\IMessageQueue.cs" />
+        <Compile Include="Context\Message\MessageQueue.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Context\Message\Buff" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
