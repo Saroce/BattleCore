@@ -22,12 +22,14 @@ public partial class Contexts : Entitas.IContexts {
     static Contexts _sharedInstance;
 
     public LogicBuffContext logicBuff { get; set; }
+    public LogicInputContext logicInput { get; set; }
     public LogicSkillContext logicSkill { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { logicBuff, logicSkill }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { logicBuff, logicInput, logicSkill }; } }
 
     public Contexts() {
         logicBuff = new LogicBuffContext();
+        logicInput = new LogicInputContext();
         logicSkill = new LogicSkillContext();
 
         var postConstructors = System.Linq.Enumerable.Where(
@@ -91,6 +93,7 @@ public partial class Contexts {
     public void InitializeContextObservers() {
         try {
             CreateContextObserver(logicBuff);
+            CreateContextObserver(logicInput);
             CreateContextObserver(logicSkill);
         } catch(System.Exception) {
         }

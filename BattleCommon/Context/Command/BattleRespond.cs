@@ -11,7 +11,7 @@ using System.Collections;
 
 namespace Battle.Common.Context.Command
 {
-    public class BattleRespond : IBattleRespond
+    public abstract class BattleRespond : IBattleRespond
     {
         private class YieldInstruction : IEnumerator
         {
@@ -30,6 +30,10 @@ namespace Battle.Common.Context.Command
 
         public BattleRespond() {
             _iter = new YieldInstruction();
+        }
+
+        public void Send() {
+            _iter.KeepWaiting = false;
         }
         
         public IEnumerator Receive() => _iter;

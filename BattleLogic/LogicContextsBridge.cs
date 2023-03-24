@@ -11,7 +11,7 @@ using Core.Lite.Base;
 
 namespace Battle.Logic
 {
-    public class LogicContextsBridge : BaseObject<LogicContexts>
+    internal class LogicContextsBridge : BaseObject<LogicContexts>
     {
         protected LogicContexts Contexts { get; private set; }
         

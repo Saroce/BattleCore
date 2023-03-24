@@ -11,11 +11,11 @@ using System;
 
 namespace Battle.Common.Context.Command
 {
-    public class BattleRequest : IBattleRequest
+    public abstract class BattleRequest : IBattleRequest
     {
         private readonly IBattleRespond _respond;
 
-        public BattleRequest(Type respond) {
+        protected BattleRequest(Type respond) {
             _respond = Activator.CreateInstance(respond) as IBattleRespond;
         }
 
