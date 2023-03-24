@@ -46,6 +46,8 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Constant\BattleDef.cs" />
+        <Compile Include="Context\Command\BattleRequest.cs" />
+        <Compile Include="Context\Command\BattleRespond.cs" />
         <Compile Include="Context\Command\IBattleRequest.cs" />
         <Compile Include="Context\Command\IBattleRespond.cs" />
         <Compile Include="Context\Message\BattleMessage.cs" />
