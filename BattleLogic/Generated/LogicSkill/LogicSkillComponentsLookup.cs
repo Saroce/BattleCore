@@ -10,14 +10,20 @@ public static class LogicSkillComponentsLookup {
 
     public const int Activated = 0;
     public const int Destroyed = 1;
-    public const int Id = 2;
-    public const int Logic = 3;
+    public const int EncryptedFixedPointValueLogic = 2;
+    public const int EncryptedIntValueLogic = 3;
+    public const int EncryptedUlongValueLogic = 4;
+    public const int Id = 5;
+    public const int Logic = 6;
 
-    public const int TotalComponents = 4;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
         "Activated",
         "Destroyed",
+        "EncryptedFixedPointValueLogic",
+        "EncryptedIntValueLogic",
+        "EncryptedUlongValueLogic",
         "Id",
         "Logic"
     };
@@ -25,6 +31,9 @@ public static class LogicSkillComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(Battle.Logic.Base.CSExtension.ActivatedComponent),
         typeof(Battle.Logic.Base.CSExtension.DestroyedComponent),
+        typeof(Battle.Logic.Base.CSExtension.EncryptedFixedPointValueLogicComponent),
+        typeof(Battle.Logic.Base.CSExtension.EncryptedIntValueLogicComponent),
+        typeof(Battle.Logic.Base.CSExtension.EncryptedUlongValueLogicComponent),
         typeof(Battle.Logic.Base.CSExtension.IdComponent),
         typeof(Battle.Logic.Base.CSExtension.LogicComponent)
     };

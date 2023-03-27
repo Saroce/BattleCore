@@ -55,26 +55,40 @@
     <Compile Include="Generated\LogicSkill\Components\LogicSkillIdComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillDestroyedComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillLogicComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedFixedPointValueLogicComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedIntValueLogicComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedUlongValueLogicComponent.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
     <Compile Include="Generated\LogicInput\LogicInputComponentsLookup.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillAttribute.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffAttribute.cs" />
     <Compile Include="Generated\LogicInput\LogicInputAttribute.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingAttribute.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillContext.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffContext.cs" />
     <Compile Include="Generated\LogicInput\LogicInputContext.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingContext.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillMatcher.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffMatcher.cs" />
     <Compile Include="Generated\LogicInput\LogicInputMatcher.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingMatcher.cs" />
     <Compile Include="Generated\Contexts.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillEntity.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffEntity.cs" />
     <Compile Include="Generated\LogicInput\LogicInputEntity.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Input\System\CommandProcessor.cs" />
     <Compile Include="Input\System\ICommandProcessor.cs" />
     <Compile Include="Skill\System\SkillTearDownSystem.cs" />
+    <Compile Include="Thing\Factory\PlayerFactory.cs" />
+    <Compile Include="Thing\System\Player\InitializeCardGroupSystem.cs" />
+    <Compile Include="Thing\System\ThingTearDownSystem.cs" />
+    <Compile Include="Thing\ThingSystems.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buff\System\BuffTearDownSystem.cs" />
@@ -122,9 +136,7 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Buff\Component" />
-      <Folder Include="Input\Component" />
-      <Folder Include="Input\System\Processor" />
-      <Folder Include="Skill\Component" />
+      <Folder Include="Thing\Component" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

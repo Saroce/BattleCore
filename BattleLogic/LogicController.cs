@@ -104,6 +104,38 @@ namespace Battle.Logic
             _requestQueue.Enqueue(request);
         }
         
+        /// <summary>
+        /// 获取战斗现场
+        /// </summary>
+        /// <returns></returns>
+        internal BattleContext GetBattleContext() {
+            return _battleContext;
+        }
+        
+        /// <summary>
+        /// 获取时钟
+        /// </summary>
+        /// <returns></returns>
+        internal IClock GetClock() {
+            return _clock;
+        }
+        
+        /// <summary>
+        /// 获取逻辑帧计数器
+        /// </summary>
+        /// <returns></returns>
+        internal FrameCounter GetFrameCounter() {
+            return _frameCounter;
+        }
+        
+        /// <summary>
+        /// 获取随机数
+        /// </summary>
+        /// <returns></returns>
+        internal TSRandom GetRandom() {
+            return _random;
+        }
+        
         protected override void OnDestroy() {
             _logicSystems?.TearDown();
             _logicSystems = null;

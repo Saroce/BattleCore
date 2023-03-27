@@ -7,6 +7,8 @@
 //    Modified:  2023-03-21
 //============================================================
 
+using Battle.Logic.Base;
+
 namespace Battle.Logic
 {
     public class LogicContexts : Contexts
@@ -16,7 +18,13 @@ namespace Battle.Logic
         public LogicContexts(LogicController controller) {
             _controller = controller;
         }
-        
-        
+
+        public LogicController GetController() {
+            return _controller;
+        }
+
+        public BattleContext GetBattleContext() {
+            return GetController().GetBattleContext();
+        }
     }
 }

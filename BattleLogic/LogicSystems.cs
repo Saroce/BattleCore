@@ -10,12 +10,14 @@
 using Battle.Logic.Buff;
 using Battle.Logic.Input;
 using Battle.Logic.Skill;
+using Battle.Logic.Thing;
 
 namespace Battle.Logic
 {
     internal sealed class LogicSystems : Feature
     {
         public LogicSystems(LogicContexts contexts) {
+            Add(new ThingSystems(contexts));
             Add(new InputSystems(contexts));
             Add(new BuffSystems(contexts));
             Add(new SkillSystems(contexts));

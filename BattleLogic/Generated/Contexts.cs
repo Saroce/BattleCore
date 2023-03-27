@@ -24,13 +24,15 @@ public partial class Contexts : Entitas.IContexts {
     public LogicBuffContext logicBuff { get; set; }
     public LogicInputContext logicInput { get; set; }
     public LogicSkillContext logicSkill { get; set; }
+    public LogicThingContext logicThing { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { logicBuff, logicInput, logicSkill }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { logicBuff, logicInput, logicSkill, logicThing }; } }
 
     public Contexts() {
         logicBuff = new LogicBuffContext();
         logicInput = new LogicInputContext();
         logicSkill = new LogicSkillContext();
+        logicThing = new LogicThingContext();
 
         var postConstructors = System.Linq.Enumerable.Where(
             GetType().GetMethods(),
@@ -95,6 +97,7 @@ public partial class Contexts {
             CreateContextObserver(logicBuff);
             CreateContextObserver(logicInput);
             CreateContextObserver(logicSkill);
+            CreateContextObserver(logicThing);
         } catch(System.Exception) {
         }
     }
