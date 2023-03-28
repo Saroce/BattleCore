@@ -58,17 +58,37 @@ namespace Battle.Logic.Base.FSM
             }
 
             var state = States[stateId];
-            if (!state.CanTransit(Entity, context)) {
+            if (state == null || !state.CanTransit(Entity, context)) {
                 return false;
             }
-
+            
             if (state == CurState) {
-                
+                state.OnUpdate(Entity);
+                return true;
             }
+            
+            ExistCurState();
+            CurState = state;
+            CurState.OnEnter(Entity);
+            return true;
         }
 
         public IState GetCurState() {
             return CurState;
+        }
+
+        public int GetCurStateId() {
+            foreach (var kv in States) {
+                if (kv.Value == CurState) {
+                    return kv.Key;
+                }
+            }
+
+            return -1;
+        }
+
+        public IContexts GetContexts() {
+            return Contexts;
         }
     }
 }

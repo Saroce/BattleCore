@@ -15,12 +15,12 @@ namespace Battle.Logic
     {
         protected LogicContexts Contexts { get; private set; }
         
-        protected override void OnDestroy() {
-            Contexts = null;
-        }
-
         protected override void OnCreate(LogicContexts contexts) {
             Contexts = contexts;
+        }
+        
+        protected override void OnDestroy() {
+            Contexts = null;
         }
     }
 }

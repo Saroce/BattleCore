@@ -54,7 +54,9 @@
     <Compile Include="Base\FSM\IState.cs" />
     <Compile Include="Base\FSM\IStateContext.cs" />
     <Compile Include="Base\FSM\IStateMachine.cs" />
+    <Compile Include="Base\FSM\State.cs" />
     <Compile Include="Base\FSM\StateMachine.cs" />
+    <Compile Include="Constant\LogicThingDef.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingGamerCombatComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingGamerHeroIdComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingGamerIdGroupComponent.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Input\System\CommandProcessor.cs" />
     <Compile Include="Input\System\ICommandProcessor.cs" />
     <Compile Include="Skill\System\SkillTearDownSystem.cs" />
+    <Compile Include="Thing\Behaviour\StateMachine\StateMachineComponent.cs" />
     <Compile Include="Thing\Component\Gamer\GamerCombatComponent.cs" />
     <Compile Include="Thing\Component\Gamer\GamerHeroIdComponent.cs" />
     <Compile Include="Thing\Component\Gamer\GamerIdGroupComponent.cs" />

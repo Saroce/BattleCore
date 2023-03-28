@@ -7,6 +7,8 @@
 //    Modified:  2023-03-28
 //============================================================
 
+using Entitas;
+
 namespace Battle.Logic.Base.FSM
 {
     public interface IStateMachine
@@ -18,5 +20,9 @@ namespace Battle.Logic.Base.FSM
         bool ChangeState(int stateId, IStateContext context = null);
 
         IState GetCurState();
+
+        int GetCurStateId();
+
+        IContexts GetContexts();
     }
 }
