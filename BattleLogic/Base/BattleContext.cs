@@ -17,6 +17,6 @@ namespace Battle.Logic.Base
 
         public int Seed;
 
-        public PlayerGroup PlayerGroup;
+        public GamerGroup GamerGroup;
     }
 }

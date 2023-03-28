@@ -51,17 +51,36 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\FSM\IState.cs" />
+    <Compile Include="Base\FSM\IStateContext.cs" />
+    <Compile Include="Base\FSM\IStateMachine.cs" />
+    <Compile Include="Base\FSM\StateMachine.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerCombatComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerHeroIdComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerIdGroupComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerInfoComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingCreateTimeComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingPositionComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingRadiusComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingRotationComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingOtherComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerGroupComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingThingComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillActivatedComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingIdComponent.cs" />
+    <Compile Include="Generated\LogicBuff\Components\LogicBuffIdComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillIdComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillDestroyedComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillLogicComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedFixedPointValueLogicComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedIntValueLogicComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedUlongValueLogicComponent.cs" />
+    <Compile Include="Generated\Components\Interfaces\IIdEntity.cs" />
+    <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
     <Compile Include="Generated\LogicInput\LogicInputComponentsLookup.cs" />
-    <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillAttribute.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffAttribute.cs" />
     <Compile Include="Generated\LogicInput\LogicInputAttribute.cs" />
@@ -85,8 +104,21 @@
     <Compile Include="Input\System\CommandProcessor.cs" />
     <Compile Include="Input\System\ICommandProcessor.cs" />
     <Compile Include="Skill\System\SkillTearDownSystem.cs" />
-    <Compile Include="Thing\Factory\PlayerFactory.cs" />
-    <Compile Include="Thing\System\Player\InitializeCardGroupSystem.cs" />
+    <Compile Include="Thing\Component\Gamer\GamerCombatComponent.cs" />
+    <Compile Include="Thing\Component\Gamer\GamerHeroIdComponent.cs" />
+    <Compile Include="Thing\Component\Gamer\GamerIdGroupComponent.cs" />
+    <Compile Include="Thing\Component\Gamer\GamerDataComponent.cs" />
+    <Compile Include="Thing\Component\Property\Base\CreateTimeComponent.cs" />
+    <Compile Include="Thing\Component\Property\Base\PositionComponent.cs" />
+    <Compile Include="Thing\Component\Property\Base\RadiusComponent.cs" />
+    <Compile Include="Thing\Component\Property\Base\RotationComponent.cs" />
+    <Compile Include="Thing\Component\Type\OtherComponent.cs" />
+    <Compile Include="Thing\Component\Type\GamerComponent.cs" />
+    <Compile Include="Thing\Component\Type\GamerGroupComponent.cs" />
+    <Compile Include="Thing\Component\Type\ThingComponent.cs" />
+    <Compile Include="Thing\Factory\GamerDataFactory.cs" />
+    <Compile Include="Thing\Factory\ThingFactory.cs" />
+    <Compile Include="Thing\System\Gamer\InitializeGamerGroupSystem.cs" />
     <Compile Include="Thing\System\ThingTearDownSystem.cs" />
     <Compile Include="Thing\ThingSystems.cs" />
   </ItemGroup>
@@ -136,7 +168,6 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Buff\Component" />
-      <Folder Include="Thing\Component" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

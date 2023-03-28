@@ -7,6 +7,8 @@
 //    Modified:  2023-03-27
 //============================================================
 
+using System;
+
 namespace Battle.Common.Constant
 {
     public class ThingPropertyDef
@@ -21,5 +23,35 @@ namespace Battle.Common.Constant
         public const int CriticalRate = 8; // 暴击率
         public const int MoveSpeed = 9; // 移动速度
         public const int CastSpeed = 10; // 攻击速度
+    }
+    
+    public enum ThingType
+    {
+        Unknown,
+        Gamer,
+        Monster,
+        Bullet,
+    }
+    
+    [Flags]
+    public enum ThingFlag
+    {
+        None = 0,
+        Static = 1,
+        Dynamic = 2
+    }
+
+    public enum ThingCastAttributeType
+    {
+        None,
+        Physics,    // 物理
+        Magic,      // 魔法
+    }
+
+    public enum ThingCastRangeType
+    {
+        None,
+        Melee,  // 近战
+        Ranged, // 远程
     }
 }

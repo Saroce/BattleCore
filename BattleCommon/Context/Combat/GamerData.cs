@@ -1,17 +1,19 @@
 ﻿//------------------------------------------------------------
-//        File:  PlayerData.cs
-//       Brief:  PlayerData
+//        File:  Gamer.cs
+//       Brief:  Gamer
 //
 //      Author:  Saroce, Saroce233@163.com
 //
 //    Modified:  2023-03-27
 //============================================================
 
+using vFrame.Lockstep.Core;
+
 namespace Battle.Common.Context.Combat
 {
-    public class PlayerData
+    public class GamerData
     {
-        public long UId { get; set; }
+        public ulong Id { get; set; }
         
         public int HeroId { get; set; }
         
@@ -22,5 +24,9 @@ namespace Battle.Common.Context.Combat
         public SkillData DefaultSkillData { get; set; }
         
         public SkillData UltimateSkillData { get; set; }
+        
+        public TSVector Position { get; set; }
+        
+        public TSQuaternion Rotation { get; set; }
     }
 }

@@ -135,6 +135,10 @@ namespace Battle.Logic
         internal TSRandom GetRandom() {
             return _random;
         }
+
+        internal ulong GetIndependentId() {
+            return _idGenerator.IndependentId;
+        }
         
         protected override void OnDestroy() {
             _logicSystems?.TearDown();

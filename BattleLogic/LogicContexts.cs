@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Logic.Base;
+using Battle.Logic.Base.Clock;
 
 namespace Battle.Logic
 {
@@ -25,6 +26,14 @@ namespace Battle.Logic
 
         public BattleContext GetBattleContext() {
             return GetController().GetBattleContext();
+        }
+
+        public ulong GetIndependentId() {
+            return GetController().GetIndependentId();
+        }
+
+        public IClock GetClock() {
+            return GetController().GetClock();
         }
     }
 }

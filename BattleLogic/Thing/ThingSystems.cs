@@ -8,12 +8,15 @@
 //============================================================
 
 using Battle.Logic.Thing.System;
+using Battle.Logic.Thing.System.Gamer;
 
 namespace Battle.Logic.Thing
 {
     internal sealed class ThingSystems : Feature
     {
         public ThingSystems(LogicContexts contexts) {
+            // Initialize Systems 
+            Add(new InitializeGamerGroupSystem(contexts));
             
             // Teardown Systems
             Add(new ThingTearDownSystem(contexts));

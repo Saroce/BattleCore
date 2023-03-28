@@ -66,6 +66,14 @@ public partial class Contexts {
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
+        logicThing.AddEntityIndex(new Entitas.PrimaryEntityIndex<LogicThingEntity, ulong>(
+            Id,
+            logicThing.GetGroup(LogicThingMatcher.Id),
+            (e, c) => ((Battle.Logic.Base.CSExtension.IdComponent)c).Value));
+        logicBuff.AddEntityIndex(new Entitas.PrimaryEntityIndex<LogicBuffEntity, ulong>(
+            Id,
+            logicBuff.GetGroup(LogicBuffMatcher.Id),
+            (e, c) => ((Battle.Logic.Base.CSExtension.IdComponent)c).Value));
         logicSkill.AddEntityIndex(new Entitas.PrimaryEntityIndex<LogicSkillEntity, ulong>(
             Id,
             logicSkill.GetGroup(LogicSkillMatcher.Id),
@@ -74,6 +82,14 @@ public partial class Contexts {
 }
 
 public static class ContextsExtensions {
+
+    public static LogicThingEntity GetEntityWithId(this LogicThingContext context, ulong Value) {
+        return ((Entitas.PrimaryEntityIndex<LogicThingEntity, ulong>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
+    }
+
+    public static LogicBuffEntity GetEntityWithId(this LogicBuffContext context, ulong Value) {
+        return ((Entitas.PrimaryEntityIndex<LogicBuffEntity, ulong>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
+    }
 
     public static LogicSkillEntity GetEntityWithId(this LogicSkillContext context, ulong Value) {
         return ((Entitas.PrimaryEntityIndex<LogicSkillEntity, ulong>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);

@@ -11,6 +11,7 @@ using Entitas.CodeGeneration.Attributes;
 
 namespace Battle.Logic.Base.CSExtension
 {
+    [LogicThing, LogicBuff, LogicSkill]
     public class IdComponent : LogicComponent
     {
         [PrimaryEntityIndex]

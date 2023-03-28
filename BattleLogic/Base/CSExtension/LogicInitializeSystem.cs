@@ -11,7 +11,7 @@ using Entitas;
 
 namespace Battle.Logic.Base.CSExtension
 {
-    public abstract class LogicInitializeSystem : LogicBaseSystem, IInitializeSystem, ITearDownSystem
+    internal abstract class LogicInitializeSystem : LogicBaseSystem, IInitializeSystem, ITearDownSystem
     {
         protected LogicInitializeSystem(LogicContexts contexts) : base(contexts) {
         }
