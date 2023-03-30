@@ -37,7 +37,7 @@ namespace Battle.Logic.Thing.System.Gamer
         private void InitializeGamerGroup(List<ulong> gamerIds) {
             var gamerGroup = Contexts.GetBattleContext().GamerGroup;
             foreach (var gamer in gamerGroup.Gamers) {
-                gamerIds.Add(Contexts.CreateGamerDataEntity(gamer));
+                gamerIds.Add(Contexts.CreateGamerData(gamer));
             }
 
             var gamerGroupEntity = Contexts.logicThing.CreateEntity();

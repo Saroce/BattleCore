@@ -9,23 +9,47 @@
 public static class LogicThingComponentsLookup {
 
     public const int Id = 0;
-    public const int GamerCombat = 1;
-    public const int GamerHeroId = 2;
-    public const int GamerIdGroup = 3;
-    public const int GamerInfo = 4;
-    public const int CreateTime = 5;
-    public const int Position = 6;
-    public const int Radius = 7;
-    public const int Rotation = 8;
-    public const int Gamer = 9;
-    public const int GamerGroup = 10;
-    public const int Other = 11;
-    public const int Thing = 12;
+    public const int CastableRef = 1;
+    public const int CastState = 2;
+    public const int Dead = 3;
+    public const int IdlableRef = 4;
+    public const int IdleMotionName = 5;
+    public const int IdleState = 6;
+    public const int MovableRef = 7;
+    public const int MoveMotionName = 8;
+    public const int MoveState = 9;
+    public const int StateMachine = 10;
+    public const int GamerCombat = 11;
+    public const int GamerHeroId = 12;
+    public const int GamerIdGroup = 13;
+    public const int GamerInfo = 14;
+    public const int CreateTime = 15;
+    public const int Position = 16;
+    public const int Radius = 17;
+    public const int Rotation = 18;
+    public const int Creature = 19;
+    public const int Gamer = 20;
+    public const int GamerData = 21;
+    public const int GamerGroup = 22;
+    public const int Other = 23;
+    public const int ThingCastAttributeType = 24;
+    public const int ThingCastRangeType = 25;
+    public const int Thing = 26;
 
-    public const int TotalComponents = 13;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "Id",
+        "CastableRef",
+        "CastState",
+        "Dead",
+        "IdlableRef",
+        "IdleMotionName",
+        "IdleState",
+        "MovableRef",
+        "MoveMotionName",
+        "MoveState",
+        "StateMachine",
         "GamerCombat",
         "GamerHeroId",
         "GamerIdGroup",
@@ -34,14 +58,28 @@ public static class LogicThingComponentsLookup {
         "Position",
         "Radius",
         "Rotation",
+        "Creature",
         "Gamer",
+        "GamerData",
         "GamerGroup",
         "Other",
+        "ThingCastAttributeType",
+        "ThingCastRangeType",
         "Thing"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Battle.Logic.Base.CSExtension.IdComponent),
+        typeof(Battle.Logic.Thing.Behaviour.State.Cast.Component.CastableRefComponent),
+        typeof(Battle.Logic.Thing.Behaviour.State.Cast.Component.CastStateComponent),
+        typeof(Battle.Logic.Thing.Behaviour.State.Dead.Component.DeadComponent),
+        typeof(Battle.Logic.Thing.Behaviour.State.Idle.Component.IdlableRefComponent),
+        typeof(Battle.Logic.Thing.Behaviour.State.Idle.Component.IdleMotionNameComponent),
+        typeof(Battle.Logic.Thing.Behaviour.State.Idle.Component.IdleStateComponent),
+        typeof(Battle.Logic.Thing.Behaviour.State.Move.Component.MovableRefComponent),
+        typeof(Battle.Logic.Thing.Behaviour.State.Move.Component.MoveMotionNameComponent),
+        typeof(Battle.Logic.Thing.Behaviour.State.Move.Component.MoveStateComponent),
+        typeof(Battle.Logic.Thing.Behaviour.State.StateMachineComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerCombatComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerHeroIdComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerIdGroupComponent),
@@ -50,9 +88,13 @@ public static class LogicThingComponentsLookup {
         typeof(Battle.Logic.Thing.Component.Property.Base.PositionComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.RadiusComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.RotationComponent),
+        typeof(Battle.Logic.Thing.Component.Type.CreatureComponent),
         typeof(Battle.Logic.Thing.Component.Type.GamerComponent),
+        typeof(Battle.Logic.Thing.Component.Type.GamerDataComponent),
         typeof(Battle.Logic.Thing.Component.Type.GamerGroupComponent),
         typeof(Battle.Logic.Thing.Component.Type.OtherComponent),
+        typeof(Battle.Logic.Thing.Component.Type.ThingCastAttributeTypeComponent),
+        typeof(Battle.Logic.Thing.Component.Type.ThingCastRangeTypeComponent),
         typeof(Battle.Logic.Thing.Component.Type.ThingComponent)
     };
 }

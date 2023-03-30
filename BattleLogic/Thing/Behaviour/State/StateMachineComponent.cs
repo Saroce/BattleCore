@@ -10,7 +10,7 @@
 using Battle.Logic.Base.CSExtension;
 using Battle.Logic.Base.FSM;
 
-namespace Battle.Logic.Thing.Behaviour.StateMachine
+namespace Battle.Logic.Thing.Behaviour.State
 {
     [LogicThing]
     public class StateMachineComponent : LogicComponent

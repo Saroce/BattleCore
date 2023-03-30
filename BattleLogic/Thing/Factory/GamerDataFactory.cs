@@ -19,7 +19,7 @@ namespace Battle.Logic.Thing.Factory
         /// <param name="contexts"></param>
         /// <param name="gamerData"></param>
         /// <returns>玩家Id</returns>
-        public static ulong CreateGamerDataEntity(this LogicContexts contexts, GamerData gamerData) {
+        public static ulong CreateGamerData(this LogicContexts contexts, GamerData gamerData) {
             var entity = contexts.logicThing.CreateEntity();
             entity.AddId(gamerData.Id);
             entity.AddGamerInfo(gamerData);
@@ -28,8 +28,7 @@ namespace Battle.Logic.Thing.Factory
             
             // TODO 技能配置
             
-            entity.isThing = entity.isGamer = true;
-
+            entity.isThing = entity.isGamerData = true;
             return entity.id.Value;
         }
     }

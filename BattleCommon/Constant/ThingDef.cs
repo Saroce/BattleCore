@@ -54,4 +54,10 @@ namespace Battle.Common.Constant
         Melee,  // 近战
         Ranged, // 远程
     }
+
+    public enum ThingOutOfControlType
+    {
+        None,
+        Stun,   // 眩晕
+    }
 }
