@@ -33,7 +33,7 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="Core.Lite, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Reference Include="Core.Lite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Game.Core\Core.Lite.dll</HintPath>
         </Reference>
         <Reference Include="Entitas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">

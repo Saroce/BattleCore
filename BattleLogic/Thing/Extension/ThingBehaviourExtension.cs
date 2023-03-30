@@ -19,5 +19,8 @@ namespace Battle.Logic.Thing.Extension
             return thingEntity.hasMovableRef && thingEntity.movableRef.Value > 0;
         }
         
+        public static bool IsCastable(this LogicThingEntity thingEntity) {
+            return thingEntity.hasCastableRef && thingEntity.castableRef.Value > 0;
+        }
     }
 }

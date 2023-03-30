@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Common.Context.Create;
+using Battle.Logic.Thing.Extension;
 
 namespace Battle.Logic.Thing.Factory
 {
@@ -19,8 +20,14 @@ namespace Battle.Logic.Thing.Factory
             // TODO 读取配置表数据
 
             thingEntity.isGamer = true;
-            var combatValue = context.CombatValue;
             
+            
+            var combatValue = context.CombatValue;
+            thingEntity.ReadPropertiesFromCombatValue(combatValue);
+            
+            // TODO 技能配置
+            
+            // TODO AI行为
         }
     }
 }

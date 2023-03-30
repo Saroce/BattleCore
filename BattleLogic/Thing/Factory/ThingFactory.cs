@@ -29,14 +29,20 @@ namespace Battle.Logic.Thing.Factory
 
             switch (createContext.ThingType) {
                 case ThingType.Gamer:
+                    contexts.CreateGamer(entity, createContext as GamerCreateContext);
                     break;
                 case ThingType.Monster:
+                    // TODO
                     break;
                 case ThingType.Bullet:
+                    // TODO
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException($"Unknown thing type: {createContext.ThingType}");
             }
+            
+            entity.AddThingCreateContext(createContext);
+            entity.isThing = true;
             
             return entity;
         }

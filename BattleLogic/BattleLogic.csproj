@@ -78,6 +78,15 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingPositionComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingRadiusComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingRotationComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingAttackComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingCastSpeedComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingCriticalRateComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingDodgeRateComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingHealPointComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingHitRateComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingMagicDefendComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingMoveSpeedComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingPhysicsDefendComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingCreatureComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingGamerDataComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingOtherComponent.cs" />
@@ -86,6 +95,7 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCastAttributeTypeComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCastRangeTypeComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingThingCreateContextComponent.cs" />
     <Compile Include="Generated\Components\Interfaces\IIdEntity.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
     <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
@@ -146,10 +156,20 @@
     <Compile Include="Thing\Component\Gamer\GamerHeroIdComponent.cs" />
     <Compile Include="Thing\Component\Gamer\GamerIdGroupComponent.cs" />
     <Compile Include="Thing\Component\Gamer\GamerDataComponent.cs" />
+    <Compile Include="Thing\Component\Property\AttackComponent.cs" />
     <Compile Include="Thing\Component\Property\Base\CreateTimeComponent.cs" />
     <Compile Include="Thing\Component\Property\Base\PositionComponent.cs" />
     <Compile Include="Thing\Component\Property\Base\RadiusComponent.cs" />
     <Compile Include="Thing\Component\Property\Base\RotationComponent.cs" />
+    <Compile Include="Thing\Component\Property\CastSpeedComponent.cs" />
+    <Compile Include="Thing\Component\Property\CriticalRateComponent.cs" />
+    <Compile Include="Thing\Component\Property\DodgeRateComponent.cs" />
+    <Compile Include="Thing\Component\Property\HealPointComponent.cs" />
+    <Compile Include="Thing\Component\Property\HitRateComponent.cs" />
+    <Compile Include="Thing\Component\Property\MagicDefendComponent.cs" />
+    <Compile Include="Thing\Component\Property\MoveSpeedComponent.cs" />
+    <Compile Include="Thing\Component\Property\PhysicsDefendComponent.cs" />
+    <Compile Include="Thing\Component\ThingCreateComponent.cs" />
     <Compile Include="Thing\Component\Type\CreatureComponent.cs" />
     <Compile Include="Thing\Component\Type\GamerDataComponent.cs" />
     <Compile Include="Thing\Component\Type\OtherComponent.cs" />
@@ -214,7 +234,6 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Buff\Component" />
-      <Folder Include="Thing\Behaviour\State\Cast\System" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

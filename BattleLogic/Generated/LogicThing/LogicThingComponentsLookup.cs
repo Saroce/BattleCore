@@ -23,20 +23,30 @@ public static class LogicThingComponentsLookup {
     public const int GamerHeroId = 12;
     public const int GamerIdGroup = 13;
     public const int GamerInfo = 14;
-    public const int CreateTime = 15;
-    public const int Position = 16;
-    public const int Radius = 17;
-    public const int Rotation = 18;
-    public const int Creature = 19;
-    public const int Gamer = 20;
-    public const int GamerData = 21;
-    public const int GamerGroup = 22;
-    public const int Other = 23;
-    public const int ThingCastAttributeType = 24;
-    public const int ThingCastRangeType = 25;
-    public const int Thing = 26;
+    public const int Attack = 15;
+    public const int CreateTime = 16;
+    public const int Position = 17;
+    public const int Radius = 18;
+    public const int Rotation = 19;
+    public const int CastSpeed = 20;
+    public const int CriticalRate = 21;
+    public const int DodgeRate = 22;
+    public const int HealPoint = 23;
+    public const int HitRate = 24;
+    public const int MagicDefend = 25;
+    public const int MoveSpeed = 26;
+    public const int PhysicsDefend = 27;
+    public const int ThingCreateContext = 28;
+    public const int Creature = 29;
+    public const int Gamer = 30;
+    public const int GamerData = 31;
+    public const int GamerGroup = 32;
+    public const int Other = 33;
+    public const int ThingCastAttributeType = 34;
+    public const int ThingCastRangeType = 35;
+    public const int Thing = 36;
 
-    public const int TotalComponents = 27;
+    public const int TotalComponents = 37;
 
     public static readonly string[] componentNames = {
         "Id",
@@ -54,10 +64,20 @@ public static class LogicThingComponentsLookup {
         "GamerHeroId",
         "GamerIdGroup",
         "GamerInfo",
+        "Attack",
         "CreateTime",
         "Position",
         "Radius",
         "Rotation",
+        "CastSpeed",
+        "CriticalRate",
+        "DodgeRate",
+        "HealPoint",
+        "HitRate",
+        "MagicDefend",
+        "MoveSpeed",
+        "PhysicsDefend",
+        "ThingCreateContext",
         "Creature",
         "Gamer",
         "GamerData",
@@ -84,10 +104,20 @@ public static class LogicThingComponentsLookup {
         typeof(Battle.Logic.Thing.Component.Gamer.GamerHeroIdComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerIdGroupComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerInfoComponent),
+        typeof(Battle.Logic.Thing.Component.Property.AttackComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.CreateTimeComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.PositionComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.RadiusComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.RotationComponent),
+        typeof(Battle.Logic.Thing.Component.Property.CastSpeedComponent),
+        typeof(Battle.Logic.Thing.Component.Property.CriticalRateComponent),
+        typeof(Battle.Logic.Thing.Component.Property.DodgeRateComponent),
+        typeof(Battle.Logic.Thing.Component.Property.HealPointComponent),
+        typeof(Battle.Logic.Thing.Component.Property.HitRateComponent),
+        typeof(Battle.Logic.Thing.Component.Property.MagicDefendComponent),
+        typeof(Battle.Logic.Thing.Component.Property.MoveSpeedComponent),
+        typeof(Battle.Logic.Thing.Component.Property.PhysicsDefendComponent),
+        typeof(Battle.Logic.Thing.Component.ThingCreateContextComponent),
         typeof(Battle.Logic.Thing.Component.Type.CreatureComponent),
         typeof(Battle.Logic.Thing.Component.Type.GamerComponent),
         typeof(Battle.Logic.Thing.Component.Type.GamerDataComponent),
