@@ -51,8 +51,7 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillActivatedComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillDestroyedComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingDestroyedComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingIdComponent.cs" />
     <Compile Include="Generated\LogicBuff\Components\LogicBuffIdComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillIdComponent.cs" />
@@ -97,9 +96,9 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingThingComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCreateContextComponent.cs" />
     <Compile Include="Generated\Components\Interfaces\IIdEntity.cs" />
-    <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
     <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
     <Compile Include="Generated\LogicInput\LogicInputComponentsLookup.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillAttribute.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffAttribute.cs" />
@@ -121,7 +120,6 @@
     <Compile Include="Generated\Feature.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\Component\ActivatedComponent.cs" />
     <Compile Include="Base\Component\DestroyedComponent.cs" />
     <Compile Include="Base\Component\IdComponent.cs" />
     <Compile Include="Base\Component\LogicComponent.cs" />
@@ -211,12 +209,12 @@
     <Compile Include="Base\Clock\FixedClock.cs" />
     <Compile Include="Base\Clock\IClock.cs" />
     <Compile Include="Base\Clock\ScalableClock.cs" />
-    <Compile Include="Base\CSExtension\LogicBaseSystem.cs" />
-    <Compile Include="Base\CSExtension\LogicCleanupSystem.cs" />
-    <Compile Include="Base\CSExtension\LogicExecuteSystem.cs" />
-    <Compile Include="Base\CSExtension\LogicInitializeSystem.cs" />
-    <Compile Include="Base\CSExtension\LogicReactiveSystem.cs" />
-    <Compile Include="Base\CSExtension\LogicTearDownSystem.cs" />
+    <Compile Include="Base\System\LogicBaseSystem.cs" />
+    <Compile Include="Base\System\LogicCleanupSystem.cs" />
+    <Compile Include="Base\System\LogicExecuteSystem.cs" />
+    <Compile Include="Base\System\LogicInitializeSystem.cs" />
+    <Compile Include="Base\System\LogicReactiveSystem.cs" />
+    <Compile Include="Base\System\LogicTearDownSystem.cs" />
     <Compile Include="Base\FrameCounter.cs" />
     <Compile Include="Base\UniqueIdGenerator.cs" />
   </ItemGroup>

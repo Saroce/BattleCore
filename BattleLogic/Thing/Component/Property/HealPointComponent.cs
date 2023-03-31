@@ -8,7 +8,6 @@
 //============================================================
 
 using Battle.Logic.Base.Component;
-using Battle.Logic.Base.CSExtension;
 using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Thing.Component.Property

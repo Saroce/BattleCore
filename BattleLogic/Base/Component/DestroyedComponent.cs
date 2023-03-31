@@ -7,10 +7,9 @@
 //    Modified:  2023-03-23
 //============================================================
 
-using Battle.Logic.Base.CSExtension;
-
 namespace Battle.Logic.Base.Component
 {
+    [LogicThing]
     public class DestroyedComponent : LogicComponent
     {
         

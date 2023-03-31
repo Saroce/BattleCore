@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class ViewSkillEntity {
 
-    static readonly Battle.View.Base.CSExtension.ViewComponent viewComponent = new Battle.View.Base.CSExtension.ViewComponent();
+    static readonly Battle.View.Base.System.ViewComponent viewComponent = new Battle.View.Base.System.ViewComponent();
 
     public bool isView {
         get { return HasComponent(ViewSkillComponentsLookup.View); }

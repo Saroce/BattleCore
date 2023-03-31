@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class ViewSkillEntity {
 
-    public Battle.View.Base.CSExtension.ViewComponent.EncryptedUlongValueViewComponent encryptedUlongValueView { get { return (Battle.View.Base.CSExtension.ViewComponent.EncryptedUlongValueViewComponent)GetComponent(ViewSkillComponentsLookup.EncryptedUlongValueView); } }
+    public Battle.View.Base.System.ViewComponent.EncryptedUlongValueViewComponent encryptedUlongValueView { get { return (Battle.View.Base.System.ViewComponent.EncryptedUlongValueViewComponent)GetComponent(ViewSkillComponentsLookup.EncryptedUlongValueView); } }
     public bool hasEncryptedUlongValueView { get { return HasComponent(ViewSkillComponentsLookup.EncryptedUlongValueView); } }
 
     public void AddEncryptedUlongValueView(ulong newValue) {
         var index = ViewSkillComponentsLookup.EncryptedUlongValueView;
-        var component = (Battle.View.Base.CSExtension.ViewComponent.EncryptedUlongValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.CSExtension.ViewComponent.EncryptedUlongValueViewComponent));
+        var component = (Battle.View.Base.System.ViewComponent.EncryptedUlongValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.System.ViewComponent.EncryptedUlongValueViewComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
     public void ReplaceEncryptedUlongValueView(ulong newValue) {
         var index = ViewSkillComponentsLookup.EncryptedUlongValueView;
-        var component = (Battle.View.Base.CSExtension.ViewComponent.EncryptedUlongValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.CSExtension.ViewComponent.EncryptedUlongValueViewComponent));
+        var component = (Battle.View.Base.System.ViewComponent.EncryptedUlongValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.System.ViewComponent.EncryptedUlongValueViewComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }

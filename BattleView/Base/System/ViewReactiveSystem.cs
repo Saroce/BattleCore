@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
-//        File:  LogicReactiveSystem.cs
-//       Brief:  LogicReactiveSystem
+//        File:  ViewReactiveSystem.cs
+//       Brief:  ViewReactiveSystem
 //
 //      Author:  Saroce, Saroce233@163.com
 //
@@ -10,16 +10,16 @@
 using System.Collections.Generic;
 using Entitas;
 
-namespace Battle.Logic.Base.CSExtension
+namespace Battle.View.Base.System
 {
-    internal abstract class LogicReactiveSystem<TEntity> : ReactiveSystem<TEntity> where TEntity : class, IEntity
+    internal abstract class ViewReactiveSystem<TEntity> : ReactiveSystem<TEntity> where TEntity : class, IEntity
     {
-        protected LogicContexts Contexts { get; }
+        protected ViewContexts Contexts { get; }
         
-        public LogicReactiveSystem(LogicContexts contexts, IContext<TEntity> context) : base(context) {
+        protected ViewReactiveSystem(ViewContexts contexts, IContext<TEntity> context) : base(context) {
             Contexts = contexts;
         }
-
+        
         protected abstract override ICollector<TEntity> GetTrigger(IContext<TEntity> context);
 
         protected abstract override bool Filter(TEntity entity);

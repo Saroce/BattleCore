@@ -7,7 +7,7 @@
 //    Modified:  2023-03-31
 //============================================================
 
-using Battle.View.Base.CSExtension;
+using Battle.View.Base.System;
 using vFrame.Lockstep.Core;
 
 namespace Battle.View.Base.Component

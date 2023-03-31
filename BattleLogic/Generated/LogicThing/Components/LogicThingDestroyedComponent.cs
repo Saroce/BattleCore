@@ -6,20 +6,20 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class LogicSkillEntity {
+public partial class LogicThingEntity {
 
-    static readonly Battle.Logic.Base.Component.ActivatedComponent activatedComponent = new Battle.Logic.Base.Component.ActivatedComponent();
+    static readonly Battle.Logic.Base.Component.DestroyedComponent destroyedComponent = new Battle.Logic.Base.Component.DestroyedComponent();
 
-    public bool isActivated {
-        get { return HasComponent(LogicSkillComponentsLookup.Activated); }
+    public bool isDestroyed {
+        get { return HasComponent(LogicThingComponentsLookup.Destroyed); }
         set {
-            if (value != isActivated) {
-                var index = LogicSkillComponentsLookup.Activated;
+            if (value != isDestroyed) {
+                var index = LogicThingComponentsLookup.Destroyed;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : activatedComponent;
+                            : destroyedComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -38,19 +38,19 @@ public partial class LogicSkillEntity {
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed partial class LogicSkillMatcher {
+public sealed partial class LogicThingMatcher {
 
-    static Entitas.IMatcher<LogicSkillEntity> _matcherActivated;
+    static Entitas.IMatcher<LogicThingEntity> _matcherDestroyed;
 
-    public static Entitas.IMatcher<LogicSkillEntity> Activated {
+    public static Entitas.IMatcher<LogicThingEntity> Destroyed {
         get {
-            if (_matcherActivated == null) {
-                var matcher = (Entitas.Matcher<LogicSkillEntity>)Entitas.Matcher<LogicSkillEntity>.AllOf(LogicSkillComponentsLookup.Activated);
-                matcher.componentNames = LogicSkillComponentsLookup.componentNames;
-                _matcherActivated = matcher;
+            if (_matcherDestroyed == null) {
+                var matcher = (Entitas.Matcher<LogicThingEntity>)Entitas.Matcher<LogicThingEntity>.AllOf(LogicThingComponentsLookup.Destroyed);
+                matcher.componentNames = LogicThingComponentsLookup.componentNames;
+                _matcherDestroyed = matcher;
             }
 
-            return _matcherActivated;
+            return _matcherDestroyed;
         }
     }
 }

@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class ViewSkillEntity {
 
-    public Battle.View.Base.CSExtension.ViewComponent.EncryptedFixedPointValueViewComponent encryptedFixedPointValueView { get { return (Battle.View.Base.CSExtension.ViewComponent.EncryptedFixedPointValueViewComponent)GetComponent(ViewSkillComponentsLookup.EncryptedFixedPointValueView); } }
+    public Battle.View.Base.System.ViewComponent.EncryptedFixedPointValueViewComponent encryptedFixedPointValueView { get { return (Battle.View.Base.System.ViewComponent.EncryptedFixedPointValueViewComponent)GetComponent(ViewSkillComponentsLookup.EncryptedFixedPointValueView); } }
     public bool hasEncryptedFixedPointValueView { get { return HasComponent(ViewSkillComponentsLookup.EncryptedFixedPointValueView); } }
 
     public void AddEncryptedFixedPointValueView(vFrame.Lockstep.Core.FixedPoint newValue) {
         var index = ViewSkillComponentsLookup.EncryptedFixedPointValueView;
-        var component = (Battle.View.Base.CSExtension.ViewComponent.EncryptedFixedPointValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.CSExtension.ViewComponent.EncryptedFixedPointValueViewComponent));
+        var component = (Battle.View.Base.System.ViewComponent.EncryptedFixedPointValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.System.ViewComponent.EncryptedFixedPointValueViewComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
     public void ReplaceEncryptedFixedPointValueView(vFrame.Lockstep.Core.FixedPoint newValue) {
         var index = ViewSkillComponentsLookup.EncryptedFixedPointValueView;
-        var component = (Battle.View.Base.CSExtension.ViewComponent.EncryptedFixedPointValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.CSExtension.ViewComponent.EncryptedFixedPointValueViewComponent));
+        var component = (Battle.View.Base.System.ViewComponent.EncryptedFixedPointValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.System.ViewComponent.EncryptedFixedPointValueViewComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }

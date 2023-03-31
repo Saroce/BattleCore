@@ -8,7 +8,6 @@
 //============================================================
 
 using Battle.Logic.Base.Component;
-using Battle.Logic.Base.CSExtension;
 using Battle.Logic.Base.FSM;
 
 namespace Battle.Logic.Thing.Behaviour.State

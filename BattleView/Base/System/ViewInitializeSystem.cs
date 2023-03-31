@@ -9,7 +9,7 @@
 
 using Entitas;
 
-namespace Battle.View.Base.CSExtension
+namespace Battle.View.Base.System
 {
     internal abstract class ViewInitializeSystem : ViewBaseSystem, IInitializeSystem
     {

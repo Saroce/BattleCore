@@ -8,15 +8,17 @@
 //------------------------------------------------------------------------------
 public static class ViewSkillComponentsLookup {
 
-    public const int Id = 0;
-    public const int View = 1;
-    public const int EncryptedFixedPointValueView = 2;
-    public const int EncryptedIntValueView = 3;
-    public const int EncryptedUlongValueView = 4;
+    public const int Destroyed = 0;
+    public const int Id = 1;
+    public const int View = 2;
+    public const int EncryptedFixedPointValueView = 3;
+    public const int EncryptedIntValueView = 4;
+    public const int EncryptedUlongValueView = 5;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 6;
 
     public static readonly string[] componentNames = {
+        "Destroyed",
         "Id",
         "View",
         "EncryptedFixedPointValueView",
@@ -25,10 +27,11 @@ public static class ViewSkillComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Battle.View.Base.Component.DestroyedComponent),
         typeof(Battle.View.Base.Component.IdComponent),
-        typeof(Battle.View.Base.CSExtension.ViewComponent),
-        typeof(Battle.View.Base.CSExtension.ViewComponent.EncryptedFixedPointValueViewComponent),
-        typeof(Battle.View.Base.CSExtension.ViewComponent.EncryptedIntValueViewComponent),
-        typeof(Battle.View.Base.CSExtension.ViewComponent.EncryptedUlongValueViewComponent)
+        typeof(Battle.View.Base.System.ViewComponent),
+        typeof(Battle.View.Base.System.ViewComponent.EncryptedFixedPointValueViewComponent),
+        typeof(Battle.View.Base.System.ViewComponent.EncryptedIntValueViewComponent),
+        typeof(Battle.View.Base.System.ViewComponent.EncryptedUlongValueViewComponent)
     };
 }

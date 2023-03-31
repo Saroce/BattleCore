@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
-//        File:  ViewExecuteSystem.cs
-//       Brief:  ViewExecuteSystem
+//        File:  LogicExecuteSystem.cs
+//       Brief:  LogicExecuteSystem
 //
 //      Author:  Saroce, Saroce233@163.com
 //
@@ -9,11 +9,12 @@
 
 using Entitas;
 
-namespace Battle.View.Base.CSExtension
+namespace Battle.Logic.Base.System
 {
-    internal abstract class ViewExecuteSystem : ViewBaseSystem, IExecuteSystem
+    internal abstract class LogicExecuteSystem : LogicBaseSystem, IExecuteSystem
     {
-        protected ViewExecuteSystem(ViewContexts contexts) : base(contexts) {
+        protected LogicExecuteSystem(LogicContexts contexts) : base(contexts) {
+            
         }
 
         public abstract void Execute();

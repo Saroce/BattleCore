@@ -7,7 +7,7 @@
 //    Modified:  2023-03-22
 //============================================================
 
-namespace Battle.View.Base.CSExtension
+namespace Battle.View.Base.System
 {
     internal class ViewBaseSystem : ViewContextsBridge
     {

@@ -9,7 +9,7 @@
 
 using System;
 using System.Collections.Generic;
-using Battle.View.Base.CSExtension;
+using Battle.View.Base.System;
 using Battle.View.Input.System.Processor;
 
 namespace Battle.View.Input.System
@@ -21,7 +21,7 @@ namespace Battle.View.Input.System
         public MessageSystem(ViewContexts contexts) : base(contexts) {
             _type2Processor = new Dictionary<Type, IMessageProcessor>();
             
-            // TODO 消息注册(考虑利用特性处理)
+            RegisterProcessor<OnCreateThing>();
         }
 
         private void RegisterProcessor<T>() where T : IMessageProcessor {

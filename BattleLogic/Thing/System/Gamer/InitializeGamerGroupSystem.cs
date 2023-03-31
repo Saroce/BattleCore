@@ -10,7 +10,7 @@
 using System.Collections.Generic;
 using Battle.Common.Context.Combat;
 using Battle.Common.Context.Create;
-using Battle.Logic.Base.CSExtension;
+using Battle.Logic.Base.System;
 using Battle.Logic.Thing.Factory;
 using vFrame.Lockstep.Core;
 

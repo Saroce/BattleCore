@@ -15,7 +15,7 @@ using Battle.Logic.Thing.Extension;
 
 namespace Battle.Logic.Thing.Factory
 {
-    public static class ThingFactory
+    internal static class ThingFactory
     {
         public static LogicThingEntity CreateThing(this LogicContexts contexts, ThingCrateContext createContext) {
             var entity = contexts.logicThing.CreateEntity();
