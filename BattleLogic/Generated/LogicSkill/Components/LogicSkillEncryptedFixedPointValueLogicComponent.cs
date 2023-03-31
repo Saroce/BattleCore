@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class LogicSkillEntity {
 
-    public Battle.Logic.Base.CSExtension.EncryptedFixedPointValueLogicComponent encryptedFixedPointValueLogic { get { return (Battle.Logic.Base.CSExtension.EncryptedFixedPointValueLogicComponent)GetComponent(LogicSkillComponentsLookup.EncryptedFixedPointValueLogic); } }
+    public Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent encryptedFixedPointValueLogic { get { return (Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent)GetComponent(LogicSkillComponentsLookup.EncryptedFixedPointValueLogic); } }
     public bool hasEncryptedFixedPointValueLogic { get { return HasComponent(LogicSkillComponentsLookup.EncryptedFixedPointValueLogic); } }
 
     public void AddEncryptedFixedPointValueLogic(vFrame.Lockstep.Core.FixedPoint newValue) {
         var index = LogicSkillComponentsLookup.EncryptedFixedPointValueLogic;
-        var component = (Battle.Logic.Base.CSExtension.EncryptedFixedPointValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.CSExtension.EncryptedFixedPointValueLogicComponent));
+        var component = (Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
     public void ReplaceEncryptedFixedPointValueLogic(vFrame.Lockstep.Core.FixedPoint newValue) {
         var index = LogicSkillComponentsLookup.EncryptedFixedPointValueLogic;
-        var component = (Battle.Logic.Base.CSExtension.EncryptedFixedPointValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.CSExtension.EncryptedFixedPointValueLogicComponent));
+        var component = (Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }

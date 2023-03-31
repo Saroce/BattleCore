@@ -10,6 +10,8 @@
 using System;
 using Battle.Common.Constant;
 using Battle.Common.Context.Create;
+using Battle.Common.Context.Message.Thing;
+using Battle.Logic.Thing.Extension;
 
 namespace Battle.Logic.Thing.Factory
 {
@@ -43,6 +45,15 @@ namespace Battle.Logic.Thing.Factory
             
             entity.AddThingCreateContext(createContext);
             entity.isThing = true;
+
+            var message = contexts.GetRefPool<ThingCreateMessage>().Get();
+            message.Id = entity.id.Value;
+            message.ThingType = entity.GetThingType();
+            message.CreateContext = entity.thingCreateContext.Value;
+            contexts.SendMessage(message);
+
+            // 切换到Idle状态
+            entity.Idle(contexts, false);
             
             return entity;
         }

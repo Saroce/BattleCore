@@ -7,7 +7,9 @@
 //    Modified:  2023-03-24
 //============================================================
 
-namespace Battle.Logic.Base.CSExtension
+using Battle.Logic.Base.CSExtension;
+
+namespace Battle.Logic.Base.Component
 {
     public class ActivatedComponent : LogicComponent
     {

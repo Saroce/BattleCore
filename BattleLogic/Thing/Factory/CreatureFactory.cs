@@ -29,8 +29,8 @@ namespace Battle.Logic.Thing.Factory
             fsm.Create(contexts);
             
             fsm.AddState((int) BehaviourType.Idle, new IdleState(fsm));
-            fsm.AddState((int) BehaviourType.Moving, new MoveState(fsm));
-            fsm.AddState((int) BehaviourType.Casting, new CastState(fsm));
+            fsm.AddState((int) BehaviourType.Move, new MoveState(fsm));
+            fsm.AddState((int) BehaviourType.Cast, new CastState(fsm));
             fsm.AddState((int) BehaviourType.Dead, new DeadState(fsm));
             fsm.AddState((int) BehaviourType.OutOfControl, new OutOfControlState(fsm));
             

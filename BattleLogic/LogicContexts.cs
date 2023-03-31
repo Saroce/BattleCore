@@ -7,8 +7,10 @@
 //    Modified:  2023-03-21
 //============================================================
 
+using Battle.Common.Context.Message;
 using Battle.Logic.Base;
 using Battle.Logic.Base.Clock;
+using Core.Lite.RefPool;
 
 namespace Battle.Logic
 {
@@ -20,20 +22,28 @@ namespace Battle.Logic
             _controller = controller;
         }
 
-        public LogicController GetController() {
+        internal LogicController GetController() {
             return _controller;
         }
 
-        public BattleContext GetBattleContext() {
+        internal BattleContext GetBattleContext() {
             return GetController().GetBattleContext();
         }
 
-        public ulong GetIndependentId() {
+        internal ulong GetIndependentId() {
             return GetController().GetIndependentId();
         }
 
-        public IClock GetClock() {
+        internal IClock GetClock() {
             return GetController().GetClock();
+        }
+
+        internal void SendMessage(IBattleMessage message) {
+            GetController().EnqueueMessage(message);
+        }
+        
+        internal IRefPool<T> GetRefPool<T>() where T : class, new() {
+            return GetController().GetRefPool<T>();
         }
     }
 }

@@ -12,8 +12,8 @@ namespace Battle.Logic.Constant
     internal enum BehaviourType
     {
         Idle,
-        Moving,
-        Casting,
+        Move,
+        Cast,
         OutOfControl,
         Dead,
     }

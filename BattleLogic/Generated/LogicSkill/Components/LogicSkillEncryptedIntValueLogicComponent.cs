@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class LogicSkillEntity {
 
-    public Battle.Logic.Base.CSExtension.EncryptedIntValueLogicComponent encryptedIntValueLogic { get { return (Battle.Logic.Base.CSExtension.EncryptedIntValueLogicComponent)GetComponent(LogicSkillComponentsLookup.EncryptedIntValueLogic); } }
+    public Battle.Logic.Base.Component.EncryptedIntValueLogicComponent encryptedIntValueLogic { get { return (Battle.Logic.Base.Component.EncryptedIntValueLogicComponent)GetComponent(LogicSkillComponentsLookup.EncryptedIntValueLogic); } }
     public bool hasEncryptedIntValueLogic { get { return HasComponent(LogicSkillComponentsLookup.EncryptedIntValueLogic); } }
 
     public void AddEncryptedIntValueLogic(int newValue) {
         var index = LogicSkillComponentsLookup.EncryptedIntValueLogic;
-        var component = (Battle.Logic.Base.CSExtension.EncryptedIntValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.CSExtension.EncryptedIntValueLogicComponent));
+        var component = (Battle.Logic.Base.Component.EncryptedIntValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.Component.EncryptedIntValueLogicComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
     public void ReplaceEncryptedIntValueLogic(int newValue) {
         var index = LogicSkillComponentsLookup.EncryptedIntValueLogic;
-        var component = (Battle.Logic.Base.CSExtension.EncryptedIntValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.CSExtension.EncryptedIntValueLogicComponent));
+        var component = (Battle.Logic.Base.Component.EncryptedIntValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.Component.EncryptedIntValueLogicComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }

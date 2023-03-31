@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial interface IIdEntity {
 
-    Battle.Logic.Base.CSExtension.IdComponent id { get; }
+    Battle.Logic.Base.Component.IdComponent id { get; }
     bool hasId { get; }
 
     void AddId(ulong newValue);

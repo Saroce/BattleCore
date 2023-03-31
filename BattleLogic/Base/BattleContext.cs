@@ -8,15 +8,16 @@
 //============================================================
 
 using Battle.Common.Context.Combat;
+using Core.Lite.RefPool;
 
 namespace Battle.Logic.Base
 {
     public sealed class BattleContext
     {
         public int FrameDeltaInMilliseconds;
-
         public int Seed;
-
         public GamerGroup GamerGroup;
+
+        public IRefPoolManager RefPoolManager;
     }
 }

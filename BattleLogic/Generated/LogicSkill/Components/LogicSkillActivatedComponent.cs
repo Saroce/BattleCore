@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class LogicSkillEntity {
 
-    static readonly Battle.Logic.Base.CSExtension.ActivatedComponent activatedComponent = new Battle.Logic.Base.CSExtension.ActivatedComponent();
+    static readonly Battle.Logic.Base.Component.ActivatedComponent activatedComponent = new Battle.Logic.Base.Component.ActivatedComponent();
 
     public bool isActivated {
         get { return HasComponent(LogicSkillComponentsLookup.Activated); }

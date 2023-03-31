@@ -12,6 +12,7 @@ using Battle.Common.Context;
 using Battle.Common.Context.Message;
 using Battle.View.Base;
 using Core.Lite.Base;
+using Core.Lite.RefPool;
 using vFrame.Lockstep.Core;
 
 namespace Battle.View
@@ -44,11 +45,23 @@ namespace Battle.View
             _systems.Initialize();
         }
 
+        internal BattleContext GetBattleContext() {
+            return _battleContext;
+        } 
+        
+        internal IRefPoolManager GetRefPoolManager() {
+            return GetBattleContext().RefPoolManager;
+        }
+        
         public void EnterFrame() {
             _systems.Execute();
             _systems.Cleanup();
         }
 
+        internal bool TryDequeueMessage(out IBattleMessage message) {
+            return _messageQueue.TryDequeue(out message);
+        }
+        
         public void EnqueueMessage(IBattleMessage message) {
             _messageQueue.Enqueue(message);
         }

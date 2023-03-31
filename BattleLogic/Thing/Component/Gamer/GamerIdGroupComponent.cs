@@ -8,6 +8,7 @@
 //============================================================
 
 using System.Collections.Generic;
+using Battle.Logic.Base.Component;
 using Battle.Logic.Base.CSExtension;
 
 namespace Battle.Logic.Thing.Component.Gamer

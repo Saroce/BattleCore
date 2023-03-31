@@ -89,7 +89,7 @@ public static class LogicThingComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Battle.Logic.Base.CSExtension.IdComponent),
+        typeof(Battle.Logic.Base.Component.IdComponent),
         typeof(Battle.Logic.Thing.Behaviour.State.Cast.Component.CastableRefComponent),
         typeof(Battle.Logic.Thing.Behaviour.State.Cast.Component.CastStateComponent),
         typeof(Battle.Logic.Thing.Behaviour.State.Dead.Component.DeadComponent),

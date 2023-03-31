@@ -29,12 +29,12 @@ public static class LogicSkillComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Battle.Logic.Base.CSExtension.ActivatedComponent),
-        typeof(Battle.Logic.Base.CSExtension.DestroyedComponent),
-        typeof(Battle.Logic.Base.CSExtension.EncryptedFixedPointValueLogicComponent),
-        typeof(Battle.Logic.Base.CSExtension.EncryptedIntValueLogicComponent),
-        typeof(Battle.Logic.Base.CSExtension.EncryptedUlongValueLogicComponent),
-        typeof(Battle.Logic.Base.CSExtension.IdComponent),
-        typeof(Battle.Logic.Base.CSExtension.LogicComponent)
+        typeof(Battle.Logic.Base.Component.ActivatedComponent),
+        typeof(Battle.Logic.Base.Component.DestroyedComponent),
+        typeof(Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent),
+        typeof(Battle.Logic.Base.Component.EncryptedIntValueLogicComponent),
+        typeof(Battle.Logic.Base.Component.EncryptedUlongValueLogicComponent),
+        typeof(Battle.Logic.Base.Component.IdComponent),
+        typeof(Battle.Logic.Base.Component.LogicComponent)
     };
 }

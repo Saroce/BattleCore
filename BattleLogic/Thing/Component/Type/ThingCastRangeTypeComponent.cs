@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Common.Constant;
+using Battle.Logic.Base.Component;
 using Battle.Logic.Base.CSExtension;
 
 namespace Battle.Logic.Thing.Component.Type

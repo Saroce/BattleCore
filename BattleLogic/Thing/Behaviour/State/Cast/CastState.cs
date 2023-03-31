@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Logic.Base.FSM;
+using Battle.Logic.Thing.Extension;
 using Entitas;
 
 namespace Battle.Logic.Thing.Behaviour.State.Cast
@@ -22,13 +23,9 @@ namespace Battle.Logic.Thing.Behaviour.State.Cast
             if (!(entity is LogicThingEntity thingEntity)) {
                 return false;
             }
-
-            if (!(context is CastStateContext stateContext)) {
-                return false;
-            }
-
+            
             // TODO 
-            return false;
+            return thingEntity.IsCastable();
         }
 
         public override void OnEnter(IEntity entity) {

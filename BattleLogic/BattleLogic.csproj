@@ -52,10 +52,10 @@
     </ItemGroup>
   <ItemGroup>
     <Compile Include="Generated\LogicSkill\Components\LogicSkillActivatedComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillDestroyedComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingIdComponent.cs" />
     <Compile Include="Generated\LogicBuff\Components\LogicBuffIdComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillIdComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillDestroyedComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillLogicComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedFixedPointValueLogicComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedIntValueLogicComponent.cs" />
@@ -121,6 +121,12 @@
     <Compile Include="Generated\Feature.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Component\ActivatedComponent.cs" />
+    <Compile Include="Base\Component\DestroyedComponent.cs" />
+    <Compile Include="Base\Component\IdComponent.cs" />
+    <Compile Include="Base\Component\LogicComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Base\FSM\IState.cs" />
     <Compile Include="Base\FSM\IStateContext.cs" />
     <Compile Include="Base\FSM\IStateMachine.cs" />
@@ -179,6 +185,7 @@
     <Compile Include="Thing\Component\Type\ThingCastRangeTypeComponent.cs" />
     <Compile Include="Thing\Component\Type\ThingComponent.cs" />
     <Compile Include="Thing\Extension\ThingBehaviourExtension.cs" />
+    <Compile Include="Thing\Extension\ThingExtension.cs" />
     <Compile Include="Thing\Extension\ThingPropertyExtension.cs" />
     <Compile Include="Thing\Factory\CreatureFactory.cs" />
     <Compile Include="Thing\Factory\GamerDataFactory.cs" />
@@ -192,16 +199,11 @@
     <Compile Include="Buff\System\BuffTearDownSystem.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\CSExtension\ActivatedComponent.cs" />
-    <Compile Include="Base\CSExtension\IdComponent.cs" />
     <Compile Include="Buff\BuffSystems.cs" />
     <Compile Include="IBattleLogic.cs" />
     <Compile Include="Input\InputSystems.cs" />
     <Compile Include="Input\System\InputTearDownSystem.cs" />
     <Compile Include="Skill\SkillSystems.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Base\CSExtension\DestroyedComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BattleContext.cs" />
@@ -211,7 +213,6 @@
     <Compile Include="Base\Clock\ScalableClock.cs" />
     <Compile Include="Base\CSExtension\LogicBaseSystem.cs" />
     <Compile Include="Base\CSExtension\LogicCleanupSystem.cs" />
-    <Compile Include="Base\CSExtension\LogicComponent.cs" />
     <Compile Include="Base\CSExtension\LogicExecuteSystem.cs" />
     <Compile Include="Base\CSExtension\LogicInitializeSystem.cs" />
     <Compile Include="Base\CSExtension\LogicReactiveSystem.cs" />

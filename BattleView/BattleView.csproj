@@ -51,19 +51,35 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Component\DestroyedComponent.cs" />
+    <Compile Include="Base\Component\PositionComponent.cs" />
+    <Compile Include="Base\Component\RotationComponent.cs" />
+    <Compile Include="Base\Component\VelocityComponent.cs" />
+    <Compile Include="Generated\ViewSkill\Components\ViewSkillIdComponent.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillViewComponent.cs" />
+    <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedFixedPointValueViewComponent.cs" />
+    <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedIntValueViewComponent.cs" />
+    <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedUlongValueViewComponent.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillComponentsLookup.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffComponentsLookup.cs" />
+    <Compile Include="Generated\ViewThing\ViewThingComponentsLookup.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillAttribute.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffAttribute.cs" />
+    <Compile Include="Generated\ViewThing\ViewThingAttribute.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillContext.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffContext.cs" />
+    <Compile Include="Generated\ViewThing\ViewThingContext.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillMatcher.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffMatcher.cs" />
+    <Compile Include="Generated\ViewThing\ViewThingMatcher.cs" />
     <Compile Include="Generated\Contexts.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillEntity.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffEntity.cs" />
+    <Compile Include="Generated\ViewThing\ViewThingEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Component\IdComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BattleContext.cs" />
@@ -75,6 +91,12 @@
     <Compile Include="Base\CSExtension\ViewReactiveSystem.cs" />
     <Compile Include="Base\CSExtension\ViewTearDownSystem.cs" />
     <Compile Include="IBattleView.cs" />
+    <Compile Include="Input\InputSystems.cs" />
+    <Compile Include="Input\System\MessageSystem.cs" />
+    <Compile Include="Input\System\Processor\IMessageProcessor.cs" />
+    <Compile Include="Input\System\Processor\MessageProcessor.cs" />
+    <Compile Include="Thing\Component\CreateContextComponent.cs" />
+    <Compile Include="Thing\Component\ThingTypeComponent.cs" />
     <Compile Include="ViewContexts.cs" />
     <Compile Include="ViewContextsBridge.cs" />
     <Compile Include="ViewController.cs" />

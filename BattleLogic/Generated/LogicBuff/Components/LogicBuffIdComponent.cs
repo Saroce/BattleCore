@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class LogicBuffEntity {
 
-    public Battle.Logic.Base.CSExtension.IdComponent id { get { return (Battle.Logic.Base.CSExtension.IdComponent)GetComponent(LogicBuffComponentsLookup.Id); } }
+    public Battle.Logic.Base.Component.IdComponent id { get { return (Battle.Logic.Base.Component.IdComponent)GetComponent(LogicBuffComponentsLookup.Id); } }
     public bool hasId { get { return HasComponent(LogicBuffComponentsLookup.Id); } }
 
     public void AddId(ulong newValue) {
         var index = LogicBuffComponentsLookup.Id;
-        var component = (Battle.Logic.Base.CSExtension.IdComponent)CreateComponent(index, typeof(Battle.Logic.Base.CSExtension.IdComponent));
+        var component = (Battle.Logic.Base.Component.IdComponent)CreateComponent(index, typeof(Battle.Logic.Base.Component.IdComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
     public void ReplaceId(ulong newValue) {
         var index = LogicBuffComponentsLookup.Id;
-        var component = (Battle.Logic.Base.CSExtension.IdComponent)CreateComponent(index, typeof(Battle.Logic.Base.CSExtension.IdComponent));
+        var component = (Battle.Logic.Base.Component.IdComponent)CreateComponent(index, typeof(Battle.Logic.Base.Component.IdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }

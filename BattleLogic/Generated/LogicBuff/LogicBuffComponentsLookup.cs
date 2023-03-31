@@ -17,6 +17,6 @@ public static class LogicBuffComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Battle.Logic.Base.CSExtension.IdComponent)
+        typeof(Battle.Logic.Base.Component.IdComponent)
     };
 }

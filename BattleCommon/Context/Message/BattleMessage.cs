@@ -11,10 +11,6 @@ namespace Battle.Common.Context.Message
 {
     public class BattleMessage : IBattleMessage
     {
-        private static int _idGenerator = 0;
-
-        public int GetMessageId() => ++_idGenerator;
-
         public int FrameIndex { get; set; }
     }
 }

@@ -11,14 +11,14 @@ using System;
 using Entitas;
 using vFrame.Lockstep.Core;
 
-namespace Battle.Logic.Base.CSExtension
+namespace Battle.Logic.Base.Component
 {
     public class LogicComponent : IComponent
     {
         private static readonly Random Random = new Random();
 
         private int Secret { get; } = Random.Next(0, int.MaxValue);
-
+        
         // ReSharper disable once RedundantAssignment
         protected void SetValue(ref int variable, int newValue) {
             variable = newValue ^ Secret;

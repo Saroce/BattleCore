@@ -4,14 +4,15 @@
 //
 //      Author:  Saroce, Saroce233@163.com
 //
-//    Modified:  2023-03-23
+//    Modified:  2023-03-31
 //============================================================
 
-using Entitas.CodeGeneration.Attributes;
+using Battle.View.Base.CSExtension;
 
-namespace Battle.Logic.Base.CSExtension
+namespace Battle.View.Base.Component
 {
-    public class DestroyedComponent : LogicComponent
+    [ViewThing, ViewBuff, ViewSkill]
+    public class DestroyedComponent : ViewComponent
     {
         
     }

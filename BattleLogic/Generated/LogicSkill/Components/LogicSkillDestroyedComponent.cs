@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class LogicSkillEntity {
 
-    static readonly Battle.Logic.Base.CSExtension.DestroyedComponent destroyedComponent = new Battle.Logic.Base.CSExtension.DestroyedComponent();
+    static readonly Battle.Logic.Base.Component.DestroyedComponent destroyedComponent = new Battle.Logic.Base.Component.DestroyedComponent();
 
     public bool isDestroyed {
         get { return HasComponent(LogicSkillComponentsLookup.Destroyed); }

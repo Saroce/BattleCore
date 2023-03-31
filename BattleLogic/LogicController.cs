@@ -14,6 +14,7 @@ using Battle.Common.Context.Message;
 using Battle.Logic.Base;
 using Battle.Logic.Base.Clock;
 using Core.Lite.Base;
+using Core.Lite.RefPool;
 using vFrame.Lockstep.Core;
 
 namespace Battle.Logic
@@ -111,7 +112,11 @@ namespace Battle.Logic
         internal BattleContext GetBattleContext() {
             return _battleContext;
         }
-        
+
+        internal IRefPool<T> GetRefPool<T>() where T : class, new() {
+            return GetBattleContext().RefPoolManager.GetRefPool<T>();
+        }
+
         /// <summary>
         /// 获取时钟
         /// </summary>

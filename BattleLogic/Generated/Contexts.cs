@@ -69,15 +69,15 @@ public partial class Contexts {
         logicThing.AddEntityIndex(new Entitas.PrimaryEntityIndex<LogicThingEntity, ulong>(
             Id,
             logicThing.GetGroup(LogicThingMatcher.Id),
-            (e, c) => ((Battle.Logic.Base.CSExtension.IdComponent)c).Value));
+            (e, c) => ((Battle.Logic.Base.Component.IdComponent)c).Value));
         logicBuff.AddEntityIndex(new Entitas.PrimaryEntityIndex<LogicBuffEntity, ulong>(
             Id,
             logicBuff.GetGroup(LogicBuffMatcher.Id),
-            (e, c) => ((Battle.Logic.Base.CSExtension.IdComponent)c).Value));
+            (e, c) => ((Battle.Logic.Base.Component.IdComponent)c).Value));
         logicSkill.AddEntityIndex(new Entitas.PrimaryEntityIndex<LogicSkillEntity, ulong>(
             Id,
             logicSkill.GetGroup(LogicSkillMatcher.Id),
-            (e, c) => ((Battle.Logic.Base.CSExtension.IdComponent)c).Value));
+            (e, c) => ((Battle.Logic.Base.Component.IdComponent)c).Value));
     }
 }
 

@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class LogicSkillEntity {
 
-    public Battle.Logic.Base.CSExtension.EncryptedUlongValueLogicComponent encryptedUlongValueLogic { get { return (Battle.Logic.Base.CSExtension.EncryptedUlongValueLogicComponent)GetComponent(LogicSkillComponentsLookup.EncryptedUlongValueLogic); } }
+    public Battle.Logic.Base.Component.EncryptedUlongValueLogicComponent encryptedUlongValueLogic { get { return (Battle.Logic.Base.Component.EncryptedUlongValueLogicComponent)GetComponent(LogicSkillComponentsLookup.EncryptedUlongValueLogic); } }
     public bool hasEncryptedUlongValueLogic { get { return HasComponent(LogicSkillComponentsLookup.EncryptedUlongValueLogic); } }
 
     public void AddEncryptedUlongValueLogic(ulong newValue) {
         var index = LogicSkillComponentsLookup.EncryptedUlongValueLogic;
-        var component = (Battle.Logic.Base.CSExtension.EncryptedUlongValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.CSExtension.EncryptedUlongValueLogicComponent));
+        var component = (Battle.Logic.Base.Component.EncryptedUlongValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.Component.EncryptedUlongValueLogicComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
     public void ReplaceEncryptedUlongValueLogic(ulong newValue) {
         var index = LogicSkillComponentsLookup.EncryptedUlongValueLogic;
-        var component = (Battle.Logic.Base.CSExtension.EncryptedUlongValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.CSExtension.EncryptedUlongValueLogicComponent));
+        var component = (Battle.Logic.Base.Component.EncryptedUlongValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.Component.EncryptedUlongValueLogicComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }

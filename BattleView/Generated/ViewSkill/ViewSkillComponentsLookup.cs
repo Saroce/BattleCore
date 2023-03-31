@@ -8,15 +8,27 @@
 //------------------------------------------------------------------------------
 public static class ViewSkillComponentsLookup {
 
-    public const int View = 0;
+    public const int Id = 0;
+    public const int View = 1;
+    public const int EncryptedFixedPointValueView = 2;
+    public const int EncryptedIntValueView = 3;
+    public const int EncryptedUlongValueView = 4;
 
-    public const int TotalComponents = 1;
+    public const int TotalComponents = 5;
 
     public static readonly string[] componentNames = {
-        "View"
+        "Id",
+        "View",
+        "EncryptedFixedPointValueView",
+        "EncryptedIntValueView",
+        "EncryptedUlongValueView"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Battle.View.Base.CSExtension.ViewComponent)
+        typeof(Battle.View.Base.Component.IdComponent),
+        typeof(Battle.View.Base.CSExtension.ViewComponent),
+        typeof(Battle.View.Base.CSExtension.ViewComponent.EncryptedFixedPointValueViewComponent),
+        typeof(Battle.View.Base.CSExtension.ViewComponent.EncryptedIntValueViewComponent),
+        typeof(Battle.View.Base.CSExtension.ViewComponent.EncryptedUlongValueViewComponent)
     };
 }

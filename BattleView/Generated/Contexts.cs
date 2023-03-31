@@ -23,12 +23,14 @@ public partial class Contexts : Entitas.IContexts {
 
     public ViewBuffContext viewBuff { get; set; }
     public ViewSkillContext viewSkill { get; set; }
+    public ViewThingContext viewThing { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { viewBuff, viewSkill }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { viewBuff, viewSkill, viewThing }; } }
 
     public Contexts() {
         viewBuff = new ViewBuffContext();
         viewSkill = new ViewSkillContext();
+        viewThing = new ViewThingContext();
 
         var postConstructors = System.Linq.Enumerable.Where(
             GetType().GetMethods(),
@@ -65,6 +67,7 @@ public partial class Contexts {
         try {
             CreateContextObserver(viewBuff);
             CreateContextObserver(viewSkill);
+            CreateContextObserver(viewThing);
         } catch(System.Exception) {
         }
     }

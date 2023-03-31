@@ -7,6 +7,7 @@
 //    Modified:  2023-03-28
 //============================================================
 
+using Battle.Logic.Base.Component;
 using Battle.Logic.Base.CSExtension;
 using vFrame.Lockstep.Core;
 
