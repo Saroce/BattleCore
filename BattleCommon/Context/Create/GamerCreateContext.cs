@@ -13,12 +13,14 @@ namespace Battle.Common.Context.Create
 {
     public class GamerCreateContext : CreatureCreateContext
     {
-        public int HeroId;
+        public int GeneralId;
         
         // TODO 技能配置数据
 
         public GamerCreateContext() {
             ThingType = ThingType.Gamer;
         }
+        
+        
     }
 }

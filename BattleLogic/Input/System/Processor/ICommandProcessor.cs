@@ -11,7 +11,7 @@ using System;
 using Battle.Common.Context.Command;
 using Core.Lite.Base;
 
-namespace Battle.Logic.Input.System
+namespace Battle.Logic.Input.System.Processor
 {
     internal interface ICommandProcessor : IBaseObject<LogicContexts>
     {

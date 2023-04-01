@@ -23,7 +23,7 @@ namespace Battle.Logic.Thing.Factory
             var entity = contexts.logicThing.CreateEntity();
             entity.AddId(gamerData.Id);
             entity.AddGamerInfo(gamerData);
-            entity.AddGamerHeroId(gamerData.HeroId);
+            entity.AddGamerHeroId(gamerData.GeneralId);
             entity.AddGamerCombat(gamerData.CombatValue);
             
             // TODO 技能配置

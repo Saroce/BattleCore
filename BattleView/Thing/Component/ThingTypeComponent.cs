@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Common.Constant;
+using Battle.View.Base.Component;
 using Battle.View.Base.System;
 
 namespace Battle.View.Thing.Component

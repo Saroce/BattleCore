@@ -16,7 +16,9 @@ namespace Battle.View.Thing.Factory
         public static void CreateGamer(this ViewContexts contexts, ViewThingEntity thingEntity,
             GamerCreateContext context) {
             
+            // TODO 挂载技能配置相关组件
             
-        } 
+            
+        }
     }
 }

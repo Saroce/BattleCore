@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class ViewSkillEntity {
 
-    public Battle.View.Base.System.ViewComponent.EncryptedIntValueViewComponent encryptedIntValueView { get { return (Battle.View.Base.System.ViewComponent.EncryptedIntValueViewComponent)GetComponent(ViewSkillComponentsLookup.EncryptedIntValueView); } }
+    public Battle.View.Base.Component.ViewComponent.EncryptedIntValueViewComponent encryptedIntValueView { get { return (Battle.View.Base.Component.ViewComponent.EncryptedIntValueViewComponent)GetComponent(ViewSkillComponentsLookup.EncryptedIntValueView); } }
     public bool hasEncryptedIntValueView { get { return HasComponent(ViewSkillComponentsLookup.EncryptedIntValueView); } }
 
     public void AddEncryptedIntValueView(int newValue) {
         var index = ViewSkillComponentsLookup.EncryptedIntValueView;
-        var component = (Battle.View.Base.System.ViewComponent.EncryptedIntValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.System.ViewComponent.EncryptedIntValueViewComponent));
+        var component = (Battle.View.Base.Component.ViewComponent.EncryptedIntValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.Component.ViewComponent.EncryptedIntValueViewComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
     public void ReplaceEncryptedIntValueView(int newValue) {
         var index = ViewSkillComponentsLookup.EncryptedIntValueView;
-        var component = (Battle.View.Base.System.ViewComponent.EncryptedIntValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.System.ViewComponent.EncryptedIntValueViewComponent));
+        var component = (Battle.View.Base.Component.ViewComponent.EncryptedIntValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.Component.ViewComponent.EncryptedIntValueViewComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }

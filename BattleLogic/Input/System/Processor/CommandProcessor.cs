@@ -10,7 +10,7 @@
 using System;
 using Battle.Common.Context.Command;
 
-namespace Battle.Logic.Input.System
+namespace Battle.Logic.Input.System.Processor
 {
     internal  abstract class CommandProcessor<TRequest, TRespond> : LogicContextsBridge, ICommandProcessor
         where TRequest : BattleRequest where TRespond : BattleRespond

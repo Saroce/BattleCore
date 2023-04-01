@@ -29,9 +29,9 @@ public static class ViewSkillComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(Battle.View.Base.Component.DestroyedComponent),
         typeof(Battle.View.Base.Component.IdComponent),
-        typeof(Battle.View.Base.System.ViewComponent),
-        typeof(Battle.View.Base.System.ViewComponent.EncryptedFixedPointValueViewComponent),
-        typeof(Battle.View.Base.System.ViewComponent.EncryptedIntValueViewComponent),
-        typeof(Battle.View.Base.System.ViewComponent.EncryptedUlongValueViewComponent)
+        typeof(Battle.View.Base.Component.ViewComponent),
+        typeof(Battle.View.Base.Component.ViewComponent.EncryptedFixedPointValueViewComponent),
+        typeof(Battle.View.Base.Component.ViewComponent.EncryptedIntValueViewComponent),
+        typeof(Battle.View.Base.Component.ViewComponent.EncryptedUlongValueViewComponent)
     };
 }

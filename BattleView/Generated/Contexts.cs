@@ -22,13 +22,15 @@ public partial class Contexts : Entitas.IContexts {
     static Contexts _sharedInstance;
 
     public ViewBuffContext viewBuff { get; set; }
+    public ViewHUDContext viewHUD { get; set; }
     public ViewSkillContext viewSkill { get; set; }
     public ViewThingContext viewThing { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { viewBuff, viewSkill, viewThing }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { viewBuff, viewHUD, viewSkill, viewThing }; } }
 
     public Contexts() {
         viewBuff = new ViewBuffContext();
+        viewHUD = new ViewHUDContext();
         viewSkill = new ViewSkillContext();
         viewThing = new ViewThingContext();
 
@@ -60,10 +62,16 @@ public partial class Contexts : Entitas.IContexts {
 //------------------------------------------------------------------------------
 public partial class Contexts {
 
+    public const string HUDOwner = "HUDOwner";
     public const string Id = "Id";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
+        viewHUD.AddEntityIndex(new Entitas.EntityIndex<ViewHUDEntity, ulong>(
+            HUDOwner,
+            viewHUD.GetGroup(ViewHUDMatcher.HUDOwner),
+            (e, c) => ((Battle.View.HUD.Component.HUDOwnerComponent)c).Id));
+
         viewBuff.AddEntityIndex(new Entitas.PrimaryEntityIndex<ViewBuffEntity, ulong>(
             Id,
             viewBuff.GetGroup(ViewBuffMatcher.Id),
@@ -80,6 +88,10 @@ public partial class Contexts {
 }
 
 public static class ContextsExtensions {
+
+    public static System.Collections.Generic.HashSet<ViewHUDEntity> GetEntitiesWithHUDOwner(this ViewHUDContext context, ulong Id) {
+        return ((Entitas.EntityIndex<ViewHUDEntity, ulong>)context.GetEntityIndex(Contexts.HUDOwner)).GetEntities(Id);
+    }
 
     public static ViewBuffEntity GetEntityWithId(this ViewBuffContext context, ulong Value) {
         return ((Entitas.PrimaryEntityIndex<ViewBuffEntity, ulong>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
@@ -109,6 +121,7 @@ public partial class Contexts {
     public void InitializeContextObservers() {
         try {
             CreateContextObserver(viewBuff);
+            CreateContextObserver(viewHUD);
             CreateContextObserver(viewSkill);
             CreateContextObserver(viewThing);
         } catch(System.Exception) {

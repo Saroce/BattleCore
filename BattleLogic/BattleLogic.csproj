@@ -133,8 +133,8 @@
     <Compile Include="Constant\LogicThingDef.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Input\System\CommandProcessor.cs" />
-    <Compile Include="Input\System\ICommandProcessor.cs" />
+    <Compile Include="Input\System\Processor\CommandProcessor.cs" />
+    <Compile Include="Input\System\Processor\ICommandProcessor.cs" />
     <Compile Include="Skill\System\SkillTearDownSystem.cs" />
     <Compile Include="Thing\Behaviour\State\Cast\CastState.cs" />
     <Compile Include="Thing\Behaviour\State\Cast\CastStateContext.cs" />

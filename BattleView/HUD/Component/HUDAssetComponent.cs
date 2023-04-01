@@ -1,19 +1,18 @@
 ﻿//------------------------------------------------------------
-//        File:  AvatarAssetComponent.cs
-//       Brief:  AvatarAssetComponent
+//        File:  HUDAssetComponent.cs
+//       Brief:  HUDAssetComponent
 //
 //      Author:  Saroce, Saroce233@163.com
 //
-//    Modified:  2023-03-31
+//    Modified:  2023-04-01
 //============================================================
 
 using Battle.View.Base.Component;
-using Battle.View.Base.System;
 
-namespace Battle.View.Thing.Component.Avatar
+namespace Battle.View.HUD.Component
 {
-    [ViewThing]
-    public class AvatarAssetComponent : ViewComponent
+    [ViewHUD]
+    public class HUDAssetComponent : ViewComponent
     {
         public string Value;
     }

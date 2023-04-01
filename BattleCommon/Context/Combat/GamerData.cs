@@ -15,7 +15,7 @@ namespace Battle.Common.Context.Combat
     {
         public ulong Id { get; set; }
         
-        public int HeroId { get; set; }
+        public int GeneralId { get; set; }
         
         public bool IsOther { get; set; }
         

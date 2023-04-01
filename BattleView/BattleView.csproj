@@ -46,11 +46,18 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
+        <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
         <Reference Include="vFrame.Lockstep.Core, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Lockstep.Core\vFrame.Lockstep.Core.dll</HintPath>
         </Reference>
     </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generated\ViewSkill\Components\ViewSkillViewComponent.cs" />
+    <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedFixedPointValueViewComponent.cs" />
+    <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedIntValueViewComponent.cs" />
+    <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedUlongValueViewComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingDestroyedComponent.cs" />
     <Compile Include="Generated\ViewBuff\Components\ViewBuffDestroyedComponent.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillDestroyedComponent.cs" />
@@ -60,31 +67,46 @@
     <Compile Include="Generated\ViewBuff\Components\ViewBuffIdComponent.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillIdComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingIdComponent.cs" />
-    <Compile Include="Generated\ViewSkill\Components\ViewSkillViewComponent.cs" />
-    <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedFixedPointValueViewComponent.cs" />
-    <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedIntValueViewComponent.cs" />
-    <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedUlongValueViewComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDAssetComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDBindPointComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDAutoDestroyWithOwnerComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDHPComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDOffsetComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDOwnerComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDPositionComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDPositionSyncWithOwnerComponent.cs" />
+    <Compile Include="Generated\ViewThing\Components\ViewThingAvatarAssetComponent.cs" />
+    <Compile Include="Generated\ViewThing\Components\ViewThingAvatarMotionComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingCreateContextComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingThingTypeComponent.cs" />
     <Compile Include="Generated\Components\Interfaces\IDestroyedEntity.cs" />
     <Compile Include="Generated\Components\Interfaces\IIdEntity.cs" />
+    <Compile Include="Generated\ViewSkill\ViewSkillComponentsLookup.cs" />
     <Compile Include="Generated\ViewThing\ViewThingComponentsLookup.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffComponentsLookup.cs" />
-    <Compile Include="Generated\ViewSkill\ViewSkillComponentsLookup.cs" />
+    <Compile Include="Generated\ViewHUD\ViewHUDComponentsLookup.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillAttribute.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffAttribute.cs" />
     <Compile Include="Generated\ViewThing\ViewThingAttribute.cs" />
+    <Compile Include="Generated\ViewHUD\ViewHUDAttribute.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillContext.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffContext.cs" />
     <Compile Include="Generated\ViewThing\ViewThingContext.cs" />
+    <Compile Include="Generated\ViewHUD\ViewHUDContext.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillMatcher.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffMatcher.cs" />
     <Compile Include="Generated\ViewThing\ViewThingMatcher.cs" />
+    <Compile Include="Generated\ViewHUD\ViewHUDMatcher.cs" />
     <Compile Include="Generated\Contexts.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillEntity.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffEntity.cs" />
     <Compile Include="Generated\ViewThing\ViewThingEntity.cs" />
+    <Compile Include="Generated\ViewHUD\ViewHUDEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Component\ViewComponent.cs" />
+    <Compile Include="Constant\ViewDef.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\Component\DestroyedComponent.cs" />
@@ -99,17 +121,26 @@
     <Compile Include="Base\BattleContext.cs" />
     <Compile Include="Base\System\ViewBaseSystem.cs" />
     <Compile Include="Base\System\ViewCleanupSystem.cs" />
-    <Compile Include="Base\System\ViewComponent.cs" />
     <Compile Include="Base\System\ViewExecuteSystem.cs" />
     <Compile Include="Base\System\ViewInitializeSystem.cs" />
     <Compile Include="Base\System\ViewReactiveSystem.cs" />
     <Compile Include="Base\System\ViewTearDownSystem.cs" />
+    <Compile Include="HUD\Component\HUDAssetComponent.cs" />
+    <Compile Include="HUD\Component\HUDBindPointComponent.cs" />
+    <Compile Include="HUD\Component\HUDAutoDestroyWithOwnerComponent.cs" />
+    <Compile Include="HUD\Component\HUDHPComponent.cs" />
+    <Compile Include="HUD\Component\HUDOffsetComponent.cs" />
+    <Compile Include="HUD\Component\HUDOwnerComponent.cs" />
+    <Compile Include="HUD\Component\HUDPositionComponent.cs" />
+    <Compile Include="HUD\Component\HUDPositionSyncWithOwnerComponent.cs" />
     <Compile Include="IBattleView.cs" />
     <Compile Include="Input\InputSystems.cs" />
     <Compile Include="Input\System\MessageSystem.cs" />
     <Compile Include="Input\System\Processor\IMessageProcessor.cs" />
     <Compile Include="Input\System\Processor\MessageProcessor.cs" />
     <Compile Include="Input\System\Processor\OnCreateThing.cs" />
+    <Compile Include="Thing\Component\Avatar\AvatarAssetComponent.cs" />
+    <Compile Include="Thing\Component\Avatar\AvatarMotionComponent.cs" />
     <Compile Include="Thing\Component\CreateContextComponent.cs" />
     <Compile Include="Thing\Component\ThingTypeComponent.cs" />
     <Compile Include="Thing\Factory\GamerFactory.cs" />

@@ -62,7 +62,7 @@ namespace Battle.Logic.Thing.System.Gamer
                 var createContext = new GamerCreateContext() {
                     Position = gamerInfo.Position,
                     Rotation = gamerInfo.Rotation,
-                    HeroId = gamerInfo.HeroId,
+                    GeneralId = gamerInfo.GeneralId,
                     CombatValue = gamerDataEntity.hasGamerCombat
                         ? gamerDataEntity.gamerCombat.Value
                         : new CombatValue(),

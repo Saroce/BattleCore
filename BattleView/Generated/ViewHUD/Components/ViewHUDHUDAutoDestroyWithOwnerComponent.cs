@@ -6,20 +6,20 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class ViewSkillEntity {
+public partial class ViewHUDEntity {
 
-    static readonly Battle.View.Base.Component.ViewComponent viewComponent = new Battle.View.Base.Component.ViewComponent();
+    static readonly Battle.View.HUD.Component.HUDAutoDestroyWithOwnerComponent hUDAutoDestroyWithOwnerComponent = new Battle.View.HUD.Component.HUDAutoDestroyWithOwnerComponent();
 
-    public bool isView {
-        get { return HasComponent(ViewSkillComponentsLookup.View); }
+    public bool isHUDAutoDestroyWithOwner {
+        get { return HasComponent(ViewHUDComponentsLookup.HUDAutoDestroyWithOwner); }
         set {
-            if (value != isView) {
-                var index = ViewSkillComponentsLookup.View;
+            if (value != isHUDAutoDestroyWithOwner) {
+                var index = ViewHUDComponentsLookup.HUDAutoDestroyWithOwner;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : viewComponent;
+                            : hUDAutoDestroyWithOwnerComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -38,19 +38,19 @@ public partial class ViewSkillEntity {
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed partial class ViewSkillMatcher {
+public sealed partial class ViewHUDMatcher {
 
-    static Entitas.IMatcher<ViewSkillEntity> _matcherView;
+    static Entitas.IMatcher<ViewHUDEntity> _matcherHUDAutoDestroyWithOwner;
 
-    public static Entitas.IMatcher<ViewSkillEntity> View {
+    public static Entitas.IMatcher<ViewHUDEntity> HUDAutoDestroyWithOwner {
         get {
-            if (_matcherView == null) {
-                var matcher = (Entitas.Matcher<ViewSkillEntity>)Entitas.Matcher<ViewSkillEntity>.AllOf(ViewSkillComponentsLookup.View);
-                matcher.componentNames = ViewSkillComponentsLookup.componentNames;
-                _matcherView = matcher;
+            if (_matcherHUDAutoDestroyWithOwner == null) {
+                var matcher = (Entitas.Matcher<ViewHUDEntity>)Entitas.Matcher<ViewHUDEntity>.AllOf(ViewHUDComponentsLookup.HUDAutoDestroyWithOwner);
+                matcher.componentNames = ViewHUDComponentsLookup.componentNames;
+                _matcherHUDAutoDestroyWithOwner = matcher;
             }
 
-            return _matcherView;
+            return _matcherHUDAutoDestroyWithOwner;
         }
     }
 }
