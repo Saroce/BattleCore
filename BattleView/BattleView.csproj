@@ -95,6 +95,7 @@
     <Compile Include="Input\System\MessageSystem.cs" />
     <Compile Include="Input\System\Processor\IMessageProcessor.cs" />
     <Compile Include="Input\System\Processor\MessageProcessor.cs" />
+    <Compile Include="Thing\Component\Avatar\AvatarAssetComponent.cs" />
     <Compile Include="Thing\Component\CreateContextComponent.cs" />
     <Compile Include="Thing\Component\ThingTypeComponent.cs" />
     <Compile Include="ViewContexts.cs" />
