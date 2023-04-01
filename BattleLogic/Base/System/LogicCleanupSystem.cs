@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
-//        File:  ViewCleanupSystem.cs
-//       Brief:  ViewCleanupSystem
+//        File:  LogicCleanupSystem.cs
+//       Brief:  LogicCleanupSystem
 //
 //      Author:  Saroce, Saroce233@163.com
 //
@@ -9,11 +9,11 @@
 
 using Entitas;
 
-namespace Battle.View.Base.CSExtension
+namespace Battle.Logic.Base.System
 {
-    internal abstract class ViewCleanupSystem : ViewBaseSystem, ICleanupSystem
+    internal abstract class LogicCleanupSystem : LogicBaseSystem, ICleanupSystem
     {
-        protected ViewCleanupSystem(ViewContexts contexts) : base(contexts) {
+        protected LogicCleanupSystem(LogicContexts contexts) : base(contexts) {
         }
 
         public abstract void Cleanup();

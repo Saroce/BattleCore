@@ -8,7 +8,7 @@
 //============================================================
 
 using Battle.Common.Context.Create;
-using Battle.View.Base.CSExtension;
+using Battle.View.Base.System;
 
 namespace Battle.View.Thing.Component
 {

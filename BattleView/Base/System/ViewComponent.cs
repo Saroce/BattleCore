@@ -11,7 +11,7 @@ using System;
 using Entitas;
 using vFrame.Lockstep.Core;
 
-namespace Battle.View.Base.CSExtension
+namespace Battle.View.Base.System
 {
     public class ViewComponent : IComponent
     {

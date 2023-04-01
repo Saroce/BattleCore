@@ -8,15 +8,33 @@
 //------------------------------------------------------------------------------
 public static class ViewThingComponentsLookup {
 
+    public const int Destroyed = 0;
+    public const int Id = 1;
+    public const int Position = 2;
+    public const int Rotation = 3;
+    public const int Velocity = 4;
+    public const int CreateContext = 5;
+    public const int ThingType = 6;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
-
+        "Destroyed",
+        "Id",
+        "Position",
+        "Rotation",
+        "Velocity",
+        "CreateContext",
+        "ThingType"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(Battle.View.Base.Component.DestroyedComponent),
+        typeof(Battle.View.Base.Component.IdComponent),
+        typeof(Battle.View.Base.Component.PositionComponent),
+        typeof(Battle.View.Base.Component.RotationComponent),
+        typeof(Battle.View.Base.Component.VelocityComponent),
+        typeof(Battle.View.Thing.Component.CreateContextComponent),
+        typeof(Battle.View.Thing.Component.ThingTypeComponent)
     };
 }

@@ -9,7 +9,7 @@
 
 using Entitas;
 
-namespace Battle.Logic.Base.CSExtension
+namespace Battle.Logic.Base.System
 {
     internal abstract class LogicInitializeSystem : LogicBaseSystem, IInitializeSystem, ITearDownSystem
     {

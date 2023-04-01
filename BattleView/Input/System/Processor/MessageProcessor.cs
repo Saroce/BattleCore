@@ -19,7 +19,7 @@ namespace Battle.View.Input.System.Processor
             OnProcess(message as TMessage);
         }
 
-        protected abstract void OnProcess(IBattleMessage message);
+        protected abstract void OnProcess(TMessage message);
 
         public Type GetMessageType() {
             return typeof(TMessage);

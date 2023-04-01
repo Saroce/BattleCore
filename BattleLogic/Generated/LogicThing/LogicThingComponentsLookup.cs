@@ -8,47 +8,49 @@
 //------------------------------------------------------------------------------
 public static class LogicThingComponentsLookup {
 
-    public const int Id = 0;
-    public const int CastableRef = 1;
-    public const int CastState = 2;
-    public const int Dead = 3;
-    public const int IdlableRef = 4;
-    public const int IdleMotionName = 5;
-    public const int IdleState = 6;
-    public const int MovableRef = 7;
-    public const int MoveMotionName = 8;
-    public const int MoveState = 9;
-    public const int StateMachine = 10;
-    public const int GamerCombat = 11;
-    public const int GamerHeroId = 12;
-    public const int GamerIdGroup = 13;
-    public const int GamerInfo = 14;
-    public const int Attack = 15;
-    public const int CreateTime = 16;
-    public const int Position = 17;
-    public const int Radius = 18;
-    public const int Rotation = 19;
-    public const int CastSpeed = 20;
-    public const int CriticalRate = 21;
-    public const int DodgeRate = 22;
-    public const int HealPoint = 23;
-    public const int HitRate = 24;
-    public const int MagicDefend = 25;
-    public const int MoveSpeed = 26;
-    public const int PhysicsDefend = 27;
-    public const int ThingCreateContext = 28;
-    public const int Creature = 29;
-    public const int Gamer = 30;
-    public const int GamerData = 31;
-    public const int GamerGroup = 32;
-    public const int Other = 33;
-    public const int ThingCastAttributeType = 34;
-    public const int ThingCastRangeType = 35;
-    public const int Thing = 36;
+    public const int Destroyed = 0;
+    public const int Id = 1;
+    public const int CastableRef = 2;
+    public const int CastState = 3;
+    public const int Dead = 4;
+    public const int IdlableRef = 5;
+    public const int IdleMotionName = 6;
+    public const int IdleState = 7;
+    public const int MovableRef = 8;
+    public const int MoveMotionName = 9;
+    public const int MoveState = 10;
+    public const int StateMachine = 11;
+    public const int GamerCombat = 12;
+    public const int GamerHeroId = 13;
+    public const int GamerIdGroup = 14;
+    public const int GamerInfo = 15;
+    public const int Attack = 16;
+    public const int CreateTime = 17;
+    public const int Position = 18;
+    public const int Radius = 19;
+    public const int Rotation = 20;
+    public const int CastSpeed = 21;
+    public const int CriticalRate = 22;
+    public const int DodgeRate = 23;
+    public const int HealPoint = 24;
+    public const int HitRate = 25;
+    public const int MagicDefend = 26;
+    public const int MoveSpeed = 27;
+    public const int PhysicsDefend = 28;
+    public const int ThingCreateContext = 29;
+    public const int Creature = 30;
+    public const int Gamer = 31;
+    public const int GamerData = 32;
+    public const int GamerGroup = 33;
+    public const int Other = 34;
+    public const int ThingCastAttributeType = 35;
+    public const int ThingCastRangeType = 36;
+    public const int Thing = 37;
 
-    public const int TotalComponents = 37;
+    public const int TotalComponents = 38;
 
     public static readonly string[] componentNames = {
+        "Destroyed",
         "Id",
         "CastableRef",
         "CastState",
@@ -89,6 +91,7 @@ public static class LogicThingComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Battle.Logic.Base.Component.DestroyedComponent),
         typeof(Battle.Logic.Base.Component.IdComponent),
         typeof(Battle.Logic.Thing.Behaviour.State.Cast.Component.CastableRefComponent),
         typeof(Battle.Logic.Thing.Behaviour.State.Cast.Component.CastStateComponent),

@@ -8,15 +8,18 @@
 //------------------------------------------------------------------------------
 public static class ViewBuffComponentsLookup {
 
+    public const int Destroyed = 0;
+    public const int Id = 1;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 2;
 
     public static readonly string[] componentNames = {
-
+        "Destroyed",
+        "Id"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(Battle.View.Base.Component.DestroyedComponent),
+        typeof(Battle.View.Base.Component.IdComponent)
     };
 }

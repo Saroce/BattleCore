@@ -7,7 +7,6 @@
 //    Modified:  2023-03-24
 //============================================================
 
-using Battle.Logic.Base.CSExtension;
 using Entitas.CodeGeneration.Attributes;
 
 namespace Battle.Logic.Base.Component

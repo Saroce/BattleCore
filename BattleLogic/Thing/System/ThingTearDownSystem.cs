@@ -7,7 +7,7 @@
 //    Modified:  2023-03-27
 //============================================================
 
-using Battle.Logic.Base.CSExtension;
+using Battle.Logic.Base.System;
 
 namespace Battle.Logic.Thing.System
 {
