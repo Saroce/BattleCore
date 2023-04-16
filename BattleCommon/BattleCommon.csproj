@@ -36,6 +36,9 @@
         <Reference Include="Core.Lite, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Game.Core\Core.Lite.dll</HintPath>
         </Reference>
+        <Reference Include="Google.Protobuf, Version=3.10.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
+          <HintPath>..\Libraries\Protobuf\Google.Protobuf.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -45,6 +48,18 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Configs\Generated\BattleConfBattle.cs" />
+        <Compile Include="Configs\Generated\BattleConfRandomBuff.cs" />
+        <Compile Include="Configs\Generated\BattleConfRandomBuffGroup.cs" />
+        <Compile Include="Configs\Generated\BuffConfBuff.cs" />
+        <Compile Include="Configs\Generated\DressConfDress.cs" />
+        <Compile Include="Configs\Generated\FriendshipConfTalk.cs" />
+        <Compile Include="Configs\Generated\FunctionConfFunction.cs" />
+        <Compile Include="Configs\Generated\GeneralConfGeneral.cs" />
+        <Compile Include="Configs\Generated\MonsterConfMonster.cs" />
+        <Compile Include="Configs\Generated\SkillConfBasic.cs" />
+        <Compile Include="Configs\Generated\SkillConfSkillLevel.cs" />
+        <Compile Include="Configs\Generated\XlsxRecordIndex.cs" />
         <Compile Include="Constant\BattleDef.cs" />
         <Compile Include="Constant\ThingDef.cs" />
         <Compile Include="Context\Combat\CombatValue.cs" />
