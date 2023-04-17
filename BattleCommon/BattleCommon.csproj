@@ -59,7 +59,6 @@
         <Compile Include="Configs\Generated\MonsterConfMonster.cs" />
         <Compile Include="Configs\Generated\SkillConfBasic.cs" />
         <Compile Include="Configs\Generated\SkillConfSkillLevel.cs" />
-        <Compile Include="Configs\Generated\XlsxRecordIndex.cs" />
         <Compile Include="Constant\BattleDef.cs" />
         <Compile Include="Constant\ThingDef.cs" />
         <Compile Include="Context\Combat\CombatValue.cs" />
