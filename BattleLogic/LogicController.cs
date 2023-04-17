@@ -8,13 +8,21 @@
 //============================================================
 
 using System;
-using Battle.Common.Context;
 using Battle.Common.Context.Command;
 using Battle.Common.Context.Message;
 using Battle.Logic.Base;
 using Battle.Logic.Base.Clock;
 using Core.Lite.Base;
+using Core.Lite.DataSystem.Config;
 using Core.Lite.RefPool;
+using ExcelConvert.Auto.BattleConf;
+using ExcelConvert.Auto.BuffConf;
+using ExcelConvert.Auto.DressConf;
+using ExcelConvert.Auto.FriendshipConf;
+using ExcelConvert.Auto.FunctionConf;
+using ExcelConvert.Auto.GeneralConf;
+using ExcelConvert.Auto.MonsterConf;
+using ExcelConvert.Auto.SkillConf;
 using vFrame.Lockstep.Core;
 
 namespace Battle.Logic
@@ -27,7 +35,9 @@ namespace Battle.Logic
         private TSRandom _random;
         private UniqueIdGenerator _idGenerator;
         private FrameCounter _frameCounter;
-
+        private Logger _logger;
+        private ConfigReader _configReader;
+        
         private LogicContexts _contexts;
         private LogicSystems _logicSystems;
         
@@ -40,12 +50,17 @@ namespace Battle.Logic
             }
 
             _battleContext = context;
-            // TODO log设置
+            _logger = new Logger();
+            _logger.Create(this);
 
             _clock = new ScalableClock() { TimeScale = 1f};
             _clock.StepDelta = _battleContext.FrameDeltaInMilliseconds;
+
+
+            _configReader = new ConfigReader();
+            _configReader.Create(context.DataReader, context.ConfigPath);
+            ParseSheets(_configReader);
             
-            // TODO 读表工具
             _random = TSRandom.New(_battleContext.Seed);
             _idGenerator = new UniqueIdGenerator();
 
@@ -58,6 +73,18 @@ namespace Battle.Logic
             _logicSystems.Initialize();
         }
 
+        private static void ParseSheets(ConfigReader configReader) {
+            configReader.ParseSheet<BattleConf_Battle, BattleConf_Battle_Record>("BattleConf_Battle");
+            configReader.ParseSheet<GeneralConf_General, GeneralConf_General_Record>("GeneralConf_General");
+            configReader.ParseSheet<MonsterConf_Monster, MonsterConf_Monster_Record>("MonsterConf_Monster");
+            configReader.ParseSheet<SkillConf_Basic, SkillConf_Basic_Record>("SkillConf_Basic");
+            configReader.ParseSheet<SkillConf_SkillLevel, SkillConf_SkillLevel_Record>("SkillConf_SkillLevel");
+            configReader.ParseSheet<BuffConf_Buff, BuffConf_Buff_Record>("BuffConf_Buff");
+            configReader.ParseSheet<FunctionConf_Function, FunctionConf_Function_Record>("FunctionConf_Function");
+            configReader.ParseSheet<DressConf_Dress, DressConf_Dress_Record>("DressConf_Dress");
+            configReader.ParseSheet<FriendshipConf_Talk, FriendshipConf_Talk_Record>("FriendshipConf_Talk");
+        }
+        
         public void EnterFrame() {
             _clock.Step();
             _frameCounter.EnterFrame();
@@ -141,6 +168,10 @@ namespace Battle.Logic
             return _random;
         }
 
+        internal Logger GetLogger() {
+            return _logger;
+        }
+
         internal ulong GetIndependentId() {
             return _idGenerator.IndependentId;
         }
@@ -150,6 +181,8 @@ namespace Battle.Logic
             _logicSystems = null;
             
             // TODO 
+            _configReader?.Destroy();
+            _configReader = null;
         }
     }
 }

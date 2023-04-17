@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Common.Context.Combat;
+using Core.Lite.DataSystem;
 using Core.Lite.RefPool;
 
 namespace Battle.Logic.Base
@@ -18,6 +19,8 @@ namespace Battle.Logic.Base
         public int Seed;
         public GamerGroup GamerGroup;
 
+        public string ConfigPath;
         public IRefPoolManager RefPoolManager;
+        public IDataReader DataReader;
     }
 }

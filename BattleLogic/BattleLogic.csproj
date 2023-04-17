@@ -42,6 +42,9 @@
         <Reference Include="Entitas.CodeGeneration.Attributes, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
         </Reference>
+        <Reference Include="Google.Protobuf, Version=3.10.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
+          <HintPath>..\Libraries\Protobuf\Google.Protobuf.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -51,6 +54,7 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Logger.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingDestroyedComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingIdComponent.cs" />
     <Compile Include="Generated\LogicBuff\Components\LogicBuffIdComponent.cs" />
