@@ -172,6 +172,10 @@ namespace Battle.Logic
             return _logger;
         }
 
+        internal IConfigReader GetConfigReader() {
+            return _configReader;
+        }
+        
         internal ulong GetIndependentId() {
             return _idGenerator.IndependentId;
         }

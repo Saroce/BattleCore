@@ -9,6 +9,7 @@
 
 using Battle.Common.Context.Message;
 using Battle.View.Base;
+using Core.Lite.DataSystem.Config;
 using Core.Lite.RefPool;
 
 namespace Battle.View
@@ -35,6 +36,14 @@ namespace Battle.View
         
         internal bool TryDequeueMessage(out IBattleMessage message) {
             return GetController().TryDequeueMessage(out message);
+        }
+
+        internal IConfigReader GetConfigReader() {
+            return GetController().GetConfigReader();
+        }
+
+        internal BattleViewConfig GetViewConfig() {
+            return GetController().GetViewConfig();
         }
     }
 }

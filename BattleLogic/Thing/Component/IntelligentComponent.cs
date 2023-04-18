@@ -1,20 +1,19 @@
 ﻿//------------------------------------------------------------
-//        File:  ThingCreateComponent.cs
-//       Brief:  ThingCreateComponent
+//        File:  IntelligentComponent.cs
+//       Brief:  IntelligentComponent
 //
 //      Author:  Saroce, Saroce233@163.com
 //
-//    Modified:  2023-03-31
+//    Modified:  2023-04-18
 //============================================================
 
-using Battle.Common.Context.Create;
 using Battle.Logic.Base.Component;
 
 namespace Battle.Logic.Thing.Component
 {
     [LogicThing]
-    public class ThingCreateContextComponent : LogicComponent
+    public class IntelligentComponent : LogicComponent
     {
-        public ThingCrateContext Value;
+        
     }
 }

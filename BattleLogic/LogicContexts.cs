@@ -45,5 +45,9 @@ namespace Battle.Logic
         internal IRefPool<T> GetRefPool<T>() where T : class, new() {
             return GetController().GetRefPool<T>();
         }
+        
+        internal Logger GetLogger() {
+            return GetController().GetLogger();
+        }
     }
 }

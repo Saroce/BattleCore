@@ -16,7 +16,8 @@ namespace Battle.Logic.Thing.Extension
 {
     internal static class ThingPropertyExtension
     {
-        public static void SetPropValue(this LogicThingEntity thingEntity, ThingPropertyType propType, FixedPoint newValue) {
+        public static void SetPropValue(this LogicThingEntity thingEntity, ThingPropertyType propType,
+            FixedPoint newValue) {
             switch (propType) {
                 case ThingPropertyType.HpCur:
                     var max = thingEntity.hasHealPoint ? thingEntity.healPoint.Maximum : 0;
@@ -55,7 +56,34 @@ namespace Battle.Logic.Thing.Extension
             }
         }
 
-        public static FixedPoint GetPropValue(this CombatValue combatValue, ThingPropertyType propType) {
+        public static FixedPoint GetPropValue(this LogicThingEntity thingEntity, ThingPropertyType propType) {
+            switch (propType) {
+                case ThingPropertyType.HpCur:
+                    return thingEntity.hasHealPoint ? thingEntity.healPoint.Current : 0f;
+                case ThingPropertyType.HpMax:
+                    return thingEntity.hasHealPoint ? thingEntity.healPoint.Maximum : 0f;
+                case ThingPropertyType.Attack:
+                    return thingEntity.hasAttack ? thingEntity.attack.Value : 0f;
+                case ThingPropertyType.PhysicsDefend:
+                    return thingEntity.hasPhysicsDefend ? thingEntity.physicsDefend.Value : 0f;
+                case ThingPropertyType.MagicDefend:
+                    return thingEntity.hasMagicDefend ? thingEntity.magicDefend.Value : 0f;
+                case ThingPropertyType.HitRate:
+                    return thingEntity.hasHitRate ? thingEntity.hitRate.Value : 0f;
+                case ThingPropertyType.DodgeRate:
+                    return thingEntity.hasDodgeRate ? thingEntity.dodgeRate.Value : 0f;
+                case ThingPropertyType.CriticalRate:
+                    return thingEntity.hasCriticalRate ? thingEntity.criticalRate.Value : 0f;
+                case ThingPropertyType.MoveSpeed:
+                    return thingEntity.hasMoveSpeed ? thingEntity.moveSpeed.Value : 0f;
+                case ThingPropertyType.CastSpeed:
+                    return thingEntity.hasCastSpeed ? thingEntity.castSpeed.Value : 0f;
+                default:
+                    throw new ArgumentOutOfRangeException($"Get property failed, Unknown type: {propType}");
+            }
+        }
+
+        public static FixedPoint GetCombatPropValue(this CombatValue combatValue, ThingPropertyType propType) {
             switch (propType) {
                 case ThingPropertyType.HpCur:
                     return combatValue.HpCur;
@@ -81,8 +109,8 @@ namespace Battle.Logic.Thing.Extension
                     throw new ArgumentOutOfRangeException($"Get property failed, Unknown type: {propType}");
             }
         }
-        
-        public static void ReadPropertiesFromCombatValue(this LogicThingEntity thingEntity, CombatValue combatValue) {
+
+        public static void SetPropertiesFromCombatValue(this LogicThingEntity thingEntity, CombatValue combatValue) {
             thingEntity.SetPropValue(ThingPropertyType.HpCur, combatValue.HpCur);
             thingEntity.SetPropValue(ThingPropertyType.HpMax, combatValue.HpMax);
             thingEntity.SetPropValue(ThingPropertyType.Attack, combatValue.Attack);

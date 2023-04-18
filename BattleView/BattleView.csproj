@@ -33,14 +33,26 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Core.Bundler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Game.Core\Core.Bundler.dll</HintPath>
+        </Reference>
         <Reference Include="Core.Lite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Game.Core\Core.Lite.dll</HintPath>
+        </Reference>
+        <Reference Include="Core.Unity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Game.Core\Core.Unity.dll</HintPath>
         </Reference>
         <Reference Include="Entitas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.dll</HintPath>
         </Reference>
         <Reference Include="Entitas.CodeGeneration.Attributes, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
+        </Reference>
+        <Reference Include="Google.Protobuf, Version=3.10.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
+          <HintPath>..\Libraries\Protobuf\Google.Protobuf.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+          <HintPath>..\Libraries\JsonNet\Newtonsoft.Json.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
@@ -77,6 +89,7 @@
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDPositionSyncWithOwnerComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarAssetComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarMotionComponent.cs" />
+    <Compile Include="Generated\ViewThing\Components\ViewThingHealthPointComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingCreateContextComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingThingTypeComponent.cs" />
     <Compile Include="Generated\Components\Interfaces\IDestroyedEntity.cs" />
@@ -103,6 +116,11 @@
     <Compile Include="Generated\ViewThing\ViewThingEntity.cs" />
     <Compile Include="Generated\ViewHUD\ViewHUDEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BattleViewConfig.cs" />
+    <Compile Include="Base\Logger.cs" />
+    <Compile Include="Base\UniqueIdGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\Component\ViewComponent.cs" />
@@ -141,7 +159,10 @@
     <Compile Include="Input\System\Processor\OnCreateThing.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarAssetComponent.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarMotionComponent.cs" />
+    <Compile Include="Thing\Component\Avatar\AvatarRadiusComponent.cs" />
+    <Compile Include="Thing\Component\Avatar\AvatarViewOffsetComponent.cs" />
     <Compile Include="Thing\Component\CreateContextComponent.cs" />
+    <Compile Include="Thing\Component\Property\HealthPointComponent.cs" />
     <Compile Include="Thing\Component\ThingTypeComponent.cs" />
     <Compile Include="Thing\Factory\GamerFactory.cs" />
     <Compile Include="Thing\Factory\ThingFactory.cs" />

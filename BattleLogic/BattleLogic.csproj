@@ -54,7 +54,6 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\Logger.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingDestroyedComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingIdComponent.cs" />
     <Compile Include="Generated\LogicBuff\Components\LogicBuffIdComponent.cs" />
@@ -98,6 +97,7 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCastAttributeTypeComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCastRangeTypeComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingIntelligentComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCreateContextComponent.cs" />
     <Compile Include="Generated\Components\Interfaces\IIdEntity.cs" />
     <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
@@ -122,6 +122,10 @@
     <Compile Include="Generated\LogicInput\LogicInputEntity.cs" />
     <Compile Include="Generated\LogicThing\LogicThingEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Logger.cs" />
+    <Compile Include="Constant\LogTagDef.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\Component\DestroyedComponent.cs" />
@@ -164,6 +168,7 @@
     <Compile Include="Thing\Component\Gamer\GamerHeroIdComponent.cs" />
     <Compile Include="Thing\Component\Gamer\GamerIdGroupComponent.cs" />
     <Compile Include="Thing\Component\Gamer\GamerDataComponent.cs" />
+    <Compile Include="Thing\Component\IntelligentComponent.cs" />
     <Compile Include="Thing\Component\Property\AttackComponent.cs" />
     <Compile Include="Thing\Component\Property\Base\CreateTimeComponent.cs" />
     <Compile Include="Thing\Component\Property\Base\PositionComponent.cs" />
@@ -177,7 +182,7 @@
     <Compile Include="Thing\Component\Property\MagicDefendComponent.cs" />
     <Compile Include="Thing\Component\Property\MoveSpeedComponent.cs" />
     <Compile Include="Thing\Component\Property\PhysicsDefendComponent.cs" />
-    <Compile Include="Thing\Component\ThingCreateComponent.cs" />
+    <Compile Include="Thing\Component\ThingCreateContextComponent.cs" />
     <Compile Include="Thing\Component\Type\CreatureComponent.cs" />
     <Compile Include="Thing\Component\Type\GamerDataComponent.cs" />
     <Compile Include="Thing\Component\Type\OtherComponent.cs" />

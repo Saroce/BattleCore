@@ -8,6 +8,8 @@
 //============================================================
 
 using Battle.Common.Context.Create;
+using ExcelConvert.Auto.DressConf;
+using ExcelConvert.Auto.GeneralConf;
 
 namespace Battle.View.Thing.Factory
 {
@@ -15,10 +17,17 @@ namespace Battle.View.Thing.Factory
     {
         public static void CreateGamer(this ViewContexts contexts, ViewThingEntity thingEntity,
             GamerCreateContext context) {
+
+            var configReader = contexts.GetConfigReader();
+            var viewConfig = contexts.GetViewConfig();
+            var generalConf = configReader.GetRecord<GeneralConf_General_Record>("GeneralId", context.GeneralId);
             
-            // TODO 挂载技能配置相关组件
+            thingEntity.AddHealthPoint((int) context.CombatValue.HpCur, (int) context.CombatValue.HpMax);
             
+            // TODO 添加技能配置
             
+            // 创建Avatar
+            thingEntity.AddAvatarAsset($"{viewConfig.AvatarDir}/{generalConf.Avatar}");
         }
     }
 }

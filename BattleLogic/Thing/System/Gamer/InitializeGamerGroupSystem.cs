@@ -10,7 +10,9 @@
 using System.Collections.Generic;
 using Battle.Common.Context.Combat;
 using Battle.Common.Context.Create;
+using Battle.Logic.Base;
 using Battle.Logic.Base.System;
+using Battle.Logic.Constant;
 using Battle.Logic.Thing.Factory;
 using vFrame.Lockstep.Core;
 
@@ -54,7 +56,7 @@ namespace Battle.Logic.Thing.System.Gamer
             foreach (var gamerId in gamerIds) {
                 var gamerDataEntity = Contexts.logicThing.GetEntityWithId(gamerId);
                 if (gamerDataEntity == null) {
-                    // TODO 警告Log
+                    LogWarning(LogTagDef.ThingLogTag, $"Get gamer data entity failed gamerId: {gamerId}");
                     continue;
                 }
 
@@ -68,7 +70,9 @@ namespace Battle.Logic.Thing.System.Gamer
                         : new CombatValue(),
 
                 };
-                
+
+                // 创建逻辑实体
+                Contexts.CreateThing(createContext);
             }
         }
     }

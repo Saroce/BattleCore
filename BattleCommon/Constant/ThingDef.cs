@@ -39,7 +39,7 @@ namespace Battle.Common.Constant
     {
         None = 0,
         Static = 1,
-        Dynamic = 2
+        Dynamic = 1 << 1,
     }
 
     public enum ThingCastAttributeType

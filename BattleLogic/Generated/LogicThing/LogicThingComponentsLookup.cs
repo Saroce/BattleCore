@@ -24,30 +24,31 @@ public static class LogicThingComponentsLookup {
     public const int GamerHeroId = 13;
     public const int GamerIdGroup = 14;
     public const int GamerInfo = 15;
-    public const int Attack = 16;
-    public const int CreateTime = 17;
-    public const int Position = 18;
-    public const int Radius = 19;
-    public const int Rotation = 20;
-    public const int CastSpeed = 21;
-    public const int CriticalRate = 22;
-    public const int DodgeRate = 23;
-    public const int HealPoint = 24;
-    public const int HitRate = 25;
-    public const int MagicDefend = 26;
-    public const int MoveSpeed = 27;
-    public const int PhysicsDefend = 28;
-    public const int ThingCreateContext = 29;
-    public const int Creature = 30;
-    public const int Gamer = 31;
-    public const int GamerData = 32;
-    public const int GamerGroup = 33;
-    public const int Other = 34;
-    public const int ThingCastAttributeType = 35;
-    public const int ThingCastRangeType = 36;
-    public const int Thing = 37;
+    public const int Intelligent = 16;
+    public const int Attack = 17;
+    public const int CreateTime = 18;
+    public const int Position = 19;
+    public const int Radius = 20;
+    public const int Rotation = 21;
+    public const int CastSpeed = 22;
+    public const int CriticalRate = 23;
+    public const int DodgeRate = 24;
+    public const int HealPoint = 25;
+    public const int HitRate = 26;
+    public const int MagicDefend = 27;
+    public const int MoveSpeed = 28;
+    public const int PhysicsDefend = 29;
+    public const int ThingCreateContext = 30;
+    public const int Creature = 31;
+    public const int Gamer = 32;
+    public const int GamerData = 33;
+    public const int GamerGroup = 34;
+    public const int Other = 35;
+    public const int ThingCastAttributeType = 36;
+    public const int ThingCastRangeType = 37;
+    public const int Thing = 38;
 
-    public const int TotalComponents = 38;
+    public const int TotalComponents = 39;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -66,6 +67,7 @@ public static class LogicThingComponentsLookup {
         "GamerHeroId",
         "GamerIdGroup",
         "GamerInfo",
+        "Intelligent",
         "Attack",
         "CreateTime",
         "Position",
@@ -107,6 +109,7 @@ public static class LogicThingComponentsLookup {
         typeof(Battle.Logic.Thing.Component.Gamer.GamerHeroIdComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerIdGroupComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerInfoComponent),
+        typeof(Battle.Logic.Thing.Component.IntelligentComponent),
         typeof(Battle.Logic.Thing.Component.Property.AttackComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.CreateTimeComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.PositionComponent),
