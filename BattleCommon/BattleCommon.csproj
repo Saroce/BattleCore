@@ -60,6 +60,7 @@
         <Compile Include="Configs\Generated\SkillConfBasic.cs" />
         <Compile Include="Configs\Generated\SkillConfSkillLevel.cs" />
         <Compile Include="Constant\BattleDef.cs" />
+        <Compile Include="Constant\MotionDef.cs" />
         <Compile Include="Constant\ThingDef.cs" />
         <Compile Include="Context\Combat\CombatValue.cs" />
         <Compile Include="Context\Combat\GamerData.cs" />
@@ -83,7 +84,8 @@
         <Compile Include="Context\Message\Thing\ThingCreateMessage.cs" />
         <Compile Include="Context\Message\Thing\ThingMessageBase.cs" />
         <Compile Include="Context\SerializableData.cs" />
-        <Compile Include="Exception\StateMachineException.cs" />
+        <Compile Include="Exceptions\BattleException.cs" />
+        <Compile Include="Exceptions\StateMachineException.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

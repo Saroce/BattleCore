@@ -15,6 +15,6 @@ namespace Battle.View.Base.Component
     [ViewThing]
     public class PositionComponent : ViewComponent
     {
-        public TSVector Position;
+        public TSVector Value;
     }
 }

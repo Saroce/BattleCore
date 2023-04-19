@@ -8,7 +8,7 @@
 //============================================================
 
 using System.Collections.Generic;
-using Battle.Common.Exception;
+using Battle.Common.Exceptions;
 using Entitas;
 
 namespace Battle.Logic.Base.FSM

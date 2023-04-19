@@ -7,9 +7,12 @@
 //    Modified:  2023-04-18
 //============================================================
 
+using Battle.View.Base.Component;
+
 namespace Battle.View.Thing.Component.Avatar
 {
-    public class AvatarRadiusComponent
+    [ViewThing]
+    public class AvatarRadiusComponent : ViewComponent
     {
         public float Value;
     }

@@ -7,7 +7,7 @@
 //    Modified:  2023-03-28
 //============================================================
 
-namespace Battle.Common.Exception
+namespace Battle.Common.Exceptions
 {
     public class StateAlreadyExistException : System.Exception
     {

@@ -15,11 +15,13 @@ public static class ViewThingComponentsLookup {
     public const int Velocity = 4;
     public const int AvatarAsset = 5;
     public const int AvatarMotion = 6;
-    public const int CreateContext = 7;
-    public const int HealthPoint = 8;
-    public const int ThingType = 9;
+    public const int AvatarRadius = 7;
+    public const int AvatarViewOffset = 8;
+    public const int CreateContext = 9;
+    public const int HealthPoint = 10;
+    public const int ThingType = 11;
 
-    public const int TotalComponents = 10;
+    public const int TotalComponents = 12;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -29,6 +31,8 @@ public static class ViewThingComponentsLookup {
         "Velocity",
         "AvatarAsset",
         "AvatarMotion",
+        "AvatarRadius",
+        "AvatarViewOffset",
         "CreateContext",
         "HealthPoint",
         "ThingType"
@@ -42,6 +46,8 @@ public static class ViewThingComponentsLookup {
         typeof(Battle.View.Base.Component.VelocityComponent),
         typeof(Battle.View.Thing.Component.Avatar.AvatarAssetComponent),
         typeof(Battle.View.Thing.Component.Avatar.AvatarMotionComponent),
+        typeof(Battle.View.Thing.Component.Avatar.AvatarRadiusComponent),
+        typeof(Battle.View.Thing.Component.Avatar.AvatarViewOffsetComponent),
         typeof(Battle.View.Thing.Component.CreateContextComponent),
         typeof(Battle.View.Thing.Component.Property.HealthPointComponent),
         typeof(Battle.View.Thing.Component.ThingTypeComponent)

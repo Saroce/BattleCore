@@ -7,6 +7,8 @@
 //    Modified:  2023-04-18
 //============================================================
 
+using UnityEngine;
+
 namespace Battle.View.Base
 {
     /// <summary>
@@ -15,7 +17,12 @@ namespace Battle.View.Base
     internal sealed class BattleViewConfig
     {
         public string AvatarDir;
+        public string HUDDir;
+
         
+        public string HUDHPPath;
+        public string HUDHPEnemyPath;
         
+        public Vector3 HUDHPOffset;
     }
 }

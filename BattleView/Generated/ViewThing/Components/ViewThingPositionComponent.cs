@@ -11,17 +11,17 @@ public partial class ViewThingEntity {
     public Battle.View.Base.Component.PositionComponent position { get { return (Battle.View.Base.Component.PositionComponent)GetComponent(ViewThingComponentsLookup.Position); } }
     public bool hasPosition { get { return HasComponent(ViewThingComponentsLookup.Position); } }
 
-    public void AddPosition(vFrame.Lockstep.Core.TSVector newPosition) {
+    public void AddPosition(vFrame.Lockstep.Core.TSVector newValue) {
         var index = ViewThingComponentsLookup.Position;
         var component = (Battle.View.Base.Component.PositionComponent)CreateComponent(index, typeof(Battle.View.Base.Component.PositionComponent));
-        component.Position = newPosition;
+        component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplacePosition(vFrame.Lockstep.Core.TSVector newPosition) {
+    public void ReplacePosition(vFrame.Lockstep.Core.TSVector newValue) {
         var index = ViewThingComponentsLookup.Position;
         var component = (Battle.View.Base.Component.PositionComponent)CreateComponent(index, typeof(Battle.View.Base.Component.PositionComponent));
-        component.Position = newPosition;
+        component.Value = newValue;
         ReplaceComponent(index, component);
     }
 
