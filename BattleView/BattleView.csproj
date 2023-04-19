@@ -48,6 +48,9 @@
         <Reference Include="Entitas.CodeGeneration.Attributes, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
         </Reference>
+        <Reference Include="Entitas.Unity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Entitas\Entitas\Entitas.Unity.dll</HintPath>
+        </Reference>
         <Reference Include="Google.Protobuf, Version=3.10.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
           <HintPath>..\Libraries\Protobuf\Google.Protobuf.dll</HintPath>
         </Reference>
@@ -66,7 +69,8 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\TSVectorExtension.cs" />
+    <Compile Include="Base\GameObjectRoots.cs" />
+    <Compile Include="Base\TSQuaternionExtension.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillViewComponent.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedFixedPointValueViewComponent.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedIntValueViewComponent.cs" />
@@ -91,6 +95,7 @@
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarAssetComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarMotionComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarRadiusComponent.cs" />
+    <Compile Include="Generated\ViewThing\Components\ViewThingAvatarViewComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarViewOffsetComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingHealthPointComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingCreateContextComponent.cs" />
@@ -119,6 +124,9 @@
     <Compile Include="Generated\ViewThing\ViewThingEntity.cs" />
     <Compile Include="Generated\ViewHUD\ViewHUDEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\TSVectorExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BattleViewConfig.cs" />
@@ -163,6 +171,7 @@
     <Compile Include="Thing\Component\Avatar\AvatarAssetComponent.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarMotionComponent.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarRadiusComponent.cs" />
+    <Compile Include="Thing\Component\Avatar\AvatarViewComponent.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarViewOffsetComponent.cs" />
     <Compile Include="Thing\Component\CreateContextComponent.cs" />
     <Compile Include="Thing\Component\Property\HealthPointComponent.cs" />

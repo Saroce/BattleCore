@@ -12,6 +12,11 @@ using Battle.Common.Constant;
 
 namespace Battle.View.Constant
 {
+    public static class ViewConst
+    {
+        public const string ThingsRootName = "Things";
+    }
+    
     public enum AvatarBindPointType
     {
         Top,
