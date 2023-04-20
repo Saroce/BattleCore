@@ -9,6 +9,8 @@
 
 using System;
 using Battle.Common.Constant;
+using Battle.View.Base;
+using UnityEngine;
 
 namespace Battle.View.Constant
 {
@@ -22,6 +24,22 @@ namespace Battle.View.Constant
         Top,
         Center,
         Bottom,
+    }
+
+    public static class AvatarBindPoint
+    {
+        public static Vector3 GetBindPoint(this BattleViewConfig viewConfig, AvatarBindPointType type) {
+            switch (type) {
+                case AvatarBindPointType.Top:
+                    return viewConfig.AvatarTop;
+                case AvatarBindPointType.Center:
+                    return viewConfig.AvatarCenter;
+                case AvatarBindPointType.Bottom:
+                    return viewConfig.AvatarBottom;
+                default:
+                    throw new ArgumentOutOfRangeException($"Unhandled type:{type}");
+            }
+        }
     }
     
     public static class MotionName

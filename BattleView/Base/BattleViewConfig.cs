@@ -14,15 +14,20 @@ namespace Battle.View.Base
     /// <summary>
     /// 视图层Json配置文件反序列化得到
     /// </summary>
-    internal sealed class BattleViewConfig
+    public sealed class BattleViewConfig
     {
         public string AvatarDir;
         public string HUDDir;
 
-        
         public string HUDHPPath;
         public string HUDHPEnemyPath;
         
+        public float LerpSpeed;
+        
         public Vector3 HUDHPOffset;
+        
+        public Vector3 AvatarTop;
+        public Vector3 AvatarCenter;
+        public Vector3 AvatarBottom;
     }
 }

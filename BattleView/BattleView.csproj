@@ -61,16 +61,23 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
+        <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.AnimationModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.UIModule.dll</HintPath>
         </Reference>
         <Reference Include="vFrame.Lockstep.Core, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Lockstep.Core\vFrame.Lockstep.Core.dll</HintPath>
         </Reference>
     </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\GameObjectRoots.cs" />
-    <Compile Include="Base\TSQuaternionExtension.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillViewComponent.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedFixedPointValueViewComponent.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillEncryptedIntValueViewComponent.cs" />
@@ -78,6 +85,7 @@
     <Compile Include="Generated\ViewThing\Components\ViewThingDestroyedComponent.cs" />
     <Compile Include="Generated\ViewBuff\Components\ViewBuffDestroyedComponent.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillDestroyedComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDDestroyedComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingPositionComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingRotationComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingVelocityComponent.cs" />
@@ -85,6 +93,7 @@
     <Compile Include="Generated\ViewSkill\Components\ViewSkillIdComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingIdComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDAssetComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDAutoDestroyWhenPlayFinishedComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDBindPointComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDAutoDestroyWithOwnerComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDHPComponent.cs" />
@@ -92,6 +101,7 @@
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDOwnerComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDPositionComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDPositionSyncWithOwnerComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDViewComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarAssetComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarMotionComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarRadiusComponent.cs" />
@@ -126,6 +136,13 @@
     <Compile Include="Generated\Feature.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\GameObjectRoots.cs" />
+    <Compile Include="Base\MonoBehaviourEx\BattleViewBehaviour.cs" />
+    <Compile Include="Base\MonoBehaviourEx\HUDView.cs" />
+    <Compile Include="Base\TSQuaternionExtension.cs" />
+    <Compile Include="Constant\LogTagDef.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Base\TSVectorExtension.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +172,7 @@
     <Compile Include="Base\System\ViewReactiveSystem.cs" />
     <Compile Include="Base\System\ViewTearDownSystem.cs" />
     <Compile Include="HUD\Component\HUDAssetComponent.cs" />
+    <Compile Include="HUD\Component\HUDAutoDestroyWhenPlayFinishedComponent.cs" />
     <Compile Include="HUD\Component\HUDBindPointComponent.cs" />
     <Compile Include="HUD\Component\HUDAutoDestroyWithOwnerComponent.cs" />
     <Compile Include="HUD\Component\HUDHPComponent.cs" />
@@ -162,6 +180,10 @@
     <Compile Include="HUD\Component\HUDOwnerComponent.cs" />
     <Compile Include="HUD\Component\HUDPositionComponent.cs" />
     <Compile Include="HUD\Component\HUDPositionSyncWithOwnerComponent.cs" />
+    <Compile Include="HUD\Component\HUDViewComponent.cs" />
+    <Compile Include="HUD\HUDSystems.cs" />
+    <Compile Include="HUD\System\AddHUDViewSystem.cs" />
+    <Compile Include="HUD\System\HUDSyncPositionSystem.cs" />
     <Compile Include="IBattleView.cs" />
     <Compile Include="Input\InputSystems.cs" />
     <Compile Include="Input\System\MessageSystem.cs" />
@@ -179,6 +201,9 @@
     <Compile Include="Thing\Factory\GamerFactory.cs" />
     <Compile Include="Thing\Factory\ThingFactory.cs" />
     <Compile Include="Thing\System\Avatar\AddAvatarViewSystem.cs" />
+    <Compile Include="Thing\System\Avatar\ChangeMotionSystem.cs" />
+    <Compile Include="Thing\System\Avatar\SyncAvatarViewPositionSystem.cs" />
+    <Compile Include="Thing\ThingSystems.cs" />
     <Compile Include="ViewContexts.cs" />
     <Compile Include="ViewContextsBridge.cs" />
     <Compile Include="ViewController.cs" />

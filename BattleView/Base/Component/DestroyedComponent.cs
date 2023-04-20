@@ -11,7 +11,7 @@ using Battle.View.Base.System;
 
 namespace Battle.View.Base.Component
 {
-    [ViewThing, ViewBuff, ViewSkill]
+    [ViewThing, ViewBuff, ViewSkill, ViewHUD]
     public class DestroyedComponent : ViewComponent
     {
         

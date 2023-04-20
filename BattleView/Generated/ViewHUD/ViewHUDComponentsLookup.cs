@@ -8,36 +8,45 @@
 //------------------------------------------------------------------------------
 public static class ViewHUDComponentsLookup {
 
-    public const int HUDAsset = 0;
-    public const int HUDAutoDestroyWithOwner = 1;
-    public const int HUDBindPoint = 2;
-    public const int HUDHP = 3;
-    public const int HUDOffset = 4;
-    public const int HUDOwner = 5;
-    public const int HUDPosition = 6;
-    public const int HUDPositionSyncWithOwner = 7;
+    public const int Destroyed = 0;
+    public const int HUDAsset = 1;
+    public const int HUDAutoDestroyWhenPlayFinished = 2;
+    public const int HUDAutoDestroyWithOwner = 3;
+    public const int HUDBindPoint = 4;
+    public const int HUDHP = 5;
+    public const int HUDOffset = 6;
+    public const int HUDOwner = 7;
+    public const int HUDPosition = 8;
+    public const int HUDPositionSyncWithOwner = 9;
+    public const int HUDView = 10;
 
-    public const int TotalComponents = 8;
+    public const int TotalComponents = 11;
 
     public static readonly string[] componentNames = {
+        "Destroyed",
         "HUDAsset",
+        "HUDAutoDestroyWhenPlayFinished",
         "HUDAutoDestroyWithOwner",
         "HUDBindPoint",
         "HUDHP",
         "HUDOffset",
         "HUDOwner",
         "HUDPosition",
-        "HUDPositionSyncWithOwner"
+        "HUDPositionSyncWithOwner",
+        "HUDView"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Battle.View.Base.Component.DestroyedComponent),
         typeof(Battle.View.HUD.Component.HUDAssetComponent),
+        typeof(Battle.View.HUD.Component.HUDAutoDestroyWhenPlayFinishedComponent),
         typeof(Battle.View.HUD.Component.HUDAutoDestroyWithOwnerComponent),
         typeof(Battle.View.HUD.Component.HUDBindPointComponent),
         typeof(Battle.View.HUD.Component.HUDHPComponent),
         typeof(Battle.View.HUD.Component.HUDOffsetComponent),
         typeof(Battle.View.HUD.Component.HUDOwnerComponent),
         typeof(Battle.View.HUD.Component.HUDPositionComponent),
-        typeof(Battle.View.HUD.Component.HUDPositionSyncWithOwnerComponent)
+        typeof(Battle.View.HUD.Component.HUDPositionSyncWithOwnerComponent),
+        typeof(Battle.View.HUD.Component.HUDViewComponent)
     };
 }
