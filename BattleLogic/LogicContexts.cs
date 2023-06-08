@@ -7,6 +7,7 @@
 //    Modified:  2023-03-21
 //============================================================
 
+using System.Collections.Generic;
 using System.Diagnostics;
 using Battle.Common.Context.Message;
 using Battle.Logic.Base;
@@ -15,6 +16,8 @@ using Core.Lite.DataSystem;
 using Core.Lite.DataSystem.Config;
 using Core.Lite.Loggers;
 using Core.Lite.RefPool;
+using Core.Lite.RefPool.Allocator;
+using UnityEngine.Pool;
 using Logger = Battle.Logic.Base.Logger;
 
 namespace Battle.Logic
@@ -51,6 +54,33 @@ namespace Battle.Logic
             return GetController().GetRefPool<T>();
         }
         
+        /// <summary>
+        /// 获取List对象池
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public IRefPool<List<T>> ListPool<T>() {
+            return GetController().ObjectPool<List<T>, ListAllocator<T>>();
+        }
+
+        /// <summary>
+        /// 获取HashSet对象池
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public IRefPool<HashSet<T>> HashSetPool<T>() {
+            return GetController().ObjectPool<HashSet<T>, HashSetAllocator<T>>();
+        }
+
+        /// <summary>
+        /// 获取Stack对象池
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public IRefPool<Stack<T>> StackPool<T>() {
+            return GetController().ObjectPool<Stack<T>, StackAllocator<T>>();
+        }
+
         internal Logger GetLogger() {
             return GetController().GetLogger();
         }

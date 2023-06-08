@@ -33,7 +33,7 @@ namespace Battle.Logic.Thing.Factory
             thingEntity.SetPropertiesFromCombatValue(combatValue);
             
             // 技能
-            contexts.ReadAbilities(thingEntity, context.DefSkill, context.UltSkill, context.AllSkills.ToArray());
+            contexts.ReadSkillAbilities(thingEntity, context.DefSkill, context.UltSkill, context.AllSkills.ToArray());
             
             // TODO AI行为
         }

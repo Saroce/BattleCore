@@ -58,10 +58,5 @@ namespace Battle.Logic.Thing.Factory
             
             return entity;
         }
-
-        public static void ReadAbilities(this LogicContexts contexts, LogicThingEntity thingEntity,
-            SkillConfData defSkill, SkillConfData ultSkill, params SkillConfData[] allSkills) {
-            
-        }
     }
 }

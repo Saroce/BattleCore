@@ -1,10 +1,10 @@
 ﻿//------------------------------------------------------------
-//        File:  PassiveAbilitiesComponent.cs
-//       Brief:  PassiveAbilitiesComponent
+//        File:  CastAbilitiesComponent.cs
+//       Brief:  CastAbilitiesComponent
 //
 //      Author:  Saroce, Saroce233@163.com
 //
-//    Modified:  2023-06-08
+//    Modified:  2023-06-09
 //============================================================
 
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ using Battle.Logic.Base.Component;
 namespace Battle.Logic.Thing.Component.Ability
 {
     [LogicThing]
-    public class PassiveAbilitiesComponent : LogicComponent
+    public class CastAbilitiesComponent : LogicComponent
     {
         public List<SkillConfData> Value;
     }

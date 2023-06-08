@@ -16,6 +16,7 @@ using Core.Lite.Base;
 using Core.Lite.DataSystem;
 using Core.Lite.DataSystem.Config;
 using Core.Lite.RefPool;
+using Core.Lite.RefPool.Allocator;
 using ExcelConvert.Auto.BattleConf;
 using ExcelConvert.Auto.BuffConf;
 using ExcelConvert.Auto.DressConf;
@@ -141,10 +142,20 @@ namespace Battle.Logic
             return _battleContext;
         }
 
+        internal IRefPoolManager RefPoolManager() {
+            return GetBattleContext().RefPoolManager;
+        }
+        
         internal IRefPool<T> GetRefPool<T>() where T : class, new() {
-            return GetBattleContext().RefPoolManager.GetRefPool<T>();
+            return RefPoolManager().GetRefPool<T>();
         }
 
+        internal IRefPool<T1> ObjectPool<T1, T2>()
+            where T1 : class, new()
+            where T2 : IPoolRefAllocator<T1>, new() {
+            return RefPoolManager().GetRefPool<T1, T2>();
+        }
+        
         /// <summary>
         /// 获取时钟
         /// </summary>

@@ -20,40 +20,42 @@ public static class LogicThingComponentsLookup {
     public const int MoveMotionName = 9;
     public const int MoveState = 10;
     public const int StateMachine = 11;
-    public const int PassiveAbilities = 12;
-    public const int UltimateAbility = 13;
-    public const int GamerCombat = 14;
-    public const int GamerGeneralId = 15;
-    public const int GamerIdGroup = 16;
-    public const int GamerInfo = 17;
-    public const int GamerDefSkill = 18;
-    public const int GamerSkills = 19;
-    public const int GamerUltSkill = 20;
-    public const int Intelligent = 21;
-    public const int Attack = 22;
-    public const int CreateTime = 23;
-    public const int Position = 24;
-    public const int Radius = 25;
-    public const int Rotation = 26;
-    public const int CastSpeed = 27;
-    public const int CriticalRate = 28;
-    public const int DodgeRate = 29;
-    public const int HealPoint = 30;
-    public const int HitRate = 31;
-    public const int MagicDefend = 32;
-    public const int MoveSpeed = 33;
-    public const int PhysicsDefend = 34;
-    public const int ThingCreateContext = 35;
-    public const int Creature = 36;
-    public const int Gamer = 37;
-    public const int GamerData = 38;
-    public const int GamerGroup = 39;
-    public const int Other = 40;
-    public const int ThingCastAttributeType = 41;
-    public const int ThingCastRangeType = 42;
-    public const int Thing = 43;
+    public const int CastAbilities = 12;
+    public const int DefaultCastAbility = 13;
+    public const int PassiveAbilities = 14;
+    public const int UltimateAbility = 15;
+    public const int GamerCombat = 16;
+    public const int GamerGeneralId = 17;
+    public const int GamerIdGroup = 18;
+    public const int GamerInfo = 19;
+    public const int GamerDefSkill = 20;
+    public const int GamerSkills = 21;
+    public const int GamerUltSkill = 22;
+    public const int Intelligent = 23;
+    public const int Attack = 24;
+    public const int CreateTime = 25;
+    public const int Position = 26;
+    public const int Radius = 27;
+    public const int Rotation = 28;
+    public const int CastSpeed = 29;
+    public const int CriticalRate = 30;
+    public const int DodgeRate = 31;
+    public const int HealPoint = 32;
+    public const int HitRate = 33;
+    public const int MagicDefend = 34;
+    public const int MoveSpeed = 35;
+    public const int PhysicsDefend = 36;
+    public const int ThingCreateContext = 37;
+    public const int Creature = 38;
+    public const int Gamer = 39;
+    public const int GamerData = 40;
+    public const int GamerGroup = 41;
+    public const int Other = 42;
+    public const int ThingCastAttributeType = 43;
+    public const int ThingCastRangeType = 44;
+    public const int Thing = 45;
 
-    public const int TotalComponents = 44;
+    public const int TotalComponents = 46;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -68,6 +70,8 @@ public static class LogicThingComponentsLookup {
         "MoveMotionName",
         "MoveState",
         "StateMachine",
+        "CastAbilities",
+        "DefaultCastAbility",
         "PassiveAbilities",
         "UltimateAbility",
         "GamerCombat",
@@ -115,6 +119,8 @@ public static class LogicThingComponentsLookup {
         typeof(Battle.Logic.Thing.Behaviour.State.Move.Component.MoveMotionNameComponent),
         typeof(Battle.Logic.Thing.Behaviour.State.Move.Component.MoveStateComponent),
         typeof(Battle.Logic.Thing.Behaviour.State.StateMachineComponent),
+        typeof(Battle.Logic.Thing.Component.Ability.CastAbilitiesComponent),
+        typeof(Battle.Logic.Thing.Component.Ability.DefaultCastAbilityComponent),
         typeof(Battle.Logic.Thing.Component.Ability.PassiveAbilitiesComponent),
         typeof(Battle.Logic.Thing.Component.Ability.UltimateAbilityComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerCombatComponent),

@@ -66,6 +66,8 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generated\LogicThing\Components\LogicThingCastAbilitiesComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingDefaultCastAbilityComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingPassiveAbilitiesComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingUltimateAbilityComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingGamerDefSkillComponent.cs" />
@@ -141,6 +143,7 @@
     <Compile Include="Generated\Feature.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Thing\Component\Ability\CastAbilitiesComponent.cs" />
     <Compile Include="Thing\Component\Ability\DefaultCastAbilityComponent.cs" />
     <Compile Include="Thing\Component\Ability\PassiveAbilitiesComponent.cs" />
     <Compile Include="Thing\Component\Ability\UltimateAbilityComponent.cs" />
