@@ -20,35 +20,40 @@ public static class LogicThingComponentsLookup {
     public const int MoveMotionName = 9;
     public const int MoveState = 10;
     public const int StateMachine = 11;
-    public const int GamerCombat = 12;
-    public const int GamerHeroId = 13;
-    public const int GamerIdGroup = 14;
-    public const int GamerInfo = 15;
-    public const int Intelligent = 16;
-    public const int Attack = 17;
-    public const int CreateTime = 18;
-    public const int Position = 19;
-    public const int Radius = 20;
-    public const int Rotation = 21;
-    public const int CastSpeed = 22;
-    public const int CriticalRate = 23;
-    public const int DodgeRate = 24;
-    public const int HealPoint = 25;
-    public const int HitRate = 26;
-    public const int MagicDefend = 27;
-    public const int MoveSpeed = 28;
-    public const int PhysicsDefend = 29;
-    public const int ThingCreateContext = 30;
-    public const int Creature = 31;
-    public const int Gamer = 32;
-    public const int GamerData = 33;
-    public const int GamerGroup = 34;
-    public const int Other = 35;
-    public const int ThingCastAttributeType = 36;
-    public const int ThingCastRangeType = 37;
-    public const int Thing = 38;
+    public const int PassiveAbilities = 12;
+    public const int UltimateAbility = 13;
+    public const int GamerCombat = 14;
+    public const int GamerGeneralId = 15;
+    public const int GamerIdGroup = 16;
+    public const int GamerInfo = 17;
+    public const int GamerDefSkill = 18;
+    public const int GamerSkills = 19;
+    public const int GamerUltSkill = 20;
+    public const int Intelligent = 21;
+    public const int Attack = 22;
+    public const int CreateTime = 23;
+    public const int Position = 24;
+    public const int Radius = 25;
+    public const int Rotation = 26;
+    public const int CastSpeed = 27;
+    public const int CriticalRate = 28;
+    public const int DodgeRate = 29;
+    public const int HealPoint = 30;
+    public const int HitRate = 31;
+    public const int MagicDefend = 32;
+    public const int MoveSpeed = 33;
+    public const int PhysicsDefend = 34;
+    public const int ThingCreateContext = 35;
+    public const int Creature = 36;
+    public const int Gamer = 37;
+    public const int GamerData = 38;
+    public const int GamerGroup = 39;
+    public const int Other = 40;
+    public const int ThingCastAttributeType = 41;
+    public const int ThingCastRangeType = 42;
+    public const int Thing = 43;
 
-    public const int TotalComponents = 39;
+    public const int TotalComponents = 44;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -63,10 +68,15 @@ public static class LogicThingComponentsLookup {
         "MoveMotionName",
         "MoveState",
         "StateMachine",
+        "PassiveAbilities",
+        "UltimateAbility",
         "GamerCombat",
-        "GamerHeroId",
+        "GamerGeneralId",
         "GamerIdGroup",
         "GamerInfo",
+        "GamerDefSkill",
+        "GamerSkills",
+        "GamerUltSkill",
         "Intelligent",
         "Attack",
         "CreateTime",
@@ -105,10 +115,15 @@ public static class LogicThingComponentsLookup {
         typeof(Battle.Logic.Thing.Behaviour.State.Move.Component.MoveMotionNameComponent),
         typeof(Battle.Logic.Thing.Behaviour.State.Move.Component.MoveStateComponent),
         typeof(Battle.Logic.Thing.Behaviour.State.StateMachineComponent),
+        typeof(Battle.Logic.Thing.Component.Ability.PassiveAbilitiesComponent),
+        typeof(Battle.Logic.Thing.Component.Ability.UltimateAbilityComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerCombatComponent),
-        typeof(Battle.Logic.Thing.Component.Gamer.GamerHeroIdComponent),
+        typeof(Battle.Logic.Thing.Component.Gamer.GamerGeneralIdComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerIdGroupComponent),
         typeof(Battle.Logic.Thing.Component.Gamer.GamerInfoComponent),
+        typeof(Battle.Logic.Thing.Component.Gamer.Skill.GamerDefSkillComponent),
+        typeof(Battle.Logic.Thing.Component.Gamer.Skill.GamerSkillsComponent),
+        typeof(Battle.Logic.Thing.Component.Gamer.Skill.GamerUltSkillComponent),
         typeof(Battle.Logic.Thing.Component.IntelligentComponent),
         typeof(Battle.Logic.Thing.Component.Property.AttackComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.CreateTimeComponent),

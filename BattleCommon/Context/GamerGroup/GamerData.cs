@@ -7,23 +7,25 @@
 //    Modified:  2023-03-27
 //============================================================
 
+using System.Collections.Generic;
+using Battle.Common.Context.Combat;
 using vFrame.Lockstep.Core;
 
-namespace Battle.Common.Context.Combat
+namespace Battle.Common.Context.GamerGroup
 {
     public class GamerData
     {
-        public ulong Id { get; set; }
-        
-        public int GeneralId { get; set; }
-        
         public bool IsOther { get; set; }
         
         public CombatValue CombatValue { get; set; }
         
-        public SkillData DefaultSkillData { get; set; }
+        public SkillLevelData DefaultSkillData { get; set; }
         
-        public SkillData UltimateSkillData { get; set; }
+        public SkillLevelData UltimateSkillData { get; set; }
+
+        public List<SkillLevelData> AllSkillDataList { get; set; } = new List<SkillLevelData>();
+
+        public int GeneralId { get; set; }
         
         public TSVector Position { get; set; }
         

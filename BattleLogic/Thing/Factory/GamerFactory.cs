@@ -23,9 +23,8 @@ namespace Battle.Logic.Thing.Factory
             var configReader = contexts.GetController().GetConfigReader();
             var generalConf = configReader.GetRecord<GeneralConf_General_Record>("GeneralId", context.GeneralId);
             
-            // TODO 
-            
             thingEntity.isGamer = true;
+            
             thingEntity.AddRadius((FixedPoint) generalConf.Radius / 100f);
             thingEntity.AddThingCastAttributeType((ThingCastAttributeType) generalConf.GeneralType1);
             thingEntity.AddThingCastRangeType((ThingCastRangeType) generalConf.GeneralType2);
@@ -33,7 +32,8 @@ namespace Battle.Logic.Thing.Factory
             var combatValue = context.CombatValue;
             thingEntity.SetPropertiesFromCombatValue(combatValue);
             
-            // TODO 技能配置
+            // 技能
+            contexts.ReadAbilities(thingEntity, context.DefSkill, context.UltSkill, context.AllSkills.ToArray());
             
             // TODO AI行为
         }

@@ -7,20 +7,24 @@
 //    Modified:  2023-03-28
 //============================================================
 
+using System.Collections.Generic;
 using Battle.Common.Constant;
+using Battle.Common.Context.Combat;
 
 namespace Battle.Common.Context.Create
 {
     public class GamerCreateContext : CreatureCreateContext
     {
         public int GeneralId;
-        
-        // TODO 技能配置数据
+
+        public SkillConfData DefSkill;
+
+        public SkillConfData UltSkill;
+
+        public List<SkillConfData> AllSkills;
 
         public GamerCreateContext() {
             ThingType = ThingType.Gamer;
         }
-        
-        
     }
 }

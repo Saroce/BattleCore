@@ -14,7 +14,7 @@ using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Thing.Extension
 {
-    internal static class ThingPropertyExtension
+    internal static class ThingPropertyEx
     {
         public static void SetPropValue(this LogicThingEntity thingEntity, ThingPropertyType propType,
             FixedPoint newValue) {

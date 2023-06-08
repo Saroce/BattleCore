@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Gamer.GamerInfoComponent gamerInfo { get { return (Battle.Logic.Thing.Component.Gamer.GamerInfoComponent)GetComponent(LogicThingComponentsLookup.GamerInfo); } }
     public bool hasGamerInfo { get { return HasComponent(LogicThingComponentsLookup.GamerInfo); } }
 
-    public void AddGamerInfo(Battle.Common.Context.Combat.GamerData newValue) {
+    public void AddGamerInfo(Battle.Common.Context.GamerGroup.GamerData newValue) {
         var index = LogicThingComponentsLookup.GamerInfo;
         var component = (Battle.Logic.Thing.Component.Gamer.GamerInfoComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Gamer.GamerInfoComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceGamerInfo(Battle.Common.Context.Combat.GamerData newValue) {
+    public void ReplaceGamerInfo(Battle.Common.Context.GamerGroup.GamerData newValue) {
         var index = LogicThingComponentsLookup.GamerInfo;
         var component = (Battle.Logic.Thing.Component.Gamer.GamerInfoComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Gamer.GamerInfoComponent));
         component.Value = newValue;

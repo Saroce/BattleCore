@@ -11,7 +11,7 @@ using Battle.Common.Constant;
 
 namespace Battle.Logic.Thing.Extension
 {
-    internal static class ThingExtension
+    internal static class ThingEx
     {
         public static ThingType GetThingType(this LogicThingEntity thingEntity) {
             if (thingEntity.isGamer) {

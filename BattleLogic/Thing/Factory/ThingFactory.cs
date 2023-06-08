@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
 //        File:  ThingFactory.cs
-//       Brief:  ThingFactory
+//       Brief:  逻辑实体物件工厂
 //
 //      Author:  Saroce, Saroce233@163.com
 //
@@ -9,6 +9,7 @@
 
 using System;
 using Battle.Common.Constant;
+using Battle.Common.Context.Combat;
 using Battle.Common.Context.Create;
 using Battle.Common.Context.Message.Thing;
 using Battle.Logic.Thing.Extension;
@@ -56,6 +57,11 @@ namespace Battle.Logic.Thing.Factory
             entity.Idle(contexts, false);
             
             return entity;
+        }
+
+        public static void ReadAbilities(this LogicContexts contexts, LogicThingEntity thingEntity,
+            SkillConfData defSkill, SkillConfData ultSkill, params SkillConfData[] allSkills) {
+            
         }
     }
 }

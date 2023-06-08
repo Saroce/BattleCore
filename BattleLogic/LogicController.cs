@@ -13,6 +13,7 @@ using Battle.Common.Context.Message;
 using Battle.Logic.Base;
 using Battle.Logic.Base.Clock;
 using Core.Lite.Base;
+using Core.Lite.DataSystem;
 using Core.Lite.DataSystem.Config;
 using Core.Lite.RefPool;
 using ExcelConvert.Auto.BattleConf;
@@ -174,6 +175,10 @@ namespace Battle.Logic
 
         internal IConfigReader GetConfigReader() {
             return _configReader;
+        }
+
+        internal IDataReader GetDataReader() {
+            return GetBattleContext().DataReader;
         }
         
         internal ulong GetIndependentId() {

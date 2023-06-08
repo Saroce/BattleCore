@@ -14,5 +14,6 @@ namespace Battle.Logic.Constant
     internal static class LogTagDef
     {
         public static readonly LogTag ThingLogTag = new LogTag("BattleLogic/Thing");
+        public static readonly LogTag SkillLogTag = new LogTag("BattleLogic/Skill");
     }
 }

@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Common.Context.Combat;
+using Battle.Common.Context.GamerGroup;
 using Core.Lite.DataSystem;
 using Core.Lite.RefPool;
 

@@ -8,7 +8,6 @@
 //============================================================
 
 using System;
-using Battle.Common.Context;
 using Battle.Common.Context.Message;
 using Battle.View.Base;
 using Core.Lite.Base;

@@ -17,7 +17,7 @@ using Battle.Logic.Thing.Behaviour.State.OutOfControl;
 
 namespace Battle.Logic.Thing.Extension
 {
-    internal static class ThingBehaviourExtension
+    internal static class ThingBehaviourEx
     {
         private static bool ChangeState(this LogicThingEntity thingEntity, int stateId, IStateContext stateContext) {
             if (!thingEntity.hasStateMachine) {

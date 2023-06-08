@@ -19,7 +19,7 @@
         <DebugType>full</DebugType>
         <Optimize>false</Optimize>
         <OutputPath>..\Build\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <DefineConstants>DEBUG;TRACE;UNITY_EDITOR</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
@@ -42,6 +42,9 @@
         <Reference Include="Core.Unity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Game.Core\Core.Unity.dll</HintPath>
         </Reference>
+        <Reference Include="DesperateDevs.Utils, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Entitas\DesperateDevs\DesperateDevs.Utils.dll</HintPath>
+        </Reference>
         <Reference Include="Entitas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.dll</HintPath>
         </Reference>
@@ -51,10 +54,13 @@
         <Reference Include="Entitas.Unity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.Unity.dll</HintPath>
         </Reference>
+        <Reference Include="Entitas.VisualDebugging.Unity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Entitas\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
+        </Reference>
         <Reference Include="Google.Protobuf, Version=3.10.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
           <HintPath>..\Libraries\Protobuf\Google.Protobuf.dll</HintPath>
         </Reference>
-        <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
           <HintPath>..\Libraries\JsonNet\Newtonsoft.Json.dll</HintPath>
         </Reference>
         <Reference Include="System" />

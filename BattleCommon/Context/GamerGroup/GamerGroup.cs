@@ -10,7 +10,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Battle.Common.Context.Combat
+namespace Battle.Common.Context.GamerGroup
 {
     public class GamerGroup
     {
@@ -20,8 +20,6 @@ namespace Battle.Common.Context.Combat
             Gamers = gamers.ToList();
         }
         
-        public GamerData GetGamerDataById(ulong uid) {
-            return Gamers.Find(v => v.Id == uid);
-        }
+        
     }
 }

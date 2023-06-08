@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
-//        File:  GamerHeroIdComponent.cs
-//       Brief:  GamerHeroIdComponent
+//        File:  GamerGeneralIdComponent.cs
+//       Brief:  GamerGeneralIdComponent
 //
 //      Author:  Saroce, Saroce233@163.com
 //
@@ -12,7 +12,7 @@ using Battle.Logic.Base.Component;
 namespace Battle.Logic.Thing.Component.Gamer
 {
     [LogicThing]
-    public class GamerHeroIdComponent : EncryptedIntValueLogicComponent
+    public class GamerGeneralIdComponent : EncryptedIntValueLogicComponent
     {
         
     }

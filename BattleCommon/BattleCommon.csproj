@@ -39,6 +39,9 @@
         <Reference Include="Google.Protobuf, Version=3.10.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
           <HintPath>..\Libraries\Protobuf\Google.Protobuf.dll</HintPath>
         </Reference>
+        <Reference Include="SkillModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\SkillModule\SkillModule.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -61,11 +64,11 @@
         <Compile Include="Configs\Generated\SkillConfSkillLevel.cs" />
         <Compile Include="Constant\BattleDef.cs" />
         <Compile Include="Constant\MotionDef.cs" />
+        <Compile Include="Constant\SkillDef.cs" />
         <Compile Include="Constant\ThingDef.cs" />
         <Compile Include="Context\Combat\CombatValue.cs" />
-        <Compile Include="Context\Combat\GamerData.cs" />
-        <Compile Include="Context\Combat\GamerGroup.cs" />
-        <Compile Include="Context\Combat\SkillData.cs" />
+        <Compile Include="Context\Combat\SkillConfData.cs" />
+        <Compile Include="Context\Combat\SkillLevelData.cs" />
         <Compile Include="Context\Command\BattleRequest.cs" />
         <Compile Include="Context\Command\BattleRespond.cs" />
         <Compile Include="Context\Command\IBattleRequest.cs" />
@@ -76,6 +79,8 @@
         <Compile Include="Context\Create\CreatureCreateContext.cs" />
         <Compile Include="Context\Create\GamerCreateContext.cs" />
         <Compile Include="Context\Create\ThingCrateContext.cs" />
+        <Compile Include="Context\GamerGroup\GamerData.cs" />
+        <Compile Include="Context\GamerGroup\GamerGroup.cs" />
         <Compile Include="Context\ISerializableData.cs" />
         <Compile Include="Context\Message\BattleMessage.cs" />
         <Compile Include="Context\Message\IBattleMessage.cs" />

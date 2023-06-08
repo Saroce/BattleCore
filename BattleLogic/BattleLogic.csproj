@@ -19,7 +19,7 @@
         <DebugType>full</DebugType>
         <Optimize>false</Optimize>
         <OutputPath>..\Build\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <DefineConstants>DEBUG;TRACE;FULL_LOG;UNITY_EDITOR</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
@@ -36,44 +36,43 @@
         <Reference Include="Core.Lite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Game.Core\Core.Lite.dll</HintPath>
         </Reference>
+        <Reference Include="DesperateDevs.Utils, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Entitas\DesperateDevs\DesperateDevs.Utils.dll</HintPath>
+        </Reference>
         <Reference Include="Entitas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.dll</HintPath>
         </Reference>
         <Reference Include="Entitas.CodeGeneration.Attributes, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
         </Reference>
+        <Reference Include="Entitas.VisualDebugging.Unity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Entitas\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
+        </Reference>
         <Reference Include="Google.Protobuf, Version=3.10.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
           <HintPath>..\Libraries\Protobuf\Google.Protobuf.dll</HintPath>
+        </Reference>
+        <Reference Include="SkillModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\SkillModule\SkillModule.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
+        <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
         <Reference Include="vFrame.Lockstep.Core, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Lockstep.Core\vFrame.Lockstep.Core.dll</HintPath>
         </Reference>
     </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generated\LogicThing\Components\LogicThingDestroyedComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingIdComponent.cs" />
-    <Compile Include="Generated\LogicBuff\Components\LogicBuffIdComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillIdComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillLogicComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedFixedPointValueLogicComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedIntValueLogicComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedUlongValueLogicComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingCastableRefComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingCastStateComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingDeadComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingIdleMotionNameComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingIdlableRefComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingIdleStateComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingMovableRefComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingMoveMotionNameComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingMoveStateComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingStateMachineComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingPassiveAbilitiesComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingUltimateAbilityComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerDefSkillComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerSkillsComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerUltSkillComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingGamerCombatComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingGamerHeroIdComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerGeneralIdComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingGamerIdGroupComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingGamerInfoComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingCreateTimeComponent.cs" />
@@ -99,6 +98,24 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingThingComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingIntelligentComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCreateContextComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingCastableRefComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingCastStateComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingDeadComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingIdleMotionNameComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingIdlableRefComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingIdleStateComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingMovableRefComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingMoveMotionNameComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingMoveStateComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingStateMachineComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingDestroyedComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingIdComponent.cs" />
+    <Compile Include="Generated\LogicBuff\Components\LogicBuffIdComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillIdComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillLogicComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedFixedPointValueLogicComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedIntValueLogicComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedUlongValueLogicComponent.cs" />
     <Compile Include="Generated\Components\Interfaces\IIdEntity.cs" />
     <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
@@ -122,6 +139,16 @@
     <Compile Include="Generated\LogicInput\LogicInputEntity.cs" />
     <Compile Include="Generated\LogicThing\LogicThingEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Thing\Component\Ability\DefaultCastAbilityComponent.cs" />
+    <Compile Include="Thing\Component\Ability\PassiveAbilitiesComponent.cs" />
+    <Compile Include="Thing\Component\Ability\UltimateAbilityComponent.cs" />
+    <Compile Include="Thing\Component\Gamer\Skill\GamerDefSkillComponent.cs" />
+    <Compile Include="Thing\Component\Gamer\Skill\GamerSkillsComponent.cs" />
+    <Compile Include="Thing\Component\Gamer\Skill\GamerUltSkillComponent.cs" />
+    <Compile Include="Thing\Extension\ThingSkillEx.cs" />
+    <Compile Include="Utils\ConfigUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\Logger.cs" />
@@ -165,7 +192,7 @@
     <Compile Include="Thing\Behaviour\State\OutOfControl\OutOfControlStateContext.cs" />
     <Compile Include="Thing\Behaviour\State\StateMachineComponent.cs" />
     <Compile Include="Thing\Component\Gamer\GamerCombatComponent.cs" />
-    <Compile Include="Thing\Component\Gamer\GamerHeroIdComponent.cs" />
+    <Compile Include="Thing\Component\Gamer\GamerGeneralIdComponent.cs" />
     <Compile Include="Thing\Component\Gamer\GamerIdGroupComponent.cs" />
     <Compile Include="Thing\Component\Gamer\GamerDataComponent.cs" />
     <Compile Include="Thing\Component\IntelligentComponent.cs" />
@@ -191,9 +218,9 @@
     <Compile Include="Thing\Component\Type\ThingCastAttributeTypeComponent.cs" />
     <Compile Include="Thing\Component\Type\ThingCastRangeTypeComponent.cs" />
     <Compile Include="Thing\Component\Type\ThingComponent.cs" />
-    <Compile Include="Thing\Extension\ThingBehaviourExtension.cs" />
-    <Compile Include="Thing\Extension\ThingExtension.cs" />
-    <Compile Include="Thing\Extension\ThingPropertyExtension.cs" />
+    <Compile Include="Thing\Extension\ThingBehaviourEx.cs" />
+    <Compile Include="Thing\Extension\ThingEx.cs" />
+    <Compile Include="Thing\Extension\ThingPropertyEx.cs" />
     <Compile Include="Thing\Factory\CreatureFactory.cs" />
     <Compile Include="Thing\Factory\GamerDataFactory.cs" />
     <Compile Include="Thing\Factory\GamerFactory.cs" />

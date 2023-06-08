@@ -1,21 +1,20 @@
 ﻿//------------------------------------------------------------
-//        File:  GamerDataComponent.cs
-//       Brief:  GamerDataComponent
+//        File:  DefaultCastAbilityComponent.cs
+//       Brief:  DefaultCastAbilityComponent
 //
 //      Author:  Saroce, Saroce233@163.com
 //
-//    Modified:  2023-03-28
+//    Modified:  2023-06-08
 //============================================================
 
 using Battle.Common.Context.Combat;
-using Battle.Common.Context.GamerGroup;
 using Battle.Logic.Base.Component;
 
-namespace Battle.Logic.Thing.Component.Gamer
+namespace Battle.Logic.Thing.Component.Ability
 {
     [LogicThing]
-    public class GamerInfoComponent : LogicComponent
+    public class DefaultCastAbilityComponent : LogicComponent
     {
-        public GamerData Value;
+        public SkillConfData Value;
     }
 }
