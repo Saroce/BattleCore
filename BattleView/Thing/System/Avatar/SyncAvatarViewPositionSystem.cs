@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
 //        File:  SyncAvatarViewPositionSystem.cs
-//       Brief:  SyncAvatarViewPositionSystem
+//       Brief:  同步Avatar位置
 //
 //      Author:  Saroce, Saroce233@163.com
 //

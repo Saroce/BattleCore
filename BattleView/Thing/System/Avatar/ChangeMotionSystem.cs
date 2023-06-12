@@ -21,7 +21,7 @@ namespace Battle.View.Thing.System.Avatar
         }
 
         protected override ICollector<ViewThingEntity> GetTrigger(IContext<ViewThingEntity> context) {
-            return context.CreateCollector(ViewThingMatcher.AvatarMotion);
+            return context.CreateCollector(ViewThingMatcher.AvatarMotion.Added());
         }
 
         protected override bool Filter(ViewThingEntity entity) {

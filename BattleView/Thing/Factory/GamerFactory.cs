@@ -27,14 +27,17 @@ namespace Battle.View.Thing.Factory
             
             entity.AddHealthPoint((int) context.CombatValue.HpCur, (int) context.CombatValue.HpMax);
             
-            // TODO 添加技能配置
+            entity.AddDefaultCastAbility(context.DefSkill);
+            if (context.UltSkill != null) {
+                entity.AddUltimateCastAbility(context.UltSkill);
+            }
             
             // 创建Avatar
             entity.AddAvatarAsset($"{viewConfig.AvatarDir}/{generalConf.Avatar}");
             entity.AddAvatarMotion(MotionName.FromMotion(MotionDef.Idle));
             entity.AddAvatarRadius(generalConf.Radius / 100f);
             
-            // 创建血条
+            // 创建血条HUD
             var hpHUD = contexts.viewHUD.CreateEntity();
             hpHUD.AddHUDAsset($"{viewConfig.HUDDir}/{viewConfig.HUDHPPath}");
             hpHUD.AddHUDOwner(entity.id.Value);

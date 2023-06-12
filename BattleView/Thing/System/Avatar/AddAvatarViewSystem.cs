@@ -52,6 +52,8 @@ namespace Battle.View.Thing.System.Avatar
                 viewObject.transform.SetParent(container.transform, false);
                 viewObject.transform.localRotation = entity.rotation.Value.ToUnityQuaternion();
                 
+                // TODO 可以设置Avatar的偏移，层级，大小
+                
                 entity.AddAvatarView(container, viewObject);
             }
         }

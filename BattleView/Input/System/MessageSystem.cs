@@ -21,9 +21,14 @@ namespace Battle.View.Input.System
         public MessageSystem(ViewContexts contexts) : base(contexts) {
             _type2Processor = new Dictionary<Type, IMessageProcessor>();
             
+            // 物体相关消息
             RegisterProcessor<OnCreateThing>();
         }
 
+        /// <summary>
+        /// 注册消息处理器
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         private void RegisterProcessor<T>() where T : IMessageProcessor {
             var processor = Activator.CreateInstance<T>();
             processor.Create(Contexts);
@@ -31,6 +36,9 @@ namespace Battle.View.Input.System
             _type2Processor.Add(processor.GetMessageType(), processor);
         }
         
+        /// <summary>
+        /// 渲染帧处理消息队列里缓存的消息
+        /// </summary>
         public override void Execute() {
             while (true) {
                 if (!Contexts.TryDequeueMessage(out var message)) {

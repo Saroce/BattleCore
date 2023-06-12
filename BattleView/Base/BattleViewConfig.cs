@@ -22,7 +22,7 @@ namespace Battle.View.Base
         public string HUDHPPath;
         public string HUDHPEnemyPath;
         
-        public float LerpSpeed;
+        public float LerpSpeed; // Avatar位置插值速度
         
         public Vector3 HUDHPOffset;
         
