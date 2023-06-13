@@ -7,6 +7,7 @@
 //    Modified:  2023-03-30
 //============================================================
 
+using Battle.Common.Context.Combat;
 using Battle.Logic.Base.FSM;
 using Core.Lite.RefPool;
 
@@ -14,10 +15,12 @@ namespace Battle.Logic.Thing.Behaviour.State.Cast
 {
     public class CastStateContext : IStateContext, IRefReset
     {
-        // TODO 
+        public SkillConfData Ability;
+        public ulong TargetId;
         
         public void Reset() {
-            
+            Ability = null;
+            TargetId = 0;
         }
     }
 }

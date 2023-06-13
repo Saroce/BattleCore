@@ -16,4 +16,11 @@ namespace Battle.Common.Constant
         /// </summary>
         public const string SkillDataDir = "Assets/Bundles/Data/Skills/";
     }
+
+    public enum SkillCastResult
+    {
+        NoError,    // 无错误
+        NotCastableState, // 非可施法状态
+        PassiveSkillNotCastable, // 被动技能无法施放
+    }
 }

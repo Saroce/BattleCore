@@ -23,8 +23,26 @@ namespace Battle.Logic.Thing.Behaviour.State.Cast
             if (!(entity is LogicThingEntity thingEntity)) {
                 return false;
             }
+
+            if (context == null) {
+                return false;
+            }
+
+            var castContext = (CastStateContext) context;
+            // 正在施法中
+            if (StateContext != null) {
+                var curContext = ((CastStateContext) StateContext).Ability;
+                // 相同技能id不能重复施法
+                if (curContext.Guid == castContext.Ability.Guid) {
+                    return false;
+                }
+
+                // 当前施法不能被替换
+                if (!(curContext.ActiveSkillData.BaseData.CanReplace) {
+                    return false;
+                }
+            }
             
-            // TODO 
             return thingEntity.IsCastable();
         }
 
