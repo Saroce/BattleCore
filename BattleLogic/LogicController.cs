@@ -12,6 +12,7 @@ using Battle.Common.Context.Command;
 using Battle.Common.Context.Message;
 using Battle.Logic.Base;
 using Battle.Logic.Base.Clock;
+using Battle.Logic.Input.System;
 using Core.Lite.Base;
 using Core.Lite.DataSystem;
 using Core.Lite.DataSystem.Config;
@@ -42,6 +43,7 @@ namespace Battle.Logic
         
         private LogicContexts _contexts;
         private LogicSystems _logicSystems;
+        private CommandSystem _commandSystem;
         
         private MessageQueue<IBattleMessage> _messageQueue;
         private MessageQueue<IBattleRequest> _requestQueue;
@@ -72,6 +74,7 @@ namespace Battle.Logic
 
             _contexts = new LogicContexts(this);
             _logicSystems = new LogicSystems(_contexts);
+            _commandSystem = new CommandSystem(_contexts);
             _logicSystems.Initialize();
         }
 
@@ -93,10 +96,6 @@ namespace Battle.Logic
             
             _logicSystems.Execute();
             _logicSystems.Cleanup();
-        }
-
-        public void Poll() {
-            
         }
 
         /// <summary>
@@ -132,6 +131,13 @@ namespace Battle.Logic
         /// <param name="request"></param>
         public void EnqueueRequest(IBattleRequest request) {
             _requestQueue.Enqueue(request);
+        }
+
+        /// <summary>
+        /// 外部轮询命令
+        /// </summary>
+        public void PollCommands() {
+            _commandSystem.Execute();
         }
         
         /// <summary>

@@ -143,6 +143,10 @@
     <Compile Include="Generated\Feature.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Input\System\CommandSystem.cs" />
+    <Compile Include="Input\System\Processor\CastSkill.cs" />
+    <Compile Include="Skill\Utils\SkillUtil.cs" />
+    <Compile Include="Thing\Behaviour\State\Idle\System\UpdateIdleMotionSystem.cs" />
     <Compile Include="Thing\Component\Ability\CastAbilitiesComponent.cs" />
     <Compile Include="Thing\Component\Ability\DefaultCastAbilityComponent.cs" />
     <Compile Include="Thing\Component\Ability\PassiveAbilitiesComponent.cs" />
@@ -151,6 +155,8 @@
     <Compile Include="Thing\Component\Gamer\Skill\GamerSkillsComponent.cs" />
     <Compile Include="Thing\Component\Gamer\Skill\GamerUltSkillComponent.cs" />
     <Compile Include="Thing\Extension\ThingSkillEx.cs" />
+    <Compile Include="Thing\System\ThingPositionUpdateSystem.cs" />
+    <Compile Include="Thing\System\ThingRotationUpdatedSystem.cs" />
     <Compile Include="Utils\ConfigUtil.cs" />
   </ItemGroup>
   <ItemGroup>

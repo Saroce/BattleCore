@@ -29,5 +29,7 @@ namespace Battle.View.Base
         public Vector3 AvatarTop;
         public Vector3 AvatarCenter;
         public Vector3 AvatarBottom;
+        
+        public float AnimationTweenDuration;
     }
 }

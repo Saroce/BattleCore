@@ -7,9 +7,14 @@
 //    Modified:  2023-03-22
 //============================================================
 
+using System.Collections.Generic;
 using System.Diagnostics;
+using Battle.Common.Context.Message;
 using Core.Lite.Base;
+using Core.Lite.DataSystem;
+using Core.Lite.DataSystem.Config;
 using Core.Lite.Loggers;
+using Core.Lite.RefPool;
 
 namespace Battle.Logic
 {
@@ -24,7 +29,27 @@ namespace Battle.Logic
         protected override void OnDestroy() {
             Contexts = null;
         }
+
+        protected IConfigReader ConfigReader => Contexts.GetConfigReader();
+
+        protected IDataReader DataReader => Contexts.GetDataReader();
+
+        protected void SendMessage(IBattleMessage message) {
+            Contexts.SendMessage(message);
+        }
+
+        protected IRefPool<T> RefPool<T>() where T : class, new() {
+            return Contexts.GetRefPool<T>();
+        }
         
+        public IRefPool<List<T>> ListPool<T>() {
+            return Contexts.ListPool<T>();
+        }
+        
+        public IRefPool<HashSet<T>> HashSetPool<T>() {
+            return Contexts.HashSetPool<T>();
+        }
+
         [Conditional("FULL_LOG")]
         protected void LogDebug(LogTag tag, string content, params object[] args) {
             Contexts.GetLogger().LogDebug(tag, content, 2, args);

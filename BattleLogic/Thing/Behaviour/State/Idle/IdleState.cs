@@ -7,6 +7,7 @@
 //    Modified:  2023-03-30
 //============================================================
 
+using Battle.Common.Context.Message.Thing;
 using Battle.Logic.Base.FSM;
 using Battle.Logic.Thing.Extension;
 using Entitas;
@@ -39,15 +40,41 @@ namespace Battle.Logic.Thing.Behaviour.State.Idle
         }
 
         public override void OnEnter(IEntity entity) {
-            // TODO 
+            if (!(entity is LogicThingEntity thingEntity)) {
+                return;
+            }
+            
+            SendEnterIdleMessage(thingEntity);
+            thingEntity.isIdleState = true;
         }
 
         public override void OnExit(IEntity entity) {
-            // TODO 
+            if (!(entity is LogicThingEntity thingEntity)) {
+                return;
+            }
+
+            thingEntity.isIdleState = false;
         }
 
         public override void OnUpdate(IEntity entity) {
-            // TODO 
+            if (!(entity is LogicThingEntity thingEntity)) {
+                return;
+            }
+            
+            SendEnterIdleMessage(thingEntity);
+        }
+
+        private void SendEnterIdleMessage(LogicThingEntity thingEntity) {
+            var motionName = string.Empty;
+            if (thingEntity.hasIdleMotionName) {
+                motionName = thingEntity.idleMotionName.Value;
+            }
+
+            var message = RefPool<ThingEnterIdleMessage>().Get();
+            message.Id = thingEntity.id.Value;
+            message.ThingType = thingEntity.GetThingType();
+            message.MotionName = motionName;
+            SendMessage(message);
         }
     }
 }

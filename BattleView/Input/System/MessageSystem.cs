@@ -23,6 +23,9 @@ namespace Battle.View.Input.System
             
             // 物体相关消息
             RegisterProcessor<OnCreateThing>();
+            RegisterProcessor<OnPositionUpdate>();
+            RegisterProcessor<OnRotationUpdate>();
+            RegisterProcessor<OnEnterIdle>();
         }
 
         /// <summary>

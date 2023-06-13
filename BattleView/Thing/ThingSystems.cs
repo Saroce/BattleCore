@@ -18,6 +18,7 @@ namespace Battle.View.Thing
             // Reactive Systems
             Add(new AddAvatarViewSystem(contexts));
             Add(new ChangeMotionSystem(contexts));
+            Add(new RotateAvatarViewSystem(contexts));
             
             // Execute Systems
             Add(new SyncAvatarViewPositionSystem(contexts));

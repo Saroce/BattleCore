@@ -45,6 +45,9 @@
         <Reference Include="DesperateDevs.Utils, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\DesperateDevs\DesperateDevs.Utils.dll</HintPath>
         </Reference>
+        <Reference Include="DOTween, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Demigiant\DOTween\DOTween.dll</HintPath>
+        </Reference>
         <Reference Include="Entitas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.dll</HintPath>
         </Reference>
@@ -111,6 +114,7 @@
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarAssetComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarMotionComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarRadiusComponent.cs" />
+    <Compile Include="Generated\ViewThing\Components\ViewThingAvatarRotateTweenComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarViewComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarViewOffsetComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingHealthPointComponent.cs" />
@@ -198,9 +202,13 @@
     <Compile Include="Input\System\Processor\IMessageProcessor.cs" />
     <Compile Include="Input\System\Processor\MessageProcessor.cs" />
     <Compile Include="Input\System\Processor\OnCreateThing.cs" />
+    <Compile Include="Input\System\Processor\OnEnterIdle.cs" />
+    <Compile Include="Input\System\Processor\OnPositionUpdate.cs" />
+    <Compile Include="Input\System\Processor\OnRotationUpdate.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarAssetComponent.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarMotionComponent.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarRadiusComponent.cs" />
+    <Compile Include="Thing\Component\Avatar\AvatarRotateTweenComponent.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarViewComponent.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarViewOffsetComponent.cs" />
     <Compile Include="Thing\Component\CreateContextComponent.cs" />
@@ -212,6 +220,7 @@
     <Compile Include="Thing\Factory\ThingFactory.cs" />
     <Compile Include="Thing\System\Avatar\AddAvatarViewSystem.cs" />
     <Compile Include="Thing\System\Avatar\ChangeMotionSystem.cs" />
+    <Compile Include="Thing\System\Avatar\RotateAvatarViewSystem.cs" />
     <Compile Include="Thing\System\Avatar\SyncAvatarViewPositionSystem.cs" />
     <Compile Include="Thing\ThingSystems.cs" />
     <Compile Include="ViewContexts.cs" />

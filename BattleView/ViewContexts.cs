@@ -45,5 +45,9 @@ namespace Battle.View
         internal BattleViewConfig GetViewConfig() {
             return GetController().GetViewConfig();
         }
+        
+        public ulong GetIndependentId() {
+            return GetController().GetIndependentId();
+        }
     }
 }

@@ -9,6 +9,7 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
+using Battle.Common.Context.Command;
 using Battle.Common.Context.Message;
 using Battle.Logic.Base;
 using Battle.Logic.Base.Clock;
@@ -81,6 +82,10 @@ namespace Battle.Logic
             return GetController().ObjectPool<Stack<T>, StackAllocator<T>>();
         }
 
+        public IRefPoolManager RefPoolManager() {
+            return GetController().RefPoolManager();
+        }
+        
         internal Logger GetLogger() {
             return GetController().GetLogger();
         }
@@ -91,6 +96,10 @@ namespace Battle.Logic
 
         internal IDataReader GetDataReader() {
             return GetController().GetDataReader();
+        }
+        
+        internal bool TryDequeueRequest(out IBattleRequest request) {
+            return GetController().TryDequeueRequest(out request);
         }
         
         /// <summary>

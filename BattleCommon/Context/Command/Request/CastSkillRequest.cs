@@ -14,6 +14,8 @@ namespace Battle.Common.Context.Command.Request
 {
     public class CastSkillRequest : BattleRequest, IRecordableRequest
     {
+        public ulong Id { get; set; } // 逻辑实体Id
+        
         public CastSkillRequest() : base(typeof(DefaultRespond)) {
             
         }

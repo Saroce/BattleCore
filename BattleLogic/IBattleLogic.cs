@@ -17,7 +17,7 @@ namespace Battle.Logic
     {
         void EnterFrame();
         
-        void Poll();
+        void PollCommands();
         
         bool TryDequeueMessage(out IBattleMessage message);
 

@@ -49,6 +49,12 @@ namespace Battle.Logic.Base.FSM
                 return;
             }
             CurState.OnExit(Entity);
+
+            if (CurState.StateContext != null) {
+                Contexts.RefPoolManager().TryReturn(CurState.StateContext);
+            }
+
+            CurState.StateContext = null;
             CurState = null;
         }
         
@@ -58,12 +64,15 @@ namespace Battle.Logic.Base.FSM
             }
 
             var state = States[stateId];
-            if (state == null || !state.CanTransit(Entity, context)) {
+            if (!state.CanTransit(Entity, context)) {
+                if (context != null) {
+                    Contexts.RefPoolManager().TryReturn(context);
+                }
                 return false;
             }
             
             if (state == CurState) {
-                state.OnUpdate(Entity);
+                UpdateCurState(context);
                 return true;
             }
             
@@ -73,6 +82,20 @@ namespace Battle.Logic.Base.FSM
             return true;
         }
 
+        protected virtual void UpdateCurState(IStateContext context) {
+            var state = GetCurState();
+            if (state == null) {
+                return;
+            }
+
+            if (state.StateContext != null) {
+                Contexts.RefPoolManager().TryReturn(state.StateContext);
+            }
+
+            state.StateContext = context;
+            state.OnUpdate(Entity);
+        }
+        
         public IState GetCurState() {
             return CurState;
         }

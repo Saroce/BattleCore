@@ -33,7 +33,7 @@ namespace Battle.Logic.Input.System.Processor
 
         protected void Fail(string message) {
             _respond.Result = false;
-            // TODO 错误信息
+            _respond.ErrorMessage = message;
             _respond.Send();
         }
         
