@@ -7,6 +7,8 @@
 //    Modified:  2023-03-28
 //============================================================
 
+using Entitas;
+
 namespace Battle.Logic.Constant
 {
     internal enum BehaviourType
@@ -16,5 +18,14 @@ namespace Battle.Logic.Constant
         Cast,
         OutOfControl,
         Dead,
+    }
+
+    internal static class LogicThingDef
+    {
+        public static readonly IMatcher<LogicThingEntity> CreatureMatchers = LogicThingMatcher.AllOf(
+            LogicThingMatcher.Id,
+            LogicThingMatcher.Creature,
+            LogicThingMatcher.ThingCreateContext,
+            LogicThingMatcher.Position);
     }
 }

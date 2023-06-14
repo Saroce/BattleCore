@@ -38,7 +38,7 @@ namespace Battle.Logic.Thing.Behaviour.State.Cast
                 }
 
                 // 当前施法不能被替换
-                if (!(curContext.ActiveSkillData.BaseData.CanReplace) {
+                if (!curContext.ActiveSkillData.BaseData.CanReplace) {
                     return false;
                 }
             }
