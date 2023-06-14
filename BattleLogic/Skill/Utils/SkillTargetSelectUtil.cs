@@ -8,6 +8,7 @@
 //============================================================
 
 using System.Collections.Generic;
+using Battle.Logic.Skill.Comparer;
 using SkillModule.Runtime.Skill;
 
 namespace Battle.Logic.Skill.Utils
@@ -53,8 +54,27 @@ namespace Battle.Logic.Skill.Utils
             if (targets.Count <= 1) {
                 return;
             }
+
+            var nestedComparer = contexts.RefPool<NestedComparer>().Get();
+            nestedComparer.Create(contexts);
+
+            // 优先血量少的
+            if ((selectData.TargetSelectPreferType & SkillTargetSelectPreferType.LessHealthPoint) > 0) {
+                var comparer = contexts.RefPool<LessHealthPointComparer>().Get();
+                comparer.Create(contexts.logicThing);
+                nestedComparer.AddComparer(comparer);
+            }
             
-            // TODO 排序规则
+            // 优先距离近的
+            if ((selectData.TargetSelectPreferType & SkillTargetSelectPreferType.Nearby) > 0) {
+                var comparer = contexts.RefPool<DistanceComparer>().Get();
+                comparer.Create(contexts.logicThing, thingEntity);
+                nestedComparer.AddComparer(comparer);
+            }
+            
+            targets.Sort(nestedComparer);
+            nestedComparer.Destroy();
+            contexts.RefPool<NestedComparer>().Return(nestedComparer);
         }
     }
 }

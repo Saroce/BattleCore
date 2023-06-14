@@ -41,29 +41,29 @@ namespace Battle.Logic.Thing.Extension
         }
 
         public static bool Idle(this LogicThingEntity thingEntity, LogicContexts contexts, bool force) {
-            var stateContext = contexts.GetRefPool<IdleStateContext>().Get();
+            var stateContext = contexts.RefPool<IdleStateContext>().Get();
             stateContext.Force = force;
             return thingEntity.ChangeState((int)BehaviourType.Idle, stateContext);
         }
 
         public static bool Idle(this LogicThingEntity thingEntity, LogicContexts contexts, IdleStateContext context = null) {
-            return thingEntity.ChangeState((int)BehaviourType.Idle, context ?? contexts.GetRefPool<IdleStateContext>().Get());
+            return thingEntity.ChangeState((int)BehaviourType.Idle, context ?? contexts.RefPool<IdleStateContext>().Get());
         }
         
         public static bool Move(this LogicThingEntity thingEntity, LogicContexts contexts, MoveStateContext context = null) {
-            return thingEntity.ChangeState((int)BehaviourType.Move, context ?? contexts.GetRefPool<MoveStateContext>().Get());
+            return thingEntity.ChangeState((int)BehaviourType.Move, context ?? contexts.RefPool<MoveStateContext>().Get());
         }
         
         public static bool Cast(this LogicThingEntity thingEntity, LogicContexts contexts, CastStateContext context = null) {
-            return thingEntity.ChangeState((int)BehaviourType.Cast, context ?? contexts.GetRefPool<CastStateContext>().Get());
+            return thingEntity.ChangeState((int)BehaviourType.Cast, context ?? contexts.RefPool<CastStateContext>().Get());
         }
         
         public static bool OutOfControl(this LogicThingEntity thingEntity, LogicContexts contexts, OutOfControlStateContext context = null) {
-            return thingEntity.ChangeState((int)BehaviourType.OutOfControl, context ?? contexts.GetRefPool<OutOfControlStateContext>().Get());
+            return thingEntity.ChangeState((int)BehaviourType.OutOfControl, context ?? contexts.RefPool<OutOfControlStateContext>().Get());
         }
         
         public static bool Dead(this LogicThingEntity thingEntity, LogicContexts contexts, DeadStateContext context = null) {
-            return thingEntity.ChangeState((int)BehaviourType.Dead, context ?? contexts.GetRefPool<DeadStateContext>().Get());
+            return thingEntity.ChangeState((int)BehaviourType.Dead, context ?? contexts.RefPool<DeadStateContext>().Get());
         }
     }
 }

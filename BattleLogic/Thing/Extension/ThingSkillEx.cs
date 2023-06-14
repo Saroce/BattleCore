@@ -94,10 +94,10 @@ namespace Battle.Logic.Thing.Extension
                 }
             }
 
-            var comparer = contexts.GetRefPool<CastAbilityComparer>().Get();
+            var comparer = contexts.RefPool<CastAbilityComparer>().Get();
             comparer.Create(thingEntity);
             castAbilities.Sort(comparer);
-            contexts.GetRefPool<CastAbilityComparer>().Return(comparer);
+            contexts.RefPool<CastAbilityComparer>().Return(comparer);
             
             thingEntity.AddCastAbilities(castAbilities);
             thingEntity.AddPassiveAbilities(passiveAbilities);

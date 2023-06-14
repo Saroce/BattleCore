@@ -14,7 +14,6 @@ using Battle.Logic.Constant;
 using Battle.Logic.Thing.Behaviour.State.Cast;
 using Battle.Logic.Thing.Extension;
 using Battle.Logic.Utils;
-using Core.Lite.RefPool.Builtin;
 using Entitas;
 using SkillModule.Runtime.Skill;
 using vFrame.Lockstep.Core;
@@ -33,7 +32,6 @@ namespace Battle.Logic.Skill.Utils
         /// <returns></returns>
         public static SkillCastResult TryCastWithAbility(LogicContexts contexts, LogicThingEntity thingEntity,
             SkillConfData ability, out ulong target) {
-
             target = 0ul;
             var error = ValidateCastContext(contexts, thingEntity, ability);
             if (error != SkillCastResult.NoError) {
@@ -45,7 +43,7 @@ namespace Battle.Logic.Skill.Utils
             if (baseData.IsDirectional && baseData.DirectionalType == SkillDirectionalType.ToThing) {
                 return TaySelectTargetAndCastWithAbility(contexts, thingEntity, ability, out target);
             }
-            
+
             // 不需要目标，直接施法
             return TryCastWithAbilityDirectly(contexts, thingEntity, ability);
         }
@@ -60,21 +58,49 @@ namespace Battle.Logic.Skill.Utils
         /// <returns></returns>
         public static SkillCastResult TaySelectTargetAndCastWithAbility(LogicContexts contexts,
             LogicThingEntity thingEntity, SkillConfData ability, out ulong target) {
-
             target = 0ul;
-            
+
             var rangeData = ability.ActiveSkillData.RangeData;
             var rangeExData = ability.ActiveSkillData.RangeExData;
             var selectData = ability.ActiveSkillData.TargetSelectData;
 
+            // 查找，过滤，排序得到目标列表
             var targets = contexts.ListPool<ulong>().Get();
             QueryCreaturesInSkillRange(contexts, thingEntity, rangeData, rangeExData, ref targets);
             SkillTargetSelectUtil.SelectEntities(contexts, thingEntity, selectData, ref targets);
+
+            var succeed = false;
+            foreach (var targetId in targets) {
+                var error = TayCastToTargetWithAbility(contexts, thingEntity, ability, targetId);
+                if (error != SkillCastResult.NoError) {
+                    continue;
+                }
+
+                target = targetId;
+                succeed = true;
+                break;
+            }
+            
+            contexts.ListPool<ulong>().Return(targets);
+            return succeed ? SkillCastResult.NoError : SkillCastResult.NoValidTarget;
         }
 
+        public static SkillCastResult TayCastToTargetWithAbility(LogicContexts contexts, LogicThingEntity thingEntity,
+            SkillConfData ability, ulong targetId) {
+            var error = ValidateCastContext(contexts, thingEntity, ability);
+            if (error != SkillCastResult.NoError) {
+                return error;
+            }
+            
+            // TODO 校验
+
+            return SkillCastResult.NoError;
+        }
+        
         public static void QueryCreaturesInSkillRange(LogicContexts contexts, LogicThingEntity thingEntity,
             SkillRangeData rangeData, SkillRangeExData rangeExData, ref List<ulong> targets) {
-            QueryEntitiesInSkillRange(contexts, thingEntity, rangeData, rangeExData, ref targets, LogicThingDef.CreatureMatchers);
+            QueryEntitiesInSkillRange(contexts, thingEntity, rangeData, rangeExData, ref targets,
+                LogicThingDef.CreatureMatchers);
         }
 
         /// <summary>
@@ -89,31 +115,31 @@ namespace Battle.Logic.Skill.Utils
         public static void QueryEntitiesInSkillRange(LogicContexts contexts, LogicThingEntity thingEntity,
             SkillRangeData rangeData, SkillRangeExData rangeExData, ref List<ulong> targets,
             IMatcher<LogicThingEntity> matcher = null) {
-
             var oriPosition = thingEntity.position.Value;
             var oriRotation = thingEntity.rotation.Value;
 
             matcher = matcher ?? LogicThingDef.CreatureMatchers;
             var ret = contexts.HashSetPool<ulong>().Get();
-            
+
             // TODO 这里有格子范围判定, 看需不需要
 
             var entities = contexts.logicThing.GetEntities(matcher);
             foreach (var entity in entities) {
-                var radius = (FixedPoint)0f;
+                var radius = (FixedPoint) 0f;
                 if (entity.hasRadius) {
                     radius = entity.radius.Value;
                 }
 
-                if (RangeUtil.IsRangeOverlap(contexts, oriPosition, oriRotation, entity.position.Value, radius, rangeData)) {
+                if (RangeUtil.IsRangeOverlap(contexts, oriPosition, oriRotation, entity.position.Value, radius,
+                        rangeData)) {
                     ret.Add(entity.id.Value);
                 }
             }
-            
+
             targets.AddRange(ret);
             contexts.HashSetPool<ulong>().Return(ret);
         }
-        
+
         /// <summary>
         /// 尝试使用指定技能直接施法(不需要选择目标)
         /// </summary>
@@ -123,8 +149,7 @@ namespace Battle.Logic.Skill.Utils
         /// <returns></returns>
         private static SkillCastResult TryCastWithAbilityDirectly(LogicContexts contexts, LogicThingEntity thingEntity,
             SkillConfData ability) {
-
-            var context = contexts.GetRefPool<CastStateContext>().Get();
+            var context = contexts.RefPool<CastStateContext>().Get();
             context.Ability = ability;
             // 切换置施法状态
             if (!thingEntity.Cast(contexts)) {
@@ -133,7 +158,7 @@ namespace Battle.Logic.Skill.Utils
 
             return SkillCastResult.NoError;
         }
-        
+
         /// <summary>
         /// 校验施法状态
         /// </summary>
@@ -143,7 +168,6 @@ namespace Battle.Logic.Skill.Utils
         /// <returns></returns>
         public static SkillCastResult ValidateCastContext(LogicContexts contexts, LogicThingEntity thingEntity,
             SkillConfData ability) {
-
             // 被动技能无法施法
             if (ability.IsPassive) {
                 return SkillCastResult.PassiveSkillNotCastable;
@@ -152,7 +176,7 @@ namespace Battle.Logic.Skill.Utils
             if (!thingEntity.IsCastable()) {
                 return SkillCastResult.NotCastableState;
             }
-            
+
             // TODO 其他异常判定，缴械，沉默，冷却等
 
             return SkillCastResult.NoError;

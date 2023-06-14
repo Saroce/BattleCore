@@ -23,5 +23,6 @@ namespace Battle.Common.Constant
         NotCastableState, // 非可施法状态
         CastStateRejected, // 施法状态拒绝
         PassiveSkillNotCastable, // 被动技能无法施放
+        NoValidTarget,  // 无有效目标
     }
 }

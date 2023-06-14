@@ -39,7 +39,7 @@ namespace Battle.Logic
         }
 
         protected IRefPool<T> RefPool<T>() where T : class, new() {
-            return Contexts.GetRefPool<T>();
+            return Contexts.RefPool<T>();
         }
         
         public IRefPool<List<T>> ListPool<T>() {

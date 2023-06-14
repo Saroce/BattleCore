@@ -51,7 +51,7 @@ namespace Battle.Logic
             GetController().EnqueueMessage(message);
         }
         
-        internal IRefPool<T> GetRefPool<T>() where T : class, new() {
+        internal IRefPool<T> RefPool<T>() where T : class, new() {
             return GetController().GetRefPool<T>();
         }
         

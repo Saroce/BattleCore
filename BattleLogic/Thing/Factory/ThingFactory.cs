@@ -47,7 +47,7 @@ namespace Battle.Logic.Thing.Factory
             entity.AddThingCreateContext(createContext);
             entity.isThing = true;
 
-            var message = contexts.GetRefPool<ThingCreateMessage>().Get();
+            var message = contexts.RefPool<ThingCreateMessage>().Get();
             message.Id = entity.id.Value;
             message.ThingType = entity.GetThingType();
             message.CreateContext = entity.thingCreateContext.Value;

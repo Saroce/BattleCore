@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Common.Constant;
+using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Thing.Extension
 {
@@ -21,6 +22,26 @@ namespace Battle.Logic.Thing.Extension
             // TODO 
 
             return ThingType.Unknown;
+        }
+        
+        /// <summary>
+        /// 计算两个物件间的距离
+        /// </summary>
+        /// <param name="thingA"></param>
+        /// <param name="thingB"></param>
+        /// <returns></returns>
+        public static FixedPoint GetDistance(this LogicThingEntity thingA, LogicThingEntity thingB) {
+            if (!thingA.hasPosition || !thingB.hasPosition) {
+                return FixedPoint.MaxValue;
+            }
+
+            var radiusA = thingA.hasRadius ? thingA.radius.Value : 0;
+            var radiusB = thingB.hasRadius ? thingB.radius.Value : 0;
+
+            var positionA = thingA.position.Value;
+            var positionB = thingB.position.Value;
+
+            return (positionA - positionB).magnitude - radiusA - radiusB;
         }
     }
 }
