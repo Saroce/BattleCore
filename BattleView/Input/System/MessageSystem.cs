@@ -26,6 +26,7 @@ namespace Battle.View.Input.System
             RegisterProcessor<OnPositionUpdate>();
             RegisterProcessor<OnRotationUpdate>();
             RegisterProcessor<OnEnterIdle>();
+            RegisterProcessor<OnEnterCast>();
         }
 
         /// <summary>

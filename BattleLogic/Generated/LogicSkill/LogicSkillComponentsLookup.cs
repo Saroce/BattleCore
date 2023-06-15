@@ -13,15 +13,21 @@ public static class LogicSkillComponentsLookup {
     public const int EncryptedUlongValueLogic = 2;
     public const int Id = 3;
     public const int Logic = 4;
+    public const int SkillCastContext = 5;
+    public const int SkillCasterId = 6;
+    public const int SkillTargetId = 7;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 8;
 
     public static readonly string[] componentNames = {
         "EncryptedFixedPointValueLogic",
         "EncryptedIntValueLogic",
         "EncryptedUlongValueLogic",
         "Id",
-        "Logic"
+        "Logic",
+        "SkillCastContext",
+        "SkillCasterId",
+        "SkillTargetId"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -29,6 +35,9 @@ public static class LogicSkillComponentsLookup {
         typeof(Battle.Logic.Base.Component.EncryptedIntValueLogicComponent),
         typeof(Battle.Logic.Base.Component.EncryptedUlongValueLogicComponent),
         typeof(Battle.Logic.Base.Component.IdComponent),
-        typeof(Battle.Logic.Base.Component.LogicComponent)
+        typeof(Battle.Logic.Base.Component.LogicComponent),
+        typeof(Battle.Logic.Skill.Component.Cast.SkillCastContextComponent),
+        typeof(Battle.Logic.Skill.Component.Cast.SkillCasterIdComponent),
+        typeof(Battle.Logic.Skill.Component.Cast.SkillTargetIdComponent)
     };
 }

@@ -76,5 +76,20 @@ namespace Battle.Logic.Skill.Utils
             nestedComparer.Destroy();
             contexts.RefPool<NestedComparer>().Return(nestedComparer);
         }
+
+        /// <summary>
+        /// 技能目标选择数据是否符合
+        /// </summary>
+        /// <param name="contexts"></param>
+        /// <param name="thingEntity"></param>
+        /// <param name="target"></param>
+        /// <param name="selectData"></param>
+        /// <returns></returns>
+        public static bool IsTargetSelectDataMatched(LogicContexts contexts, LogicThingEntity thingEntity,
+            LogicThingEntity target, SkillTargetSelectData selectData) {
+            // TODO 比较阵营，职业，排除选项
+
+            return true;
+        }
     }
 }

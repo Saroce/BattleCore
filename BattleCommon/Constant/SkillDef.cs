@@ -24,5 +24,8 @@ namespace Battle.Common.Constant
         CastStateRejected, // 施法状态拒绝
         PassiveSkillNotCastable, // 被动技能无法施放
         NoValidTarget,  // 无有效目标
+        TargetIsDead, // 目标死亡
+        TargetTooFar, // 目标太远
+        TargetSelectNoMatch, // 目标选择不匹配
     }
 }

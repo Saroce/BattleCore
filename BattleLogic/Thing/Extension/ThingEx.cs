@@ -8,6 +8,8 @@
 //============================================================
 
 using Battle.Common.Constant;
+using Battle.Common.Context.Combat;
+using Core.Lite.RefPool.Builtin;
 using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Thing.Extension
@@ -42,6 +44,26 @@ namespace Battle.Logic.Thing.Extension
             var positionB = thingB.position.Value;
 
             return (positionA - positionB).magnitude - radiusA - radiusB;
+        }
+
+        public static FixedPoint GetCastSpeedScale(this LogicThingEntity thingEntity, LogicContexts contexts,
+            SkillConfData ability) {
+            // TODO 暂时默认返回1
+            return ThingCastSpeed.Default;
+        }
+        
+        public static string GetThingSummary(this LogicThingEntity thingEntity) {
+            var builder = StringBuilderPool.Shared.Get();
+            builder.Append("[ThingType: ");
+            builder.Append(thingEntity.GetThingType());
+
+            if (thingEntity.hasId) {
+                builder.Append(", Id: ");
+                builder.Append(thingEntity.id.Value);
+            }
+
+            builder.Append("]");
+            return builder.ToString();
         }
     }
 }

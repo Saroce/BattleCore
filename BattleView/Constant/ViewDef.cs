@@ -17,6 +17,9 @@ namespace Battle.View.Constant
     public static class ViewConst
     {
         public const string ThingsRootName = "Things";
+        public const string SkillsRootName = "Skills";
+        public const string BuffsRootName = "Buffs";
+        public const string DecorationRootName = "Decorations";
     }
     
     public enum AvatarBindPointType

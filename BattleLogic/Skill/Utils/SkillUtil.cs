@@ -49,7 +49,7 @@ namespace Battle.Logic.Skill.Utils
         }
 
         /// <summary>
-        /// 尝试选择目标后释放
+        /// 尝试选择目标后施法
         /// </summary>
         /// <param name="contexts"></param>
         /// <param name="thingEntity"></param>
@@ -69,6 +69,7 @@ namespace Battle.Logic.Skill.Utils
             QueryCreaturesInSkillRange(contexts, thingEntity, rangeData, rangeExData, ref targets);
             SkillTargetSelectUtil.SelectEntities(contexts, thingEntity, selectData, ref targets);
 
+            // 对有效目标尝试施法
             var succeed = false;
             foreach (var targetId in targets) {
                 var error = TayCastToTargetWithAbility(contexts, thingEntity, ability, targetId);
@@ -85,18 +86,79 @@ namespace Battle.Logic.Skill.Utils
             return succeed ? SkillCastResult.NoError : SkillCastResult.NoValidTarget;
         }
 
+        /// <summary>
+        /// 对指定目标尝试施法
+        /// </summary>
+        /// <param name="contexts"></param>
+        /// <param name="thingEntity"></param>
+        /// <param name="ability"></param>
+        /// <param name="targetId"></param>
+        /// <returns></returns>
         public static SkillCastResult TayCastToTargetWithAbility(LogicContexts contexts, LogicThingEntity thingEntity,
             SkillConfData ability, ulong targetId) {
+            
+            // 检验施法状态
             var error = ValidateCastContext(contexts, thingEntity, ability);
             if (error != SkillCastResult.NoError) {
                 return error;
             }
-            
-            // TODO 校验
 
+            // 目标是否死亡
+            var targetEntity = contexts.logicThing.GetEntityWithId(targetId);
+            if (targetEntity.isDead || targetEntity.isDestroyed) {
+                return SkillCastResult.TargetIsDead;
+            }
+
+            // 目标是否在技能范围内
+            if (IsTargetTooFar(contexts, thingEntity, targetEntity, ability)) {
+                return SkillCastResult.TargetTooFar;
+            }
+
+            // 目标是否符合技能选择数据
+            if (!SkillTargetSelectUtil.IsTargetSelectDataMatched(contexts, thingEntity, targetEntity,
+                    ability.ActiveSkillData.TargetSelectData)) {
+                return SkillCastResult.TargetSelectNoMatch;
+            }
+
+            var castContext = contexts.RefPool<CastStateContext>().Get();
+            castContext.Ability = ability;
+            castContext.TargetId = targetId;
+            // 切换置施法状态
+            if (!thingEntity.Cast(contexts)) {
+                return SkillCastResult.CastStateRejected;
+            }
+            
             return SkillCastResult.NoError;
         }
+
+        private static bool IsTargetTooFar(LogicContexts contexts, LogicThingEntity thingEntity,
+            LogicThingEntity targetEntity, SkillConfData ability) {
+            return !IsTargetRangeMatched(contexts, thingEntity, targetEntity, ability.ActiveSkillData.RangeData,
+                ability.ActiveSkillData.RangeExData);
+        }
+
+        private static bool IsTargetRangeMatched(LogicContexts contexts, LogicThingEntity thingEntity,
+            LogicThingEntity targetEntity, SkillRangeData rangeData, SkillRangeExData rangeExData) {
+            if (!thingEntity.hasPosition || !thingEntity.hasRotation || !targetEntity.hasPosition) {
+                return true;
+            }
+
+            var originPosition = thingEntity.position.Value;
+            var originRotation = thingEntity.rotation.Value;
+            var targetPosition = targetEntity.position.Value;
+            var targetRadius = targetEntity.hasRadius ? targetEntity.radius.Value : 0f;
+
+            return RangeUtil.IsRangeOverlap(contexts, originPosition, originRotation, targetPosition, targetRadius, rangeData);
+        }
         
+        /// <summary>
+        /// 查询技能范围内的所有生物
+        /// </summary>
+        /// <param name="contexts"></param>
+        /// <param name="thingEntity"></param>
+        /// <param name="rangeData"></param>
+        /// <param name="rangeExData"></param>
+        /// <param name="targets"></param>
         public static void QueryCreaturesInSkillRange(LogicContexts contexts, LogicThingEntity thingEntity,
             SkillRangeData rangeData, SkillRangeExData rangeExData, ref List<ulong> targets) {
             QueryEntitiesInSkillRange(contexts, thingEntity, rangeData, rangeExData, ref targets,
@@ -177,7 +239,7 @@ namespace Battle.Logic.Skill.Utils
                 return SkillCastResult.NotCastableState;
             }
 
-            // TODO 其他异常判定，缴械，沉默，冷却等
+            // TODO 其他异常判定，缴械，沉默，冷却, 怒气，充能次数判断
 
             return SkillCastResult.NoError;
         }

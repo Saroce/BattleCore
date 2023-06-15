@@ -8,6 +8,7 @@
 //============================================================
 
 using System;
+using vFrame.Lockstep.Core;
 
 namespace Battle.Common.Constant
 {
@@ -24,6 +25,11 @@ namespace Battle.Common.Constant
         CriticalRate,           // 暴击率
         MoveSpeed,              // 移动速度
         CastSpeed               // 攻击速度
+    }
+
+    public static class ThingCastSpeed
+    {
+        public static readonly FixedPoint Default = 1f;
     }
     
     public enum ThingType

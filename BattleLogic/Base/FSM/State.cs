@@ -21,10 +21,10 @@ namespace Battle.Logic.Base.FSM
 
         public abstract void OnEnter(IEntity entity);
 
-        public abstract void OnExit(IEntity entity);
-
         public abstract void OnUpdate(IEntity entity);
 
+        public abstract void OnExit(IEntity entity);
+        
         public IStateContext StateContext { get; set; }
     }
 }

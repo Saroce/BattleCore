@@ -16,5 +16,6 @@ namespace Battle.View.Constant
         public static readonly LogTag InputLogTag = new LogTag("BattleView/Input");
         public static readonly LogTag ThingLogTag = new LogTag("BattleView/Thing");
         public static readonly LogTag HUDLogTag = new LogTag("BattleView/HUD");
+        public static readonly LogTag SkillLogTag = new LogTag("BattleView/Skill");
     }
 }

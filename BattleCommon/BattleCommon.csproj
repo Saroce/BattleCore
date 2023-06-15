@@ -87,7 +87,9 @@
         <Compile Include="Context\Message\IMessageQueue.cs" />
         <Compile Include="Context\Message\MessageQueue.cs" />
         <Compile Include="Context\Message\Thing\ThingCreateMessage.cs" />
+        <Compile Include="Context\Message\Thing\ThingEnterCastMessage.cs" />
         <Compile Include="Context\Message\Thing\ThingEnterIdleMessage.cs" />
+        <Compile Include="Context\Message\Thing\ThingExitCastMessage.cs" />
         <Compile Include="Context\Message\Thing\ThingMessageBase.cs" />
         <Compile Include="Context\Message\Thing\ThingPositionMessage.cs" />
         <Compile Include="Context\Message\Thing\ThingRotationMessage.cs" />

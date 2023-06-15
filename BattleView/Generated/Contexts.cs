@@ -64,6 +64,7 @@ public partial class Contexts {
 
     public const string HUDOwner = "HUDOwner";
     public const string Id = "Id";
+    public const string SkillCasterId = "SkillCasterId";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
@@ -84,6 +85,11 @@ public partial class Contexts {
             Id,
             viewThing.GetGroup(ViewThingMatcher.Id),
             (e, c) => ((Battle.View.Base.Component.IdComponent)c).Value));
+
+        viewSkill.AddEntityIndex(new Entitas.PrimaryEntityIndex<ViewSkillEntity, ulong>(
+            SkillCasterId,
+            viewSkill.GetGroup(ViewSkillMatcher.SkillCasterId),
+            (e, c) => ((Battle.View.Skill.Component.SkillCasterIdComponent)c).Id));
     }
 }
 
@@ -103,6 +109,10 @@ public static class ContextsExtensions {
 
     public static ViewThingEntity GetEntityWithId(this ViewThingContext context, ulong Value) {
         return ((Entitas.PrimaryEntityIndex<ViewThingEntity, ulong>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
+    }
+
+    public static ViewSkillEntity GetEntityWithSkillCasterId(this ViewSkillContext context, ulong Id) {
+        return ((Entitas.PrimaryEntityIndex<ViewSkillEntity, ulong>)context.GetEntityIndex(Contexts.SkillCasterId)).GetEntity(Id);
     }
 }
 //------------------------------------------------------------------------------

@@ -66,6 +66,19 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillCastContextComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillCasterIdComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillTargetIdComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingIdleMotionNameComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingIdlableRefComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingIdleStateComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingCastableRefComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingCastStateComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingDeadComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingMovableRefComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingMoveMotionNameComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingMoveStateComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingStateMachineComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingCastAbilitiesComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingDefaultCastAbilityComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingPassiveAbilitiesComponent.cs" />
@@ -100,16 +113,6 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingThingComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingIntelligentComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCreateContextComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingCastableRefComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingCastStateComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingDeadComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingIdleMotionNameComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingIdlableRefComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingIdleStateComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingMovableRefComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingMoveMotionNameComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingMoveStateComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingStateMachineComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingDestroyedComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingIdComponent.cs" />
     <Compile Include="Generated\LogicBuff\Components\LogicBuffIdComponent.cs" />
@@ -119,9 +122,9 @@
     <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedIntValueLogicComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedUlongValueLogicComponent.cs" />
     <Compile Include="Generated\Components\Interfaces\IIdEntity.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
     <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
-    <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
     <Compile Include="Generated\LogicInput\LogicInputComponentsLookup.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillAttribute.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffAttribute.cs" />
@@ -141,9 +144,15 @@
     <Compile Include="Generated\LogicInput\LogicInputEntity.cs" />
     <Compile Include="Generated\LogicThing\LogicThingEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Skill\Comparer\DistanceComparer.cs" />
     <Compile Include="Skill\Comparer\LessHealthPointComparer.cs" />
     <Compile Include="Skill\Comparer\NestedComparer.cs" />
+    <Compile Include="Skill\Component\Cast\SkillCastContextComponent.cs" />
+    <Compile Include="Skill\Component\Cast\SkillCasterIdComponent.cs" />
+    <Compile Include="Skill\Component\Cast\SkillTargetIdComponent.cs" />
+    <Compile Include="Skill\SkillEx.cs" />
     <Compile Include="Skill\Utils\SkillTargetSelectUtil.cs" />
     <Compile Include="Utils\RangeUtil.cs" />
     <Compile Include="Utils\TransformUtil.cs" />

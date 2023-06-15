@@ -71,14 +71,20 @@ namespace Battle.Logic.Base.FSM
                 return false;
             }
             
+            // 更新当前状态
             if (state == CurState) {
                 UpdateCurState(context);
                 return true;
             }
             
+            // 退出前状态
             ExistCurState();
+            
+            // 进入当前状态
             CurState = state;
+            CurState.StateContext = context;
             CurState.OnEnter(Entity);
+            
             return true;
         }
 
