@@ -9,6 +9,7 @@
 
 using System.Collections.Generic;
 using Core.Lite.Loggers;
+using Core.Lite.RefPool;
 using Entitas;
 
 namespace Battle.View.Base.System
@@ -28,6 +29,14 @@ namespace Battle.View.Base.System
         protected abstract override void Execute(List<TEntity> entities);
         
         protected BattleViewConfig ViewConfigs => Contexts.GetController().GetViewConfig();
+
+        public IRefPool<List<T>> ListPool<T>() {
+            return Contexts.ListPool<T>();
+        }
+
+        protected void LogDebug(LogTag tag, string content, params object[] args) {
+            Logger.LogDebug(tag, content, args);
+        }
         
         protected void LogWarning(LogTag tag, string content, params object[] args) {
             Logger.LogWarning(tag, content, args);

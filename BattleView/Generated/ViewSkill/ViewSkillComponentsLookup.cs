@@ -20,8 +20,9 @@ public static class ViewSkillComponentsLookup {
     public const int SkillContinuousSequence = 9;
     public const int SkillEndingSequence = 10;
     public const int SkillSequence = 11;
+    public const int SkillView = 12;
 
-    public const int TotalComponents = 12;
+    public const int TotalComponents = 13;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -35,7 +36,8 @@ public static class ViewSkillComponentsLookup {
         "SkillCastSpeedScale",
         "SkillContinuousSequence",
         "SkillEndingSequence",
-        "SkillSequence"
+        "SkillSequence",
+        "SkillView"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -50,6 +52,7 @@ public static class ViewSkillComponentsLookup {
         typeof(Battle.View.Skill.Component.SkillCastSpeedScaleComponent),
         typeof(Battle.View.Skill.Component.SkillContinuousSequenceComponent),
         typeof(Battle.View.Skill.Component.SkillEndingSequenceComponent),
-        typeof(Battle.View.Skill.Component.SkillSequenceComponent)
+        typeof(Battle.View.Skill.Component.SkillSequenceComponent),
+        typeof(Battle.View.Skill.Component.SkillViewComponent)
     };
 }

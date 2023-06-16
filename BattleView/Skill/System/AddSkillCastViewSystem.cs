@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using Battle.View.Base;
 using Battle.View.Base.System;
 using Battle.View.Constant;
+using Core.Unity.Behaviours;
+using Core.Unity.Extensions;
 using DG.Tweening;
 using Entitas;
 using Entitas.Unity;
@@ -117,6 +119,10 @@ namespace Battle.View.Skill.System
             casterEntity.avatarView.ViewObject.transform.localRotation = rotation;
         }
         
+        /// <summary>
+        /// 创建技能视图的播放
+        /// </summary>
+        /// <param name="skillEntity"></param>
         private void CreateSkillView(ViewSkillEntity skillEntity) {
             var casterTransform = (Transform)null;
             var targetTransform = (Transform)null;
@@ -129,34 +135,119 @@ namespace Battle.View.Skill.System
             }
             casterTransform = casterEntity.avatarView.ViewObject.transform;
 
+            // 可能是非指向性技能，没有目标
             var targetEntity = Contexts.viewThing.GetEntityWithId(casterContext.TargetId);
-            if (targetEntity == null || !targetEntity.hasAvatarView) {
-                LogWarning(LogTagDef.SkillLogTag, "In create skill view try get target entity failed, id: {0}", casterContext.TargetId);
+            if (targetEntity != null && targetEntity.hasAvatarView) {
+                targetTransform = targetEntity.avatarView.ViewObject.transform;
+            }
+            
+            var castSpeed = skillEntity.hasSkillCastSpeedScale ? skillEntity.skillCastSpeedScale.Value.AsFloat() : 1f;
+            
+            if (CreateAndPlayStartSequence(skillEntity, casterTransform, targetTransform, castSpeed)) {
                 return;
             }
-            targetTransform = targetEntity.avatarView.ViewObject.transform;
 
-            var castSpeed = skillEntity.hasSkillCastSpeedScale ? skillEntity.skillCastSpeedScale.Value : 1f;
+            if (CreateAndPlayContinuousSequence(skillEntity, casterTransform, targetTransform, castSpeed)) {
+                return;
+            }
+            
+            LogError(LogTagDef.SkillLogTag, "No valid skill view created, caster id: {0}, skill guid: {1}",
+                skillEntity.skillCastContext.OwnerId, skillEntity.skillCastContext.Ability.Guid);
         }
 
+        /// <summary>
+        /// 起手技能序列
+        /// </summary>
+        /// <param name="skillEntity"></param>
+        /// <param name="casterTransform"></param>
+        /// <param name="targetTransform"></param>
+        /// <param name="castSpeed"></param>
+        /// <returns></returns>
         private bool CreateAndPlayStartSequence(ViewSkillEntity skillEntity, Transform casterTransform,
             Transform targetTransform, float castSpeed) {
             if (!skillEntity.hasSkillSequence) {
                 return false;
             }
 
-            var sequence = CreateSequenceAndPlay(skillEntity.skillSequence.Path, 
+            var seq = CreateSequenceAndPlay(skillEntity.skillSequence.Path, 
                 skillEntity,
                 casterTransform,
                 targetTransform, 
                 castSpeed,
                 () => {
-                    // TODO 
+                    // TODO 快照还原
+                    skillEntity.RecycleSequence();
+                    CreateAndPlayContinuousSequence(skillEntity, casterTransform, targetTransform, castSpeed);
                 });
 
-            return sequence != null;
+            return seq != null;
         }
 
+        /// <summary>
+        /// 持续技能序列
+        /// </summary>
+        /// <param name="skillEntity"></param>
+        /// <param name="casterTransform"></param>
+        /// <param name="targetTransform"></param>
+        /// <param name="castSpeed"></param>
+        /// <returns></returns>
+        private bool CreateAndPlayContinuousSequence(ViewSkillEntity skillEntity, Transform casterTransform,
+            Transform targetTransform, float castSpeed) {
+            if (!skillEntity.hasSkillContinuousSequence) {
+                return false;
+            }
+            
+            var seq = CreateSequenceAndPlay(skillEntity.skillContinuousSequence.Path, 
+                skillEntity,
+                casterTransform,
+                targetTransform, 
+                castSpeed);
+            
+            // 根据配置将技能序列设置为循环
+            if (seq != null && skillEntity.skillContinuousSequence.Loop) {
+                seq.Loop = true;
+            }
+
+            // 持续配置时间后，回收持续序列，尝试创建收尾技能序列
+            var duration = skillEntity.skillContinuousSequence.Duration;
+            seq.gameObject.GetOrAddComponent<MethodInvoker>().DelayInvoke(duration, (contexts, entity) => {
+                // TODO 快照处理
+                entity.RecycleSequence();
+                CreateAndPlayEndSequence(skillEntity, casterTransform, targetTransform, castSpeed);
+            }, 
+            Contexts,
+            skillEntity);
+
+            return seq != null;
+        }
+
+        /// <summary>
+        /// 收尾技能序列
+        /// </summary>
+        /// <param name="skillEntity"></param>
+        /// <param name="casterTransform"></param>
+        /// <param name="targetTransform"></param>
+        /// <param name="castSpeed"></param>
+        /// <returns></returns>
+        private bool CreateAndPlayEndSequence(ViewSkillEntity skillEntity, Transform casterTransform,
+            Transform targetTransform, float castSpeed) {
+            if (!skillEntity.hasSkillEndingSequence) {
+                return false;
+            }
+            
+            var seq = CreateSequenceAndPlay(skillEntity.skillEndingSequence.Path, 
+                skillEntity,
+                casterTransform,
+                targetTransform, 
+                castSpeed, 
+                () => {
+                    // TODO 快照处理
+                    skillEntity.RecycleSequence();
+                });
+
+            return seq != null;
+        }
+        
         private FSequence CreateSequenceAndPlay(string sequencePath, 
             ViewSkillEntity skillEntity,
             Transform casterTransform,
@@ -185,15 +276,26 @@ namespace Battle.View.Skill.System
             }
             
             // TODO 快照处理
+            skillEntity.AddSkillView(go);
             seq.RuntimeArgs = new FRuntimeArgs() {
                 Caster = casterTransform,
                 Target = targetTransform
             };
-            // TODO  Sequence RuntimeSetting
+            seq.RuntimeSetting = Contexts.GetFluxRuntimeSetting();
+            // TODO 序列速度控制
             seq.ReplaceOwner(casterTransform);
-
-            seq.gameObject.Link(skillEntity);
             
+            seq.gameObject.Link(skillEntity);
+            seq.OnFinishedCallback.RemoveAllListeners();
+            seq.OnFinishedCallback.AddListener(v => {
+                onFinish?.Invoke();
+            });
+            seq.Play();
+
+            LogDebug(LogTagDef.SkillLogTag, "Skill view sequence created, casterId: {0}, path: {1}",
+                skillEntity.skillCasterId.Id, sequencePath);
+            
+            return seq;
         }
     }
 }

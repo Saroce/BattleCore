@@ -123,6 +123,7 @@
     <Compile Include="Generated\ViewSkill\Components\ViewSkillSkillContinuousSequenceComponent.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillSkillEndingSequenceComponent.cs" />
     <Compile Include="Generated\ViewSkill\Components\ViewSkillSkillSequenceComponent.cs" />
+    <Compile Include="Generated\ViewSkill\Components\ViewSkillSkillViewComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarAssetComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarMotionComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarRadiusComponent.cs" />
@@ -225,6 +226,7 @@
     <Compile Include="Skill\Component\SkillEndingSequenceComponent.cs" />
     <Compile Include="Skill\Component\SkillSequenceComponent.cs" />
     <Compile Include="Skill\Component\SkillViewComponent.cs" />
+    <Compile Include="Skill\SkillEx.cs" />
     <Compile Include="Skill\SkillSystems.cs" />
     <Compile Include="Skill\System\AddSkillCastViewSystem.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarAssetComponent.cs" />

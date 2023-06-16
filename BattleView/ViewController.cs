@@ -13,6 +13,7 @@ using Battle.View.Base;
 using Core.Lite.Base;
 using Core.Lite.DataSystem.Config;
 using Core.Lite.RefPool;
+using Core.Lite.RefPool.Allocator;
 using ExcelConvert.Auto.BattleConf;
 using ExcelConvert.Auto.BuffConf;
 using ExcelConvert.Auto.DressConf;
@@ -80,8 +81,18 @@ namespace Battle.View
             return _battleContext;
         } 
         
-        internal IRefPoolManager GetRefPoolManager() {
+        internal IRefPoolManager RefPoolManager() {
             return GetBattleContext().RefPoolManager;
+        }
+        
+        internal IRefPool<T> GetRefPool<T>() where T : class, new() {
+            return RefPoolManager().GetRefPool<T>();
+        }
+
+        internal IRefPool<T1> GetRefPool<T1, T2>()
+            where T1 : class, new()
+            where T2 : IPoolRefAllocator<T1>, new() {
+            return RefPoolManager().GetRefPool<T1, T2>();
         }
         
         internal TSRandom GetRandom() {

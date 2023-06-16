@@ -15,6 +15,9 @@ namespace Battle.Logic.Skill
     {
         public SkillSystems(LogicContexts contexts) {
             
+            // Reactive Systems
+            Add(new CastSkillSystem(contexts));
+            
             // TearDown System
             Add(new SkillTearDownSystem(contexts));
         }

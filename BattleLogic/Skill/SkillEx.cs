@@ -18,6 +18,7 @@ namespace Battle.Logic.Skill
             ulong targetId, SkillConfData ability) {
             var castSpeed = caster.GetCastSpeedScale(contexts, ability);
 
+            // 创建施法逻辑实体
             var skillEntity = context.CreateEntity();
             skillEntity.AddId(contexts.GetIndependentId());
             skillEntity.AddSkillCasterId(caster.id.Value);

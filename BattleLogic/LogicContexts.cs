@@ -60,8 +60,8 @@ namespace Battle.Logic
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public IRefPool<List<T>> ListPool<T>() {
-            return GetController().ObjectPool<List<T>, ListAllocator<T>>();
+        internal IRefPool<List<T>> ListPool<T>() {
+            return GetController().GetRefPool<List<T>, ListAllocator<T>>();
         }
 
         /// <summary>
@@ -69,8 +69,8 @@ namespace Battle.Logic
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public IRefPool<HashSet<T>> HashSetPool<T>() {
-            return GetController().ObjectPool<HashSet<T>, HashSetAllocator<T>>();
+        internal IRefPool<HashSet<T>> HashSetPool<T>() {
+            return GetController().GetRefPool<HashSet<T>, HashSetAllocator<T>>();
         }
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace Battle.Logic
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public IRefPool<Stack<T>> StackPool<T>() {
-            return GetController().ObjectPool<Stack<T>, StackAllocator<T>>();
+        internal IRefPool<Stack<T>> StackPool<T>() {
+            return GetController().GetRefPool<Stack<T>, StackAllocator<T>>();
         }
 
         public IRefPoolManager RefPoolManager() {

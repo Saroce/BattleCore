@@ -53,7 +53,7 @@ namespace Battle.View.Input.System
                     processor.Process(message);
                 }
                 
-                Contexts.GetRefPoolManager().TryReturn(message);
+                Contexts.RefPoolManager().TryReturn(message);
             }
         }
     }

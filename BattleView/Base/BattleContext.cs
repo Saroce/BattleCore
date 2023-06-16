@@ -11,6 +11,8 @@ using Core.Bundler;
 using Core.Lite.DataSystem;
 using Core.Lite.RefPool;
 using Core.Unity.SpawnPool;
+using Flux.Runtime.Adapter.Audios;
+using Flux.Runtime.Adapter.Loaders;
 using UnityEngine;
 
 namespace Battle.View.Base
@@ -26,6 +28,9 @@ namespace Battle.View.Base
         public IBundler Bundler;
         public ISpawnPool SpawnPool;
         public IDataReader DataReader;
+        public IAudioPlayerFactory FluxAudioPlayerFactory;
+        public IAssetLoader FluxAssetLoader;
+        public string FluxObjectRootName;
         public GameObject HUDRoot;
         public GameObject CameraRoot;
         public Camera HUDCamera;

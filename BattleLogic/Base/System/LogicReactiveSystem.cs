@@ -8,6 +8,9 @@
 //============================================================
 
 using System.Collections.Generic;
+using System.Diagnostics;
+using Battle.Common.Context.Message;
+using Core.Lite.Loggers;
 using Entitas;
 
 namespace Battle.Logic.Base.System
@@ -25,5 +28,26 @@ namespace Battle.Logic.Base.System
         protected abstract override bool Filter(TEntity entity);
 
         protected abstract override void Execute(List<TEntity> entities);
+        
+        protected void SendMessage(IBattleMessage message) {
+            Contexts.SendMessage(message);
+        }
+        
+        [Conditional("FULL_LOG")]
+        protected void LogDebug(LogTag tag, string content, params object[] args) {
+            Contexts.GetLogger().LogDebug(tag, content, 2, args);
+        }
+
+        protected void LogInfo(LogTag tag, string content, params object[] args) {
+            Contexts.GetLogger().LogInfo(tag, content, 2, args);
+        }
+
+        protected void LogWarning(LogTag tag, string content, params object[] args) {
+            Contexts.GetLogger().LogWarning(tag, content, 2, args);
+        }
+
+        protected void LogError(LogTag tag, string content, params object[] args) {
+            Contexts.GetLogger().LogError(tag, content, 2, args);
+        }
     }
 }

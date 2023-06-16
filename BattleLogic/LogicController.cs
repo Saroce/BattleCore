@@ -156,7 +156,7 @@ namespace Battle.Logic
             return RefPoolManager().GetRefPool<T>();
         }
 
-        internal IRefPool<T1> ObjectPool<T1, T2>()
+        internal IRefPool<T1> GetRefPool<T1, T2>()
             where T1 : class, new()
             where T2 : IPoolRefAllocator<T1>, new() {
             return RefPoolManager().GetRefPool<T1, T2>();
