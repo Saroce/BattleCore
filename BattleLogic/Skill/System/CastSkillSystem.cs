@@ -8,9 +8,14 @@
 //============================================================
 
 using System.Collections.Generic;
+using Battle.Common.Context.Combat;
 using Battle.Logic.Base.System;
 using Battle.Logic.Constant;
+using Battle.Logic.Skill.Component.Flux;
+using Battle.Logic.Skill.Utils;
 using Entitas;
+using SkillModule.Runtime.Skill;
+using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Skill.System
 {
@@ -62,7 +67,51 @@ namespace Battle.Logic.Skill.System
                 }
             }
             
+            var startTime = (FixedPoint) 0f;
+            var events = ListPool<SkillFluxEventContext>().Get();
+        }
+
+        private bool ReadFluxEventData(ActiveSkillTimelineData timelineData,
+            LogicSkillEntity skillEntity,
+            FixedPoint startTime, 
+            ref List<SkillFluxEventContext> events, 
+            out FixedPoint length) {
+
+            if (timelineData == null) {
+                length = 0f;
+                return false;
+            }
+
+            var sequencePath = timelineData.SequencePath;
+            if (string.IsNullOrEmpty(sequencePath)) {
+                length = 0f;
+                return false;
+            }
+
+            // 转换到Flux导出数据文件路径，反序列化得到Flux序列数据
+            var seqDataPath = SkillUtil.ConvertToSequenceDataPath(sequencePath);
+            var sequence = DataReader.ReadData<FluxSkillEventData>(sequencePath);
+            if (sequence == null) {
+                LogError(LogTagDef.SkillLogTag, $"Read sequence failed path: {seqDataPath}");
+                length = 0f;
+                return false;
+            }
+
+            // 得出整个序列文件长度
+            length = (FixedPoint)sequence.Length / sequence.FrameRate;
+            if (length <= 0f) {
+                LogError(LogTagDef.SkillLogTag, "Sequence length <= 0: {0}", sequencePath);
+                return false;
+            }
+
+            var castContext = skillEntity.skillCastContext;
+            var skillConfData = castContext.Ability;
             
+            // 处理Flux的Judge事件
+            var judgeList = timelineData.Judges;
+            for (var i = 0; i < sequence.Judges.Count; i++) {
+                
+            }
         }
     }
 }

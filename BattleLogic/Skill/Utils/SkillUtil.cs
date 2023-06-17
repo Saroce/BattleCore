@@ -243,5 +243,19 @@ namespace Battle.Logic.Skill.Utils
 
             return SkillCastResult.NoError;
         }
+
+        private static readonly Dictionary<string, string> _sequencePathDict = new Dictionary<string, string>();
+
+        public static string ConvertToSequenceDataPath(string prefabPath) {
+            if (string.IsNullOrEmpty(prefabPath)) {
+                return string.Empty;
+            }
+
+            if (_sequencePathDict.TryGetValue(prefabPath, out var outPath)) {
+                return outPath;
+            }
+
+            return _sequencePathDict[prefabPath] = prefabPath.Replace(".prefab", ".json");
+        }
     }
 }

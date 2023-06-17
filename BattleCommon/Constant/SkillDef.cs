@@ -17,6 +17,15 @@ namespace Battle.Common.Constant
         public const string SkillDataDir = "Assets/Bundles/Data/Skills/";
     }
 
+    /// <summary>
+    /// 技能Flux事件类型
+    /// </summary>
+    public enum SkillFluxEventType
+    {
+        Judge, // 判定
+        Shoot, // 发射
+    }
+    
     public enum SkillCastResult
     {
         NoError,    // 无错误

@@ -67,6 +67,7 @@
         <Compile Include="Constant\SkillDef.cs" />
         <Compile Include="Constant\ThingDef.cs" />
         <Compile Include="Context\Combat\CombatValue.cs" />
+        <Compile Include="Context\Combat\FluxSkillEventData.cs" />
         <Compile Include="Context\Combat\SkillConfData.cs" />
         <Compile Include="Context\Combat\SkillLevelData.cs" />
         <Compile Include="Context\Command\BattleRequest.cs" />

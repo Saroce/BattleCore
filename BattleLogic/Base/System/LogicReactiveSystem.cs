@@ -10,7 +10,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Battle.Common.Context.Message;
+using Core.Lite.DataSystem;
+using Core.Lite.DataSystem.Config;
 using Core.Lite.Loggers;
+using Core.Lite.RefPool;
 using Entitas;
 
 namespace Battle.Logic.Base.System
@@ -29,8 +32,15 @@ namespace Battle.Logic.Base.System
 
         protected abstract override void Execute(List<TEntity> entities);
         
+        protected IConfigReader ConfigReader => Contexts.GetController().GetConfigReader();
+        protected IDataReader DataReader => Contexts.GetBattleContext().DataReader;
+        
         protected void SendMessage(IBattleMessage message) {
             Contexts.SendMessage(message);
+        }
+        
+        public IRefPool<List<T>> ListPool<T>() {
+            return Contexts.ListPool<T>();
         }
         
         [Conditional("FULL_LOG")]

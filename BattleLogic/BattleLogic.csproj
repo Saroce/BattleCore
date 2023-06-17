@@ -152,6 +152,7 @@
     <Compile Include="Skill\Component\Cast\SkillCastContextComponent.cs" />
     <Compile Include="Skill\Component\Cast\SkillCasterIdComponent.cs" />
     <Compile Include="Skill\Component\Cast\SkillTargetIdComponent.cs" />
+    <Compile Include="Skill\Component\Flux\SkillFluxEventContext.cs" />
     <Compile Include="Skill\SkillEx.cs" />
     <Compile Include="Skill\System\CastSkillSystem.cs" />
     <Compile Include="Skill\Utils\SkillTargetSelectUtil.cs" />
