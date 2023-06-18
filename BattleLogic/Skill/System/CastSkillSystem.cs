@@ -8,6 +8,7 @@
 //============================================================
 
 using System.Collections.Generic;
+using Battle.Common.Constant;
 using Battle.Common.Context.Combat;
 using Battle.Logic.Base.System;
 using Battle.Logic.Constant;
@@ -110,8 +111,33 @@ namespace Battle.Logic.Skill.System
             // 处理Flux的Judge事件
             var judgeList = timelineData.Judges;
             for (var i = 0; i < sequence.Judges.Count; i++) {
-                
+                var judgeData = sequence.Judges[i];
+                var evt = new JudgeFluxEventContext() {
+                    SkillEntityId = skillEntity.id.Value,
+                    SkillConfData = skillConfData,
+                    JudgeData = judgeList[i],
+                    Time = castContext.CastSpeed * (startTime + (FixedPoint) judgeData.StartFrame / sequence.FrameRate),
+                    Type = SkillFluxEventType.Judge
+                };
+                events.Add(evt);
             }
+            
+            // 处理Flux的Shoot事件
+            var shootList = timelineData.Shoots;
+            for (var i = 0; i < sequence.Shoots.Count; i++) {
+                var shootData = sequence.Shoots[i];
+                var evt = new ShootFluxEventContext() {
+                    SkillEntityId = skillEntity.id.Value,
+                    SkillConfData = skillConfData,
+                    Time = castContext.CastSpeed * (startTime + (FixedPoint) shootData.StartFrame / sequence.FrameRate),
+                    Type = SkillFluxEventType.Shoot,
+                    ShootData = shootList[i],
+                    FluxShootData = shootData
+                };
+                events.Add(evt);
+            }
+
+            return true;
         }
     }
 }

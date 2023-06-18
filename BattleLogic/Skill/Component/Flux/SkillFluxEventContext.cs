@@ -9,6 +9,7 @@
 
 using Battle.Common.Constant;
 using Battle.Common.Context.Combat;
+using SkillModule.Runtime.Skill;
 using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Skill.Component.Flux
@@ -19,5 +20,16 @@ namespace Battle.Logic.Skill.Component.Flux
         public FixedPoint Time; // 触发时间
         public SkillFluxEventType Type; // 技能事件类型
         public ulong SkillEntityId; // 技能实体ID
+    }
+
+    public class JudgeFluxEventContext : SkillFluxEventContext
+    {
+        public ActiveSkillJudge JudgeData;
+    }
+
+    public class ShootFluxEventContext : SkillFluxEventContext
+    {
+        public FluxSkillShootData FluxShootData;
+        public ActiveSkillShoot ShootData;
     }
 }
