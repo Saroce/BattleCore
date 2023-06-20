@@ -10,6 +10,7 @@
 using System.Collections.Generic;
 using Battle.Logic.Skill.Comparer;
 using SkillModule.Runtime.Skill;
+using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Skill.Utils
 {
@@ -90,6 +91,11 @@ namespace Battle.Logic.Skill.Utils
             // TODO 比较阵营，职业，排除选项
 
             return true;
+        }
+
+        public static bool TestRandom(LogicContexts contexts, FixedPoint value) {
+            var randomValue = contexts.GetRandom().Next01() * 100f;
+            return randomValue <= value;
         }
     }
 }

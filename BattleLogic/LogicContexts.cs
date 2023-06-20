@@ -19,6 +19,7 @@ using Core.Lite.Loggers;
 using Core.Lite.RefPool;
 using Core.Lite.RefPool.Allocator;
 using UnityEngine.Pool;
+using vFrame.Lockstep.Core;
 using Logger = Battle.Logic.Base.Logger;
 
 namespace Battle.Logic
@@ -96,6 +97,10 @@ namespace Battle.Logic
 
         internal IDataReader GetDataReader() {
             return GetController().GetDataReader();
+        }
+
+        internal TSRandom GetRandom() {
+            return GetController().GetRandom();
         }
         
         internal bool TryDequeueRequest(out IBattleRequest request) {
