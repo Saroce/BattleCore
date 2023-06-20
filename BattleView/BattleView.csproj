@@ -141,23 +141,28 @@
     <Compile Include="Generated\ViewThing\ViewThingComponentsLookup.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffComponentsLookup.cs" />
     <Compile Include="Generated\ViewHUD\ViewHUDComponentsLookup.cs" />
+    <Compile Include="Generated\ViewEffect\ViewEffectComponentsLookup.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillAttribute.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffAttribute.cs" />
     <Compile Include="Generated\ViewThing\ViewThingAttribute.cs" />
     <Compile Include="Generated\ViewHUD\ViewHUDAttribute.cs" />
+    <Compile Include="Generated\ViewEffect\ViewEffectAttribute.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillContext.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffContext.cs" />
     <Compile Include="Generated\ViewThing\ViewThingContext.cs" />
     <Compile Include="Generated\ViewHUD\ViewHUDContext.cs" />
+    <Compile Include="Generated\ViewEffect\ViewEffectContext.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillMatcher.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffMatcher.cs" />
     <Compile Include="Generated\ViewThing\ViewThingMatcher.cs" />
     <Compile Include="Generated\ViewHUD\ViewHUDMatcher.cs" />
+    <Compile Include="Generated\ViewEffect\ViewEffectMatcher.cs" />
     <Compile Include="Generated\Contexts.cs" />
     <Compile Include="Generated\ViewSkill\ViewSkillEntity.cs" />
     <Compile Include="Generated\ViewBuff\ViewBuffEntity.cs" />
     <Compile Include="Generated\ViewThing\ViewThingEntity.cs" />
     <Compile Include="Generated\ViewHUD\ViewHUDEntity.cs" />
+    <Compile Include="Generated\ViewEffect\ViewEffectEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,7 @@
 //    Modified:  2023-06-16
 //============================================================
 
+using System;
 using System.Collections.Generic;
 using Battle.Common.Constant;
 using Battle.Common.Context.Combat;
@@ -58,7 +59,7 @@ namespace Battle.Logic.Skill.System
                         skillConfData.Guid);
                     return;
                 }
-                
+
                 // 没有配置持续技能序列
                 if (string.IsNullOrEmpty(skillConfData.ActiveSkillData.ContinuousTimelineData?.SequencePath)) {
                     LogError(LogTagDef.SkillLogTag,
@@ -67,17 +68,66 @@ namespace Battle.Logic.Skill.System
                     return;
                 }
             }
-            
-            var startTime = (FixedPoint) 0f;
+
+            var startTime = (FixedPoint)0f;
             var events = ListPool<SkillFluxEventContext>().Get();
+
+            // 起手阶段
+            if (!ReadFluxEventData(skillConfData.ActiveSkillData.StartTimelineData, skillEntity, startTime, ref events,
+                    out var startDuration)) {
+                ListPool<SkillFluxEventContext>().Return(events);
+                return;
+            }
+
+            startTime += startDuration;
+
+            // 持续阶段
+            var continuousDuration = (FixedPoint)0f;
+            if (skillConfData.ActiveSkillData.BaseData.IsContinuous) {
+                if (skillConfData.ActiveSkillData.BaseData.Duration == int.MaxValue) {
+                    throw new NotSupportedException("Active skill duration == int.MaxValue is not supported, guid: " +
+                                                    skillConfData.ActiveSkillData.Guid);
+                }
+
+                continuousDuration = (FixedPoint)skillConfData.ActiveSkillData.BaseData.Duration / 1000f;
+                var duration = (FixedPoint)0f;
+                while (duration < continuousDuration) {
+                    if (!ReadFluxEventData(skillConfData.ActiveSkillData.ContinuousTimelineData, skillEntity, startTime,
+                            ref events, out var length)) {
+                        break;
+                    }
+
+                    duration += length;
+                }
+            }
+
+            startTime += continuousDuration;
+
+            // 收尾阶段
+            var endDuration = (FixedPoint) 0f;
+            if (skillConfData.ActiveSkillData.BaseData.IsContinuous) {
+                ReadFluxEventData(skillConfData.ActiveSkillData.EndTimelineData, skillEntity, startTime, ref events,
+                    out endDuration);
+            }
+            
+            // 按照技能序列触发时间进行排序
+            events.Sort((a, b) => a.Time.CompareTo(b.Time));
+            
+            skillEntity.AddSkillFluxEvents(events);
+            skillEntity.AddSkillCastTime(Contexts.GetClock().GetTime());
+
+            var totalDuration = startDuration + continuousDuration + endDuration;
+            skillEntity.AddSkillCastDuration(skillContext.CastSpeed * totalDuration);
+            
+            LogDebug(LogTagDef.SkillLogTag, "Skill sequences read finished, caster id: {0}, skill guid: {1}, total duration: {2}",
+                skillContext.CasterId, skillContext.Ability.ActiveSkillData.Guid, totalDuration);
         }
 
         private bool ReadFluxEventData(ActiveSkillTimelineData timelineData,
             LogicSkillEntity skillEntity,
-            FixedPoint startTime, 
-            ref List<SkillFluxEventContext> events, 
+            FixedPoint startTime,
+            ref List<SkillFluxEventContext> events,
             out FixedPoint length) {
-
             if (timelineData == null) {
                 length = 0f;
                 return false;
@@ -107,7 +157,7 @@ namespace Battle.Logic.Skill.System
 
             var castContext = skillEntity.skillCastContext;
             var skillConfData = castContext.Ability;
-            
+
             // 处理Flux的Judge事件
             var judgeList = timelineData.Judges;
             for (var i = 0; i < sequence.Judges.Count; i++) {
@@ -116,12 +166,12 @@ namespace Battle.Logic.Skill.System
                     SkillEntityId = skillEntity.id.Value,
                     SkillConfData = skillConfData,
                     JudgeData = judgeList[i],
-                    Time = castContext.CastSpeed * (startTime + (FixedPoint) judgeData.StartFrame / sequence.FrameRate),
+                    Time = castContext.CastSpeed * (startTime + (FixedPoint)judgeData.StartFrame / sequence.FrameRate),
                     Type = SkillFluxEventType.Judge
                 };
                 events.Add(evt);
             }
-            
+
             // 处理Flux的Shoot事件
             var shootList = timelineData.Shoots;
             for (var i = 0; i < sequence.Shoots.Count; i++) {
@@ -129,7 +179,7 @@ namespace Battle.Logic.Skill.System
                 var evt = new ShootFluxEventContext() {
                     SkillEntityId = skillEntity.id.Value,
                     SkillConfData = skillConfData,
-                    Time = castContext.CastSpeed * (startTime + (FixedPoint) shootData.StartFrame / sequence.FrameRate),
+                    Time = castContext.CastSpeed * (startTime + (FixedPoint)shootData.StartFrame / sequence.FrameRate),
                     Type = SkillFluxEventType.Shoot,
                     ShootData = shootList[i],
                     FluxShootData = shootData

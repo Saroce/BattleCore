@@ -63,10 +63,12 @@
         <Compile Include="Configs\Generated\SkillConfBasic.cs" />
         <Compile Include="Configs\Generated\SkillConfSkillLevel.cs" />
         <Compile Include="Constant\BattleDef.cs" />
+        <Compile Include="Constant\EffectDef.cs" />
         <Compile Include="Constant\MotionDef.cs" />
         <Compile Include="Constant\SkillDef.cs" />
         <Compile Include="Constant\ThingDef.cs" />
         <Compile Include="Context\Combat\CombatValue.cs" />
+        <Compile Include="Context\Combat\EffectUserData.cs" />
         <Compile Include="Context\Combat\FluxSkillEventData.cs" />
         <Compile Include="Context\Combat\SkillConfData.cs" />
         <Compile Include="Context\Combat\SkillLevelData.cs" />

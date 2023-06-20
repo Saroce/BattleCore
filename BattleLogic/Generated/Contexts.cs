@@ -22,14 +22,16 @@ public partial class Contexts : Entitas.IContexts {
     static Contexts _sharedInstance;
 
     public LogicBuffContext logicBuff { get; set; }
+    public LogicEffectContext logicEffect { get; set; }
     public LogicInputContext logicInput { get; set; }
     public LogicSkillContext logicSkill { get; set; }
     public LogicThingContext logicThing { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { logicBuff, logicInput, logicSkill, logicThing }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { logicBuff, logicEffect, logicInput, logicSkill, logicThing }; } }
 
     public Contexts() {
         logicBuff = new LogicBuffContext();
+        logicEffect = new LogicEffectContext();
         logicInput = new LogicInputContext();
         logicSkill = new LogicSkillContext();
         logicThing = new LogicThingContext();
@@ -78,6 +80,10 @@ public partial class Contexts {
             Id,
             logicSkill.GetGroup(LogicSkillMatcher.Id),
             (e, c) => ((Battle.Logic.Base.Component.IdComponent)c).Value));
+        logicEffect.AddEntityIndex(new Entitas.PrimaryEntityIndex<LogicEffectEntity, ulong>(
+            Id,
+            logicEffect.GetGroup(LogicEffectMatcher.Id),
+            (e, c) => ((Battle.Logic.Base.Component.IdComponent)c).Value));
     }
 }
 
@@ -93,6 +99,10 @@ public static class ContextsExtensions {
 
     public static LogicSkillEntity GetEntityWithId(this LogicSkillContext context, ulong Value) {
         return ((Entitas.PrimaryEntityIndex<LogicSkillEntity, ulong>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
+    }
+
+    public static LogicEffectEntity GetEntityWithId(this LogicEffectContext context, ulong Value) {
+        return ((Entitas.PrimaryEntityIndex<LogicEffectEntity, ulong>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
     }
 }
 //------------------------------------------------------------------------------
@@ -111,6 +121,7 @@ public partial class Contexts {
     public void InitializeContextObservers() {
         try {
             CreateContextObserver(logicBuff);
+            CreateContextObserver(logicEffect);
             CreateContextObserver(logicInput);
             CreateContextObserver(logicSkill);
             CreateContextObserver(logicThing);

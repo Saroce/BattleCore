@@ -14,10 +14,13 @@ public static class LogicSkillComponentsLookup {
     public const int Id = 3;
     public const int Logic = 4;
     public const int SkillCastContext = 5;
-    public const int SkillCasterId = 6;
-    public const int SkillTargetId = 7;
+    public const int SkillCastDuration = 6;
+    public const int SkillCasterId = 7;
+    public const int SkillCastTime = 8;
+    public const int SkillTargetId = 9;
+    public const int SkillFluxEvents = 10;
 
-    public const int TotalComponents = 8;
+    public const int TotalComponents = 11;
 
     public static readonly string[] componentNames = {
         "EncryptedFixedPointValueLogic",
@@ -26,8 +29,11 @@ public static class LogicSkillComponentsLookup {
         "Id",
         "Logic",
         "SkillCastContext",
+        "SkillCastDuration",
         "SkillCasterId",
-        "SkillTargetId"
+        "SkillCastTime",
+        "SkillTargetId",
+        "SkillFluxEvents"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -37,7 +43,10 @@ public static class LogicSkillComponentsLookup {
         typeof(Battle.Logic.Base.Component.IdComponent),
         typeof(Battle.Logic.Base.Component.LogicComponent),
         typeof(Battle.Logic.Skill.Component.Cast.SkillCastContextComponent),
+        typeof(Battle.Logic.Skill.Component.Cast.SkillCastDurationComponent),
         typeof(Battle.Logic.Skill.Component.Cast.SkillCasterIdComponent),
-        typeof(Battle.Logic.Skill.Component.Cast.SkillTargetIdComponent)
+        typeof(Battle.Logic.Skill.Component.Cast.SkillCastTimeComponent),
+        typeof(Battle.Logic.Skill.Component.Cast.SkillTargetIdComponent),
+        typeof(Battle.Logic.Skill.Component.Flux.SkillFluxEventsComponent)
     };
 }

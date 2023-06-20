@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Logic.Buff;
+using Battle.Logic.Effect;
 using Battle.Logic.Input;
 using Battle.Logic.Skill;
 using Battle.Logic.Thing;
@@ -21,6 +22,7 @@ namespace Battle.Logic
             Add(new InputSystems(contexts));
             Add(new BuffSystems(contexts));
             Add(new SkillSystems(contexts));
+            Add(new EffectSystems(contexts));
         }
 
         public override void TearDown() {

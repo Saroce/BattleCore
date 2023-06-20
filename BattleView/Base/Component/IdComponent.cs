@@ -12,7 +12,7 @@ using Entitas.CodeGeneration.Attributes;
 
 namespace Battle.View.Base.Component
 {
-    [ViewBuff, ViewSkill, ViewThing]
+    [ViewBuff, ViewSkill, ViewThing, ViewEffect]
     public class IdComponent : ViewComponent
     {
         [PrimaryEntityIndex]

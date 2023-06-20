@@ -22,14 +22,16 @@ public partial class Contexts : Entitas.IContexts {
     static Contexts _sharedInstance;
 
     public ViewBuffContext viewBuff { get; set; }
+    public ViewEffectContext viewEffect { get; set; }
     public ViewHUDContext viewHUD { get; set; }
     public ViewSkillContext viewSkill { get; set; }
     public ViewThingContext viewThing { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { viewBuff, viewHUD, viewSkill, viewThing }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { viewBuff, viewEffect, viewHUD, viewSkill, viewThing }; } }
 
     public Contexts() {
         viewBuff = new ViewBuffContext();
+        viewEffect = new ViewEffectContext();
         viewHUD = new ViewHUDContext();
         viewSkill = new ViewSkillContext();
         viewThing = new ViewThingContext();
@@ -131,6 +133,7 @@ public partial class Contexts {
     public void InitializeContextObservers() {
         try {
             CreateContextObserver(viewBuff);
+            CreateContextObserver(viewEffect);
             CreateContextObserver(viewHUD);
             CreateContextObserver(viewSkill);
             CreateContextObserver(viewThing);

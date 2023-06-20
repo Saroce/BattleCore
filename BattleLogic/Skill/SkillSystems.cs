@@ -18,6 +18,9 @@ namespace Battle.Logic.Skill
             // Reactive Systems
             Add(new CastSkillSystem(contexts));
             
+            // Execute Systems
+            Add(new ProcessSkillFluxEventSystem(contexts));
+            
             // TearDown System
             Add(new SkillTearDownSystem(contexts));
         }
