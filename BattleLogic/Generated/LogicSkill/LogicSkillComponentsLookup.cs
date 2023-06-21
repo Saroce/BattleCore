@@ -8,21 +8,24 @@
 //------------------------------------------------------------------------------
 public static class LogicSkillComponentsLookup {
 
-    public const int EncryptedFixedPointValueLogic = 0;
-    public const int EncryptedIntValueLogic = 1;
-    public const int EncryptedUlongValueLogic = 2;
-    public const int Id = 3;
-    public const int Logic = 4;
-    public const int SkillCastContext = 5;
-    public const int SkillCastDuration = 6;
-    public const int SkillCasterId = 7;
-    public const int SkillCastTime = 8;
-    public const int SkillTargetId = 9;
-    public const int SkillFluxEvents = 10;
+    public const int Destroyed = 0;
+    public const int EncryptedFixedPointValueLogic = 1;
+    public const int EncryptedIntValueLogic = 2;
+    public const int EncryptedUlongValueLogic = 3;
+    public const int Id = 4;
+    public const int Logic = 5;
+    public const int SkillCastContext = 6;
+    public const int SkillCastDuration = 7;
+    public const int SkillCasterId = 8;
+    public const int SkillCastTime = 9;
+    public const int SkillFinished = 10;
+    public const int SkillTargetId = 11;
+    public const int SkillFluxEvents = 12;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 13;
 
     public static readonly string[] componentNames = {
+        "Destroyed",
         "EncryptedFixedPointValueLogic",
         "EncryptedIntValueLogic",
         "EncryptedUlongValueLogic",
@@ -32,11 +35,13 @@ public static class LogicSkillComponentsLookup {
         "SkillCastDuration",
         "SkillCasterId",
         "SkillCastTime",
+        "SkillFinished",
         "SkillTargetId",
         "SkillFluxEvents"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Battle.Logic.Base.Component.DestroyedComponent),
         typeof(Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent),
         typeof(Battle.Logic.Base.Component.EncryptedIntValueLogicComponent),
         typeof(Battle.Logic.Base.Component.EncryptedUlongValueLogicComponent),
@@ -46,6 +51,7 @@ public static class LogicSkillComponentsLookup {
         typeof(Battle.Logic.Skill.Component.Cast.SkillCastDurationComponent),
         typeof(Battle.Logic.Skill.Component.Cast.SkillCasterIdComponent),
         typeof(Battle.Logic.Skill.Component.Cast.SkillCastTimeComponent),
+        typeof(Battle.Logic.Skill.Component.Cast.SkillFinishedComponent),
         typeof(Battle.Logic.Skill.Component.Cast.SkillTargetIdComponent),
         typeof(Battle.Logic.Skill.Component.Flux.SkillFluxEventsComponent)
     };

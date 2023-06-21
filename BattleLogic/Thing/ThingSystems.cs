@@ -7,6 +7,7 @@
 //    Modified:  2023-03-27
 //============================================================
 
+using Battle.Logic.Thing.Behaviour.State.Cast.System;
 using Battle.Logic.Thing.Behaviour.State.Idle.System;
 using Battle.Logic.Thing.System;
 using Battle.Logic.Thing.System.Gamer;
@@ -22,6 +23,7 @@ namespace Battle.Logic.Thing
             
             // Reactive Systems
             Add(new UpdateIdleMotionSystem(contexts));
+            Add(new ExitCastStateOnFinishedSystem(contexts));
             
             // Teardown Systems
             Add(new ThingTearDownSystem(contexts));

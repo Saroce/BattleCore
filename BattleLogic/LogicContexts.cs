@@ -103,6 +103,10 @@ namespace Battle.Logic
             return GetController().GetRandom();
         }
         
+        public FrameCounter GetFrameCounter() {
+            return GetController().GetFrameCounter();
+        }
+        
         internal bool TryDequeueRequest(out IBattleRequest request) {
             return GetController().TryDequeueRequest(out request);
         }

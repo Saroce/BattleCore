@@ -27,6 +27,9 @@ namespace Battle.View.Input.System
             RegisterProcessor<OnRotationUpdate>();
             RegisterProcessor<OnEnterIdle>();
             RegisterProcessor<OnEnterCast>();
+            
+            // 技能相关消息
+            RegisterProcessor<OnSkillJudgeHit>();
         }
 
         /// <summary>

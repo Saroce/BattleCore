@@ -12,7 +12,7 @@ using vFrame.Lockstep.Core;
 
 namespace Battle.Common.Context.Message.Thing
 {
-    public class ThingEnterCastMessage : ThingMessageBase
+    public class ThingEnterCastMessage : ThingMessageBase<ThingEnterCastMessage>
     {
         public ulong TargetId { get; set; }
         public SkillConfData Ability { get; set; }

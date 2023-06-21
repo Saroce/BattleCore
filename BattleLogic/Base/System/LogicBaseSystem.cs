@@ -11,7 +11,7 @@ namespace Battle.Logic.Base.System
 {
     internal class LogicBaseSystem : LogicContextsBridge
     {
-        public LogicBaseSystem(LogicContexts contexts) {
+        protected LogicBaseSystem(LogicContexts contexts) {
             Create(contexts);
         }
     }

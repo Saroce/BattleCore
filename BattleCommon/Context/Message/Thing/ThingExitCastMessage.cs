@@ -11,7 +11,7 @@ using Battle.Common.Context.Combat;
 
 namespace Battle.Common.Context.Message.Thing
 {
-    public class ThingExitCastMessage : ThingMessageBase
+    public class ThingExitCastMessage : ThingMessageBase<ThingEnterCastMessage>
     {
         public SkillConfData Ability { get; set; }
     }

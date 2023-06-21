@@ -10,6 +10,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Battle.Common.Context.Message;
+using Battle.Logic.Base.Event;
 using Core.Lite.Base;
 using Core.Lite.DataSystem;
 using Core.Lite.DataSystem.Config;
@@ -38,6 +39,10 @@ namespace Battle.Logic
             Contexts.SendMessage(message);
         }
 
+        protected void SendEvent(IEventContext context) {
+            Contexts.SendEvent(context);
+        }
+        
         protected IRefPool<T> RefPool<T>() where T : class, new() {
             return Contexts.RefPool<T>();
         }

@@ -10,6 +10,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Battle.Common.Context.Message;
+using Battle.Logic.Base.Event;
 using Core.Lite.DataSystem;
 using Core.Lite.DataSystem.Config;
 using Core.Lite.Loggers;
@@ -21,8 +22,8 @@ namespace Battle.Logic.Base.System
     internal abstract class LogicReactiveSystem<TEntity> : ReactiveSystem<TEntity> where TEntity : class, IEntity
     {
         protected LogicContexts Contexts { get; }
-        
-        public LogicReactiveSystem(LogicContexts contexts, IContext<TEntity> context) : base(context) {
+
+        protected LogicReactiveSystem(LogicContexts contexts, IContext<TEntity> context) : base(context) {
             Contexts = contexts;
         }
 
@@ -37,6 +38,10 @@ namespace Battle.Logic.Base.System
         
         protected void SendMessage(IBattleMessage message) {
             Contexts.SendMessage(message);
+        }
+        
+        protected void SendEvent(IEventContext context) {
+            Contexts.SendEvent(context);
         }
         
         public IRefPool<List<T>> ListPool<T>() {

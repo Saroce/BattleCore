@@ -23,15 +23,17 @@ public partial class Contexts : Entitas.IContexts {
 
     public LogicBuffContext logicBuff { get; set; }
     public LogicEffectContext logicEffect { get; set; }
+    public LogicEventContext logicEvent { get; set; }
     public LogicInputContext logicInput { get; set; }
     public LogicSkillContext logicSkill { get; set; }
     public LogicThingContext logicThing { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { logicBuff, logicEffect, logicInput, logicSkill, logicThing }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { logicBuff, logicEffect, logicEvent, logicInput, logicSkill, logicThing }; } }
 
     public Contexts() {
         logicBuff = new LogicBuffContext();
         logicEffect = new LogicEffectContext();
+        logicEvent = new LogicEventContext();
         logicInput = new LogicInputContext();
         logicSkill = new LogicSkillContext();
         logicThing = new LogicThingContext();
@@ -122,6 +124,7 @@ public partial class Contexts {
         try {
             CreateContextObserver(logicBuff);
             CreateContextObserver(logicEffect);
+            CreateContextObserver(logicEvent);
             CreateContextObserver(logicInput);
             CreateContextObserver(logicSkill);
             CreateContextObserver(logicThing);

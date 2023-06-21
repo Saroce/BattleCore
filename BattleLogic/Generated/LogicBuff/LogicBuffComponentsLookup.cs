@@ -8,15 +8,18 @@
 //------------------------------------------------------------------------------
 public static class LogicBuffComponentsLookup {
 
-    public const int Id = 0;
+    public const int Destroyed = 0;
+    public const int Id = 1;
 
-    public const int TotalComponents = 1;
+    public const int TotalComponents = 2;
 
     public static readonly string[] componentNames = {
+        "Destroyed",
         "Id"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Battle.Logic.Base.Component.DestroyedComponent),
         typeof(Battle.Logic.Base.Component.IdComponent)
     };
 }

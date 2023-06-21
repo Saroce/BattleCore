@@ -7,6 +7,7 @@
 //    Modified:  2023-03-21
 //============================================================
 
+using Battle.Logic.Base.Event;
 using Battle.Logic.Buff;
 using Battle.Logic.Effect;
 using Battle.Logic.Input;
@@ -18,6 +19,7 @@ namespace Battle.Logic
     internal sealed class LogicSystems : Feature
     {
         public LogicSystems(LogicContexts contexts) {
+            Add(new EventSystems(contexts));
             Add(new ThingSystems(contexts));
             Add(new InputSystems(contexts));
             Add(new BuffSystems(contexts));

@@ -9,7 +9,7 @@
 
 namespace Battle.Common.Context.Message
 {
-    public class BattleMessage : IBattleMessage
+    public class BattleMessage<T> : IBattleMessage where T : class
     {
         public int FrameIndex { get; set; }
     }

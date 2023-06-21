@@ -89,6 +89,8 @@
         <Compile Include="Context\Message\IBattleMessage.cs" />
         <Compile Include="Context\Message\IMessageQueue.cs" />
         <Compile Include="Context\Message\MessageQueue.cs" />
+        <Compile Include="Context\Message\Skill\SkillJudgeHitMessage.cs" />
+        <Compile Include="Context\Message\Skill\SkillMessageBase.cs" />
         <Compile Include="Context\Message\Thing\ThingCreateMessage.cs" />
         <Compile Include="Context\Message\Thing\ThingEnterCastMessage.cs" />
         <Compile Include="Context\Message\Thing\ThingEnterIdleMessage.cs" />

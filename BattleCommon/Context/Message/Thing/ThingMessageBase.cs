@@ -18,7 +18,7 @@ namespace Battle.Common.Context.Message.Thing
         ThingType ThingType { get; set; }
     }
     
-    public class ThingMessageBase : BattleMessage, IThingMessageBase
+    public class ThingMessageBase<T> : BattleMessage<T>, IThingMessageBase where T : class
     {
         public ulong Id { get; set; }
         

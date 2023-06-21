@@ -11,7 +11,7 @@ using vFrame.Lockstep.Core;
 
 namespace Battle.Common.Context.Message.Thing
 {
-    public class ThingPositionMessage : ThingMessageBase
+    public class ThingPositionMessage : ThingMessageBase<ThingEnterCastMessage>
     {
         public TSVector Position;
     }

@@ -14,18 +14,19 @@ public static class ViewThingComponentsLookup {
     public const int Rotation = 3;
     public const int Velocity = 4;
     public const int AvatarAsset = 5;
-    public const int AvatarMotion = 6;
-    public const int AvatarRadius = 7;
-    public const int AvatarRotateTween = 8;
-    public const int AvatarView = 9;
-    public const int AvatarViewOffset = 10;
-    public const int CreateContext = 11;
-    public const int DefaultCastAbility = 12;
-    public const int HealthPoint = 13;
-    public const int ThingType = 14;
-    public const int UltimateCastAbility = 15;
+    public const int AvatarHurting = 6;
+    public const int AvatarMotion = 7;
+    public const int AvatarRadius = 8;
+    public const int AvatarRotateTween = 9;
+    public const int AvatarView = 10;
+    public const int AvatarViewOffset = 11;
+    public const int CreateContext = 12;
+    public const int DefaultCastAbility = 13;
+    public const int HealthPoint = 14;
+    public const int ThingType = 15;
+    public const int UltimateCastAbility = 16;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 17;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -34,6 +35,7 @@ public static class ViewThingComponentsLookup {
         "Rotation",
         "Velocity",
         "AvatarAsset",
+        "AvatarHurting",
         "AvatarMotion",
         "AvatarRadius",
         "AvatarRotateTween",
@@ -53,6 +55,7 @@ public static class ViewThingComponentsLookup {
         typeof(Battle.View.Base.Component.RotationComponent),
         typeof(Battle.View.Base.Component.VelocityComponent),
         typeof(Battle.View.Thing.Component.Avatar.AvatarAssetComponent),
+        typeof(Battle.View.Thing.Component.Avatar.AvatarHurtingComponent),
         typeof(Battle.View.Thing.Component.Avatar.AvatarMotionComponent),
         typeof(Battle.View.Thing.Component.Avatar.AvatarRadiusComponent),
         typeof(Battle.View.Thing.Component.Avatar.AvatarRotateTweenComponent),

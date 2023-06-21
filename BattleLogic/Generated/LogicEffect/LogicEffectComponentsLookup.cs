@@ -8,19 +8,23 @@
 //------------------------------------------------------------------------------
 public static class LogicEffectComponentsLookup {
 
-    public const int Id = 0;
-    public const int DestroyAfterProcess = 1;
-    public const int Effect = 2;
-    public const int EffectSource = 3;
-    public const int EffectUserData = 4;
-    public const int ToAdd = 5;
-    public const int ToReduce = 6;
+    public const int Destroyed = 0;
+    public const int Id = 1;
+    public const int DestroyAfterProcess = 2;
+    public const int EffectApplied = 3;
+    public const int Effect = 4;
+    public const int EffectSource = 5;
+    public const int EffectUserData = 6;
+    public const int ToAdd = 7;
+    public const int ToReduce = 8;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 9;
 
     public static readonly string[] componentNames = {
+        "Destroyed",
         "Id",
         "DestroyAfterProcess",
+        "EffectApplied",
         "Effect",
         "EffectSource",
         "EffectUserData",
@@ -29,8 +33,10 @@ public static class LogicEffectComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Battle.Logic.Base.Component.DestroyedComponent),
         typeof(Battle.Logic.Base.Component.IdComponent),
         typeof(Battle.Logic.Effect.Component.DestroyAfterProcessComponent),
+        typeof(Battle.Logic.Effect.Component.EffectAppliedComponent),
         typeof(Battle.Logic.Effect.Component.EffectComponent),
         typeof(Battle.Logic.Effect.Component.EffectSourceComponent),
         typeof(Battle.Logic.Effect.Component.EffectUserDataComponent),

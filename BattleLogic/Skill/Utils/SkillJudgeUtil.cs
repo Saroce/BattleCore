@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using Battle.Common.Constant;
 using Battle.Common.Context.Combat;
+using Battle.Common.Context.Message.Skill;
 using Battle.Logic.Constant;
 using Battle.Logic.Effect;
 using Battle.Logic.Skill.Component.Flux;
@@ -22,7 +23,7 @@ namespace Battle.Logic.Skill.Utils
     internal static class SkillJudgeUtil
     {
         public static void ProcessJudge(LogicContexts contexts, ulong casterId, ulong targetId,
-            JudgeFluxEventContext fluxEventContext) {
+            JudgeFluxEventContext fluxEvent) {
             var caster = contexts.logicThing.GetEntityWithId(casterId);
             if (null == caster) {
                 contexts.LogWarning(LogTagDef.SkillLogTag, "Process judge event, but caster not found: {0}", casterId);
@@ -31,13 +32,12 @@ namespace Battle.Logic.Skill.Utils
 
             contexts.LogDebug(LogTagDef.SkillLogTag,
                 "Process judge event, casterId: {0}, skill guid: {1}, judgeId: {2}",
-                casterId, fluxEventContext.SkillConfData.Guid, fluxEventContext.JudgeData.Guid);
+                casterId, fluxEvent.SkillConfData.Guid, fluxEvent.JudgeData.Guid);
 
             // 处理技能判定效果
-            foreach (var effectData in fluxEventContext.JudgeData.EffectDataList) {
+            foreach (var effectData in fluxEvent.JudgeData.EffectDataList) {
                 var hitTargets = new List<ulong>();
-                var userData =
-                    BuildEffectUserData(contexts, fluxEventContext, casterId, fluxEventContext.SkillEntityId);
+                var userData = BuildEffectUserData(contexts, fluxEvent, casterId, fluxEvent.SkillEntityId);
 
                 switch (effectData.JudgeType) {
                     case SkillJudgeType.None:
@@ -48,6 +48,7 @@ namespace Battle.Logic.Skill.Utils
                         if (targetId > 0 && SkillTargetSelectUtil.TestRandom(contexts, effectData.Probability)) {
                             contexts.AddEffect(casterId, targetId, effectData.EffectData, true, EffectSource.Skill,
                                 userData);
+                            hitTargets.Add(targetId);
                         }
                         break;
                     case SkillJudgeType.All:
@@ -57,6 +58,14 @@ namespace Battle.Logic.Skill.Utils
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
+
+                // 向外部发送技能判定命中消息
+                var judgeHitMessage = contexts.RefPool<SkillJudgeHitMessage>().Get();
+                judgeHitMessage.CasterId = casterId;
+                judgeHitMessage.Targets = hitTargets;
+                judgeHitMessage.SkillConfData = fluxEvent.SkillConfData;
+                judgeHitMessage.EffectData = effectData;
+                contexts.SendMessage(judgeHitMessage);
             }
         }
 
@@ -67,7 +76,7 @@ namespace Battle.Logic.Skill.Utils
                 SkillConfData = fluxEventContext.SkillConfData,
                 SkillCasterId = casterId,
                 SkillEntityId = skillEntityId,
-                Duration = (FixedPoint) skillData.BaseData.Duration / 1000f
+                Duration = (FixedPoint)skillData.BaseData.Duration / 1000f
             };
 
             return userData;

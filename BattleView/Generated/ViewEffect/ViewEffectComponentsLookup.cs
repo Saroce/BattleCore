@@ -8,15 +8,15 @@
 //------------------------------------------------------------------------------
 public static class ViewEffectComponentsLookup {
 
+    public const int Id = 0;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 1;
 
     public static readonly string[] componentNames = {
-
+        "Id"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(Battle.View.Base.Component.IdComponent)
     };
 }

@@ -19,10 +19,12 @@ namespace Battle.Logic.Skill
             Add(new CastSkillSystem(contexts));
             
             // Execute Systems
+            Add(new DetectSkillCastFinishedSystem(contexts));
             Add(new ProcessSkillFluxEventSystem(contexts));
+            Add(new DestroySkillOnFinishSystem(contexts));
             
             // TearDown System
-            Add(new SkillTearDownSystem(contexts));
+            Add(new DestroySkillSystem(contexts));
         }
     }
 }

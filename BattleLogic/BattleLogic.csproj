@@ -66,6 +66,24 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Event\Skill\SkillCastFinishedEvent.cs" />
+    <Compile Include="Common\Event\Skill\SkillEventBase.cs" />
+    <Compile Include="Generated\LogicEvent\Components\LogicEventEventContextComponent.cs" />
+    <Compile Include="Generated\LogicEvent\Components\LogicEventEventFrameIndexComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingDestroyedComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillDestroyedComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectDestroyedComponent.cs" />
+    <Compile Include="Generated\LogicBuff\Components\LogicBuffDestroyedComponent.cs" />
+    <Compile Include="Generated\LogicEvent\Components\LogicEventDestroyedComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingIdComponent.cs" />
+    <Compile Include="Generated\LogicBuff\Components\LogicBuffIdComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillIdComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectIdComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillLogicComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedFixedPointValueLogicComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedIntValueLogicComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedUlongValueLogicComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectAppliedComponent.cs" />
     <Compile Include="Generated\LogicEffect\Components\LogicEffectDestroyAfterProcessComponent.cs" />
     <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectSourceComponent.cs" />
     <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectUserDataComponent.cs" />
@@ -76,6 +94,7 @@
     <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillCastDurationComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillCasterIdComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillCastTimeComponent.cs" />
+    <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillFinishedComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillTargetIdComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillFluxEventsComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingIdleMotionNameComponent.cs" />
@@ -122,19 +141,12 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingThingComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingIntelligentComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCreateContextComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingDestroyedComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingIdComponent.cs" />
-    <Compile Include="Generated\LogicBuff\Components\LogicBuffIdComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillIdComponent.cs" />
-    <Compile Include="Generated\LogicEffect\Components\LogicEffectIdComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillLogicComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedFixedPointValueLogicComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedIntValueLogicComponent.cs" />
-    <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedUlongValueLogicComponent.cs" />
+    <Compile Include="Generated\Components\Interfaces\IDestroyedEntity.cs" />
     <Compile Include="Generated\Components\Interfaces\IIdEntity.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectComponentsLookup.cs" />
-    <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventComponentsLookup.cs" />
     <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
+    <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectComponentsLookup.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
     <Compile Include="Generated\LogicInput\LogicInputComponentsLookup.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillAttribute.cs" />
@@ -142,23 +154,53 @@
     <Compile Include="Generated\LogicInput\LogicInputAttribute.cs" />
     <Compile Include="Generated\LogicThing\LogicThingAttribute.cs" />
     <Compile Include="Generated\LogicEffect\LogicEffectAttribute.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventAttribute.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillContext.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffContext.cs" />
     <Compile Include="Generated\LogicInput\LogicInputContext.cs" />
     <Compile Include="Generated\LogicThing\LogicThingContext.cs" />
     <Compile Include="Generated\LogicEffect\LogicEffectContext.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventContext.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillMatcher.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffMatcher.cs" />
     <Compile Include="Generated\LogicInput\LogicInputMatcher.cs" />
     <Compile Include="Generated\LogicThing\LogicThingMatcher.cs" />
     <Compile Include="Generated\LogicEffect\LogicEffectMatcher.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventMatcher.cs" />
     <Compile Include="Generated\Contexts.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillEntity.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffEntity.cs" />
     <Compile Include="Generated\LogicInput\LogicInputEntity.cs" />
     <Compile Include="Generated\LogicThing\LogicThingEntity.cs" />
     <Compile Include="Generated\LogicEffect\LogicEffectEntity.cs" />
+    <Compile Include="Generated\LogicEvent\LogicEventEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Event\EventEx.cs" />
+    <Compile Include="Base\Event\System\CleanupEventSystem.cs" />
+    <Compile Include="Base\Event\System\DestroyEventSystem.cs" />
+    <Compile Include="Base\Event\System\TearDownEventSystem.cs" />
+    <Compile Include="Base\System\LogicEventSystem.cs" />
+    <Compile Include="Base\System\LogicImmediateEventSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Event\Component\EventContextComponent.cs" />
+    <Compile Include="Base\Event\Component\EventFrameIndexComponent.cs" />
+    <Compile Include="Base\Event\EventSystems.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Event\IEventContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Effect\Processor\Adder\EAPropertiesOp.cs" />
+    <Compile Include="Effect\Processor\Adder\EffectAdderFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Effect\Component\EffectAppliedComponent.cs" />
+    <Compile Include="Effect\Processor\Adder\EffectAdderBase.cs" />
+    <Compile Include="Effect\System\AddEffectSystem.cs" />
+    <Compile Include="Effect\Utils\EffectUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Effect\Component\DestroyAfterProcessComponent.cs" />
@@ -182,14 +224,19 @@
     <Compile Include="Skill\Component\Cast\SkillCastDurationComponent.cs" />
     <Compile Include="Skill\Component\Cast\SkillCasterIdComponent.cs" />
     <Compile Include="Skill\Component\Cast\SkillCastTimeComponent.cs" />
+    <Compile Include="Skill\Component\Cast\SkillFinishedComponent.cs" />
     <Compile Include="Skill\Component\Cast\SkillTargetIdComponent.cs" />
     <Compile Include="Skill\Component\Flux\SkillFluxEventContext.cs" />
     <Compile Include="Skill\Component\Flux\SkillFluxEventsComponent.cs" />
     <Compile Include="Skill\SkillEx.cs" />
     <Compile Include="Skill\System\CastSkillSystem.cs" />
+    <Compile Include="Skill\System\DestroySkillOnFinishSystem.cs" />
+    <Compile Include="Skill\System\DestroySkillSystem.cs" />
+    <Compile Include="Skill\System\DetectSkillCastFinishedSystem.cs" />
     <Compile Include="Skill\System\ProcessSkillFluxEventSystem.cs" />
     <Compile Include="Skill\Utils\SkillJudgeUtil.cs" />
     <Compile Include="Skill\Utils\SkillTargetSelectUtil.cs" />
+    <Compile Include="Thing\Behaviour\State\Cast\System\ExitCastStateOnFinishedSystem.cs" />
     <Compile Include="Utils\RangeUtil.cs" />
     <Compile Include="Utils\TransformUtil.cs" />
   </ItemGroup>
@@ -230,7 +277,6 @@
   <ItemGroup>
     <Compile Include="Input\System\Processor\CommandProcessor.cs" />
     <Compile Include="Input\System\Processor\ICommandProcessor.cs" />
-    <Compile Include="Skill\System\SkillTearDownSystem.cs" />
     <Compile Include="Thing\Behaviour\State\Cast\CastState.cs" />
     <Compile Include="Thing\Behaviour\State\Cast\CastStateContext.cs" />
     <Compile Include="Thing\Behaviour\State\Cast\Component\CastableRefComponent.cs" />
@@ -329,8 +375,7 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Buff\Component" />
-      <Folder Include="Effect\System" />
-      <Folder Include="Thing\Behaviour\State\Cast\System" />
+      <Folder Include="Effect\Processor\Reducer" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

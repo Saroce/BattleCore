@@ -11,7 +11,7 @@ using vFrame.Lockstep.Core;
 
 namespace Battle.Common.Context.Message.Thing
 {
-    public class ThingRotationMessage : ThingMessageBase
+    public class ThingRotationMessage : ThingMessageBase<ThingEnterCastMessage>
     {
         public TSQuaternion Rotation;
     }

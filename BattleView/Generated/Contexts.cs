@@ -87,6 +87,10 @@ public partial class Contexts {
             Id,
             viewThing.GetGroup(ViewThingMatcher.Id),
             (e, c) => ((Battle.View.Base.Component.IdComponent)c).Value));
+        viewEffect.AddEntityIndex(new Entitas.PrimaryEntityIndex<ViewEffectEntity, ulong>(
+            Id,
+            viewEffect.GetGroup(ViewEffectMatcher.Id),
+            (e, c) => ((Battle.View.Base.Component.IdComponent)c).Value));
 
         viewSkill.AddEntityIndex(new Entitas.PrimaryEntityIndex<ViewSkillEntity, ulong>(
             SkillCasterId,
@@ -111,6 +115,10 @@ public static class ContextsExtensions {
 
     public static ViewThingEntity GetEntityWithId(this ViewThingContext context, ulong Value) {
         return ((Entitas.PrimaryEntityIndex<ViewThingEntity, ulong>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
+    }
+
+    public static ViewEffectEntity GetEntityWithId(this ViewEffectContext context, ulong Value) {
+        return ((Entitas.PrimaryEntityIndex<ViewEffectEntity, ulong>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
     }
 
     public static ViewSkillEntity GetEntityWithSkillCasterId(this ViewSkillContext context, ulong Id) {

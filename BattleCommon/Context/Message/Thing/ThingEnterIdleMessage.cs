@@ -9,7 +9,7 @@
 
 namespace Battle.Common.Context.Message.Thing
 {
-    public class ThingEnterIdleMessage : ThingMessageBase
+    public class ThingEnterIdleMessage : ThingMessageBase<ThingEnterCastMessage>
     {
         public string MotionName;
     }
