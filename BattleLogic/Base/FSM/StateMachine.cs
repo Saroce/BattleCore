@@ -10,6 +10,7 @@
 using System.Collections.Generic;
 using Battle.Common.Exceptions;
 using Entitas;
+using NotImplementedException = System.NotImplementedException;
 
 namespace Battle.Logic.Base.FSM
 {
@@ -86,6 +87,18 @@ namespace Battle.Logic.Base.FSM
             CurState.OnEnter(Entity);
             
             return true;
+        }
+
+        public void ExitState(int stateId) {
+            if (!States.ContainsKey(stateId))
+                throw new StateNotExistException(stateId);
+
+            var state = States[stateId];
+            if (CurState != state) {
+                return;
+            }
+            
+            ExistCurState();
         }
 
         protected virtual void UpdateCurState(IStateContext context) {

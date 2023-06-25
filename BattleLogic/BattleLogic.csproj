@@ -19,7 +19,7 @@
         <DebugType>full</DebugType>
         <Optimize>false</Optimize>
         <OutputPath>..\Build\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE;FULL_LOG;UNITY_EDITOR</DefineConstants>
+        <DefineConstants>DEBUG;TRACE;FULL_LOG;UNITY_EDITOR;ENABLE_LOGIC_THREAD</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
@@ -28,7 +28,7 @@
         <DebugType>pdbonly</DebugType>
         <Optimize>true</Optimize>
         <OutputPath>..\Build\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
+        <DefineConstants>TRACE;ENABLE_LOGIC_THREAD</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
@@ -58,9 +58,6 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-        <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.CoreModule.dll</HintPath>
-        </Reference>
         <Reference Include="vFrame.Lockstep.Core, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Lockstep.Core\vFrame.Lockstep.Core.dll</HintPath>
         </Reference>
@@ -375,7 +372,6 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Buff\Component" />
-      <Folder Include="Effect\Processor\Reducer" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

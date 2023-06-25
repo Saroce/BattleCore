@@ -33,8 +33,7 @@ namespace Battle.Common.Context.Message
         public bool TryDequeue(out T obj) {
             return _queue.TryDequeue(out obj);
         }
-#endif
-
+#else
         private readonly Queue<T> _queue;
 
         public MessageQueue() {
@@ -59,5 +58,6 @@ namespace Battle.Common.Context.Message
             obj = _queue.Dequeue();
             return true;
         }
+#endif
     }
 }

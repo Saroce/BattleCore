@@ -19,6 +19,8 @@ namespace Battle.Logic.Base.FSM
 
         bool ChangeState(int stateId, IStateContext context = null);
 
+        void ExitState(int stateId);
+        
         IState GetCurState();
 
         int GetCurStateId();

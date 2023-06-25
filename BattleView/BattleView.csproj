@@ -76,6 +76,9 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
+        <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.AnimationModule.dll</HintPath>
         </Reference>

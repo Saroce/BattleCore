@@ -19,13 +19,12 @@ namespace Battle.Logic.Thing.Extension
 {
     internal static class ThingBehaviourEx
     {
-        private static bool ChangeState(this LogicThingEntity thingEntity, int stateId, IStateContext stateContext) {
+        public static void ExitState(this LogicThingEntity thingEntity, int stateId) {
             if (!thingEntity.hasStateMachine) {
-                return false;
+                return;
             }
-
-            var fsm = thingEntity.stateMachine.FSM;
-            return fsm.ChangeState(stateId, stateContext);
+            
+            thingEntity.stateMachine.FSM.ExitState(stateId);
         }
         
         public static bool IsIdlable(this LogicThingEntity thingEntity) {
@@ -64,6 +63,15 @@ namespace Battle.Logic.Thing.Extension
         
         public static bool Dead(this LogicThingEntity thingEntity, LogicContexts contexts, DeadStateContext context = null) {
             return thingEntity.ChangeState((int)BehaviourType.Dead, context ?? contexts.RefPool<DeadStateContext>().Get());
+        }
+        
+        private static bool ChangeState(this LogicThingEntity thingEntity, int stateId, IStateContext stateContext) {
+            if (!thingEntity.hasStateMachine) {
+                return false;
+            }
+
+            var fsm = thingEntity.stateMachine.FSM;
+            return fsm.ChangeState(stateId, stateContext);
         }
     }
 }
