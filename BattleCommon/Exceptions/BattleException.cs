@@ -21,4 +21,12 @@ namespace Battle.Common.Exceptions
             
         }
     }
+    
+    public class TypeMismatchException : BattleException
+    {
+        public TypeMismatchException(Type expected, Type got)
+            : base($"Type mismatch, expected: {expected.FullName}, got: {got.FullName}") {
+
+        }
+    }
 }

@@ -91,7 +91,7 @@ namespace Battle.View
 
         internal IRefPool<T1> GetRefPool<T1, T2>()
             where T1 : class, new()
-            where T2 : IPoolRefAllocator<T1>, new() {
+            where T2 : IRefPoolAllocator<T1>, new() {
             return RefPoolManager().GetRefPool<T1, T2>();
         }
         

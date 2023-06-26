@@ -82,6 +82,14 @@ namespace Battle.Logic
             return GetController().GetRefPool<Stack<T>, StackAllocator<T>>();
         }
 
+        public IRefPool<Queue<T>> QueuePool<T>() {
+            return GetController().GetRefPool<Queue<T>, QueueAllocator<T>>();
+        }
+        
+        public IRefPool<Dictionary<T1, T2>> DictionaryPool<T1, T2>() {
+            return GetController().GetRefPool<Dictionary<T1, T2>, DictionaryAllocator<T1, T2>>();
+        }
+        
         public IRefPoolManager RefPoolManager() {
             return GetController().RefPoolManager();
         }
