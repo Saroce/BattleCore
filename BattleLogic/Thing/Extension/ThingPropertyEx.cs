@@ -56,6 +56,45 @@ namespace Battle.Logic.Thing.Extension
             }
         }
 
+        /// <summary>
+        /// 根据属性类型设置对应数值，设置前会对数据有校验跟修正
+        /// </summary>
+        /// <param name="contexts"></param>
+        /// <param name="thingEntity"></param>
+        /// <param name="propType"></param>
+        /// <param name="newValue"></param>
+        /// <returns></returns>
+        public static FixedPoint SetPropValueEx(this LogicContexts contexts, LogicThingEntity thingEntity,
+            ThingPropertyType propType, FixedPoint newValue) {
+            // 以下属性无法小于0
+            switch (propType) {
+                case ThingPropertyType.HpCur:
+                case ThingPropertyType.HpMax:
+                case ThingPropertyType.Attack:
+                case ThingPropertyType.PhysicsDefend:
+                case ThingPropertyType.MagicDefend:
+                case ThingPropertyType.CastSpeed:
+                case ThingPropertyType.MoveSpeed:
+                    newValue = TSMath.Max(newValue, 0f);
+                    break;
+            }
+
+            switch (propType) {
+                case ThingPropertyType.HpCur:
+                    var maxValue = thingEntity.hasHealPoint ? thingEntity.healPoint.Maximum : 0f;
+                    // 新的Hp不能超过当前最大值
+                    if (newValue > maxValue) {
+                        newValue = maxValue;
+                    }
+                    thingEntity.ReplaceHealPoint(newValue, maxValue);
+                    break;
+            }
+
+            // TODO 属性变化事件分发
+            
+            return newValue;
+        }
+
         public static FixedPoint GetPropValue(this LogicThingEntity thingEntity, ThingPropertyType propType) {
             switch (propType) {
                 case ThingPropertyType.HpCur:

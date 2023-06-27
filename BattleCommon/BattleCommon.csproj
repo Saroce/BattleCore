@@ -87,6 +87,8 @@
         <Compile Include="Context\GamerGroup\GamerGroup.cs" />
         <Compile Include="Context\ISerializableData.cs" />
         <Compile Include="Context\Message\BattleMessage.cs" />
+        <Compile Include="Context\Message\Effect\EffectMessageBase.cs" />
+        <Compile Include="Context\Message\Effect\EffectPropModificationMessage.cs" />
         <Compile Include="Context\Message\IBattleMessage.cs" />
         <Compile Include="Context\Message\IMessageQueue.cs" />
         <Compile Include="Context\Message\MessageQueue.cs" />

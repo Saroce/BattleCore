@@ -66,7 +66,17 @@
         </Reference>
     </ItemGroup>
   <ItemGroup>
-    <Compile Include="Effect\System\LoadFormulaDataSystem.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectCombatValueDeltaComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectPropOpDeltaComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectFormulaDataComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectFormulaIdComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectAppliedComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectDestroyAfterProcessComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectSourceComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectUserDataComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectToAddComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectToReduceComponent.cs" />
+    <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectComponent.cs" />
     <Compile Include="Generated\LogicEvent\Components\LogicEventEventContextComponent.cs" />
     <Compile Include="Generated\LogicEvent\Components\LogicEventEventFrameIndexComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingDestroyedComponent.cs" />
@@ -82,15 +92,6 @@
     <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedFixedPointValueLogicComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedIntValueLogicComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillEncryptedUlongValueLogicComponent.cs" />
-    <Compile Include="Generated\LogicEffect\Components\LogicEffectFormulaDataComponent.cs" />
-    <Compile Include="Generated\LogicEffect\Components\LogicEffectFormulaIdComponent.cs" />
-    <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectAppliedComponent.cs" />
-    <Compile Include="Generated\LogicEffect\Components\LogicEffectDestroyAfterProcessComponent.cs" />
-    <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectSourceComponent.cs" />
-    <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectUserDataComponent.cs" />
-    <Compile Include="Generated\LogicEffect\Components\LogicEffectToAddComponent.cs" />
-    <Compile Include="Generated\LogicEffect\Components\LogicEffectToReduceComponent.cs" />
-    <Compile Include="Generated\LogicEffect\Components\LogicEffectEffectComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillCastContextComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillCastDurationComponent.cs" />
     <Compile Include="Generated\LogicSkill\Components\LogicSkillSkillCasterIdComponent.cs" />
@@ -144,10 +145,10 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCreateContextComponent.cs" />
     <Compile Include="Generated\Components\Interfaces\IDestroyedEntity.cs" />
     <Compile Include="Generated\Components\Interfaces\IIdEntity.cs" />
+    <Compile Include="Generated\LogicEffect\LogicEffectComponentsLookup.cs" />
     <Compile Include="Generated\LogicEvent\LogicEventComponentsLookup.cs" />
     <Compile Include="Generated\LogicThing\LogicThingComponentsLookup.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillComponentsLookup.cs" />
-    <Compile Include="Generated\LogicEffect\LogicEffectComponentsLookup.cs" />
     <Compile Include="Generated\LogicBuff\LogicBuffComponentsLookup.cs" />
     <Compile Include="Generated\LogicInput\LogicInputComponentsLookup.cs" />
     <Compile Include="Generated\LogicSkill\LogicSkillAttribute.cs" />
@@ -176,6 +177,11 @@
     <Compile Include="Generated\LogicEffect\LogicEffectEntity.cs" />
     <Compile Include="Generated\LogicEvent\LogicEventEntity.cs" />
     <Compile Include="Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Effect\Component\CombatValueDeltaComponent.cs" />
+    <Compile Include="Effect\Component\PropOpDeltaComponent.cs" />
+    <Compile Include="Effect\System\LoadFormulaDataSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\ShuntingYardAlgorithm\Evaluator.cs" />

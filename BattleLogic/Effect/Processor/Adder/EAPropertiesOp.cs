@@ -7,6 +7,9 @@
 //    Modified:  2023-06-21
 //============================================================
 
+using System;
+using Battle.Common.Constant;
+using Battle.Common.Context.Message.Effect;
 using Battle.Logic.Constant;
 using Battle.Logic.Thing.Extension;
 using Battle.Logic.Utils;
@@ -53,6 +56,68 @@ namespace Battle.Logic.Effect.Processor.Adder
 
         private void ApplyPropOp(LogicThingEntity target, LogicEffectEntity effectEntity, FixedPoint newValue) {
             var snapshot1 = target.CollectCombatValue(Contexts);
+            var delta = UpdatePropValue(effectEntity, target, newValue);
+            var snapshot2 = target.CollectCombatValue(Contexts);
+            effectEntity.ReplaceCombatValueDelta(snapshot2 - snapshot1);
+            effectEntity.ReplacePropOpDelta(delta);
+        }
+
+        private FixedPoint UpdatePropValue(LogicEffectEntity effectEntity, LogicThingEntity target,
+            FixedPoint newValue) {
+            if (!(Effect.EffectParams is Effect_PropertiesOpData effectParams)) {
+                return 0f;
+            }
+
+            var propType = (ThingPropertyType) effectParams.TargetPropertyType;
+            var sourceValue = target.GetPropValue(propType);
+            var oldValue = sourceValue;
+            switch (effectParams.TargetPropertyOpType) {
+                case EffectTargetPropertyOpType.Add:
+                    sourceValue += newValue;
+                    break;
+                case EffectTargetPropertyOpType.Minus:
+                    sourceValue -= newValue;
+                    break;
+                case EffectTargetPropertyOpType.Multiply:
+                    sourceValue *= newValue;
+                    break;
+                case EffectTargetPropertyOpType.Divide:
+                    sourceValue /= newValue;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException($"Unhandled target Prop op type:{effectParams.TargetPropertyOpType}");
+            }
+            
+            // TODO 发送属性操作事件(伤害减免，伤害吸收处理)， 收集属性操作现场数据，记录属性操作
+
+            // 设置对应属性数值
+            var realValue = Contexts.SetPropValueEx(target, propType, sourceValue);
+
+            var delta = sourceValue - oldValue;
+            return delta;
+        }
+        
+        private void SendPropertyModificationMessage(LogicEffectEntity effectEntity, bool randomHit) {
+            if (!effectEntity.hasEffectSource || !effectEntity.hasEffectUserData) {
+                return;
+            }
+
+            if (!(Effect.EffectParams is Effect_PropertiesOpData effectParams)) {
+                return;
+            }
+
+            var source = effectEntity.effectSource.Value;
+            var userData = effectEntity.effectUserData.Value;
+            var delta = effectEntity.propOpDelta.Value;
+
+            var e = RefPool<EffectPropModificationMessage>().Get();
+            e.TargetId = effectEntity.effect.TargetId;
+            e.PropertyType = effectParams.TargetPropertyType;
+            e.DeltaValue = delta;
+            e.Source = source;
+            e.UserData = userData;
+            e.FormulaId = effectParams.FormulaData.FormulaId;
+            Contexts.SendMessage(e);
         }
     }
 }

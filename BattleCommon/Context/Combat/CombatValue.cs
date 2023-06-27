@@ -23,5 +23,21 @@ namespace Battle.Common.Context.Combat
         public FixedPoint CriticalRate = 8; // 暴击率
         public FixedPoint MoveSpeed = 9; // 移动速度
         public FixedPoint CastSpeed = 10; // 攻击速度
+        
+         public static CombatValue operator -(CombatValue a, CombatValue b) {
+            var values = new CombatValue {
+                HpCur = a.HpCur - b.HpCur,
+                HpMax = a.HpMax - b.HpMax,
+                Attack = a.Attack - b.Attack,
+                PhysicsDefend = a.PhysicsDefend - b.PhysicsDefend,
+                MagicDefend = a.MagicDefend - b.MagicDefend,
+                HitRate = a.HitRate - b.HitRate,
+                DodgeRate = a.DodgeRate - b.DodgeRate,
+                CriticalRate = a.CriticalRate - b.CriticalRate,
+                MoveSpeed = a.MoveSpeed - b.MoveSpeed,
+                CastSpeed = a.CastSpeed - b.CastSpeed,
+            };
+            return values;
+        }
     }
 }
