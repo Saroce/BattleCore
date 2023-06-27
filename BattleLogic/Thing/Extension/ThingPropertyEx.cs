@@ -122,5 +122,21 @@ namespace Battle.Logic.Thing.Extension
             thingEntity.SetPropValue(ThingPropertyType.MoveSpeed, combatValue.MoveSpeed);
             thingEntity.SetPropValue(ThingPropertyType.CastSpeed, combatValue.CastSpeed);
         }
+        
+        public static CombatValue CollectCombatValue(this LogicThingEntity thingEntity, LogicContexts contexts) {
+            var combatValues = contexts.RefPool<CombatValue>().Get();
+            combatValues.HpCur = thingEntity.hasHealPoint ? thingEntity.healPoint.Current : 0f;
+            combatValues.HpMax = thingEntity.hasHealPoint ? thingEntity.healPoint.Maximum : 0f;
+            combatValues.Attack = thingEntity.hasAttack ? thingEntity.attack.Value : 0f;
+            combatValues.PhysicsDefend = thingEntity.hasPhysicsDefend ? thingEntity.physicsDefend.Value : 0f;
+            combatValues.MagicDefend = thingEntity.hasMagicDefend ? thingEntity.magicDefend.Value : 0f;
+            combatValues.HitRate = thingEntity.hasHitRate ? thingEntity.hitRate.Value : 0f;
+            combatValues.DodgeRate = thingEntity.hasDodgeRate ? thingEntity.dodgeRate.Value : 0f;
+            combatValues.CriticalRate = thingEntity.hasCriticalRate ? thingEntity.criticalRate.Value : 0f;
+            combatValues.CastSpeed = thingEntity.hasCastSpeed ? thingEntity.castSpeed.Value : 0f;
+            combatValues.MoveSpeed = thingEntity.hasMoveSpeed ? thingEntity.moveSpeed.Value : 0f;
+
+            return combatValues;
+        }
     }
 }

@@ -8,8 +8,10 @@
 //============================================================
 
 using Battle.Logic.Constant;
+using Battle.Logic.Thing.Extension;
 using Battle.Logic.Utils;
 using SkillModule.Runtime.Effect;
+using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Effect.Processor.Adder
 {
@@ -42,8 +44,15 @@ namespace Battle.Logic.Effect.Processor.Adder
             if (!ret) {
                 return false;
             }
+
+            // 应用公式计算得到的属性值
+            ApplyPropOp(target, effectEntity, newValue);
             
-            return false;
+            return true;
+        }
+
+        private void ApplyPropOp(LogicThingEntity target, LogicEffectEntity effectEntity, FixedPoint newValue) {
+            var snapshot1 = target.CollectCombatValue(Contexts);
         }
     }
 }
