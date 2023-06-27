@@ -12,7 +12,7 @@ using Battle.Common.Constant;
 using Battle.Logic.Thing.Extension;
 using vFrame.Lockstep.Core;
 
-namespace Battle.Logic.Common.Event.Formula.PresetFunctions
+namespace Battle.Logic.Common.Formula.PresetFunctions
 {
     internal class PFProp : TwoArgsPresetFunction
     {

@@ -15,10 +15,12 @@ public static class LogicEffectComponentsLookup {
     public const int Effect = 4;
     public const int EffectSource = 5;
     public const int EffectUserData = 6;
-    public const int ToAdd = 7;
-    public const int ToReduce = 8;
+    public const int FormulaData = 7;
+    public const int FormulaId = 8;
+    public const int ToAdd = 9;
+    public const int ToReduce = 10;
 
-    public const int TotalComponents = 9;
+    public const int TotalComponents = 11;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -28,6 +30,8 @@ public static class LogicEffectComponentsLookup {
         "Effect",
         "EffectSource",
         "EffectUserData",
+        "FormulaData",
+        "FormulaId",
         "ToAdd",
         "ToReduce"
     };
@@ -40,6 +44,8 @@ public static class LogicEffectComponentsLookup {
         typeof(Battle.Logic.Effect.Component.EffectComponent),
         typeof(Battle.Logic.Effect.Component.EffectSourceComponent),
         typeof(Battle.Logic.Effect.Component.EffectUserDataComponent),
+        typeof(Battle.Logic.Effect.Component.FormulaDataComponent),
+        typeof(Battle.Logic.Effect.Component.FormulaIdComponent),
         typeof(Battle.Logic.Effect.Component.ToAddComponent),
         typeof(Battle.Logic.Effect.Component.ToReduceComponent)
     };

@@ -14,6 +14,8 @@ namespace Battle.Logic.Effect
     internal sealed class EffectSystems : Feature
     {
         public EffectSystems(LogicContexts contexts) {
+            // Initialize Systems
+            Add(new LoadFormulaDataSystem(contexts));
             
             // Reactivate Systems
             Add(new AddEffectSystem(contexts));

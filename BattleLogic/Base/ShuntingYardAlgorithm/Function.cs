@@ -108,28 +108,28 @@ namespace Battle.Logic.Base.ShuntingYardAlgorithm
             throw new TypeMismatchException(typeof(Token<FixedPoint>), arg.GetType());
         }
 
-        public void RegisterZeroArgDelegate(string funcName, ZeroArgDelegate @delegate) {
+        public void RegisterZeroArgsDelegate(string funcName, ZeroArgDelegate @delegate) {
             if (_registeredZeroArgDelegates.ContainsKey(funcName)) {
                 throw new FunctionAlreadyRegisteredException(funcName);
             }
             _registeredZeroArgDelegates.Add(funcName, @delegate);
         }
 
-        public void UnregisterZeroArgDelegate(string funcName, ZeroArgDelegate @delegate) {
+        public void UnregisterZeroArgDelegate(string funcName) {
             if (!_registeredZeroArgDelegates.ContainsKey(funcName)) {
                 return;
             }
             _registeredZeroArgDelegates.Remove(funcName);
         }
 
-        public void RegisterOneArgDelegate(string funcName, OneArgDelegate @delegate) {
+        public void RegisterOneArgsDelegate(string funcName, OneArgDelegate @delegate) {
             if (_registeredOneArgDelegates.ContainsKey(funcName)) {
                 throw new FunctionAlreadyRegisteredException(funcName);
             }
             _registeredOneArgDelegates.Add(funcName, @delegate);
         }
 
-        public void UnregisterOneArgDelegate(string funcName, OneArgDelegate @delegate) {
+        public void UnregisterOneArgsDelegate(string funcName) {
             if (!_registeredOneArgDelegates.ContainsKey(funcName)) {
                 return;
             }
@@ -143,7 +143,7 @@ namespace Battle.Logic.Base.ShuntingYardAlgorithm
             _registeredTwoArgsDelegates.Add(funcName, @delegate);
         }
 
-        public void UnregisterTwoArgsDelegate(string funcName, TwoArgsDelegate @delegate) {
+        public void UnregisterTwoArgsDelegate(string funcName) {
             if (!_registeredTwoArgsDelegates.ContainsKey(funcName)) {
                 return;
             }

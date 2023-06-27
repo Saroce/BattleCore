@@ -66,10 +66,16 @@ public partial class Contexts : Entitas.IContexts {
 //------------------------------------------------------------------------------
 public partial class Contexts {
 
+    public const string FormulaId = "FormulaId";
     public const string Id = "Id";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
+        logicEffect.AddEntityIndex(new Entitas.PrimaryEntityIndex<LogicEffectEntity, string>(
+            FormulaId,
+            logicEffect.GetGroup(LogicEffectMatcher.FormulaId),
+            (e, c) => ((Battle.Logic.Effect.Component.FormulaIdComponent)c).Value));
+
         logicThing.AddEntityIndex(new Entitas.PrimaryEntityIndex<LogicThingEntity, ulong>(
             Id,
             logicThing.GetGroup(LogicThingMatcher.Id),
@@ -90,6 +96,10 @@ public partial class Contexts {
 }
 
 public static class ContextsExtensions {
+
+    public static LogicEffectEntity GetEntityWithFormulaId(this LogicEffectContext context, string Value) {
+        return ((Entitas.PrimaryEntityIndex<LogicEffectEntity, string>)context.GetEntityIndex(Contexts.FormulaId)).GetEntity(Value);
+    }
 
     public static LogicThingEntity GetEntityWithId(this LogicThingContext context, ulong Value) {
         return ((Entitas.PrimaryEntityIndex<LogicThingEntity, ulong>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);

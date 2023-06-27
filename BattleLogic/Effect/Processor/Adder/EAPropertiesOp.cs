@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Logic.Constant;
+using Battle.Logic.Utils;
 using SkillModule.Runtime.Effect;
 
 namespace Battle.Logic.Effect.Processor.Adder
@@ -28,8 +29,19 @@ namespace Battle.Logic.Effect.Processor.Adder
             if (target == null) {
                 return false;
             }
-            
-            
+
+            var formulaId = effectParams.FormulaData.FormulaId;
+            var formulaArgs = effectParams.FormulaData.FormulaArgs;
+            var ret = FormulaUtil.Compute(Contexts, 
+                formulaId, 
+                formulaArgs,
+                source,
+                target,
+                out var newValue);
+
+            if (!ret) {
+                return false;
+            }
             
             return false;
         }

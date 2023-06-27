@@ -10,7 +10,7 @@
 using System.Collections.Generic;
 using vFrame.Lockstep.Core;
 
-namespace Battle.Logic.Common.Event.Formula
+namespace Battle.Logic.Common.Formula
 {
     internal static class FormulaPreprocessor
     {

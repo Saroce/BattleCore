@@ -11,7 +11,7 @@ namespace Battle.Common.Constant
 {
     public static class EffectDef
     {
-        
+        public const string FormulaDataFilePath = "Assets/Bundles/Data/Formulas/FormulaConf.json"; // 公式数据配置路径
     }
 
     public enum EffectSource

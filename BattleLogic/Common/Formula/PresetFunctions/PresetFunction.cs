@@ -11,7 +11,7 @@ using System;
 using Core.Lite.Base;
 using vFrame.Lockstep.Core;
 
-namespace Battle.Logic.Common.Event.Formula.PresetFunctions
+namespace Battle.Logic.Common.Formula.PresetFunctions
 {
     internal abstract class PresetFunction : BaseObject<LogicContexts, LogicThingEntity, LogicThingEntity>
     {
@@ -38,6 +38,10 @@ namespace Battle.Logic.Common.Event.Formula.PresetFunctions
             Target = null;
         }
 
+        /// <summary>
+        /// 对应公式里面的函数名称
+        /// </summary>
+        /// <returns></returns>
         public abstract string GetName();
     }
 
@@ -46,7 +50,7 @@ namespace Battle.Logic.Common.Event.Formula.PresetFunctions
         public abstract FixedPoint Compute();
     }
     
-    internal abstract class OneArgPresetFunction : PresetFunction
+    internal abstract class OneArgsPresetFunction : PresetFunction
     {
         public abstract FixedPoint Compute(FixedPoint arg);
     }
