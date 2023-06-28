@@ -15,11 +15,11 @@ namespace Battle.View.Base
     public static class TSVectorExtension
     {
         public static Vector3 ToUnityVector3(this TSVector vector) {
-            return new Vector3((float)vector.z, (float)vector.y, (float)vector.z);
+            return new Vector3((float)vector.x, (float)vector.y, (float)vector.z);
         }
         
         public static Vector2 ToUnityVector2(this TSVector vector) {
-            return new Vector2((float)vector.z, (float)vector.y);
+            return new Vector2((float)vector.x, (float)vector.y);
         }
     }
 }

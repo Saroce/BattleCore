@@ -14,8 +14,11 @@ namespace Battle.View.HUD
     internal sealed class HUDSystems : Feature
     {
         public HUDSystems(ViewContexts contexts) {
+            
             // Reactive Systems
             Add(new AddHUDViewSystem(contexts));
+            Add(new AssignHUDHPSystem(contexts));
+            Add(new AssignHUDDamageSystem(contexts));
 
             // Execute Systems
             Add(new HUDSyncPositionSystem(contexts));

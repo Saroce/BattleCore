@@ -48,6 +48,12 @@
         <Reference Include="DOTween, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Demigiant\DOTween\DOTween.dll</HintPath>
         </Reference>
+        <Reference Include="DOTween.Modules, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Demigiant\DOTween.Modules.dll</HintPath>
+        </Reference>
+        <Reference Include="DOTweenPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
+        </Reference>
         <Reference Include="Entitas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Entitas\Entitas\Entitas.dll</HintPath>
         </Reference>
@@ -115,6 +121,7 @@
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDAutoDestroyWhenPlayFinishedComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDBindPointComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDAutoDestroyWithOwnerComponent.cs" />
+    <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDDamageValueComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDHPComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDOffsetComponent.cs" />
     <Compile Include="Generated\ViewHUD\Components\ViewHUDHUDOwnerComponent.cs" />
@@ -211,6 +218,7 @@
     <Compile Include="HUD\Component\HUDAutoDestroyWhenPlayFinishedComponent.cs" />
     <Compile Include="HUD\Component\HUDBindPointComponent.cs" />
     <Compile Include="HUD\Component\HUDAutoDestroyWithOwnerComponent.cs" />
+    <Compile Include="HUD\Component\HUDDamageValueComponent.cs" />
     <Compile Include="HUD\Component\HUDHPComponent.cs" />
     <Compile Include="HUD\Component\HUDOffsetComponent.cs" />
     <Compile Include="HUD\Component\HUDOwnerComponent.cs" />
@@ -219,6 +227,8 @@
     <Compile Include="HUD\Component\HUDViewComponent.cs" />
     <Compile Include="HUD\HUDSystems.cs" />
     <Compile Include="HUD\System\AddHUDViewSystem.cs" />
+    <Compile Include="HUD\System\AssignHUDDamageSystem.cs" />
+    <Compile Include="HUD\System\AssignHUDHPSystem.cs" />
     <Compile Include="HUD\System\HUDSyncPositionSystem.cs" />
     <Compile Include="IBattleView.cs" />
     <Compile Include="Input\InputSystems.cs" />
@@ -226,8 +236,10 @@
     <Compile Include="Input\System\Processor\IMessageProcessor.cs" />
     <Compile Include="Input\System\Processor\MessageProcessor.cs" />
     <Compile Include="Input\System\Processor\OnCreateThing.cs" />
+    <Compile Include="Input\System\Processor\OnEffectPropModify.cs" />
     <Compile Include="Input\System\Processor\OnEnterCast.cs" />
     <Compile Include="Input\System\Processor\OnEnterIdle.cs" />
+    <Compile Include="Input\System\Processor\OnHpUpdate.cs" />
     <Compile Include="Input\System\Processor\OnPositionUpdate.cs" />
     <Compile Include="Input\System\Processor\OnRotationUpdate.cs" />
     <Compile Include="Input\System\Processor\OnSkillJudgeHit.cs" />

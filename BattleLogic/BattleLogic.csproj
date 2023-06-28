@@ -260,6 +260,7 @@
     <Compile Include="Skill\Utils\SkillJudgeUtil.cs" />
     <Compile Include="Skill\Utils\SkillTargetSelectUtil.cs" />
     <Compile Include="Thing\Behaviour\State\Cast\System\ExitCastStateOnFinishedSystem.cs" />
+    <Compile Include="Thing\System\ThingHpUpdatedSystem.cs" />
     <Compile Include="Utils\FormulaUtil.cs" />
     <Compile Include="Utils\RangeUtil.cs" />
     <Compile Include="Utils\TransformUtil.cs" />
@@ -277,7 +278,7 @@
     <Compile Include="Thing\Component\Gamer\Skill\GamerSkillsComponent.cs" />
     <Compile Include="Thing\Component\Gamer\Skill\GamerUltSkillComponent.cs" />
     <Compile Include="Thing\Extension\ThingSkillEx.cs" />
-    <Compile Include="Thing\System\ThingPositionUpdateSystem.cs" />
+    <Compile Include="Thing\System\ThingPositionUpdatedSystem.cs" />
     <Compile Include="Thing\System\ThingRotationUpdatedSystem.cs" />
     <Compile Include="Utils\ConfigUtil.cs" />
   </ItemGroup>

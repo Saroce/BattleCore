@@ -13,14 +13,15 @@ public static class ViewHUDComponentsLookup {
     public const int HUDAutoDestroyWhenPlayFinished = 2;
     public const int HUDAutoDestroyWithOwner = 3;
     public const int HUDBindPoint = 4;
-    public const int HUDHP = 5;
-    public const int HUDOffset = 6;
-    public const int HUDOwner = 7;
-    public const int HUDPosition = 8;
-    public const int HUDPositionSyncWithOwner = 9;
-    public const int HUDView = 10;
+    public const int HUDDamageValue = 5;
+    public const int HUDHP = 6;
+    public const int HUDOffset = 7;
+    public const int HUDOwner = 8;
+    public const int HUDPosition = 9;
+    public const int HUDPositionSyncWithOwner = 10;
+    public const int HUDView = 11;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 12;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -28,6 +29,7 @@ public static class ViewHUDComponentsLookup {
         "HUDAutoDestroyWhenPlayFinished",
         "HUDAutoDestroyWithOwner",
         "HUDBindPoint",
+        "HUDDamageValue",
         "HUDHP",
         "HUDOffset",
         "HUDOwner",
@@ -42,6 +44,7 @@ public static class ViewHUDComponentsLookup {
         typeof(Battle.View.HUD.Component.HUDAutoDestroyWhenPlayFinishedComponent),
         typeof(Battle.View.HUD.Component.HUDAutoDestroyWithOwnerComponent),
         typeof(Battle.View.HUD.Component.HUDBindPointComponent),
+        typeof(Battle.View.HUD.Component.HUDDamageValueComponent),
         typeof(Battle.View.HUD.Component.HUDHPComponent),
         typeof(Battle.View.HUD.Component.HUDOffsetComponent),
         typeof(Battle.View.HUD.Component.HUDOwnerComponent),

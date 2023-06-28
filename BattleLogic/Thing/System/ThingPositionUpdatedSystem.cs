@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
-//        File:  ThingPositionUpdateSystem.cs
-//       Brief:  ThingPositionUpdateSystem
+//        File:  ThingPositionUpdatedSystem.cs
+//       Brief:  ThingPositionUpdatedSystem
 //
 //      Author:  Saroce, Saroce233@163.com
 //
@@ -14,14 +14,14 @@ using Entitas;
 
 namespace Battle.Logic.Thing.System
 {
-    internal class ThingPositionUpdateSystem : LogicBaseSystem, IInitializeSystem, ITearDownSystem
+    internal class ThingPositionUpdatedSystem : LogicBaseSystem, IInitializeSystem, ITearDownSystem
     {
         private static readonly IMatcher<LogicThingEntity> ThingMatcher =
             LogicThingMatcher.AllOf(LogicThingMatcher.Id, LogicThingMatcher.Position);
 
         private readonly IGroup<LogicThingEntity> _group;
 
-        public ThingPositionUpdateSystem(LogicContexts contexts) : base(contexts) {
+        public ThingPositionUpdatedSystem(LogicContexts contexts) : base(contexts) {
             _group = contexts.logicThing.GetGroup(ThingMatcher);
         }
 

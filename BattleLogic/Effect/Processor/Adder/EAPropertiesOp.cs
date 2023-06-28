@@ -50,6 +50,8 @@ namespace Battle.Logic.Effect.Processor.Adder
 
             // 应用公式计算得到的属性值
             ApplyPropOp(target, effectEntity, newValue);
+            // 发送属性修改消息
+            SendPropModificationMessage(effectEntity);
             
             return true;
         }
@@ -97,7 +99,7 @@ namespace Battle.Logic.Effect.Processor.Adder
             return delta;
         }
         
-        private void SendPropertyModificationMessage(LogicEffectEntity effectEntity, bool randomHit) {
+        private void SendPropModificationMessage(LogicEffectEntity effectEntity) {
             if (!effectEntity.hasEffectSource || !effectEntity.hasEffectUserData) {
                 return;
             }
@@ -112,10 +114,10 @@ namespace Battle.Logic.Effect.Processor.Adder
 
             var e = RefPool<EffectPropModificationMessage>().Get();
             e.TargetId = effectEntity.effect.TargetId;
-            e.PropertyType = effectParams.TargetPropertyType;
-            e.DeltaValue = delta;
             e.Source = source;
             e.UserData = userData;
+            e.PropertyType = effectParams.TargetPropertyType;
+            e.DeltaValue = delta;
             e.FormulaId = effectParams.FormulaData.FormulaId;
             Contexts.SendMessage(e);
         }

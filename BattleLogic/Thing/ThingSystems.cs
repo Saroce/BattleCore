@@ -19,7 +19,9 @@ namespace Battle.Logic.Thing
         public ThingSystems(LogicContexts contexts) {
             // Initialize Systems 
             Add(new InitializeGamerGroupSystem(contexts));
-            Add(new ThingPositionUpdateSystem(contexts));
+            Add(new ThingPositionUpdatedSystem(contexts));
+            Add(new ThingRotationUpdatedSystem(contexts));
+            Add(new ThingHpUpdatedSystem(contexts));
             
             // Reactive Systems
             Add(new UpdateIdleMotionSystem(contexts));

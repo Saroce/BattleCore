@@ -16,14 +16,22 @@ namespace Battle.View.Base
     /// </summary>
     public sealed class BattleViewConfig
     {
+        // 资源文件目录
         public string AvatarDir;
         public string HUDDir;
 
+        // HUDs
+        public string HUDHealPath;
+        public string HUDDamagePath;
         public string HUDHPPath;
         public string HUDHPEnemyPath;
         
         public float LerpSpeed; // Avatar位置插值速度
         
+        // 位置偏移
+        public Vector3 HUDDamageOffset;
+        public float HUDDamageRandomX;
+        public float HUDDamageRandomY;
         public Vector3 HUDHPOffset;
         
         public Vector3 AvatarTop;

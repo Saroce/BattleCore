@@ -7,8 +7,10 @@
 //    Modified:  2023-06-13
 //============================================================
 
+using Battle.Common.Constant;
 using Battle.Common.Context.Command.Request;
 using Battle.Common.Context.Command.Respond;
+using Battle.Logic.Skill.Utils;
 
 namespace Battle.Logic.Input.System.Processor
 {
@@ -27,7 +29,13 @@ namespace Battle.Logic.Input.System.Processor
             }
 
             var ability = entity.ultimateAbility.Value;
-            
+            var errorCode = SkillUtil.TryCastWithAbility(Contexts, entity, ability, out var target);
+            if (errorCode == SkillCastResult.NoError) {
+                Succeed();
+            }
+            else {
+                Fail($"Cast failed error code: {errorCode}");
+            }
         }
     }
 }
