@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.Base.PositionComponent position { get { return (Battle.Logic.Thing.Component.Property.Base.PositionComponent)GetComponent(LogicThingComponentsLookup.Position); } }
     public bool hasPosition { get { return HasComponent(LogicThingComponentsLookup.Position); } }
 
-    public void AddPosition(vFrame.Lockstep.Core.TSVector newValue) {
+    public void AddPosition(Core.Lockstep.Math.TSVector newValue) {
         var index = LogicThingComponentsLookup.Position;
         var component = (Battle.Logic.Thing.Component.Property.Base.PositionComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.Base.PositionComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplacePosition(vFrame.Lockstep.Core.TSVector newValue) {
+    public void ReplacePosition(Core.Lockstep.Math.TSVector newValue) {
         var index = LogicThingComponentsLookup.Position;
         var component = (Battle.Logic.Thing.Component.Property.Base.PositionComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.Base.PositionComponent));
         component.Value = newValue;

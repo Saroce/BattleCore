@@ -11,14 +11,14 @@ public partial class ViewSkillEntity {
     public Battle.View.Skill.Component.SkillCastSpeedScaleComponent skillCastSpeedScale { get { return (Battle.View.Skill.Component.SkillCastSpeedScaleComponent)GetComponent(ViewSkillComponentsLookup.SkillCastSpeedScale); } }
     public bool hasSkillCastSpeedScale { get { return HasComponent(ViewSkillComponentsLookup.SkillCastSpeedScale); } }
 
-    public void AddSkillCastSpeedScale(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddSkillCastSpeedScale(Core.Lockstep.Math.FixedPoint newValue) {
         var index = ViewSkillComponentsLookup.SkillCastSpeedScale;
         var component = (Battle.View.Skill.Component.SkillCastSpeedScaleComponent)CreateComponent(index, typeof(Battle.View.Skill.Component.SkillCastSpeedScaleComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceSkillCastSpeedScale(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceSkillCastSpeedScale(Core.Lockstep.Math.FixedPoint newValue) {
         var index = ViewSkillComponentsLookup.SkillCastSpeedScale;
         var component = (Battle.View.Skill.Component.SkillCastSpeedScaleComponent)CreateComponent(index, typeof(Battle.View.Skill.Component.SkillCastSpeedScaleComponent));
         component.Value = newValue;

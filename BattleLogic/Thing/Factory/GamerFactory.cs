@@ -11,7 +11,7 @@ using Battle.Common.Constant;
 using Battle.Common.Context.Create;
 using Battle.Logic.Thing.Extension;
 using ExcelConvert.Auto.GeneralConf;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Thing.Factory
 {

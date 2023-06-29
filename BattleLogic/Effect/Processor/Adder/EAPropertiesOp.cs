@@ -13,8 +13,8 @@ using Battle.Common.Context.Message.Effect;
 using Battle.Logic.Constant;
 using Battle.Logic.Thing.Extension;
 using Battle.Logic.Utils;
+using Core.Lockstep.Math;
 using SkillModule.Runtime.Effect;
-using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Effect.Processor.Adder
 {

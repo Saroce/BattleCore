@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.HitRateComponent hitRate { get { return (Battle.Logic.Thing.Component.Property.HitRateComponent)GetComponent(LogicThingComponentsLookup.HitRate); } }
     public bool hasHitRate { get { return HasComponent(LogicThingComponentsLookup.HitRate); } }
 
-    public void AddHitRate(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddHitRate(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.HitRate;
         var component = (Battle.Logic.Thing.Component.Property.HitRateComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.HitRateComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceHitRate(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceHitRate(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.HitRate;
         var component = (Battle.Logic.Thing.Component.Property.HitRateComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.HitRateComponent));
         component.Value = newValue;

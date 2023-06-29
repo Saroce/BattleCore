@@ -9,8 +9,8 @@
 
 using Battle.Common.Constant;
 using Battle.Common.Context.Combat;
+using Core.Lockstep.Math;
 using SkillModule.Runtime.Skill;
-using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Skill.Component.Flux
 {

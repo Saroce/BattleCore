@@ -11,14 +11,14 @@ public partial class LogicEffectEntity {
     public Battle.Logic.Effect.Component.PropOpDeltaComponent propOpDelta { get { return (Battle.Logic.Effect.Component.PropOpDeltaComponent)GetComponent(LogicEffectComponentsLookup.PropOpDelta); } }
     public bool hasPropOpDelta { get { return HasComponent(LogicEffectComponentsLookup.PropOpDelta); } }
 
-    public void AddPropOpDelta(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddPropOpDelta(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicEffectComponentsLookup.PropOpDelta;
         var component = (Battle.Logic.Effect.Component.PropOpDeltaComponent)CreateComponent(index, typeof(Battle.Logic.Effect.Component.PropOpDeltaComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplacePropOpDelta(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplacePropOpDelta(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicEffectComponentsLookup.PropOpDelta;
         var component = (Battle.Logic.Effect.Component.PropOpDeltaComponent)CreateComponent(index, typeof(Battle.Logic.Effect.Component.PropOpDeltaComponent));
         component.Value = newValue;

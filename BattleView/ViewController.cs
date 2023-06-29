@@ -23,7 +23,7 @@ using ExcelConvert.Auto.GeneralConf;
 using ExcelConvert.Auto.MonsterConf;
 using ExcelConvert.Auto.SkillConf;
 using Newtonsoft.Json;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.View
 {

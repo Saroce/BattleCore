@@ -9,7 +9,7 @@
 
 using Battle.Common.Context.Combat;
 using Battle.Logic.Base.Component;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Skill.Component.Cast
 {

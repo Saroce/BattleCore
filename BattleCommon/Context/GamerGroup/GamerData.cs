@@ -9,7 +9,7 @@
 
 using System.Collections.Generic;
 using Battle.Common.Context.Combat;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Common.Context.GamerGroup
 {

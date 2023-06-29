@@ -8,7 +8,7 @@
 //============================================================
 
 using Battle.View.Base.System;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.View.Base.Component
 {

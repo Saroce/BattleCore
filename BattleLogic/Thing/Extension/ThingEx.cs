@@ -10,7 +10,7 @@
 using Battle.Common.Constant;
 using Battle.Common.Context.Combat;
 using Core.Lite.RefPool.Builtin;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Thing.Extension
 {

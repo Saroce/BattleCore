@@ -11,7 +11,7 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.HealPointComponent healPoint { get { return (Battle.Logic.Thing.Component.Property.HealPointComponent)GetComponent(LogicThingComponentsLookup.HealPoint); } }
     public bool hasHealPoint { get { return HasComponent(LogicThingComponentsLookup.HealPoint); } }
 
-    public void AddHealPoint(vFrame.Lockstep.Core.FixedPoint newCurrent, vFrame.Lockstep.Core.FixedPoint newMaximum) {
+    public void AddHealPoint(Core.Lockstep.Math.FixedPoint newCurrent, Core.Lockstep.Math.FixedPoint newMaximum) {
         var index = LogicThingComponentsLookup.HealPoint;
         var component = (Battle.Logic.Thing.Component.Property.HealPointComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.HealPointComponent));
         component.Current = newCurrent;
@@ -19,7 +19,7 @@ public partial class LogicThingEntity {
         AddComponent(index, component);
     }
 
-    public void ReplaceHealPoint(vFrame.Lockstep.Core.FixedPoint newCurrent, vFrame.Lockstep.Core.FixedPoint newMaximum) {
+    public void ReplaceHealPoint(Core.Lockstep.Math.FixedPoint newCurrent, Core.Lockstep.Math.FixedPoint newMaximum) {
         var index = LogicThingComponentsLookup.HealPoint;
         var component = (Battle.Logic.Thing.Component.Property.HealPointComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.HealPointComponent));
         component.Current = newCurrent;

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Base.ShuntingYardAlgorithm
 {

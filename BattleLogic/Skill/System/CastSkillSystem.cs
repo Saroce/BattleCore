@@ -15,9 +15,9 @@ using Battle.Logic.Base.System;
 using Battle.Logic.Constant;
 using Battle.Logic.Skill.Component.Flux;
 using Battle.Logic.Skill.Utils;
+using Core.Lockstep.Math;
 using Entitas;
 using SkillModule.Runtime.Skill;
-using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Skill.System
 {

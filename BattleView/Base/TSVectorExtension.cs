@@ -8,7 +8,7 @@
 //============================================================
 
 using UnityEngine;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.View.Base
 {

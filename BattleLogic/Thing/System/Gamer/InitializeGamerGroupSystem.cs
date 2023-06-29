@@ -15,7 +15,7 @@ using Battle.Logic.Base.System;
 using Battle.Logic.Constant;
 using Battle.Logic.Thing.Extension;
 using Battle.Logic.Thing.Factory;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Thing.System.Gamer
 {

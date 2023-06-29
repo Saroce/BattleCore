@@ -9,7 +9,7 @@
 
 using System;
 using Entitas;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.View.Base.Component
 {

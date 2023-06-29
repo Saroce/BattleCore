@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.CriticalRateComponent criticalRate { get { return (Battle.Logic.Thing.Component.Property.CriticalRateComponent)GetComponent(LogicThingComponentsLookup.CriticalRate); } }
     public bool hasCriticalRate { get { return HasComponent(LogicThingComponentsLookup.CriticalRate); } }
 
-    public void AddCriticalRate(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddCriticalRate(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.CriticalRate;
         var component = (Battle.Logic.Thing.Component.Property.CriticalRateComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.CriticalRateComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceCriticalRate(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceCriticalRate(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.CriticalRate;
         var component = (Battle.Logic.Thing.Component.Property.CriticalRateComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.CriticalRateComponent));
         component.Value = newValue;

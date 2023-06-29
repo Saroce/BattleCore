@@ -39,6 +39,9 @@
         <Reference Include="Core.Lite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Game.Core\Core.Lite.dll</HintPath>
         </Reference>
+        <Reference Include="Core.Lockstep, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Game.Core\Core.Lockstep.dll</HintPath>
+        </Reference>
         <Reference Include="Core.Unity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Game.Core\Core.Unity.dll</HintPath>
         </Reference>
@@ -88,6 +91,9 @@
         <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.AnimationModule.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.AudioModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
@@ -96,9 +102,6 @@
         </Reference>
         <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\UnityEngine.2021.3.16f1c1\UnityEngine.UIModule.dll</HintPath>
-        </Reference>
-        <Reference Include="vFrame.Lockstep.Core, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\Libraries\Lockstep.Core\vFrame.Lockstep.Core.dll</HintPath>
         </Reference>
     </ItemGroup>
   <ItemGroup>

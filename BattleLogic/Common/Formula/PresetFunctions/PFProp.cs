@@ -10,7 +10,7 @@
 using System;
 using Battle.Common.Constant;
 using Battle.Logic.Thing.Extension;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Common.Formula.PresetFunctions
 {

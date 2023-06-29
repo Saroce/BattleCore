@@ -8,8 +8,8 @@
 //============================================================
 
 using System;
+using Core.Lockstep.Math;
 using SkillModule.Runtime.Skill;
-using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Utils
 {

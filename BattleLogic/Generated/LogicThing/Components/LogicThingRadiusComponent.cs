@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.Base.RadiusComponent radius { get { return (Battle.Logic.Thing.Component.Property.Base.RadiusComponent)GetComponent(LogicThingComponentsLookup.Radius); } }
     public bool hasRadius { get { return HasComponent(LogicThingComponentsLookup.Radius); } }
 
-    public void AddRadius(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddRadius(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.Radius;
         var component = (Battle.Logic.Thing.Component.Property.Base.RadiusComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.Base.RadiusComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceRadius(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceRadius(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.Radius;
         var component = (Battle.Logic.Thing.Component.Property.Base.RadiusComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.Base.RadiusComponent));
         component.Value = newValue;

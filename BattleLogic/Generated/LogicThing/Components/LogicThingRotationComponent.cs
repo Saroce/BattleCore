@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.Base.RotationComponent rotation { get { return (Battle.Logic.Thing.Component.Property.Base.RotationComponent)GetComponent(LogicThingComponentsLookup.Rotation); } }
     public bool hasRotation { get { return HasComponent(LogicThingComponentsLookup.Rotation); } }
 
-    public void AddRotation(vFrame.Lockstep.Core.TSQuaternion newValue) {
+    public void AddRotation(Core.Lockstep.Math.TSQuaternion newValue) {
         var index = LogicThingComponentsLookup.Rotation;
         var component = (Battle.Logic.Thing.Component.Property.Base.RotationComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.Base.RotationComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceRotation(vFrame.Lockstep.Core.TSQuaternion newValue) {
+    public void ReplaceRotation(Core.Lockstep.Math.TSQuaternion newValue) {
         var index = LogicThingComponentsLookup.Rotation;
         var component = (Battle.Logic.Thing.Component.Property.Base.RotationComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.Base.RotationComponent));
         component.Value = newValue;

@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.PhysicsDefendComponent physicsDefend { get { return (Battle.Logic.Thing.Component.Property.PhysicsDefendComponent)GetComponent(LogicThingComponentsLookup.PhysicsDefend); } }
     public bool hasPhysicsDefend { get { return HasComponent(LogicThingComponentsLookup.PhysicsDefend); } }
 
-    public void AddPhysicsDefend(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddPhysicsDefend(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.PhysicsDefend;
         var component = (Battle.Logic.Thing.Component.Property.PhysicsDefendComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.PhysicsDefendComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplacePhysicsDefend(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplacePhysicsDefend(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.PhysicsDefend;
         var component = (Battle.Logic.Thing.Component.Property.PhysicsDefendComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.PhysicsDefendComponent));
         component.Value = newValue;

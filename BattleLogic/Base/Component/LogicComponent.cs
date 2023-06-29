@@ -8,8 +8,8 @@
 //============================================================
 
 using System;
+using Core.Lockstep.Math;
 using Entitas;
-using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Base.Component
 {

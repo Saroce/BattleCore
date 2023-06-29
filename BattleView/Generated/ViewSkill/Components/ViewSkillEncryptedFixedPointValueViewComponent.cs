@@ -11,14 +11,14 @@ public partial class ViewSkillEntity {
     public Battle.View.Base.Component.ViewComponent.EncryptedFixedPointValueViewComponent encryptedFixedPointValueView { get { return (Battle.View.Base.Component.ViewComponent.EncryptedFixedPointValueViewComponent)GetComponent(ViewSkillComponentsLookup.EncryptedFixedPointValueView); } }
     public bool hasEncryptedFixedPointValueView { get { return HasComponent(ViewSkillComponentsLookup.EncryptedFixedPointValueView); } }
 
-    public void AddEncryptedFixedPointValueView(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddEncryptedFixedPointValueView(Core.Lockstep.Math.FixedPoint newValue) {
         var index = ViewSkillComponentsLookup.EncryptedFixedPointValueView;
         var component = (Battle.View.Base.Component.ViewComponent.EncryptedFixedPointValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.Component.ViewComponent.EncryptedFixedPointValueViewComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceEncryptedFixedPointValueView(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceEncryptedFixedPointValueView(Core.Lockstep.Math.FixedPoint newValue) {
         var index = ViewSkillComponentsLookup.EncryptedFixedPointValueView;
         var component = (Battle.View.Base.Component.ViewComponent.EncryptedFixedPointValueViewComponent)CreateComponent(index, typeof(Battle.View.Base.Component.ViewComponent.EncryptedFixedPointValueViewComponent));
         component.Value = newValue;

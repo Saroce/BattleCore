@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.Base.CreateTimeComponent createTime { get { return (Battle.Logic.Thing.Component.Property.Base.CreateTimeComponent)GetComponent(LogicThingComponentsLookup.CreateTime); } }
     public bool hasCreateTime { get { return HasComponent(LogicThingComponentsLookup.CreateTime); } }
 
-    public void AddCreateTime(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddCreateTime(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.CreateTime;
         var component = (Battle.Logic.Thing.Component.Property.Base.CreateTimeComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.Base.CreateTimeComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceCreateTime(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceCreateTime(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.CreateTime;
         var component = (Battle.Logic.Thing.Component.Property.Base.CreateTimeComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.Base.CreateTimeComponent));
         component.Value = newValue;

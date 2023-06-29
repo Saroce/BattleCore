@@ -11,14 +11,14 @@ public partial class LogicSkillEntity {
     public Battle.Logic.Skill.Component.Cast.SkillCastTimeComponent skillCastTime { get { return (Battle.Logic.Skill.Component.Cast.SkillCastTimeComponent)GetComponent(LogicSkillComponentsLookup.SkillCastTime); } }
     public bool hasSkillCastTime { get { return HasComponent(LogicSkillComponentsLookup.SkillCastTime); } }
 
-    public void AddSkillCastTime(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddSkillCastTime(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicSkillComponentsLookup.SkillCastTime;
         var component = (Battle.Logic.Skill.Component.Cast.SkillCastTimeComponent)CreateComponent(index, typeof(Battle.Logic.Skill.Component.Cast.SkillCastTimeComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceSkillCastTime(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceSkillCastTime(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicSkillComponentsLookup.SkillCastTime;
         var component = (Battle.Logic.Skill.Component.Cast.SkillCastTimeComponent)CreateComponent(index, typeof(Battle.Logic.Skill.Component.Cast.SkillCastTimeComponent));
         component.Value = newValue;

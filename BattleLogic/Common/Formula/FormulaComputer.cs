@@ -13,7 +13,7 @@ using Battle.Logic.Base.ShuntingYardAlgorithm;
 using Battle.Logic.Common.Formula.PresetFunctions;
 using Battle.Logic.Constant;
 using Core.Lite.Base;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Common.Formula
 {

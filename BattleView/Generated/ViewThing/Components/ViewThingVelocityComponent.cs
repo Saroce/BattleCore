@@ -11,14 +11,14 @@ public partial class ViewThingEntity {
     public Battle.View.Base.Component.VelocityComponent velocity { get { return (Battle.View.Base.Component.VelocityComponent)GetComponent(ViewThingComponentsLookup.Velocity); } }
     public bool hasVelocity { get { return HasComponent(ViewThingComponentsLookup.Velocity); } }
 
-    public void AddVelocity(vFrame.Lockstep.Core.TSVector newValue) {
+    public void AddVelocity(Core.Lockstep.Math.TSVector newValue) {
         var index = ViewThingComponentsLookup.Velocity;
         var component = (Battle.View.Base.Component.VelocityComponent)CreateComponent(index, typeof(Battle.View.Base.Component.VelocityComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceVelocity(vFrame.Lockstep.Core.TSVector newValue) {
+    public void ReplaceVelocity(Core.Lockstep.Math.TSVector newValue) {
         var index = ViewThingComponentsLookup.Velocity;
         var component = (Battle.View.Base.Component.VelocityComponent)CreateComponent(index, typeof(Battle.View.Base.Component.VelocityComponent));
         component.Value = newValue;

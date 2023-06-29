@@ -18,7 +18,7 @@ using Core.Lite.DataSystem.Config;
 using Core.Lite.Loggers;
 using Core.Lite.RefPool;
 using Core.Lite.RefPool.Allocator;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 using Logger = Battle.Logic.Base.Logger;
 
 namespace Battle.Logic

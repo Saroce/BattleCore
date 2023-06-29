@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.MagicDefendComponent magicDefend { get { return (Battle.Logic.Thing.Component.Property.MagicDefendComponent)GetComponent(LogicThingComponentsLookup.MagicDefend); } }
     public bool hasMagicDefend { get { return HasComponent(LogicThingComponentsLookup.MagicDefend); } }
 
-    public void AddMagicDefend(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddMagicDefend(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.MagicDefend;
         var component = (Battle.Logic.Thing.Component.Property.MagicDefendComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.MagicDefendComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceMagicDefend(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceMagicDefend(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.MagicDefend;
         var component = (Battle.Logic.Thing.Component.Property.MagicDefendComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.MagicDefendComponent));
         component.Value = newValue;

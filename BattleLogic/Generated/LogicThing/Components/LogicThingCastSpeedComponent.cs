@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.CastSpeedComponent castSpeed { get { return (Battle.Logic.Thing.Component.Property.CastSpeedComponent)GetComponent(LogicThingComponentsLookup.CastSpeed); } }
     public bool hasCastSpeed { get { return HasComponent(LogicThingComponentsLookup.CastSpeed); } }
 
-    public void AddCastSpeed(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddCastSpeed(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.CastSpeed;
         var component = (Battle.Logic.Thing.Component.Property.CastSpeedComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.CastSpeedComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceCastSpeed(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceCastSpeed(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.CastSpeed;
         var component = (Battle.Logic.Thing.Component.Property.CastSpeedComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.CastSpeedComponent));
         component.Value = newValue;

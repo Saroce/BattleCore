@@ -9,7 +9,7 @@
 
 using Battle.Logic.Base.FSM;
 using Core.Lite.RefPool;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Thing.Behaviour.State.Move
 {

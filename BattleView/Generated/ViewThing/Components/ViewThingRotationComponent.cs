@@ -11,14 +11,14 @@ public partial class ViewThingEntity {
     public Battle.View.Base.Component.RotationComponent rotation { get { return (Battle.View.Base.Component.RotationComponent)GetComponent(ViewThingComponentsLookup.Rotation); } }
     public bool hasRotation { get { return HasComponent(ViewThingComponentsLookup.Rotation); } }
 
-    public void AddRotation(vFrame.Lockstep.Core.TSQuaternion newValue) {
+    public void AddRotation(Core.Lockstep.Math.TSQuaternion newValue) {
         var index = ViewThingComponentsLookup.Rotation;
         var component = (Battle.View.Base.Component.RotationComponent)CreateComponent(index, typeof(Battle.View.Base.Component.RotationComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceRotation(vFrame.Lockstep.Core.TSQuaternion newValue) {
+    public void ReplaceRotation(Core.Lockstep.Math.TSQuaternion newValue) {
         var index = ViewThingComponentsLookup.Rotation;
         var component = (Battle.View.Base.Component.RotationComponent)CreateComponent(index, typeof(Battle.View.Base.Component.RotationComponent));
         component.Value = newValue;

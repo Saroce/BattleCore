@@ -9,7 +9,7 @@
 
 using System;
 using Core.Lite.Base;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Common.Formula.PresetFunctions
 {

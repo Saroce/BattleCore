@@ -7,7 +7,7 @@
 //    Modified:  2023-06-13
 //============================================================
 
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Common.Context.Message.Thing
 {

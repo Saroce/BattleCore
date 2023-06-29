@@ -15,8 +15,8 @@ using Battle.Common.Context.Message.Skill;
 using Battle.Logic.Constant;
 using Battle.Logic.Effect;
 using Battle.Logic.Skill.Component.Flux;
+using Core.Lockstep.Math;
 using SkillModule.Runtime.Skill;
-using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Skill.Utils
 {

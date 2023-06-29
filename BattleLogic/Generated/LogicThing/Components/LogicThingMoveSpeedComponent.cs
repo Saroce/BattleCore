@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.MoveSpeedComponent moveSpeed { get { return (Battle.Logic.Thing.Component.Property.MoveSpeedComponent)GetComponent(LogicThingComponentsLookup.MoveSpeed); } }
     public bool hasMoveSpeed { get { return HasComponent(LogicThingComponentsLookup.MoveSpeed); } }
 
-    public void AddMoveSpeed(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddMoveSpeed(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.MoveSpeed;
         var component = (Battle.Logic.Thing.Component.Property.MoveSpeedComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.MoveSpeedComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceMoveSpeed(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceMoveSpeed(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.MoveSpeed;
         var component = (Battle.Logic.Thing.Component.Property.MoveSpeedComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.MoveSpeedComponent));
         component.Value = newValue;

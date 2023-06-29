@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.AttackComponent attack { get { return (Battle.Logic.Thing.Component.Property.AttackComponent)GetComponent(LogicThingComponentsLookup.Attack); } }
     public bool hasAttack { get { return HasComponent(LogicThingComponentsLookup.Attack); } }
 
-    public void AddAttack(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddAttack(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.Attack;
         var component = (Battle.Logic.Thing.Component.Property.AttackComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.AttackComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceAttack(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceAttack(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.Attack;
         var component = (Battle.Logic.Thing.Component.Property.AttackComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.AttackComponent));
         component.Value = newValue;

@@ -11,14 +11,14 @@ public partial class LogicThingEntity {
     public Battle.Logic.Thing.Component.Property.DodgeRateComponent dodgeRate { get { return (Battle.Logic.Thing.Component.Property.DodgeRateComponent)GetComponent(LogicThingComponentsLookup.DodgeRate); } }
     public bool hasDodgeRate { get { return HasComponent(LogicThingComponentsLookup.DodgeRate); } }
 
-    public void AddDodgeRate(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddDodgeRate(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.DodgeRate;
         var component = (Battle.Logic.Thing.Component.Property.DodgeRateComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.DodgeRateComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceDodgeRate(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceDodgeRate(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicThingComponentsLookup.DodgeRate;
         var component = (Battle.Logic.Thing.Component.Property.DodgeRateComponent)CreateComponent(index, typeof(Battle.Logic.Thing.Component.Property.DodgeRateComponent));
         component.Value = newValue;

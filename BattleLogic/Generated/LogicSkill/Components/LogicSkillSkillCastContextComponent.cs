@@ -11,7 +11,7 @@ public partial class LogicSkillEntity {
     public Battle.Logic.Skill.Component.Cast.SkillCastContextComponent skillCastContext { get { return (Battle.Logic.Skill.Component.Cast.SkillCastContextComponent)GetComponent(LogicSkillComponentsLookup.SkillCastContext); } }
     public bool hasSkillCastContext { get { return HasComponent(LogicSkillComponentsLookup.SkillCastContext); } }
 
-    public void AddSkillCastContext(ulong newCasterId, ulong newTargetId, Battle.Common.Context.Combat.SkillConfData newAbility, vFrame.Lockstep.Core.FixedPoint newCastSpeed) {
+    public void AddSkillCastContext(ulong newCasterId, ulong newTargetId, Battle.Common.Context.Combat.SkillConfData newAbility, Core.Lockstep.Math.FixedPoint newCastSpeed) {
         var index = LogicSkillComponentsLookup.SkillCastContext;
         var component = (Battle.Logic.Skill.Component.Cast.SkillCastContextComponent)CreateComponent(index, typeof(Battle.Logic.Skill.Component.Cast.SkillCastContextComponent));
         component.CasterId = newCasterId;
@@ -21,7 +21,7 @@ public partial class LogicSkillEntity {
         AddComponent(index, component);
     }
 
-    public void ReplaceSkillCastContext(ulong newCasterId, ulong newTargetId, Battle.Common.Context.Combat.SkillConfData newAbility, vFrame.Lockstep.Core.FixedPoint newCastSpeed) {
+    public void ReplaceSkillCastContext(ulong newCasterId, ulong newTargetId, Battle.Common.Context.Combat.SkillConfData newAbility, Core.Lockstep.Math.FixedPoint newCastSpeed) {
         var index = LogicSkillComponentsLookup.SkillCastContext;
         var component = (Battle.Logic.Skill.Component.Cast.SkillCastContextComponent)CreateComponent(index, typeof(Battle.Logic.Skill.Component.Cast.SkillCastContextComponent));
         component.CasterId = newCasterId;

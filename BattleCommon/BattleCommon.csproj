@@ -36,6 +36,9 @@
         <Reference Include="Core.Lite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Libraries\Game.Core\Core.Lite.dll</HintPath>
         </Reference>
+        <Reference Include="Core.Lockstep, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Libraries\Game.Core\Core.Lockstep.dll</HintPath>
+        </Reference>
         <Reference Include="Google.Protobuf, Version=3.10.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
           <HintPath>..\Libraries\Protobuf\Google.Protobuf.dll</HintPath>
         </Reference>
@@ -46,9 +49,6 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-        <Reference Include="vFrame.Lockstep.Core, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\Libraries\Lockstep.Core\vFrame.Lockstep.Core.dll</HintPath>
-        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Configs\Generated\BattleConfBattle.cs" />

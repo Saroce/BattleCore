@@ -8,7 +8,7 @@
 //============================================================
 
 using System;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Common.Constant
 {

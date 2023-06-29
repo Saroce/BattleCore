@@ -9,8 +9,8 @@
 
 using System.Collections.Generic;
 using Battle.Logic.Skill.Comparer;
+using Core.Lockstep.Math;
 using SkillModule.Runtime.Skill;
-using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Skill.Utils
 {

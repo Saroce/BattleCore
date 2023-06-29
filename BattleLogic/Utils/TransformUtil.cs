@@ -7,7 +7,7 @@
 //    Modified:  2023-06-14
 //============================================================
 
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Utils
 {

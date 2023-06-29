@@ -14,9 +14,9 @@ using Battle.Logic.Constant;
 using Battle.Logic.Thing.Behaviour.State.Cast;
 using Battle.Logic.Thing.Extension;
 using Battle.Logic.Utils;
+using Core.Lockstep.Math;
 using Entitas;
 using SkillModule.Runtime.Skill;
-using vFrame.Lockstep.Core;
 
 namespace Battle.Logic.Skill.Utils
 {

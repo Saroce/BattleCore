@@ -12,7 +12,7 @@ using Battle.Logic.Common.Formula;
 using Battle.Logic.Constant;
 using SkillModule.Runtime.Effect;
 using SkillModule.Runtime.Formula;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Utils
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Battle.Common.Exceptions;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic.Base.ShuntingYardAlgorithm
 {

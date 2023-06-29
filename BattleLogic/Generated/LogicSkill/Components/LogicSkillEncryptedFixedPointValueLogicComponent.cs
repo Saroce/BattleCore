@@ -11,14 +11,14 @@ public partial class LogicSkillEntity {
     public Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent encryptedFixedPointValueLogic { get { return (Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent)GetComponent(LogicSkillComponentsLookup.EncryptedFixedPointValueLogic); } }
     public bool hasEncryptedFixedPointValueLogic { get { return HasComponent(LogicSkillComponentsLookup.EncryptedFixedPointValueLogic); } }
 
-    public void AddEncryptedFixedPointValueLogic(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void AddEncryptedFixedPointValueLogic(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicSkillComponentsLookup.EncryptedFixedPointValueLogic;
         var component = (Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceEncryptedFixedPointValueLogic(vFrame.Lockstep.Core.FixedPoint newValue) {
+    public void ReplaceEncryptedFixedPointValueLogic(Core.Lockstep.Math.FixedPoint newValue) {
         var index = LogicSkillComponentsLookup.EncryptedFixedPointValueLogic;
         var component = (Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent)CreateComponent(index, typeof(Battle.Logic.Base.Component.EncryptedFixedPointValueLogicComponent));
         component.Value = newValue;

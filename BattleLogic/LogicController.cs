@@ -26,7 +26,7 @@ using ExcelConvert.Auto.FunctionConf;
 using ExcelConvert.Auto.GeneralConf;
 using ExcelConvert.Auto.MonsterConf;
 using ExcelConvert.Auto.SkillConf;
-using vFrame.Lockstep.Core;
+using Core.Lockstep.Math;
 
 namespace Battle.Logic
 {
