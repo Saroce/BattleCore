@@ -32,7 +32,7 @@ namespace Battle.Logic
 {
     public sealed class LogicController : BaseObject<object>, IBattleLogic
     {
-        private BattleContext _battleContext;
+        private BattleLogicContext _battleLogicContext;
 
         private IClock _clock;
         private TSRandom _random;
@@ -49,23 +49,23 @@ namespace Battle.Logic
         private MessageQueue<IBattleRequest> _requestQueue;
 
         protected override void OnCreate(object args) {
-            if (!(args is BattleContext context)) {
+            if (!(args is BattleLogicContext context)) {
                 throw new ArgumentException($"args must be an instance of BattleContext!");
             }
 
-            _battleContext = context;
+            _battleLogicContext = context;
             _logger = new Logger();
             _logger.Create(this);
 
             _clock = new ScalableClock() { TimeScale = 1f};
-            _clock.StepDelta = _battleContext.FrameDeltaInMilliseconds;
+            _clock.StepDelta = _battleLogicContext.FrameDeltaInMilliseconds;
 
 
             _configReader = new ConfigReader();
             _configReader.Create(context.DataReader, context.ConfigPath);
             ParseSheets(_configReader);
             
-            _random = TSRandom.New(_battleContext.Seed);
+            _random = TSRandom.New(_battleLogicContext.Seed);
             _idGenerator = new UniqueIdGenerator();
 
             _frameCounter = new FrameCounter();
@@ -144,8 +144,8 @@ namespace Battle.Logic
         /// 获取战斗现场
         /// </summary>
         /// <returns></returns>
-        internal BattleContext GetBattleContext() {
-            return _battleContext;
+        internal BattleLogicContext GetBattleContext() {
+            return _battleLogicContext;
         }
 
         internal IRefPoolManager RefPoolManager() {

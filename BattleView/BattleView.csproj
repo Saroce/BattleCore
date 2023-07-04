@@ -210,7 +210,7 @@
     <Compile Include="Base\Component\IdComponent.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\BattleContext.cs" />
+    <Compile Include="Base\BattleViewContext.cs" />
     <Compile Include="Base\System\ViewBaseSystem.cs" />
     <Compile Include="Base\System\ViewCleanupSystem.cs" />
     <Compile Include="Base\System\ViewExecuteSystem.cs" />

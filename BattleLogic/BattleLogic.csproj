@@ -374,7 +374,7 @@
     <Compile Include="Skill\SkillSystems.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\BattleContext.cs" />
+    <Compile Include="Base\BattleLogicContext.cs" />
     <Compile Include="Base\Clock\Clock.cs" />
     <Compile Include="Base\Clock\FixedClock.cs" />
     <Compile Include="Base\Clock\IClock.cs" />

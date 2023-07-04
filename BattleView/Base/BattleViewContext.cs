@@ -17,7 +17,7 @@ using UnityEngine;
 
 namespace Battle.View.Base
 {
-    public sealed class BattleContext
+    public sealed class BattleViewContext
     {
         public int BattleId;
         public int Seed;
@@ -32,7 +32,6 @@ namespace Battle.View.Base
         public IAssetLoader FluxAssetLoader;
         public string FluxObjectRootName;
         public GameObject HUDRoot;
-        public GameObject CameraRoot;
         public Camera HUDCamera;
         public Camera SceneCamera;
     }

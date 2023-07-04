@@ -35,7 +35,7 @@ namespace Battle.Logic
             return _controller;
         }
 
-        internal BattleContext GetBattleContext() {
+        internal BattleLogicContext GetBattleContext() {
             return GetController().GetBattleContext();
         }
 

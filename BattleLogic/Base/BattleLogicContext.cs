@@ -14,7 +14,7 @@ using Core.Lite.RefPool;
 
 namespace Battle.Logic.Base
 {
-    public sealed class BattleContext
+    public sealed class BattleLogicContext
     {
         public int FrameDeltaInMilliseconds;
         public int Seed;

@@ -38,7 +38,7 @@ namespace Battle.View
             return _controller;
         }
 
-        internal BattleContext GetBattleContext() {
+        internal BattleViewContext GetBattleContext() {
             return GetController().GetBattleContext();
         }
         

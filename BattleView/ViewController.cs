@@ -29,7 +29,7 @@ namespace Battle.View
 {
     public sealed class ViewController : BaseObject<object>, IBattleView
     {
-        private BattleContext _battleContext;
+        private BattleViewContext _battleViewContext;
         private TSRandom _random;
         private UniqueIdGenerator _idGenerator;
         private BattleViewConfig _viewConfig;
@@ -41,10 +41,10 @@ namespace Battle.View
         private ViewSystems _systems;
 
         protected override void OnCreate(object args) {
-            if (!(args is BattleContext context)) {
+            if (!(args is BattleViewContext context)) {
                 throw new ArgumentException($"args must be an instance of BattleContext!");
             }
-            _battleContext = context;
+            _battleViewContext = context;
 
             _idGenerator = new UniqueIdGenerator();
             _random = TSRandom.New(context.Seed);
@@ -77,8 +77,8 @@ namespace Battle.View
             configReader.ParseSheet<FriendshipConf_Talk, FriendshipConf_Talk_Record>("FriendshipConf_Talk");
         }
 
-        internal BattleContext GetBattleContext() {
-            return _battleContext;
+        internal BattleViewContext GetBattleContext() {
+            return _battleViewContext;
         } 
         
         internal IRefPoolManager RefPoolManager() {
