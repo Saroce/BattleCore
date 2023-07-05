@@ -6,10 +6,11 @@ ConfigDebug = /p:Configuration=Debug
 ConfigRelease = /p:Configuration=Release
 
 BuildDir = Build
-BuildReleaseDir = $(BuildDir)/Release
 BuildDebugDir = $(BuildDir)/Debug
+BuildReleaseDir = $(BuildDir)/Release
 
 OutputDir = Output
+ProjectOutputDir = ../SFrameworkProject/Assets/Bundles/Assemblies
 
 Assemblies = Battle.*
 
@@ -37,6 +38,9 @@ prepare_release_binary:
 	mkdir -p $(OutputDir)
 	cp -rfv $(BuildReleaseDir)/$(Assemblies) $(OutputDir)
 
+deploy:
+	cp -rfv $(OutputDir)/$(Assemblies) $(ProjectOutputDir)
+
 .PHONY:
-	debug release clean debug_build release_build prepare_debug_binary prepare_release_binary
+	debug release clean debug_build release_build prepare_debug_binary prepare_release_binary deploy
 

@@ -11,6 +11,13 @@ namespace Battle.Common.Context.Message
 {
     public class BattleMessage<T> : IBattleMessage where T : class
     {
+        /// <summary>
+        /// 消息Id
+        /// </summary>
+        private static int _id = UniqueIdGenerator.Id;
+        
         public int FrameIndex { get; set; }
+
+        public int MessageId { get; } = _id;
     }
 }

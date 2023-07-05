@@ -12,5 +12,7 @@ namespace Battle.Common.Context.Message
     public interface IBattleMessage
     {
         int FrameIndex { get; set; }
+
+        int MessageId { get; }
     }
 }

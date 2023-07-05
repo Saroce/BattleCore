@@ -4,15 +4,15 @@
 //
 //      Author:  Saroce, Saroce233@163.com
 //
-//    Modified:  2023-03-21
+//    Modified:  2023-07-05
 //============================================================
 
-namespace Battle.Logic.Base
+namespace Battle.Common
 {
-    internal class UniqueIdGenerator
+    internal static class UniqueIdGenerator
     {
-        private ulong _independentId;
+        private static int _id;
 
-        public ulong IndependentId => ++_independentId;
+        public static int Id => ++_id;
     }
 }
