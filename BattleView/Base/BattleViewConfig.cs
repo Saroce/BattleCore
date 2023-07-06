@@ -21,11 +21,12 @@ namespace Battle.View.Base
         public string HUDDir;
 
         // HUDs
-        public string HUDHealPath;
-        public string HUDDamagePath;
-        public string HUDHPPath;
+        public string HUDHealPath;  // 加血飘字
+        public string HUDDamagePath; // 扣血飘字
+        public string HUDHPPath; // 血条HUD
         public string HUDHPEnemyPath;
         
+        // Animations
         public float LerpSpeed; // Avatar位置插值速度
         
         // 位置偏移

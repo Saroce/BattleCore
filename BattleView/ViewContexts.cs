@@ -29,7 +29,7 @@ namespace Battle.View
             _fRuntimeSetting = new FRuntimeSetting() {
                 AudioPlayerFactory = battleContext.FluxAudioPlayerFactory,
                 FluxAssetLoader = battleContext.FluxAssetLoader,
-                ObjectRootName = battleContext.FluxObjectRootName,
+                ObjectRoot = GameObjectRoots.GetRoot(battleContext.FluxObjectRootName)?.transform,
                 ControlAnimator = true
             };
         }
