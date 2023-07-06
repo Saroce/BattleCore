@@ -28,7 +28,7 @@ namespace Battle.View
             var battleContext = GetBattleContext();
             _fRuntimeSetting = new FRuntimeSetting() {
                 AudioPlayerFactory = battleContext.FluxAudioPlayerFactory,
-                AssetLoader = battleContext.FluxAssetLoader,
+                FluxAssetLoader = battleContext.FluxAssetLoader,
                 ObjectRootName = battleContext.FluxObjectRootName,
                 ControlAnimator = true
             };

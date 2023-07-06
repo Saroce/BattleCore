@@ -29,7 +29,7 @@ namespace Battle.View.Base
         public ISpawnPool SpawnPool;
         public IDataReader DataReader;
         public IAudioPlayerFactory FluxAudioPlayerFactory;
-        public IAssetLoader FluxAssetLoader;
+        public IFluxAssetLoader FluxAssetLoader;
         public string FluxObjectRootName;
         public GameObject HUDRoot;
         public Camera HUDCamera;
