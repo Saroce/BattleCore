@@ -25,13 +25,14 @@ namespace Battle.Logic.Utils
             var skillData = ReadSkillData(contexts, levelConf.SkillConfPath);
             try {
                 // TODO 暂时未配置技能等级数据
-                var data = (SkillConfData)skillData.GetSkillData();
+                var data = (SkillConfData)skillData?.GetSkillData();
                 data.Id = skillId;
                 data.Level = level;
                 return data;
             }
             catch (Exception e) {
-                Console.WriteLine(e);
+                contexts.LogError(LogTagDef.ThingLogTag, "Get skill data failed, skill id:{0}, level:{1}, guid:{2}",
+                    skillId, level, skillData?.Guid ?? string.Empty);
                 throw;
             }
         }
