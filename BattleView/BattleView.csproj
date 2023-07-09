@@ -258,6 +258,7 @@
     <Compile Include="Skill\SkillSystems.cs" />
     <Compile Include="Skill\System\AddSkillCastViewSystem.cs" />
     <Compile Include="Skill\System\AddSkillHitViewSystem.cs" />
+    <Compile Include="Skill\System\DestroySkillViewSystem.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarAssetComponent.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarHurtingComponent.cs" />
     <Compile Include="Thing\Component\Avatar\AvatarMotionComponent.cs" />

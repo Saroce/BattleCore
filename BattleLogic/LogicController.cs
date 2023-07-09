@@ -58,8 +58,7 @@ namespace Battle.Logic
             _logger.Create(this);
 
             _clock = new ScalableClock() { TimeScale = 1f};
-            _clock.StepDelta = _battleLogicContext.FrameDeltaInMilliseconds;
-
+            _clock.StepDelta = _battleLogicContext.FrameDeltaInMilliseconds / 1000f;
 
             _configReader = new ConfigReader();
             _configReader.Create(context.DataReader, context.ConfigPath);

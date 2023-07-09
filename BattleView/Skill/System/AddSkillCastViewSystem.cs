@@ -147,9 +147,9 @@ namespace Battle.View.Skill.System
                 return;
             }
 
-            if (CreateAndPlayContinuousSequence(skillEntity, casterTransform, targetTransform, castSpeed)) {
-                return;
-            }
+            // if (CreateAndPlayContinuousSequence(skillEntity, casterTransform, targetTransform, castSpeed)) {
+            //     return;
+            // }
             
             LogError(LogTagDef.SkillLogTag, "No valid skill view created, caster id: {0}, skill guid: {1}",
                 skillEntity.skillCastContext.OwnerId, skillEntity.skillCastContext.Ability.Guid);
@@ -176,8 +176,9 @@ namespace Battle.View.Skill.System
                 castSpeed,
                 () => {
                     // TODO 快照还原
-                    skillEntity.RecycleSequence();
-                    CreateAndPlayContinuousSequence(skillEntity, casterTransform, targetTransform, castSpeed);
+                    // skillEntity.RecycleSequence();
+                    // CreateAndPlayContinuousSequence(skillEntity, casterTransform, targetTransform, castSpeed);
+                    skillEntity.isDestroyed = true;
                 });
 
             return seq != null;

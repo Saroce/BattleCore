@@ -32,7 +32,7 @@ namespace Battle.View
             Contexts = null;
         }
         
-        [Conditional("FULL_LOG")]
+        // [Conditional("FULL_LOG")]
         protected void LogDebug(LogTag tag, string content, params object[] args) {
             Logger.LogDebug(tag, content, args);
         }

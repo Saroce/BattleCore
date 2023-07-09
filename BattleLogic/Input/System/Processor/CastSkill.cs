@@ -8,6 +8,7 @@
 //============================================================
 
 using Battle.Common.Constant;
+using Battle.Common.Context.Combat;
 using Battle.Common.Context.Command.Request;
 using Battle.Common.Context.Command.Respond;
 using Battle.Logic.Skill.Utils;
@@ -23,12 +24,23 @@ namespace Battle.Logic.Input.System.Processor
                 return;
             }
 
-            if (!entity.hasUltimateAbility) {
-                Fail("Entity does not have ultimate cast ability.");
-                return;
-            }
+            SkillConfData ability = null;
 
-            var ability = entity.ultimateAbility.Value;
+            if (request.IsDefaultSkill) {
+                if (!entity.hasDefaultCastAbility) {
+                    Fail("Entity does not have default cast ability.");
+                    return;
+                }
+                ability = entity.defaultCastAbility.Value;
+            }
+            else {
+                if (!entity.hasUltimateAbility) {
+                    Fail("Entity does not have ultimate cast ability.");
+                    return;
+                }
+                ability = entity.ultimateAbility.Value;
+            }
+            
             var errorCode = SkillUtil.TryCastWithAbility(Contexts, entity, ability, out var target);
             if (errorCode == SkillCastResult.NoError) {
                 Succeed();

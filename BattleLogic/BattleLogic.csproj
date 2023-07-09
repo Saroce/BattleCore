@@ -19,7 +19,7 @@
         <DebugType>full</DebugType>
         <Optimize>false</Optimize>
         <OutputPath>..\Build\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE;FULL_LOG;UNITY_EDITOR;ENABLE_LOGIC_THREAD</DefineConstants>
+        <DefineConstants>DEBUG;TRACE;FULL_LOG;ENABLE_LOGIC_THREAD</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
@@ -243,6 +243,9 @@
     <Compile Include="Effect\EffectSystems.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Input\System\CommandProcessor.cs" />
+    <Compile Include="Input\System\ICommandProcessor.cs" />
+    <Compile Include="Input\System\Processor\RetrieveGamerByGeneralId.cs" />
     <Compile Include="Skill\Comparer\DistanceComparer.cs" />
     <Compile Include="Skill\Comparer\LessHealthPointComparer.cs" />
     <Compile Include="Skill\Comparer\NestedComparer.cs" />
@@ -303,8 +306,6 @@
     <Compile Include="Constant\LogicThingDef.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Input\System\Processor\CommandProcessor.cs" />
-    <Compile Include="Input\System\Processor\ICommandProcessor.cs" />
     <Compile Include="Thing\Behaviour\State\Cast\CastState.cs" />
     <Compile Include="Thing\Behaviour\State\Cast\CastStateContext.cs" />
     <Compile Include="Thing\Behaviour\State\Cast\Component\CastableRefComponent.cs" />

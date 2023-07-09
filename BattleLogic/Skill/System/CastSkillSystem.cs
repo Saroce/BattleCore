@@ -141,7 +141,7 @@ namespace Battle.Logic.Skill.System
 
             // 转换到Flux导出数据文件路径，反序列化得到Flux序列数据
             var seqDataPath = SkillUtil.ConvertToSequenceDataPath(sequencePath);
-            var sequence = DataReader.ReadData<FluxSkillEventData>(sequencePath);
+            var sequence = DataReader.ReadData<FluxSkillEventData>(seqDataPath);
             if (sequence == null) {
                 LogError(LogTagDef.SkillLogTag, $"Read sequence failed path: {seqDataPath}");
                 length = 0f;

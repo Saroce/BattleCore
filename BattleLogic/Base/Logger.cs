@@ -17,12 +17,7 @@ namespace Battle.Logic.Base
 {
     internal class Logger : BaseObject<LogicController>
     {
-
-#if DEBUG
-        private static readonly LogFormatType BattleLogFormatter = Core.Lite.Loggers.Logger.DefaultLogFormatMask;
-#else
         private static readonly LogFormatType BattleLogFormatter = LogFormatType.Tag | LogFormatType.Class | LogFormatType.Function;
-#endif
 
         private LogicController _controller;
 
@@ -41,7 +36,7 @@ namespace Battle.Logic.Base
             return frameCounter.FrameIndex;
         }
 
-        [Conditional("FULL_LOG")]
+        // [Conditional("FULL_LOG")]
         public void LogDebug(LogTag tag, string content, int skip, params object[] args) {
             if (!Enabled) {
                 return;

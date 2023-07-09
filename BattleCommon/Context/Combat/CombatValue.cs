@@ -38,6 +38,14 @@ namespace Battle.Common.Context.Combat
                 CastSpeed = a.CastSpeed - b.CastSpeed,
             };
             return values;
-        }
+         }
+
+         /// <summary>
+         /// 调试用
+         /// </summary>
+         /// <returns></returns>
+         public override string ToString() {
+             return $"HpCur: {HpCur}, HpMax:{HpMax} Attack:{Attack} PhysicsDefend:{PhysicsDefend} MagicDefend:{MagicDefend}";
+         }
     }
 }
