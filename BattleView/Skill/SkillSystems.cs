@@ -18,6 +18,9 @@ namespace Battle.View.Skill
             // Reactive Systems
             Add(new AddSkillCastViewSystem(contexts));
             Add(new AddSkillHitViewSystem(contexts));
+            
+            // Clean up
+            Add(new DestroySkillViewSystem(contexts));
         }
     }
 }

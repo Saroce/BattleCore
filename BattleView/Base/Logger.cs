@@ -16,13 +16,13 @@ namespace Battle.View.Base
 {
    internal static class Logger
     {
-        private static readonly LogFormatType BattleLogFormatter = Core.Lite.Loggers.Logger.DefaultLogFormatMask;
+        private static readonly LogFormatType BattleLogFormatter = LogFormatType.Tag | LogFormatType.Class | LogFormatType.Function;
 
         private static int GetFrameIndex() {
             return Time.frameCount;
         }
 
-        [Conditional("DEBUG")]
+        // [Conditional("DEBUG")]
         private static void LogDebug(LogTag tag, string content, int skip, params object[] args) {
             var builder = StringBuilderPool.Shared.Get();
             builder.Append("<color=green>[VIEW-");

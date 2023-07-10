@@ -26,7 +26,7 @@ namespace Battle.Logic.Base.FSM
         }
         
         public void AddState(int stateId, IState state) {
-            if (!States.ContainsKey(stateId)) {
+            if (States.ContainsKey(stateId)) {
                 throw new StateAlreadyExistException(stateId);
             }
 

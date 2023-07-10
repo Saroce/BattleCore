@@ -27,5 +27,12 @@ namespace Battle.Logic.Constant
             LogicThingMatcher.Creature,
             LogicThingMatcher.ThingCreateContext,
             LogicThingMatcher.Position);
+        
+        public static readonly IMatcher<LogicThingEntity> GamerMatchers = LogicThingMatcher.AllOf(
+            LogicThingMatcher.Id,
+            LogicThingMatcher.Creature,
+            LogicThingMatcher.Gamer,
+            LogicThingMatcher.ThingCreateContext,
+            LogicThingMatcher.Position);
     }
 }

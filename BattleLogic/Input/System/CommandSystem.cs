@@ -24,6 +24,7 @@ namespace Battle.Logic.Input.System
             _processors = new Dictionary<Type, ICommandProcessor>();
             
             RegisterProcessor<CastSkill>();
+            RegisterProcessor<RetrieveGamerByGeneralId>();
         }
 
         private void RegisterProcessor<T>() where T : ICommandProcessor {

@@ -124,7 +124,7 @@ namespace Battle.Logic.Skill.Utils
             castContext.Ability = ability;
             castContext.TargetId = targetId;
             // 切换置施法状态
-            if (!thingEntity.Cast(contexts)) {
+            if (!thingEntity.Cast(contexts, castContext)) {
                 return SkillCastResult.CastStateRejected;
             }
             

@@ -55,7 +55,7 @@ namespace Battle.Logic
             return Contexts.HashSetPool<T>();
         }
 
-        [Conditional("FULL_LOG")]
+        // [Conditional("FULL_LOG")]
         protected void LogDebug(LogTag tag, string content, params object[] args) {
             Contexts.GetLogger().LogDebug(tag, content, 2, args);
         }

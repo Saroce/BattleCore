@@ -79,7 +79,10 @@
         <Compile Include="Context\Command\IBattleRespond.cs" />
         <Compile Include="Context\Command\IRecordableRequest.cs" />
         <Compile Include="Context\Command\Request\CastSkillRequest.cs" />
+        <Compile Include="Context\Command\Request\RetrieveGamerByGeneralIdRequest.cs" />
         <Compile Include="Context\Command\Respond\DefaultRespond.cs" />
+        <Compile Include="Context\Command\Respond\RetrieveCreatureRespond.cs" />
+        <Compile Include="Context\Command\Respond\RetrieveGamerByGeneralIdRespond.cs" />
         <Compile Include="Context\Create\CreatureCreateContext.cs" />
         <Compile Include="Context\Create\GamerCreateContext.cs" />
         <Compile Include="Context\Create\ThingCrateContext.cs" />

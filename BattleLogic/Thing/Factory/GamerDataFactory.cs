@@ -69,7 +69,7 @@ namespace Battle.Logic.Thing.Factory
                 entity.AddPassiveAbilities(passiveAbilities);
             }
             
-            contexts.LogDebug(LogTagDef.ThingLogTag, "Create card, id: {0}, general id: {1}",
+            contexts.LogDebug(LogTagDef.ThingLogTag, "Create gamer, entity id: {0}, general id: {1}",
                 entity.id.Value, entity.gamerGeneralId.Value);
             
             entity.isThing = entity.isGamerData = true;
