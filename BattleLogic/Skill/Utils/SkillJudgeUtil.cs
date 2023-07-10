@@ -51,10 +51,12 @@ namespace Battle.Logic.Skill.Utils
                             hitTargets.Add(targetId);
                         }
                         break;
-                    case SkillJudgeType.All:
-                        break;
                     case SkillJudgeType.Range:
+                    case SkillJudgeType.All: {
+                        var realTargets = contexts.ListPool<ulong>().Get();
+                        CollectAffectedTargets(contexts, fluxEvent, effectData, casterId, targetId, ref realTargets);
                         break;
+                    }
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -80,6 +82,21 @@ namespace Battle.Logic.Skill.Utils
             };
 
             return userData;
+        }
+
+        private static void CollectAffectedTargets(LogicContexts contexts,
+            SkillFluxEventContext fluxEventContext,
+            ActiveSkillEffectData effectData,
+            ulong casterId,
+            ulong targetId,
+            ref List<ulong> realTargets) {
+            
+            var caster = contexts.logicThing.GetEntityWithId(casterId);
+            if (null == caster) {
+                return;
+            }
+            
+            
         }
     }
 }

@@ -84,7 +84,7 @@ namespace Battle.Logic.Skill.Utils
                 return true;
             }
 
-            if (!thingEntity.hasCamp || targetEntity.hasCamp) {
+            if (!thingEntity.hasCamp || !targetEntity.hasCamp) {
                 return false;
             }
 

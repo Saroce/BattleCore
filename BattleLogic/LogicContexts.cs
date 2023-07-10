@@ -124,7 +124,7 @@ namespace Battle.Logic
         /// <param name="tag"></param>
         /// <param name="content"></param>
         /// <param name="args"></param>
-        [Conditional("FULL_LOG")]
+        // [Conditional("FULL_LOG")]
         public void LogDebug(LogTag tag, string content, params object[] args) {
             GetLogger().LogDebug(tag, content, 2, args);
         }

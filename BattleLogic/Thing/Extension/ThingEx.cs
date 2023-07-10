@@ -21,8 +21,10 @@ namespace Battle.Logic.Thing.Extension
             if (thingEntity.isGamer) {
                 return ThingType.Gamer;
             }
-            
-            // TODO 
+
+            if (thingEntity.isMonster) {
+                return ThingType.Monster;
+            }
 
             return ThingType.Unknown;
         }

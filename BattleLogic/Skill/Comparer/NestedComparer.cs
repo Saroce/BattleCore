@@ -47,10 +47,10 @@ namespace Battle.Logic.Skill.Comparer
                     default:
                         throw new IndexOutOfRangeException($"Unhandled comparer type: {baseObject.GetType().FullName}");
                 }
-                
-                _contexts.ListPool<IComparer<ulong>>().Return(_comparers);
-                _comparers = null;
             }
+            
+            _contexts.ListPool<IComparer<ulong>>().Return(_comparers);
+            _comparers = null;
         }
     }
 }
