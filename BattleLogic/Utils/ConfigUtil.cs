@@ -12,6 +12,7 @@ using Battle.Common.Constant;
 using Battle.Common.Context.Combat;
 using Battle.Logic.Constant;
 using ExcelConvert.Auto.SkillConf;
+using Google.Protobuf;
 using SkillModule.Runtime.Skill;
 
 namespace Battle.Logic.Utils
@@ -46,6 +47,36 @@ namespace Battle.Logic.Utils
             }
 
             return skillData;
+        }
+
+        /// <summary>
+        /// 从配置表中读取数据
+        /// </summary>
+        /// <param name="conf"></param>
+        /// <returns></returns>
+        public static CombatValue ReadCombatValue(IMessage conf) {
+            var combatValue = new CombatValue {
+                HpCur = conf.GetPropertyValue("HP"),
+                HpMax = conf.GetPropertyValue("HP"),
+                Attack = conf.GetPropertyValue("Attack"),
+                PhysicsDefend = conf.GetPropertyValue("PhysicsDefend"),
+                MagicDefend = conf.GetPropertyValue("MagicDefend"),
+                HitRate = conf.GetPropertyValue("HitRate"),
+                DodgeRate = conf.GetPropertyValue("DodgeRate"),
+                CriticalRate = conf.GetPropertyValue("Crit"),
+                MoveSpeed = conf.GetPropertyValue("MoveSpeed"),
+                CastSpeed = conf.GetPropertyValue("CastSpeed"),
+            };
+            return combatValue;
+        }
+
+        private static int GetPropertyValue(this IMessage message, string propName) {
+            var type = message.GetType();
+            var propInfo = type.GetProperty(propName);
+            if (propInfo == null) {
+                throw new ArgumentNullException($"property not found, name:{propName}, type:{type.FullName}");
+            }
+            return (int)propInfo.GetValue(message, null);
         }
     }
 }

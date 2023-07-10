@@ -112,17 +112,7 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingMoveMotionNameComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingMoveStateComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingStateMachineComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingCastAbilitiesComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingDefaultCastAbilityComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingPassiveAbilitiesComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingUltimateAbilityComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingGamerDefSkillComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingGamerSkillsComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingGamerUltSkillComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingGamerCombatComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingGamerGeneralIdComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingGamerIdGroupComponent.cs" />
-    <Compile Include="Generated\LogicThing\Components\LogicThingGamerInfoComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingCampComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingCreateTimeComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingPositionComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingRadiusComponent.cs" />
@@ -136,6 +126,7 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingMagicDefendComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingMoveSpeedComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingPhysicsDefendComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingMonsterComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingCreatureComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingGamerDataComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingOtherComponent.cs" />
@@ -144,6 +135,17 @@
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCastAttributeTypeComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCastRangeTypeComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingCastAbilitiesComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingDefaultCastAbilityComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingPassiveAbilitiesComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingUltimateAbilityComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerDefSkillComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerSkillsComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerUltSkillComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerCombatComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerGeneralIdComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerIdGroupComponent.cs" />
+    <Compile Include="Generated\LogicThing\Components\LogicThingGamerInfoComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingIntelligentComponent.cs" />
     <Compile Include="Generated\LogicThing\Components\LogicThingThingCreateContextComponent.cs" />
     <Compile Include="Generated\Components\Interfaces\IDestroyedEntity.cs" />
@@ -245,6 +247,7 @@
   <ItemGroup>
     <Compile Include="Input\System\CommandProcessor.cs" />
     <Compile Include="Input\System\ICommandProcessor.cs" />
+    <Compile Include="Input\System\Processor\GM\GMSummonMonster.cs" />
     <Compile Include="Input\System\Processor\RetrieveGamerByGeneralId.cs" />
     <Compile Include="Skill\Comparer\DistanceComparer.cs" />
     <Compile Include="Skill\Comparer\LessHealthPointComparer.cs" />
@@ -266,6 +269,9 @@
     <Compile Include="Skill\Utils\SkillJudgeUtil.cs" />
     <Compile Include="Skill\Utils\SkillTargetSelectUtil.cs" />
     <Compile Include="Thing\Behaviour\State\Cast\System\ExitCastStateOnFinishedSystem.cs" />
+    <Compile Include="Thing\Component\Property\Base\CampComponent.cs" />
+    <Compile Include="Thing\Component\Type\MonsterComponent.cs" />
+    <Compile Include="Thing\Factory\MonsterFactory.cs" />
     <Compile Include="Thing\System\ThingHpUpdatedSystem.cs" />
     <Compile Include="Utils\FormulaUtil.cs" />
     <Compile Include="Utils\RangeUtil.cs" />

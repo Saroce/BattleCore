@@ -24,5 +24,9 @@ namespace Battle.Common.Context.Combat
             Id = id;
             Level = level;
         }
+        
+        public static implicit operator SkillLevelData(int id) {
+            return new SkillLevelData(id);
+        }
     }
 }

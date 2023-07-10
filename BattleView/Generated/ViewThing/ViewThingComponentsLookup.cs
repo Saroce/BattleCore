@@ -22,11 +22,12 @@ public static class ViewThingComponentsLookup {
     public const int AvatarViewOffset = 11;
     public const int CreateContext = 12;
     public const int DefaultCastAbility = 13;
-    public const int HealthPoint = 14;
-    public const int ThingType = 15;
-    public const int UltimateCastAbility = 16;
+    public const int CampFlag = 14;
+    public const int HealthPoint = 15;
+    public const int ThingType = 16;
+    public const int UltimateCastAbility = 17;
 
-    public const int TotalComponents = 17;
+    public const int TotalComponents = 18;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -43,6 +44,7 @@ public static class ViewThingComponentsLookup {
         "AvatarViewOffset",
         "CreateContext",
         "DefaultCastAbility",
+        "CampFlag",
         "HealthPoint",
         "ThingType",
         "UltimateCastAbility"
@@ -63,6 +65,7 @@ public static class ViewThingComponentsLookup {
         typeof(Battle.View.Thing.Component.Avatar.AvatarViewOffsetComponent),
         typeof(Battle.View.Thing.Component.CreateContextComponent),
         typeof(Battle.View.Thing.Component.DefaultCastAbilityComponent),
+        typeof(Battle.View.Thing.Component.Property.CampFlagComponent),
         typeof(Battle.View.Thing.Component.Property.HealthPointComponent),
         typeof(Battle.View.Thing.Component.ThingTypeComponent),
         typeof(Battle.View.Thing.Component.UltimateCastAbilityComponent)

@@ -8,6 +8,7 @@
 //============================================================
 
 using System.Collections.Generic;
+using Battle.Common.Constant;
 using Battle.Common.Context.Combat;
 using Battle.Common.Context.Create;
 using Battle.Logic.Base;
@@ -66,6 +67,7 @@ namespace Battle.Logic.Thing.System.Gamer
                     GeneralId = gamerInfo.GeneralId,
                     Position = gamerInfo.Position,
                     Rotation = gamerInfo.Rotation,
+                    CampFlag = CampFlag.Camp_1,
                     CombatValue = gamerDataEntity.hasGamerCombat
                         ? gamerDataEntity.gamerCombat.Value
                         : new CombatValue(),

@@ -33,29 +33,31 @@ public static class LogicThingComponentsLookup {
     public const int GamerUltSkill = 22;
     public const int Intelligent = 23;
     public const int Attack = 24;
-    public const int CreateTime = 25;
-    public const int Position = 26;
-    public const int Radius = 27;
-    public const int Rotation = 28;
-    public const int CastSpeed = 29;
-    public const int CriticalRate = 30;
-    public const int DodgeRate = 31;
-    public const int HealPoint = 32;
-    public const int HitRate = 33;
-    public const int MagicDefend = 34;
-    public const int MoveSpeed = 35;
-    public const int PhysicsDefend = 36;
-    public const int ThingCreateContext = 37;
-    public const int Creature = 38;
-    public const int Gamer = 39;
-    public const int GamerData = 40;
-    public const int GamerGroup = 41;
-    public const int Other = 42;
-    public const int ThingCastAttributeType = 43;
-    public const int ThingCastRangeType = 44;
-    public const int Thing = 45;
+    public const int Camp = 25;
+    public const int CreateTime = 26;
+    public const int Position = 27;
+    public const int Radius = 28;
+    public const int Rotation = 29;
+    public const int CastSpeed = 30;
+    public const int CriticalRate = 31;
+    public const int DodgeRate = 32;
+    public const int HealPoint = 33;
+    public const int HitRate = 34;
+    public const int MagicDefend = 35;
+    public const int MoveSpeed = 36;
+    public const int PhysicsDefend = 37;
+    public const int ThingCreateContext = 38;
+    public const int Creature = 39;
+    public const int Gamer = 40;
+    public const int GamerData = 41;
+    public const int GamerGroup = 42;
+    public const int Monster = 43;
+    public const int Other = 44;
+    public const int ThingCastAttributeType = 45;
+    public const int ThingCastRangeType = 46;
+    public const int Thing = 47;
 
-    public const int TotalComponents = 46;
+    public const int TotalComponents = 48;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -83,6 +85,7 @@ public static class LogicThingComponentsLookup {
         "GamerUltSkill",
         "Intelligent",
         "Attack",
+        "Camp",
         "CreateTime",
         "Position",
         "Radius",
@@ -100,6 +103,7 @@ public static class LogicThingComponentsLookup {
         "Gamer",
         "GamerData",
         "GamerGroup",
+        "Monster",
         "Other",
         "ThingCastAttributeType",
         "ThingCastRangeType",
@@ -132,6 +136,7 @@ public static class LogicThingComponentsLookup {
         typeof(Battle.Logic.Thing.Component.Gamer.Skill.GamerUltSkillComponent),
         typeof(Battle.Logic.Thing.Component.IntelligentComponent),
         typeof(Battle.Logic.Thing.Component.Property.AttackComponent),
+        typeof(Battle.Logic.Thing.Component.Property.Base.CampComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.CreateTimeComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.PositionComponent),
         typeof(Battle.Logic.Thing.Component.Property.Base.RadiusComponent),
@@ -149,6 +154,7 @@ public static class LogicThingComponentsLookup {
         typeof(Battle.Logic.Thing.Component.Type.GamerComponent),
         typeof(Battle.Logic.Thing.Component.Type.GamerDataComponent),
         typeof(Battle.Logic.Thing.Component.Type.GamerGroupComponent),
+        typeof(Battle.Logic.Thing.Component.Type.MonsterComponent),
         typeof(Battle.Logic.Thing.Component.Type.OtherComponent),
         typeof(Battle.Logic.Thing.Component.Type.ThingCastAttributeTypeComponent),
         typeof(Battle.Logic.Thing.Component.Type.ThingCastRangeTypeComponent),

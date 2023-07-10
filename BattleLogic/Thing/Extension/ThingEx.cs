@@ -9,6 +9,7 @@
 
 using Battle.Common.Constant;
 using Battle.Common.Context.Combat;
+using Battle.Logic.Utils;
 using Core.Lite.RefPool.Builtin;
 using Core.Lockstep.Math;
 
@@ -64,6 +65,59 @@ namespace Battle.Logic.Thing.Extension
 
             builder.Append("]");
             return builder.ToString();
+        }
+
+        public static void ReadAbilities(this LogicContexts contexts, LogicThingEntity thingEntity, int defSkillId,
+            int ultSkillId, params int[] allSkills) {
+
+            SkillLevelData defSkill = null;
+            if (defSkillId > 0) {
+                defSkill = new SkillLevelData(defSkillId);
+            }
+
+            SkillLevelData ultSkill = null;
+            if (ultSkillId > 0) {
+                ultSkill = new SkillLevelData(ultSkillId);
+            }
+
+            var skillsData = contexts.ListPool<SkillLevelData>().Get();
+            foreach (var skill in allSkills) {
+                if (skill > 0) {
+                    skillsData.Add(skill);
+                }
+            }
+
+            contexts.ReadAbilities(thingEntity, defSkill, ultSkill, skillsData.ToArray());
+            contexts.ListPool<SkillLevelData>().Return(skillsData);
+        }
+
+        private static void ReadAbilities(this LogicContexts contexts, LogicThingEntity thingEntity,
+            SkillLevelData defSkillData, SkillLevelData ultSkillData, params SkillLevelData[] allSkillsData) {
+            
+            SkillConfData defaultSkill = null;
+            if (null != defSkillData) {
+                defaultSkill = ConfigUtil.ReadSkillConfData(contexts, defSkillData.Id, defSkillData.Level);
+            }
+            SkillConfData ultimateSkill = null;
+            if (null != ultSkillData) {
+                ultimateSkill = ConfigUtil.ReadSkillConfData(contexts, ultSkillData.Id, ultSkillData.Level);
+            }
+
+            SkillConfData[] skills = null;
+            if (null != allSkillsData) {
+                var skillList = contexts.ListPool<SkillConfData>().Get();
+                foreach (var skillData in allSkillsData) {
+                    if (null == skillData) {
+                        continue;
+                    }
+                    var confData = ConfigUtil.ReadSkillConfData(contexts, skillData.Id, skillData.Level);
+                    skillList.Add(confData);
+                }
+                skills = skillList.ToArray();
+                contexts.ListPool<SkillConfData>().Return(skillList);
+            }
+            
+            contexts.ReadSkillAbilities(thingEntity, defaultSkill, ultimateSkill, skills);
         }
     }
 }

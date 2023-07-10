@@ -146,6 +146,7 @@
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarRotateTweenComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarViewComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingAvatarViewOffsetComponent.cs" />
+    <Compile Include="Generated\ViewThing\Components\ViewThingCampFlagComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingHealthPointComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingCreateContextComponent.cs" />
     <Compile Include="Generated\ViewThing\Components\ViewThingDefaultCastAbilityComponent.cs" />
@@ -268,10 +269,12 @@
     <Compile Include="Thing\Component\Avatar\AvatarViewOffsetComponent.cs" />
     <Compile Include="Thing\Component\CreateContextComponent.cs" />
     <Compile Include="Thing\Component\DefaultCastAbilityComponent.cs" />
+    <Compile Include="Thing\Component\Property\CampFlagComponent.cs" />
     <Compile Include="Thing\Component\Property\HealthPointComponent.cs" />
     <Compile Include="Thing\Component\ThingTypeComponent.cs" />
     <Compile Include="Thing\Component\UltimateCastAbilityComponent.cs" />
     <Compile Include="Thing\Factory\GamerFactory.cs" />
+    <Compile Include="Thing\Factory\MonsterFactory.cs" />
     <Compile Include="Thing\Factory\ThingFactory.cs" />
     <Compile Include="Thing\System\Avatar\AddAvatarViewSystem.cs" />
     <Compile Include="Thing\System\Avatar\ChangeMotionSystem.cs" />

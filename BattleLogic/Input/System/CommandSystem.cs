@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using Battle.Logic.Base.System;
 using Battle.Logic.Constant;
 using Battle.Logic.Input.System.Processor;
+using Battle.Logic.Input.System.Processor.GM;
 
 namespace Battle.Logic.Input.System
 {
@@ -25,6 +26,8 @@ namespace Battle.Logic.Input.System
             
             RegisterProcessor<CastSkill>();
             RegisterProcessor<RetrieveGamerByGeneralId>();
+            
+            RegisterProcessor<GMSummonMonster>();
         }
 
         private void RegisterProcessor<T>() where T : ICommandProcessor {

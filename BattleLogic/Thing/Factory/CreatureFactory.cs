@@ -39,6 +39,7 @@ namespace Battle.Logic.Thing.Factory
             thingEntity.AddMovableRef((context.ThingFlag & ThingFlag.Dynamic) > 0 ? 1 : 0);
             thingEntity.AddCastableRef(1);
             
+            thingEntity.AddCamp(context.CampFlag);
             thingEntity.isCreature = true;
         }
     }

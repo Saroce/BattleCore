@@ -25,14 +25,16 @@ namespace Battle.Logic.Thing.Factory
             
             thingEntity.isGamer = true;
             
+            // 基础属性
             thingEntity.AddRadius((FixedPoint) generalConf.Radius / 100f);
             thingEntity.AddThingCastAttributeType((ThingCastAttributeType) generalConf.GeneralType1);
             thingEntity.AddThingCastRangeType((ThingCastRangeType) generalConf.GeneralType2);
             
+            // 战斗属性
             var combatValue = context.CombatValue;
             thingEntity.SetPropertiesFromCombatValue(combatValue);
             
-            // 技能
+            // 施法能力
             contexts.ReadSkillAbilities(thingEntity, context.DefSkill, context.UltSkill, context.AllSkills.ToArray());
             
             // TODO AI行为

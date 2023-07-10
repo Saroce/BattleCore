@@ -28,11 +28,11 @@ namespace Battle.Logic.Skill.Utils
             // 根据阵营选择目标
             SelectEntitiesByCampType(contexts, caster, selectData.TargetSelectCampType, ref targets);
 
-            if (selectData.TargetSelectCampType != SkillTargetSelectCampType.Self) {
-                // TODO 通过职业筛选
-            }
-            
-            // TODO 根据过滤信息过滤
+            // if (selectData.TargetSelectCampType != SkillTargetSelectCampType.Self) {
+            //     // TODO 通过职业筛选
+            // }
+            //
+            // // TODO 根据过滤信息过滤
             
             // 根据排序规则对目标排序
             SortEntities(contexts, caster, selectData, ref targets);
@@ -47,9 +47,66 @@ namespace Battle.Logic.Skill.Utils
         /// <param name="targets"></param>
         public static void SelectEntitiesByCampType(LogicContexts contexts, LogicThingEntity thingEntity,
             SkillTargetSelectCampType campType, ref List<ulong> targets) {
-            // TODO    
+            if (!thingEntity.hasCamp) {
+                return;
+            }
+
+            var toRemoved = contexts.ListPool<ulong>().Get();
+            foreach (var targetId in targets) {
+                var targetEntity = contexts.logicThing.GetEntityWithId(targetId);
+                if (targetEntity == null) {
+                    continue;
+                }
+
+                if (!IsTargetCampMatched(contexts, thingEntity, targetEntity, campType)) {
+                    toRemoved.Add(targetEntity.id.Value);
+                }
+            }
+
+            foreach (var id in toRemoved) {
+                targets.Remove(id);
+            }
+            
+            contexts.ListPool<ulong>().Return(toRemoved);
         }
 
+        /// <summary>
+        /// 目标阵营是否符合
+        /// </summary>
+        /// <param name="contexts"></param>
+        /// <param name="thingEntity"></param>
+        /// <param name="targetEntity"></param>
+        /// <param name="campType"></param>
+        /// <returns></returns>
+        public static bool IsTargetCampMatched(LogicContexts contexts, LogicThingEntity thingEntity,
+            LogicThingEntity targetEntity, SkillTargetSelectCampType campType) {
+            if (campType == SkillTargetSelectCampType.None) {
+                return true;
+            }
+
+            if (!thingEntity.hasCamp || targetEntity.hasCamp) {
+                return false;
+            }
+
+            var ret = false;
+            // 自身
+            if ((campType & SkillTargetSelectCampType.Self) > 0) {
+                ret |= thingEntity == targetEntity;
+            }
+
+            // 敌方
+            if ((campType & SkillTargetSelectCampType.Enemy) > 0) {
+                ret |= thingEntity != targetEntity && ((int)thingEntity.camp.Value & (int)targetEntity.camp.Value) == 0;
+            }
+
+            // 友方
+            if ((campType & SkillTargetSelectCampType.Friend) > 0) {
+                ret |= thingEntity != targetEntity && ((int)thingEntity.camp.Value & (int)targetEntity.camp.Value) > 0;
+            }
+
+            return ret;
+        }
+        
         public static void SortEntities(LogicContexts contexts, LogicThingEntity thingEntity,
             SkillTargetSelectData selectData, ref List<ulong> targets) {
             if (targets.Count <= 1) {

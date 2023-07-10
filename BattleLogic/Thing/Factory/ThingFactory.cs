@@ -35,7 +35,7 @@ namespace Battle.Logic.Thing.Factory
                     contexts.CreateGamer(entity, createContext as GamerCreateContext);
                     break;
                 case ThingType.Monster:
-                    // TODO
+                    contexts.CreateMonster(entity, createContext as MonsterCreateContext);
                     break;
                 case ThingType.Bullet:
                     // TODO
