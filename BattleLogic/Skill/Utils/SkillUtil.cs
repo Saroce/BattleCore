@@ -148,7 +148,7 @@ namespace Battle.Logic.Skill.Utils
             var targetPosition = targetEntity.position.Value;
             var targetRadius = targetEntity.hasRadius ? targetEntity.radius.Value : 0f;
 
-            return RangeUtil.IsRangeOverlap(contexts, originPosition, originRotation, targetPosition, targetRadius, rangeData);
+            return RangeUtil.IsRangeOverlap(originPosition, originRotation, targetPosition, targetRadius, rangeData);
         }
         
         /// <summary>
@@ -161,46 +161,10 @@ namespace Battle.Logic.Skill.Utils
         /// <param name="targets"></param>
         public static void QueryCreaturesInSkillRange(LogicContexts contexts, LogicThingEntity thingEntity,
             SkillRangeData rangeData, SkillRangeExData rangeExData, ref List<ulong> targets) {
-            QueryEntitiesInSkillRange(contexts, thingEntity, rangeData, rangeExData, ref targets,
+            ThingQueryUtil.QueryEntitiesInRange(contexts, thingEntity, rangeData, rangeExData, ref targets,
                 LogicThingDef.CreatureMatchers);
         }
-
-        /// <summary>
-        /// 查询技能范围内的所有实体
-        /// </summary>
-        /// <param name="contexts"></param>
-        /// <param name="thingEntity"></param>
-        /// <param name="rangeData"></param>
-        /// <param name="rangeExData"></param>
-        /// <param name="targets"></param>
-        /// <param name="matcher"></param>
-        public static void QueryEntitiesInSkillRange(LogicContexts contexts, LogicThingEntity thingEntity,
-            SkillRangeData rangeData, SkillRangeExData rangeExData, ref List<ulong> targets,
-            IMatcher<LogicThingEntity> matcher = null) {
-            var oriPosition = thingEntity.position.Value;
-            var oriRotation = thingEntity.rotation.Value;
-
-            matcher = matcher ?? LogicThingDef.CreatureMatchers;
-            var ret = contexts.HashSetPool<ulong>().Get();
-
-            // TODO 这里有格子范围判定, 看需不需要
-
-            var entities = contexts.logicThing.GetEntities(matcher);
-            foreach (var entity in entities) {
-                var radius = (FixedPoint) 0f;
-                if (entity.hasRadius) {
-                    radius = entity.radius.Value;
-                }
-
-                if (RangeUtil.IsRangeOverlap(contexts, oriPosition, oriRotation, entity.position.Value, radius,
-                        rangeData)) {
-                    ret.Add(entity.id.Value);
-                }
-            }
-
-            targets.AddRange(ret);
-            contexts.HashSetPool<ulong>().Return(ret);
-        }
+        
 
         /// <summary>
         /// 尝试使用指定技能直接施法(不需要选择目标)

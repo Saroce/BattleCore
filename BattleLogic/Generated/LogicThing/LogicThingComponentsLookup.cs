@@ -47,17 +47,18 @@ public static class LogicThingComponentsLookup {
     public const int MoveSpeed = 36;
     public const int PhysicsDefend = 37;
     public const int ThingCreateContext = 38;
-    public const int Creature = 39;
-    public const int Gamer = 40;
-    public const int GamerData = 41;
-    public const int GamerGroup = 42;
-    public const int Monster = 43;
-    public const int Other = 44;
-    public const int ThingCastAttributeType = 45;
-    public const int ThingCastRangeType = 46;
-    public const int Thing = 47;
+    public const int Bullet = 39;
+    public const int Creature = 40;
+    public const int Gamer = 41;
+    public const int GamerData = 42;
+    public const int GamerGroup = 43;
+    public const int Monster = 44;
+    public const int Other = 45;
+    public const int ThingCastAttributeType = 46;
+    public const int ThingCastRangeType = 47;
+    public const int Thing = 48;
 
-    public const int TotalComponents = 48;
+    public const int TotalComponents = 49;
 
     public static readonly string[] componentNames = {
         "Destroyed",
@@ -99,6 +100,7 @@ public static class LogicThingComponentsLookup {
         "MoveSpeed",
         "PhysicsDefend",
         "ThingCreateContext",
+        "Bullet",
         "Creature",
         "Gamer",
         "GamerData",
@@ -150,6 +152,7 @@ public static class LogicThingComponentsLookup {
         typeof(Battle.Logic.Thing.Component.Property.MoveSpeedComponent),
         typeof(Battle.Logic.Thing.Component.Property.PhysicsDefendComponent),
         typeof(Battle.Logic.Thing.Component.ThingCreateContextComponent),
+        typeof(Battle.Logic.Thing.Component.Type.BulletComponent),
         typeof(Battle.Logic.Thing.Component.Type.CreatureComponent),
         typeof(Battle.Logic.Thing.Component.Type.GamerComponent),
         typeof(Battle.Logic.Thing.Component.Type.GamerDataComponent),

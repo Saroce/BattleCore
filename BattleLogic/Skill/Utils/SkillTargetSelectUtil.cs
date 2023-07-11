@@ -154,5 +154,24 @@ namespace Battle.Logic.Skill.Utils
             var randomValue = contexts.GetRandom().Next01() * 100f;
             return randomValue <= value;
         }
+
+        public static void TrimAffectCount(int limit, ref List<ulong> list) {
+            if (limit <= 0) {
+                return;
+            }
+
+            while (list.Count > limit) {
+                list.RemoveAt(list.Count - 1);
+            }
+        }
+
+        public static void TrimAffectCountByRandom(LogicContexts contexts, int probability, int minimum,
+            ref List<ulong> list) {
+            for (var i = list.Count - 1; i >= minimum; i--) {
+                if (!TestRandom(contexts, probability)) {
+                    list.RemoveAt(i);
+                }
+            }
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace Battle.Logic.Thing.Factory
                     contexts.CreateMonster(entity, createContext as MonsterCreateContext);
                     break;
                 case ThingType.Bullet:
-                    // TODO
+                    contexts.CreateBullet(entity, createContext as BulletCreateContext);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException($"Unknown thing type: {createContext.ThingType}");

@@ -25,7 +25,7 @@ namespace Battle.Common.Constant
         Judge, // 判定
         Shoot, // 发射
     }
-    
+
     public enum SkillCastResult
     {
         NoError,    // 无错误
@@ -36,5 +36,11 @@ namespace Battle.Common.Constant
         TargetIsDead, // 目标死亡
         TargetTooFar, // 目标太远
         TargetSelectNoMatch, // 目标选择不匹配
+    }
+    
+    public enum ShootReferenceType
+    {
+        Owner = 0, // 自身
+        Target = 1, // 目标
     }
 }

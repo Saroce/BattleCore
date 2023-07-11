@@ -75,7 +75,7 @@ namespace Battle.Logic.Skill.System
                     SkillJudgeUtil.ProcessJudge(Contexts, casterId, targetId, fluxEventContext as JudgeFluxEventContext);
                     break;
                 case SkillFluxEventType.Shoot:
-                    // TODO 
+                    SkillShootUtil.ProcessShoot(Contexts, casterId, targetId, fluxEventContext as ShootFluxEventContext);
                     break;
                 default:
                     throw new IndexOutOfRangeException($"Unhandled flux event type:{fluxEventContext.Type}");

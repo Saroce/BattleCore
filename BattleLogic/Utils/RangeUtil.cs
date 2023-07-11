@@ -18,14 +18,13 @@ namespace Battle.Logic.Utils
         /// <summary>
         /// 判断施法范围是否覆盖目标点
         /// </summary>
-        /// <param name="contexts"></param>
         /// <param name="origin"></param>
         /// <param name="rotation"></param>
         /// <param name="target"></param>
         /// <param name="radius"></param>
         /// <param name="rangeData"></param>
         /// <returns></returns>
-        public static bool IsRangeOverlap(LogicContexts contexts, TSVector origin, TSQuaternion rotation,
+        public static bool IsRangeOverlap(TSVector origin, TSQuaternion rotation,
             TSVector target, FixedPoint radius, SkillRangeData rangeData) {
             switch (rangeData.RangeType) {
                 case SkillCastRangeType.Rectangle: {
@@ -96,7 +95,7 @@ namespace Battle.Logic.Utils
         public static bool IsSectorOverlap(TSVector origin, TSQuaternion rotation, TSVector target,
             FixedPoint radius, FixedPoint rangeRadius, FixedPoint rangeAngle, FixedPoint rangeYOffset) {
             // TODO 扇形与圆的相交判断
-            return false;
+            return true;
         }
     }
 }

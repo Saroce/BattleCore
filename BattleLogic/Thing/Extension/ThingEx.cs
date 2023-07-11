@@ -26,6 +26,10 @@ namespace Battle.Logic.Thing.Extension
                 return ThingType.Monster;
             }
 
+            if (thingEntity.isBullet) {
+                return ThingType.Bullet;
+            }
+            
             return ThingType.Unknown;
         }
         
